@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/modules.xml
+/contentModel.xml
+/.idea.HayDay Project.iml
+# Datasource local storage ignored files
+/../../../../../../../../:\zFiles\5 YT\HayDay series\HayDay Project\.idea\.idea.HayDay Project\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
