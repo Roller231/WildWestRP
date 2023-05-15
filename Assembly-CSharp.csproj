@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
     <Compile Include="Assets\Scripts\PanZoom.cs" />
+    <Compile Include="Assets\Scripts\TestButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

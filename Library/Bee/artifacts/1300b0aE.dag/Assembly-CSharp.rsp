@@ -341,6 +341,7 @@
 "Assets/Scripts/CustomCursour.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PanZoom.cs"
+"Assets/Scripts/TestButton.cs"
 "Assets/Scripts/Tile.cs"
 -langversion:9.0
 

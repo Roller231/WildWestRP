@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
 
     private Building buildingToPlace;
     public GameObject grid;
-
+    [SerializeField] GameObject canvasForHouse;
     public CustomCursour customCursour;
 
     public Tile[] tiles;
+
+
 
     private void Update()
     {
@@ -34,7 +36,8 @@ public class GameManager : MonoBehaviour
             }
             if (nearesTile.isOccuped == false)
             {
-                Instantiate(buildingToPlace, nearesTile.transform.position, Quaternion.identity);
+                var houseObject = Instantiate(buildingToPlace, nearesTile.transform.position, Quaternion.identity);
+                houseObject.transform.parent = canvasForHouse.transform;
                 buildingToPlace = null;
                 nearesTile.isOccuped = true;
                 grid.SetActive(false);
@@ -48,9 +51,7 @@ public class GameManager : MonoBehaviour
     {
         if (gold >= building.cost)
         {
-            customCursour.gameObject.SetActive(true);
-            customCursour.GetComponent<SpriteRenderer>().sprite = building.GetComponent<SpriteRenderer>().sprite;
-            Cursor.visible = false;
+
 
             gold -= building.cost;
             buildingToPlace = building;
