@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject canvasForHouse;
     public CustomCursour customCursour;
 
+    public bool buildingMod = false;
+
     public Tile[] tiles;
 
 
@@ -43,6 +45,8 @@ public class GameManager : MonoBehaviour
                 grid.SetActive(false);
                 customCursour.gameObject.SetActive(false);
                 Cursor.visible = true;
+
+                buildingMod = false;
             }
         }
     }
@@ -52,7 +56,7 @@ public class GameManager : MonoBehaviour
         if (gold >= building.cost)
         {
 
-
+            buildingMod = true;
             gold -= building.cost;
             buildingToPlace = building;
             grid.SetActive(true);

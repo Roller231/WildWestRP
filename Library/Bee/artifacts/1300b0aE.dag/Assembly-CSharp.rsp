@@ -338,10 +338,10 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Building.cs"
+"Assets/Scripts/BuildingsDoing.cs"
 "Assets/Scripts/CustomCursour.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PanZoom.cs"
-"Assets/Scripts/TestButton.cs"
 "Assets/Scripts/Tile.cs"
 -langversion:9.0
 
