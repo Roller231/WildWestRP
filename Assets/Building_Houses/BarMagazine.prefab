@@ -32,7 +32,7 @@ RectTransform:
   m_GameObject: {fileID: 7572353982424131600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.75, y: 2.71, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,7 +41,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.1269317, y: -0.9754469}
-  m_SizeDelta: {x: 1.4011765, y: 1.2305882}
+  m_SizeDelta: {x: 1.73, y: 1.2305882}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7246687686979583692
 MonoBehaviour:
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.4011765, y: 1.2305882}
+  m_Size: {x: 11.91, y: 10.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
