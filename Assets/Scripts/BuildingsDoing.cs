@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class BuildingsDoing : MonoBehaviour
 {
-    public void TestText()
+    bool onePlay = false;
+    public void PlayAnimationOnClick(Animation animation)
     {
-        Debug.Log("dsds");
+        if (!onePlay)
+        {
+            animation.Play();
+            onePlay = true;
+        }
+
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7949224373686685948}
   - component: {fileID: 911155021781442415}
   - component: {fileID: 906812644005392672}
+  - component: {fileID: 5320069125339892671}
   m_Layer: 0
   m_Name: Schahta
   m_TagString: Untagged
@@ -85,15 +86,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: -273785919875891180}
-          m_TargetAssemblyTypeName: TestButton, Assembly-CSharp
-          m_MethodName: TestText
-          m_Mode: 1
+          m_TargetAssemblyTypeName: BuildingsDoing, Assembly-CSharp
+          m_MethodName: PlayAnimationOnClick
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 5320069125339892671}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Animation, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: Gold house set
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!212 &7949224373686685948
@@ -186,3 +187,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!111 &5320069125339892671
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930748836087887078}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 78e117a5df2a2d940893515a2990889e, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 78e117a5df2a2d940893515a2990889e, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
