@@ -5,13 +5,22 @@ using UnityEngine;
 public class BuildingsDoing : MonoBehaviour
 {
     bool onePlay = false;
-    public void PlayAnimationOnClick(Animation animation)
+    public void PlayAnimationOnClick(Animator animator)
     {
         if (!onePlay)
         {
-            animation.Play();
             onePlay = true;
+            animator.SetBool("OnClick", onePlay);
+
         }
+        else if (onePlay)
+        {
+            onePlay = false;
+            animator.SetBool("OnClick", onePlay);
+            Debug.Log(onePlay);
+        }
+
 
     }
 }
+     

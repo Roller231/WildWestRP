@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1121024742721722786}
   - component: {fileID: 5370218853390966626}
   - component: {fileID: 3444890851059340703}
-  - component: {fileID: -1561488716281826451}
+  - component: {fileID: -78204400783612112}
   m_Layer: 0
   m_Name: TestHouse
   m_TagString: Untagged
@@ -142,8 +142,8 @@ MonoBehaviour:
           m_MethodName: PlayAnimationOnClick
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: -1561488716281826451}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Animation, UnityEngine
+            m_ObjectArgument: {fileID: -78204400783612112}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Craft house set
@@ -187,19 +187,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!111 &-1561488716281826451
-Animation:
+--- !u!95 &-78204400783612112
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4393860098255582706}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 78e117a5df2a2d940893515a2990889e, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 78e117a5df2a2d940893515a2990889e, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c23bce0696b659242bb184f652d7dbd6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

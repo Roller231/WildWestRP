@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7949224373686685948}
   - component: {fileID: 911155021781442415}
   - component: {fileID: 906812644005392672}
-  - component: {fileID: 5320069125339892671}
+  - component: {fileID: 6614076696385075672}
   m_Layer: 0
   m_Name: Schahta
   m_TagString: Untagged
@@ -90,8 +90,8 @@ MonoBehaviour:
           m_MethodName: PlayAnimationOnClick
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 5320069125339892671}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Animation, UnityEngine
+            m_ObjectArgument: {fileID: 6614076696385075672}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Gold house set
@@ -187,19 +187,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!111 &5320069125339892671
-Animation:
+--- !u!95 &6614076696385075672
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930748836087887078}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 78e117a5df2a2d940893515a2990889e, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 78e117a5df2a2d940893515a2990889e, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c23bce0696b659242bb184f652d7dbd6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
