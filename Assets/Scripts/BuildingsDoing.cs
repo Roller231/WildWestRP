@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildingsDoing : MonoBehaviour
 {
+
     bool onePlay = false;
     public void PlayAnimationOnClick(Animator animator)
     {
@@ -12,15 +13,26 @@ public class BuildingsDoing : MonoBehaviour
             onePlay = true;
             animator.SetBool("OnClick", onePlay);
 
+            foreach (Building t in GameManager.buildings)
+            {
+                t.GetComponent<BuildingsDoing>().onePlay = true;
+
+            }
         }
+
         else if (onePlay)
         {
             onePlay = false;
             animator.SetBool("OnClick", onePlay);
-            Debug.Log(onePlay);
+            foreach (Building t in GameManager.buildings)
+            {
+                t.GetComponent<Animator>().SetBool("OnClick", onePlay);
+                t.GetComponent<BuildingsDoing>().onePlay = false;
+
+            }
         }
-
-
     }
+
+
 }
      

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public bool buildingMod = false;
 
     public Tile[] tiles;
+    public static Building[] buildings = new Building[1536];
+    int countHouses = 0;
 
 
 
@@ -46,7 +48,8 @@ public class GameManager : MonoBehaviour
                 customCursour.gameObject.SetActive(false);
                 Cursor.visible = true;
 
-                buildingMod = false;
+                buildings[countHouses] = houseObject;
+                countHouses++;
             }
         }
     }
