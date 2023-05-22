@@ -47,16 +47,16 @@ public class GameManager : MonoBehaviour
                 grid.SetActive(false);
                 customCursour.gameObject.SetActive(false);
                 Cursor.visible = true;
-
                 buildings[countHouses] = houseObject;
                 countHouses++;
+                buildingMod = false;
             }
         }
     }
 
     public void BuyBuilding(Building building)
     {
-        if (gold >= building.cost)
+        if (gold >= building.cost && !buildingMod)
         {
 
             buildingMod = true;

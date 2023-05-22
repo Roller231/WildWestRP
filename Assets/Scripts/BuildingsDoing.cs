@@ -33,6 +33,18 @@ public class BuildingsDoing : MonoBehaviour
         }
     }
 
+    public void CancelClick()
+    {
+        Debug.Log("Cancel");
+        onePlay = false;
+        foreach (Building t in GameManager.buildings)
+        {
+            t.GetComponent<Animator>().SetBool("OnClick", onePlay);
+            t.GetComponent<BuildingsDoing>().onePlay = false;
+        }
+
+    }
+
 
 }
      
