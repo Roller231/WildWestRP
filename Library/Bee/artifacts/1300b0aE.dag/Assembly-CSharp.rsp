@@ -376,6 +376,7 @@
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PanZoom.cs"
 "Assets/Scripts/Tile.cs"
+"Assets/UI/ScriptsUI/OpenBuildingSettings.cs"
 "Assets/UI/ScriptsUI/OpenScene.cs"
 "Assets/UI/ScriptsUI/SetTextGold.cs"
 "Assets/UI/ScriptsUI/ShopOpenClose.cs"

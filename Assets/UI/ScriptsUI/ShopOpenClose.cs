@@ -11,9 +11,5 @@ public class ShopOpenClose : MonoBehaviour
         box.LeanMoveLocalY(0, 0.5f).setEaseOutExpo().delay = 0.1f;
     }
 
-    public void Update()
-    {
-
-    }
 
 }
