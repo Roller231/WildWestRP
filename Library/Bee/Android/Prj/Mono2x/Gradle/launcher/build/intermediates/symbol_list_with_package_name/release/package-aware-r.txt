@@ -1,4 +1,4 @@
-com.DefaultCompany.HayDayProject
+com.DefaultCompany.WildWestRP
 id unitySurfaceView
 mipmap app_icon
 mipmap app_icon_round

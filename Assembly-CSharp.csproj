@@ -80,6 +80,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplines.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
+    <Compile Include="Assets\UI\ScriptsUI\OpenBuildingSettings.cs" />
     <Compile Include="Assets\UI\ScriptsUI\ShopOpenClose.cs" />
     <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
@@ -98,7 +99,6 @@
     <Compile Include="Assets\Scripts\PanZoom.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\UI\ScriptsUI\OpenBuildingSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\ReadMe.txt" />

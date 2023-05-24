@@ -16,7 +16,7 @@ android {
     defaultConfig {
         minSdkVersion 22
         targetSdkVersion 30
-        applicationId 'com.DefaultCompany.HayDayProject'
+        applicationId 'com.DefaultCompany.WildWestRP'
         ndk {
             abiFilters 'armeabi-v7a'
         }

@@ -9,7 +9,7 @@ INJECTED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launch
 INJECTED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 INJECTED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 	package
-		ADDED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:70-112
+		ADDED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:70-109
 		INJECTED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 		INJECTED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 	android:versionName
@@ -17,7 +17,7 @@ INJECTED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launch
 		ADDED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 		INJECTED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:113-159
+		ADDED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:110-156
 	android:versionCode
 		INJECTED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 		ADDED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
@@ -25,7 +25,7 @@ INJECTED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launch
 	xmlns:android
 		ADDED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:11-69
 	android:installLocation
-		ADDED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:160-200
+		ADDED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:157-197
 supports-screens
 ADDED from D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:3:3-163
 	android:largeScreens
@@ -103,7 +103,7 @@ ADDED from [:unityLibrary] D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\
 activity#com.unity3d.player.UnityPlayerActivity
 ADDED from [:unityLibrary] D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:31:9-51:20
 	android:screenOrientation
-		ADDED from [:unityLibrary] D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:37:13-49
+		ADDED from [:unityLibrary] D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:37:13-57
 	android:launchMode
 		ADDED from [:unityLibrary] D:\rep_Git\WildWestRP\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\library_manifest\release\AndroidManifest.xml:35:13-44
 	android:hardwareAccelerated
