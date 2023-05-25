@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject canvasForHouse;
     public CustomCursour customCursour;
 
-    public bool buildingMod = false;
+    public static bool buildingMode = false;
 
     public Tile[] tiles;
     public static Building[] buildings = new Building[1536];
@@ -49,17 +49,17 @@ public class GameManager : MonoBehaviour
                 Cursor.visible = true;
                 buildings[countHouses] = houseObject;
                 countHouses++;
-                buildingMod = false;
+                buildingMode = false;
             }
         }
     }
 
     public void BuyBuilding(Building building)
     {
-        if (gold >= building.cost && !buildingMod)
+        if (gold >= building.cost && !buildingMode)
         {
 
-            buildingMod = true;
+            buildingMode = true;
             gold -= building.cost;
             buildingToPlace = building;
             grid.SetActive(true);
