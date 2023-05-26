@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int gold;
-    //public Text goldDisplay;
 
     private Building buildingToPlace;
     public GameObject grid;

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 911155021781442415}
   - component: {fileID: 906812644005392672}
   - component: {fileID: 6614076696385075672}
+  - component: {fileID: -1266196628167416662}
   m_Layer: 0
   m_Name: Schahta
   m_TagString: Untagged
@@ -56,6 +57,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 10
+  storage: 0
+  income: 2
 --- !u!114 &-273785919875891180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb038cd54f425b04a975e62ed7f84ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasSettings: {fileID: 0}
+  grindBuild: 1
 --- !u!114 &2299015597342019234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +211,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-1266196628167416662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930748836087887078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913b0e505b2671641a3bef1dd283cb60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

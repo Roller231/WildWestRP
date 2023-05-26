@@ -373,6 +373,7 @@
 "Assets/Scripts/Building.cs"
 "Assets/Scripts/BuildingsDoing.cs"
 "Assets/Scripts/CustomCursour.cs"
+"Assets/Scripts/EarnResourse.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PanZoom.cs"
 "Assets/Scripts/Tile.cs"

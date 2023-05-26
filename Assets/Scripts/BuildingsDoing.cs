@@ -6,21 +6,30 @@ public class BuildingsDoing : MonoBehaviour
 {
 
     bool onePlay = false;
-    [SerializeField] GameObject canvasSettings;
-    public GameObject canvasInGame;
+    private GameObject canvasSettings;
+    private GameObject canvasInGame;
+    private Building buildingThis;
+    public bool grindBuild;
 
 
 
     private void Start()
     {
         canvasSettings = GameObject.Find("BuildingSettings");
+        buildingThis = gameObject.GetComponent<Building>();
     }
 
     public void PlayAnimationOnClick(Animator animator)
     {
         if (!onePlay && !GameManager.buildingMode)
         {
-
+            if (grindBuild)
+            {
+                GameObject.Find("GameManager").GetComponent<GameManager>().gold += buildingThis.storage;
+                buildingThis.storage = 0;
+                Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().gold);
+                Debug.Log(buildingThis.storage);
+            }
             onePlay = true;
             animator.SetBool("OnClick", onePlay);
             canvasSettings.GetComponent<OpenBuildingSettings>().Enable();
@@ -29,8 +38,12 @@ public class BuildingsDoing : MonoBehaviour
                 t.GetComponent<BuildingsDoing>().onePlay = true;
             }
 
-            canvasInGame.SetActive(false);
+
+
+
             canvasInGame = GameObject.Find("AlwaysInGame");
+            canvasInGame.SetActive(false);
+
 
         }
 
