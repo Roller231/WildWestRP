@@ -1,38 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingsDoing : MonoBehaviour
 {
 
     bool onePlay = false;
-    private GameObject canvasSettings;
+    private GameObject canvasSettingsNotGrind;
+    private GameObject canvasSettingsYesGrind;
     private GameObject canvasInGame;
     private Building buildingThis;
     public bool grindBuild;
+
+    public Button TestBUTTONICH;
 
 
 
     private void Start()
     {
-        canvasSettings = GameObject.Find("BuildingSettings");
+        canvasSettingsNotGrind = GameObject.Find("BuildingSettings");
+        canvasSettingsYesGrind = GameObject.Find("EarnBuildingSettings");
         buildingThis = gameObject.GetComponent<Building>();
+        TestBUTTONICH = GameObject.Find("ClaimButton").GetComponent<Button>();
+    }
+
+    private void Update()
+    {
+        if (grindBuild)
+        {
+            GameObject.Find("StorageText").GetComponent<Text>().text = buildingThis.storage.ToString();
+        }
     }
 
     public void PlayAnimationOnClick(Animator animator)
     {
         if (!onePlay && !GameManager.buildingMode)
         {
-            if (grindBuild)
+
+            if (!grindBuild)
+            {
+                canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
+
+            }
+            else if (grindBuild)
             {
                 GameObject.Find("GameManager").GetComponent<GameManager>().gold += buildingThis.storage;
                 buildingThis.storage = 0;
-                Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().gold);
-                Debug.Log(buildingThis.storage);
+    
+                canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
+                TestBUTTONICH.onClick.AddListener(() => SetStorageOnButton());
+
+                //Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().gold);
+                //Debug.Log(buildingThis.storage);
             }
+
+
+
             onePlay = true;
             animator.SetBool("OnClick", onePlay);
-            canvasSettings.GetComponent<OpenBuildingSettings>().Enable();
+
+
+
             foreach (Building t in GameManager.buildings)
             {
                 t.GetComponent<BuildingsDoing>().onePlay = true;
@@ -68,6 +97,11 @@ public class BuildingsDoing : MonoBehaviour
             t.GetComponent<BuildingsDoing>().onePlay = false;
 
         }
+    }
+
+    private void SetStorageOnButton()
+    {
+        buildingThis.storage = 0;
     }
 
 

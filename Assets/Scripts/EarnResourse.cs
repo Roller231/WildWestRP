@@ -17,8 +17,15 @@ public class EarnResourse : MonoBehaviour
 
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(5f);
+        if (gameObject.GetComponent<Building>().storage < gameObject.GetComponent<Building>().maxIncome)
+        {
+            gameObject.GetComponent<Building>().storage += gameObject.GetComponent<Building>().income;
+        }
+        else
+        {
+            Debug.Log("Full");
+        }
 
-        gameObject.GetComponent<Building>().storage += gameObject.GetComponent<Building>().income;
         StartCoroutine(EarnGoldCoroutine());
 
 
