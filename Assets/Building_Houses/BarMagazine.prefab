@@ -76,7 +76,7 @@ MonoBehaviour:
   grindBuild: 0
   upgradeGoldEarn: 0
   upgradeNewMaxIncome: 0
-  clip: {fileID: 8300000, guid: 034fc13086bbf704198d0b961a840f8c, type: 3}
+  ClaimButton: {fileID: 0}
 --- !u!114 &2824303763551457024
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,5 +11,6 @@ public class Building : MonoBehaviour
     public int maxIncome;
     public int level;
     public int upgradeCost;
+    public float timeEarn;
 
 }

@@ -7,6 +7,7 @@ public class BuildingsDoing : MonoBehaviour
 {
 
     bool onePlay = false;
+
     private GameObject canvasSettingsNotGrind;
     private GameObject canvasSettingsYesGrind;
     private GameObject canvasInGame;
@@ -21,12 +22,13 @@ public class BuildingsDoing : MonoBehaviour
     private Button claimButton;
     private Button upgradeButton;
 
-    public AudioClip clip;
-
 
 
     private void Start()
     {
+
+        canvasInGame = GameObject.Find("ButtonShop");
+
         canvasSettingsNotGrind = GameObject.Find("BuildingSettings");
         canvasSettingsYesGrind = GameObject.Find("EarnBuildingSettings");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -42,7 +44,11 @@ public class BuildingsDoing : MonoBehaviour
         if (grindBuild)
         {
             GameObject.Find("StorageText").GetComponent<Text>().text = buildingThis.storage.ToString();
+
         }
+
+
+
     }
 
     public void PlayAnimationOnClick(Animator animator)
@@ -54,22 +60,16 @@ public class BuildingsDoing : MonoBehaviour
             {
                 canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
 
-
             }
             else if (grindBuild)
             {
-                if (buildingThis.storage <= 0)
-                {
-                    gameManager.gold += buildingThis.storage;
-                    buildingThis.storage = 0;
-                    PlaySound.PlaySoundFunc(clip);
-                }
-
+                gameManager.gold += buildingThis.storage;
+                buildingThis.storage = 0;
     
                 canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
-
                 claimButton.onClick.AddListener(() => SetStorageOnButton());
                 upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
+
 
                 //Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().gold);
                 //Debug.Log(buildingThis.storage);
@@ -90,8 +90,7 @@ public class BuildingsDoing : MonoBehaviour
 
 
 
-            canvasInGame = GameObject.Find("AlwaysInGame");
-            canvasInGame.SetActive(false);
+            //canvasInGame.SetActive(false);
 
 
         }
@@ -143,6 +142,8 @@ public class BuildingsDoing : MonoBehaviour
         }
 
     }
+
+
 
 
 }

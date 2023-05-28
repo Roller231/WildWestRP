@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     private Building buildingToPlace;
     public GameObject grid;
     [SerializeField] GameObject canvasForHouse;
-    public CustomCursour customCursour;
 
     public static bool buildingMode = false;
 
@@ -37,6 +36,7 @@ public class GameManager : MonoBehaviour
                     nearesTile = tile;
                 }
             }
+
             if (nearesTile.isOccuped == false)
             {
                 var houseObject = Instantiate(buildingToPlace, nearesTile.transform.position, Quaternion.identity);
@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
                 buildingToPlace = null;
                 nearesTile.isOccuped = true;
                 grid.SetActive(false);
-                customCursour.gameObject.SetActive(false);
                 Cursor.visible = true;
                 buildings[countHouses] = houseObject;
                 countHouses++;
@@ -63,5 +62,6 @@ public class GameManager : MonoBehaviour
             buildingToPlace = building;
             grid.SetActive(true);
         }
+
     }
 }

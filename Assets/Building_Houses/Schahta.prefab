@@ -62,6 +62,7 @@ MonoBehaviour:
   maxIncome: 10
   level: 1
   upgradeCost: 10
+  timeEarn: 5
 --- !u!114 &-273785919875891180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +78,6 @@ MonoBehaviour:
   grindBuild: 1
   upgradeGoldEarn: 10
   upgradeNewMaxIncome: 50
-  clip: {fileID: 8300000, guid: 034fc13086bbf704198d0b961a840f8c, type: 3}
 --- !u!114 &2299015597342019234
 MonoBehaviour:
   m_ObjectHideFlags: 0
