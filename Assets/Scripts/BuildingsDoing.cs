@@ -59,6 +59,7 @@ public class BuildingsDoing : MonoBehaviour
                 buildingThis.storage = 0;
     
                 canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
+
                 claimButton.onClick.AddListener(() => SetStorageOnButton());
                 upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
 
@@ -117,7 +118,6 @@ public class BuildingsDoing : MonoBehaviour
 
     private void UpgradeEarnBuild()
     {
-        Debug.Log("penis");
         if (gameManager.gold >= buildingThis.upgradeCost)
         {
             gameManager.gold -= buildingThis.upgradeCost;
@@ -130,7 +130,7 @@ public class BuildingsDoing : MonoBehaviour
             upgradeGoldEarn *= 2;
             upgradeNewMaxIncome *= 2;
 
-            buildingThis.upgradeCost *= 4;
+            buildingThis.upgradeCost *= 3;
 
         }
 
