@@ -21,6 +21,8 @@ public class BuildingsDoing : MonoBehaviour
     private Button claimButton;
     private Button upgradeButton;
 
+    public AudioClip clip;
+
 
 
     private void Start()
@@ -52,11 +54,17 @@ public class BuildingsDoing : MonoBehaviour
             {
                 canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
 
+
             }
             else if (grindBuild)
             {
-                gameManager.gold += buildingThis.storage;
-                buildingThis.storage = 0;
+                if (buildingThis.storage <= 0)
+                {
+                    gameManager.gold += buildingThis.storage;
+                    buildingThis.storage = 0;
+                    PlaySound.PlaySoundFunc(clip);
+                }
+
     
                 canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
 
