@@ -60,6 +60,8 @@ MonoBehaviour:
   storage: 0
   income: 5
   maxIncome: 10
+  level: 1
+  upgradeCost: 10
 --- !u!114 &-273785919875891180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +75,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grindBuild: 1
-  TestBUTTONICH: {fileID: 0}
+  upgradeGoldEarn: 10
+  upgradeNewMaxIncome: 50
 --- !u!114 &2299015597342019234
 MonoBehaviour:
   m_ObjectHideFlags: 0

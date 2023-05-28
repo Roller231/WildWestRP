@@ -10,10 +10,16 @@ public class BuildingsDoing : MonoBehaviour
     private GameObject canvasSettingsNotGrind;
     private GameObject canvasSettingsYesGrind;
     private GameObject canvasInGame;
-    private Building buildingThis;
-    public bool grindBuild;
 
-    public Button TestBUTTONICH;
+    private Building buildingThis;
+    private GameManager gameManager;
+
+    public bool grindBuild;
+    public int upgradeGoldEarn;
+    public int upgradeNewMaxIncome;
+
+    private Button claimButton;
+    private Button upgradeButton;
 
 
 
@@ -21,8 +27,12 @@ public class BuildingsDoing : MonoBehaviour
     {
         canvasSettingsNotGrind = GameObject.Find("BuildingSettings");
         canvasSettingsYesGrind = GameObject.Find("EarnBuildingSettings");
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         buildingThis = gameObject.GetComponent<Building>();
-        TestBUTTONICH = GameObject.Find("ClaimButton").GetComponent<Button>();
+
+        claimButton = GameObject.Find("ClaimButton").GetComponent<Button>();
+        upgradeButton = GameObject.FindGameObjectWithTag("UpgradeEarnButton").GetComponent<Button>();
     }
 
     private void Update()
@@ -45,11 +55,12 @@ public class BuildingsDoing : MonoBehaviour
             }
             else if (grindBuild)
             {
-                GameObject.Find("GameManager").GetComponent<GameManager>().gold += buildingThis.storage;
+                gameManager.gold += buildingThis.storage;
                 buildingThis.storage = 0;
     
                 canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
-                TestBUTTONICH.onClick.AddListener(() => SetStorageOnButton());
+                claimButton.onClick.AddListener(() => SetStorageOnButton());
+                upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
 
                 //Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().gold);
                 //Debug.Log(buildingThis.storage);
@@ -102,6 +113,27 @@ public class BuildingsDoing : MonoBehaviour
     private void SetStorageOnButton()
     {
         buildingThis.storage = 0;
+    }
+
+    private void UpgradeEarnBuild()
+    {
+        Debug.Log("penis");
+        if (gameManager.gold >= buildingThis.upgradeCost)
+        {
+            gameManager.gold -= buildingThis.upgradeCost;
+
+            buildingThis.level += 1;
+
+            buildingThis.income = upgradeGoldEarn;
+            buildingThis.maxIncome = upgradeNewMaxIncome;
+
+            upgradeGoldEarn *= 2;
+            upgradeNewMaxIncome *= 2;
+
+            buildingThis.upgradeCost *= 4;
+
+        }
+
     }
 
 

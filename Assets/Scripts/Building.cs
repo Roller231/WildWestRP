@@ -9,5 +9,7 @@ public class Building : MonoBehaviour
     public int storage;
     public int income;
     public int maxIncome;
+    public int level;
+    public int upgradeCost;
 
 }
