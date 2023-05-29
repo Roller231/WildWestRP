@@ -62,7 +62,7 @@ MonoBehaviour:
   maxIncome: 10
   level: 1
   upgradeCost: 10
-  timeEarn: 5
+  timeEarn: 2
 --- !u!114 &-273785919875891180
 MonoBehaviour:
   m_ObjectHideFlags: 0
