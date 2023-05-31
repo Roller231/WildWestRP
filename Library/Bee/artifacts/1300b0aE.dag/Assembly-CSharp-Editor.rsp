@@ -336,6 +336,7 @@
 -r:"D:/Unity Versions/2021.3.17f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Xml.dll"
 -r:"D:/Unity Versions/2021.3.17f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Xml.Linq.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Assembly-CSharp.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aE.dag/OdinSerializer.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Tilemap.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"

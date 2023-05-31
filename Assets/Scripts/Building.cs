@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OdinSerializer;
 
-public class Building : MonoBehaviour
+[SerializeField]
+public class Building : SerializedMonoBehaviour
 {
 
     public int cost;

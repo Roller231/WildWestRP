@@ -776,6 +776,10 @@
       <Project>{C911DE1C-E467-4683-99C7-8569573B9DA4}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="OdinSerializer.csproj">
+      <Project>{614350DB-81F5-B73B-DA80-A6AC3992263B}</Project>
+      <Name>OdinSerializer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

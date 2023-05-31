@@ -21,15 +21,8 @@ public class EarnResourse : MonoBehaviour
         {
             gameObject.GetComponent<Building>().storage += gameObject.GetComponent<Building>().income;
         }
-        else
-        {
-            Debug.Log("Full");
-        }
 
         StartCoroutine(EarnGoldCoroutine());
 
-
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }

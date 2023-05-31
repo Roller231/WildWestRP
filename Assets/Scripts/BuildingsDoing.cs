@@ -71,8 +71,6 @@ public class BuildingsDoing : MonoBehaviour
                 upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
 
 
-                //Debug.Log(GameObject.Find("GameManager").GetComponent<GameManager>().gold);
-                //Debug.Log(buildingThis.storage);
             }
 
 
@@ -90,22 +88,8 @@ public class BuildingsDoing : MonoBehaviour
 
 
 
-            //canvasInGame.SetActive(false);
-
-
         }
 
-        //else if (onePlay && !GameManager.buildingMode)
-        //{
-        //    onePlay = false;
-        //    animator.SetBool("OnClick", onePlay);
-        //    foreach (Building t in GameManager.buildings)
-        //    {
-        //        t.GetComponent<Animator>().SetBool("OnClick", onePlay);
-        //        t.GetComponent<BuildingsDoing>().onePlay = false;
-
-        //    }
-        //}
     }
 
     public void BackAllBuildings()
