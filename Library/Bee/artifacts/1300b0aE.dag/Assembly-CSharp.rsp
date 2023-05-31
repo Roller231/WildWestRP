@@ -376,6 +376,7 @@
 "Assets/Scripts/EarnResourse.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PanZoom.cs"
+"Assets/Scripts/SaveAll.cs"
 "Assets/Scripts/Tile.cs"
 "Assets/UI/ScriptsUI/ClaimButton.cs"
 "Assets/UI/ScriptsUI/OpenBuildingSettings.cs"
