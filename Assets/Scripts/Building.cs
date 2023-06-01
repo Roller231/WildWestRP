@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using OdinSerializer;
 
-[SerializeField]
 public class Building : SerializedMonoBehaviour
 {
 

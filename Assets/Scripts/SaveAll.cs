@@ -18,39 +18,31 @@ public class SaveAll : MonoBehaviour
     private Data state = new Data();
 
 
-    public Building[] buildings
-    {
-        get { return this.state.buildings; }
-        set { this.state.buildings = GameManager.buildings; }
-    }
 
-    public Transform[] transforms
-    {
-        get { return this.state.transforms; }
-        set
-        {
-            for (int i = 0; i < state.transforms.Length; i++)
-            {
-                state.transforms[i] = GameManager.buildings[i].transform;
-            }; 
-        }
-    }
+
 
 
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        StartCoroutine(EarnGoldCoroutine());
         filePath = Application.persistentDataPath + "/saves.sv";
+
+        StartCoroutine(EarnGoldCoroutine());
+
     }
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(1)) 
+        if (Input.GetMouseButtonDown(0))
+        {
+            SaveState(filePath);
+        }
+        if (Input.GetMouseButtonDown(2))
         {
             LoadState(filePath);
         }
+
 
     }
 
@@ -58,12 +50,12 @@ public class SaveAll : MonoBehaviour
     {
 
 
-    yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(5);
 
 
         SaveState(filePath);
 
-    StartCoroutine(EarnGoldCoroutine());
+        StartCoroutine(EarnGoldCoroutine());
 
 
 
@@ -72,14 +64,16 @@ public class SaveAll : MonoBehaviour
 
     public void SaveState(string filePath)
     {
-        for (int i = 0; i < GameManager.buildings.Length; i++)
-        {
-            state.buildings[i] = GameManager.buildings[i];
-            //Debug.Log(state.buildings[i]);
-        }
         state.dataGold = gameManager.gold;
-        //Debug.Log("complete " + state.buildings[1]);
-        //        Debug.Log("complete " + state.transforms[1]);
+        for (int i = 0; i < gameManager.buildings.Length; i++)
+        {
+            if (gameManager.buildings[i] != null)
+            {
+                state.dataBuildings[i] = gameManager.buildings[i];
+                Debug.Log("save");
+            }
+            
+        }
         byte[] bytes = SerializationUtility.SerializeValue(this.state, DataFormat.Binary);
         File.WriteAllBytes(filePath, bytes);
 
@@ -94,9 +88,13 @@ public class SaveAll : MonoBehaviour
         this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
         gameManager.gold = state.dataGold;
 
-        for (int i = 0; i < GameManager.buildings.Length; i++)
+        for (int i = 0; i < gameManager.buildings.Length; i++)
         {
-            Debug.Log("complete " + state.buildings[i]);
+            if (state.dataBuildings[i] != null)
+            {
+                gameManager.buildings[i] = state.dataBuildings[i];
+                Debug.Log("load");
+            }
 
         }
 
@@ -111,11 +109,10 @@ public class SaveAll : MonoBehaviour
 
 
 [Serializable]
-class Data  
+class Data
 {
     [NonSerialized, OdinSerialize]
-    public Transform[ ] transforms = new Transform[1536];
+    public GameObject[] transforms = new GameObject[1536];
     public int dataGold;
-    public Building[] buildings = new Building[1536];
-
+    public Building[] dataBuildings = new Building[1536];
 }

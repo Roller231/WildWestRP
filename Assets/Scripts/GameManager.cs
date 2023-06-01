@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public static bool buildingMode = false;
 
     public Tile[] tiles;
-    public static Building[] buildings = new Building[1536];
+    public Building[] buildings = new Building[1536];
+    public GameObject[] gameObjectHouse = new GameObject[1536];
+    public 
     int countHouses = 0;
 
 

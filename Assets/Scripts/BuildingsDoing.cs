@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -55,35 +56,44 @@ public class BuildingsDoing : MonoBehaviour
     {
         if (!onePlay && !GameManager.buildingMode)
         {
-
-            if (!grindBuild)
+            try
             {
-                canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
+                if (!grindBuild)
+                {
+                    canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
 
+                }
+                else if (grindBuild)
+                {
+                    gameManager.gold += buildingThis.storage;
+                    buildingThis.storage = 0;
+
+                    canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
+                    claimButton.onClick.AddListener(() => SetStorageOnButton());
+                    upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
+
+
+                }
+
+
+
+                onePlay = true;
+                animator.SetBool("OnClick", onePlay);
+
+
+
+                foreach (Building t in gameManager.buildings)
+                {
+                    t.GetComponent<BuildingsDoing>().onePlay = true;
+                }
             }
-            else if (grindBuild)
+            catch (NullReferenceException)
             {
-                gameManager.gold += buildingThis.storage;
-                buildingThis.storage = 0;
-    
-                canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
-                claimButton.onClick.AddListener(() => SetStorageOnButton());
-                upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
 
-
+                Debug.Log("catch");
             }
 
 
-
-            onePlay = true;
-            animator.SetBool("OnClick", onePlay);
-
-
-
-            foreach (Building t in GameManager.buildings)
-            {
-                t.GetComponent<BuildingsDoing>().onePlay = true;
-            }
 
 
 
@@ -94,12 +104,21 @@ public class BuildingsDoing : MonoBehaviour
 
     public void BackAllBuildings()
     {
-        foreach (Building t in GameManager.buildings)
+        try
         {
-            t.GetComponent<Animator>().SetBool("OnClick", onePlay);
-            t.GetComponent<BuildingsDoing>().onePlay = false;
+            foreach (Building t in gameManager.buildings)
+            {
+                t.GetComponent<Animator>().SetBool("OnClick", onePlay);
+                t.GetComponent<BuildingsDoing>().onePlay = false;
 
+            }
         }
+        catch (NullReferenceException)
+        {
+
+            Debug.Log("catch");
+        }
+
     }
 
     private void SetStorageOnButton()
