@@ -5,6 +5,8 @@ using System;
 using OdinSerializer;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.Playables;
+using static UnityEditor.Progress;
 
 public class SaveAll : MonoBehaviour
 {
@@ -12,32 +14,54 @@ public class SaveAll : MonoBehaviour
 
     string filePath;
 
+    [SerializeField, HideInInspector]
+    private Data state = new Data();
+
+
+    public Building[] buildings
+    {
+        get { return this.state.buildings; }
+        set { this.state.buildings = GameManager.buildings; }
+    }
+
+    public Transform[] transforms
+    {
+        get { return this.state.transforms; }
+        set
+        {
+            for (int i = 0; i < state.transforms.Length; i++)
+            {
+                state.transforms[i] = GameManager.buildings[i].transform;
+            }; 
+        }
+    }
 
 
     private void Start()
     {
-        filePath = Application.persistentDataPath + "/saves.gamesaves";
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         StartCoroutine(EarnGoldCoroutine());
+        filePath = Application.persistentDataPath + "/saves.sv";
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if(Input.GetMouseButtonDown(1)) 
         {
-            LoadGame();
+            LoadState(filePath);
         }
+
     }
 
     IEnumerator EarnGoldCoroutine()
     {
-    //Print the time of when the function is first called.
-    //Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
-    //yield on a new YieldInstruction that waits for 5 seconds.
+
     yield return new WaitForSeconds(5);
 
-        SaveGame();
+
+        SaveState(filePath);
 
     StartCoroutine(EarnGoldCoroutine());
 
@@ -46,61 +70,52 @@ public class SaveAll : MonoBehaviour
     }
 
 
-
-
-
-
-    public void SaveGame()
+    public void SaveState(string filePath)
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream fs = new FileStream(filePath, FileMode.Create);
-
-        SaveData saveData = new SaveData();
-
-        int i = 0;
-        foreach (Building build in GameManager.buildings)
+        for (int i = 0; i < GameManager.buildings.Length; i++)
         {
-            if (GameManager.buildings[i] != null)
-            {
-                saveData.buildings[i] = build;
-                Debug.Log("saveHouse");
-            }
-            i++;
-            if (i == 1536)
-            {
-                i=0;
-            }
+            state.buildings[i] = GameManager.buildings[i];
+            //Debug.Log(state.buildings[i]);
+        }
+        state.dataGold = gameManager.gold;
+        //Debug.Log("complete " + state.buildings[1]);
+        //        Debug.Log("complete " + state.transforms[1]);
+        byte[] bytes = SerializationUtility.SerializeValue(this.state, DataFormat.Binary);
+        File.WriteAllBytes(filePath, bytes);
+
+
+    }
+
+    public void LoadState(string filePath)
+    {
+        if (!File.Exists(filePath)) return; // No state to load
+
+        byte[] bytes = File.ReadAllBytes(filePath);
+        this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
+        gameManager.gold = state.dataGold;
+
+        for (int i = 0; i < GameManager.buildings.Length; i++)
+        {
+            Debug.Log("complete " + state.buildings[i]);
+
         }
 
-        bf.Serialize(fs, saveData);
-
-        fs.Close();
-    }
-
-    public void LoadGame()
-    {
-        if (!File.Exists(filePath))
-            return;
-
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream fs = new FileStream(filePath, FileMode.Open);
-
-        SaveData saveData= (SaveData)bf.Deserialize(fs);
-
-        fs.Close();
-                Debug.Log(saveData.buildings.ToString());
-
-
 
     }
+
+
+
+
 }
 
 
+
 [Serializable]
-class SaveData
+class Data  
 {
     [NonSerialized, OdinSerialize]
-    public Building[] buildings = new Building[1536];
+    public Transform[ ] transforms = new Transform[1536];
     public int dataGold;
+    public Building[] buildings = new Building[1536];
 
 }
