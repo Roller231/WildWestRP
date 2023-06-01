@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,8 +15,7 @@ public class GameManager : MonoBehaviour
     public static bool buildingMode = false;
 
     public Tile[] tiles;
-    public Building[] buildings = new Building[1536];
-    public GameObject[] gameObjectHouse = new GameObject[1536];
+    public Building[] buildings;
     public 
     int countHouses = 0;
 
@@ -47,8 +47,12 @@ public class GameManager : MonoBehaviour
                 nearesTile.isOccuped = true;
                 grid.SetActive(false);
                 Cursor.visible = true;
+
+
+                Array.Resize(ref buildings, buildings.Length + 1);
                 buildings[countHouses] = houseObject;
                 countHouses++;
+
                 buildingMode = false;
             }
         }

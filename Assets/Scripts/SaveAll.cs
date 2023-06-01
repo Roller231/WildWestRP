@@ -7,6 +7,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.Playables;
 using static UnityEditor.Progress;
+using UnityEngine.UI;
 
 public class SaveAll : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class SaveAll : MonoBehaviour
     [SerializeField, HideInInspector]
     private Data state = new Data();
 
+    public GameObject prefab;
+    public Transform trans;
 
 
 
@@ -34,7 +37,7 @@ public class SaveAll : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             SaveState(filePath);
         }
@@ -55,6 +58,7 @@ public class SaveAll : MonoBehaviour
 
         SaveState(filePath);
 
+
         StartCoroutine(EarnGoldCoroutine());
 
 
@@ -64,19 +68,24 @@ public class SaveAll : MonoBehaviour
 
     public void SaveState(string filePath)
     {
-        state.dataGold = gameManager.gold;
+        this.state.dataGold = gameManager.gold;
         for (int i = 0; i < gameManager.buildings.Length; i++)
         {
             if (gameManager.buildings[i] != null)
             {
-                state.dataBuildings[i] = gameManager.buildings[i];
-                Debug.Log("save");
+                Array.Resize(ref this.state.dataBuildingsTR, gameManager.buildings.Length);
+                Array.Resize(ref this.state.gameObjects, gameManager.buildings.Length);
+                this.state.dataBuildingsTR[i] = gameManager.buildings[i].transform;
+
+                this.state.gameObjects[i] = gameManager.buildings[i].gameObject;
+
             }
-            
+
         }
         byte[] bytes = SerializationUtility.SerializeValue(this.state, DataFormat.Binary);
         File.WriteAllBytes(filePath, bytes);
-
+        
+        
 
     }
 
@@ -86,18 +95,28 @@ public class SaveAll : MonoBehaviour
 
         byte[] bytes = File.ReadAllBytes(filePath);
         this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
-        gameManager.gold = state.dataGold;
+        gameManager.gold = this.state.dataGold;
 
-        for (int i = 0; i < gameManager.buildings.Length; i++)
+        var houseObjects = Instantiate(prefab, trans);
+        houseObjects.transform.parent = GameObject.Find("CanvasForHouse").transform;
+
+        for (int i = 0; i < state.gameObjects.Length; i++)
         {
-            if (state.dataBuildings[i] != null)
+            if (state.gameObjects[i] != null)
             {
-                gameManager.buildings[i] = state.dataBuildings[i];
-                Debug.Log("load");
+
+                Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
+                var houseObject = Instantiate(state.gameObjects[i].GetComponent<Building>(), state.dataBuildingsTR[i]);
+
+                houseObject.transform.parent = GameObject.Find("CanvasForHouse").transform;
+
+                gameManager.buildings[i] = houseObject;
+                Debug.Log(this.state.gameObjects[i]);
+
             }
 
-        }
 
+        }
 
     }
 
@@ -111,8 +130,9 @@ public class SaveAll : MonoBehaviour
 [Serializable]
 class Data
 {
+
     [NonSerialized, OdinSerialize]
-    public GameObject[] transforms = new GameObject[1536];
     public int dataGold;
-    public Building[] dataBuildings = new Building[1536];
+    public Transform[] dataBuildingsTR;
+    public GameObject[] gameObjects;
 }
