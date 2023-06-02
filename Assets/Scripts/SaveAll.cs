@@ -73,10 +73,13 @@ public class SaveAll : MonoBehaviour
         {
             if (gameManager.buildings[i] != null)
             {
-                Array.Resize(ref this.state.dataBuildingsTR, gameManager.buildings.Length);
-                Array.Resize(ref this.state.gameObjects, gameManager.buildings.Length);
-                this.state.dataBuildingsTR[i] = gameManager.buildings[i].transform;
 
+                Array.Resize(ref this.state.gameObjects, gameManager.buildings.Length);
+
+                state.posX.Add(gameManager.buildings[i].transform.position.x);
+                state.posY.Add(gameManager.buildings[i].transform.position.y);
+
+                Debug.Log(state.posY[0]);
                 this.state.gameObjects[i] = gameManager.buildings[i].gameObject;
 
             }
@@ -97,8 +100,7 @@ public class SaveAll : MonoBehaviour
         this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
         gameManager.gold = this.state.dataGold;
 
-        var houseObjects = Instantiate(prefab, trans);
-        houseObjects.transform.parent = GameObject.Find("CanvasForHouse").transform;
+        Debug.Log(this.state.posY[0]);
 
         for (int i = 0; i < state.gameObjects.Length; i++)
         {
@@ -106,7 +108,7 @@ public class SaveAll : MonoBehaviour
             {
 
                 Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
-                var houseObject = Instantiate(state.gameObjects[i].GetComponent<Building>(), state.dataBuildingsTR[i]);
+                var houseObject = Instantiate(state.gameObjects[i].GetComponent<Building>(), new Vector3(state.posX[i], state.posY[i], 0), Quaternion.identity);
 
                 houseObject.transform.parent = GameObject.Find("CanvasForHouse").transform;
 
@@ -133,6 +135,7 @@ class Data
 
     [NonSerialized, OdinSerialize]
     public int dataGold;
-    public Transform[] dataBuildingsTR;
+    public List <float> posX = new List <float>(1536);
+    public List <float> posY = new List <float>(1536);
     public GameObject[] gameObjects;
 }
