@@ -55,12 +55,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04044a3b406b714688886dfade3c637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   cost: 10
   storage: 0
   income: 0
   maxIncome: 0
   level: 1
   upgradeCost: 10
+  timeEarn: 0
 --- !u!114 &2513792069076785706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +86,6 @@ MonoBehaviour:
   grindBuild: 0
   upgradeGoldEarn: 0
   upgradeNewMaxIncome: 0
-  ClaimButton: {fileID: 0}
 --- !u!114 &2824303763551457024
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -78,10 +78,14 @@ public class SaveAll : MonoBehaviour
             {
                 rect[i] = gameManager.buildings[i].GetComponent<RectTransform>();
 
+
                 Array.Resize(ref this.state.gameObjects, gameManager.buildings.Length);
 
-                state.posX.Add(gameManager.buildings[i].transform.position.y);
-                state.posY.Add(gameManager.buildings[i].transform.position.y);
+                state.posX.Add(rect[i].anchoredPosition.x);
+                state.posY.Add(rect[i].anchoredPosition.y);
+
+                //Debug.Log(state.posX[i]);
+                //Debug.Log(state.posY[i]);
 
                 this.state.gameObjects[i] = gameManager.buildings[i].gameObject.name;
 
@@ -114,9 +118,12 @@ public class SaveAll : MonoBehaviour
 
                     if (item == prefabsHouse[i].name + "(Clone)")
                     {
-                        //var houseObject = Instantiate(prefabsHouse[i], , Quaternion.identity);
-                        //houseObject.transform.parent = GameObject.Find("CanvasForHouse").transform;
-                        //gameManager.buildings[count] = houseObject.GetComponent<Building>();
+                        Debug.Log(state.posX[count]);
+                        Debug.Log(state.posY[count]);
+                        Debug.Log(count);
+                        var houseObject = Instantiate(prefabsHouse[i], new Vector3(state.posX[count], state.posY[count], 0), Quaternion.identity);
+                        houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
+                        gameManager.buildings[count] = houseObject.GetComponent<Building>();
                     }
 
                 }
