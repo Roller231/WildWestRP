@@ -72,26 +72,33 @@ public class SaveAll : MonoBehaviour
     public void SaveState(string filePath)
     {
         this.state.dataGold = gameManager.gold;
+
         for (int i = 0; i < gameManager.buildings.Length; i++)
         {
             if (gameManager.buildings[i] != null)
             {
-                rect[i] = gameManager.buildings[i].GetComponent<RectTransform>();
+                Array.Resize(ref state.gameObjects, gameManager.buildings.Length);
+                Array.Resize(ref state.posY, gameManager.buildings.Length);
+                Array.Resize(ref state.posX, gameManager.buildings.Length);
+                Array.Resize(ref state.isOccupped, gameManager.buildings.Length);
 
+                state.gameObjects[i] = gameManager.buildings[i].name;
 
-                Array.Resize(ref this.state.gameObjects, gameManager.buildings.Length);
+                state.posX[i] = gameManager.buildings[i].tile.transform.position.x;
+                state.posY[i] = gameManager.buildings[i].tile.transform.position.y;
 
-                state.posX.Add(rect[i].anchoredPosition.x);
-                state.posY.Add(rect[i].anchoredPosition.y);
-
-                //Debug.Log(state.posX[i]);
-                //Debug.Log(state.posY[i]);
-
-                this.state.gameObjects[i] = gameManager.buildings[i].gameObject.name;
-
+                int l = 0;
+                foreach (var tile in gameManager.tiles)
+                {
+                    state.isOccupped[l] = tile.isOccuped;
+                    if (tile.isOccuped == true)
+                    {
+                        Debug.Log("true");
+                    }
+                }
             }
-
         }
+
         byte[] bytes = SerializationUtility.SerializeValue(this.state, DataFormat.Binary);
         File.WriteAllBytes(filePath, bytes);
         
@@ -107,28 +114,32 @@ public class SaveAll : MonoBehaviour
         this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
         gameManager.gold = this.state.dataGold;
 
-        int count = 0;
-        foreach (var item in state.gameObjects)
+        for (int i = 0; i < state.gameObjects.Length; i++)
         {
-            for (int i = 0; i < prefabsHouse.Length; i++)
+            Debug.Log(state.gameObjects[i]);
+            if (state.gameObjects[i] != null)
             {
-                if (item != null)
+                for (int j = 0; j < prefabsHouse.Length; j++)
                 {
-                    Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
-
-                    if (item == prefabsHouse[i].name + "(Clone)")
+                    if (state.gameObjects[i] == prefabsHouse[j].name + "(Clone)")
                     {
-                        Debug.Log(state.posX[count]);
-                        Debug.Log(state.posY[count]);
-                        Debug.Log(count);
-                        var houseObject = Instantiate(prefabsHouse[i], new Vector3(state.posX[count], state.posY[count], 0), Quaternion.identity);
-                        houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
-                        gameManager.buildings[count] = houseObject.GetComponent<Building>();
-                    }
+                        Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
+                        gameManager.countHouses = state.gameObjects.Length;
 
+                        var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i], 0), Quaternion.identity);
+                        houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
+                        gameManager.buildings[i] = houseObject.GetComponent<Building>();
+
+
+                        int l = 0;
+                        foreach (var tile in gameManager.tiles)
+                        {
+                            tile.isOccuped = state.isOccupped[l];
+                        }
+                    }
                 }
+
             }
-            count++;
 
         }
 
@@ -147,7 +158,10 @@ class Data
 
     [NonSerialized, OdinSerialize]
     public int dataGold;
-    public List <float> posX = new List <float>(1536);
-    public List <float> posY = new List <float>(1536);
     public string[] gameObjects;
+
+    public float[] posX;
+    public float[] posY;
+
+    public bool[] isOccupped;
 }

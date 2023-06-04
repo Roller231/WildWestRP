@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour
             {
                 var houseObject = Instantiate(buildingToPlace, nearesTile.transform.position, Quaternion.identity);
                 houseObject.transform.SetParent(canvasForHouse.transform);
+
+                houseObject.tile = nearesTile;
+
                 buildingToPlace = null;
                 nearesTile.isOccuped = true;
                 grid.SetActive(false);
