@@ -28,10 +28,11 @@ public class SaveAll : MonoBehaviour
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        filePath = Application.persistentDataPath + "/saves.sv";
+        filePath = Application.persistentDataPath  + "/save.sav";
 
 
 
+        LoadState(filePath);
         StartCoroutine(EarnGoldCoroutine());
 
     }
@@ -46,7 +47,7 @@ public class SaveAll : MonoBehaviour
 
 
         SaveState(filePath);
-
+        Debug.Log(Application.persistentDataPath);
 
         StartCoroutine(EarnGoldCoroutine());
 

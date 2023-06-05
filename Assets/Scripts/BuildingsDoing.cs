@@ -49,14 +49,9 @@ public class BuildingsDoing : MonoBehaviour
 
 
             GameObject.Find("StorageText").GetComponent<Text>().text = buildingThis.storage.ToString();
-            Debug.Log(isOpen);
 
         }
-        else if(!isOpen)
-        {
-                        
-                        Debug.Log(isOpen);
-        }
+
 
 
 
