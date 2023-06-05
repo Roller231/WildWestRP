@@ -29,7 +29,8 @@ public class SaveAll : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         filePath = Application.persistentDataPath + "/saves.sv";
-        LoadState(filePath);
+
+
 
         StartCoroutine(EarnGoldCoroutine());
 
@@ -107,49 +108,58 @@ public class SaveAll : MonoBehaviour
 
     public void LoadState(string filePath)
     {
-        if (!File.Exists(filePath)) return; // No state to load
-
-        byte[] bytes = File.ReadAllBytes(filePath);
-        this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
-        gameManager.gold = this.state.dataGold;
-
-        for (int i = 0; i < state.gameObjects.Length; i++)
+        try
         {
-            
-            if (state.gameObjects[i] != null)
+            if (!File.Exists(filePath)) return; // No state to load
+
+            byte[] bytes = File.ReadAllBytes(filePath);
+            this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
+            gameManager.gold = this.state.dataGold;
+
+            for (int i = 0; i < state.gameObjects.Length; i++)
             {
-                for (int j = 0; j < prefabsHouse.Length; j++)
+
+                if (state.gameObjects[i] != null)
                 {
-                    if (state.gameObjects[i] == prefabsHouse[j].name + "(Clone)")
+                    for (int j = 0; j < prefabsHouse.Length; j++)
                     {
-                        Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
-                        gameManager.countHouses = state.gameObjects.Length;
+                        if (state.gameObjects[i] == prefabsHouse[j].name + "(Clone)")
+                        {
+                            Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
+                            gameManager.countHouses = state.gameObjects.Length;
 
 
 
 
-                        var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i], 0), Quaternion.identity);
-                        houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
-                        gameManager.buildings[i] = houseObject.GetComponent<Building>();
+                            var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i], 0), Quaternion.identity);
+                            houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
+                            gameManager.buildings[i] = houseObject.GetComponent<Building>();
 
-                        gameManager.buildings[i].storage = state.dataStorage[i];
-                        gameManager.buildings[i].income = state.dataIncome[i];
-                        gameManager.buildings[i].maxIncome = state.dataMaxIncome[i];
-                        gameManager.buildings[i].level = state.dataLevel[i];
-                        gameManager.buildings[i].upgradeCost = state.dataUpgradeCost[i];
-                        gameManager.buildings[i].timeEarn = state.dataTimeEarn[i];
+                            gameManager.buildings[i].storage = state.dataStorage[i];
+                            gameManager.buildings[i].income = state.dataIncome[i];
+                            gameManager.buildings[i].maxIncome = state.dataMaxIncome[i];
+                            gameManager.buildings[i].level = state.dataLevel[i];
+                            gameManager.buildings[i].upgradeCost = state.dataUpgradeCost[i];
+                            gameManager.buildings[i].timeEarn = state.dataTimeEarn[i];
 
-                        gameManager.buildings[i].upgradeGoldEarn = state.dataUpgradeGoldEarn[i];
-                        gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
+                            gameManager.buildings[i].upgradeGoldEarn = state.dataUpgradeGoldEarn[i];
+                            gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
 
-                        gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
+                            gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
 
+                        }
                     }
+
                 }
 
             }
-
         }
+        catch (NullReferenceException)
+        {
+
+            throw;
+        }
+
 
     }
 
