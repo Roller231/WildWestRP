@@ -13,6 +13,10 @@ public class Building : SerializedMonoBehaviour
     public int level;
     public int upgradeCost;
     public float timeEarn;
+
+    public int upgradeGoldEarn;
+    public int upgradeNewMaxIncome;
+
     public Tile tile;
 
 }

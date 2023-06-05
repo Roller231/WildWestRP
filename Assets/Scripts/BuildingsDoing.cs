@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BuildingsDoing : MonoBehaviour
 {
 
-    bool onePlay = false;
+    public bool onePlay = false;
 
     private GameObject canvasSettingsNotGrind;
     private GameObject canvasSettingsYesGrind;
@@ -17,13 +17,14 @@ public class BuildingsDoing : MonoBehaviour
     private GameManager gameManager;
 
     public bool grindBuild;
-    public int upgradeGoldEarn;
-    public int upgradeNewMaxIncome;
 
     private Button claimButton;
-    private Button upgradeButton;
+    [HideInInspector]
+    public Button upgradeButton;
+    private Button cancelButtonEarn;
+    private Button cancelButtonHouse;
 
-
+    public bool isOpen;
 
     private void Start()
     {
@@ -38,14 +39,23 @@ public class BuildingsDoing : MonoBehaviour
 
         claimButton = GameObject.Find("ClaimButton").GetComponent<Button>();
         upgradeButton = GameObject.FindGameObjectWithTag("UpgradeEarnButton").GetComponent<Button>();
+
     }
 
     private void Update()
     {
-        if (grindBuild)
+        if (grindBuild && isOpen)
         {
-            GameObject.Find("StorageText").GetComponent<Text>().text = buildingThis.storage.ToString();
 
+
+            GameObject.Find("StorageText").GetComponent<Text>().text = buildingThis.storage.ToString();
+            Debug.Log(isOpen);
+
+        }
+        else if(!isOpen)
+        {
+                        
+                        Debug.Log(isOpen);
         }
 
 
@@ -71,7 +81,12 @@ public class BuildingsDoing : MonoBehaviour
                     canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
                     claimButton.onClick.AddListener(() => SetStorageOnButton());
                     upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
+ 
 
+
+
+
+                    isOpen = true;
 
                 }
 
@@ -102,10 +117,11 @@ public class BuildingsDoing : MonoBehaviour
 
     }
 
-    public void BackAllBuildings()
+    public  void BackAllBuildings()
     {
         try
         {
+            isOpen = false;
             foreach (Building t in gameManager.buildings)
             {
                 t.GetComponent<Animator>().SetBool("OnClick", onePlay);
@@ -128,19 +144,19 @@ public class BuildingsDoing : MonoBehaviour
 
     private void UpgradeEarnBuild()
     {
-        if (gameManager.gold >= buildingThis.upgradeCost)
+        if (gameManager.gold >= this.buildingThis.upgradeCost)
         {
-            gameManager.gold -= buildingThis.upgradeCost;
+            gameManager.gold -= this.buildingThis.upgradeCost;
 
-            buildingThis.level += 1;
+            this.buildingThis.level += 1;
 
-            buildingThis.income = upgradeGoldEarn;
-            buildingThis.maxIncome = upgradeNewMaxIncome;
+            this.buildingThis.income = buildingThis.upgradeGoldEarn;
+            this.buildingThis.maxIncome = buildingThis.upgradeNewMaxIncome;
 
-            upgradeGoldEarn *= 2;
-            upgradeNewMaxIncome *= 2;
+            buildingThis.upgradeGoldEarn *= 2;
+            buildingThis.upgradeNewMaxIncome *= 3;
 
-            buildingThis.upgradeCost *= 3;
+            this.buildingThis.upgradeCost *= 3;
 
         }
 

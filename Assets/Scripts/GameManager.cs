@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,8 +18,10 @@ public class GameManager : MonoBehaviour
 
     public Tile[] tiles;
     public Building[] buildings;
-    public 
-    int countHouses = 0;
+    public SaveAll saveAll;
+    public int countHouses = 0;
+
+
 
 
 
@@ -29,22 +33,38 @@ public class GameManager : MonoBehaviour
         {
             Tile nearesTile = null;
             float nearestDistance = float.MaxValue;
+
+
             foreach (Tile tile in tiles)
             {
+                
                 float dist = Vector2.Distance(tile.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 if (dist < nearestDistance)
                 {
                     nearestDistance = dist;
                     nearesTile = tile;
+                    
                 }
+
             }
+
 
             if (nearesTile.isOccuped == false)
             {
                 var houseObject = Instantiate(buildingToPlace, nearesTile.transform.position, Quaternion.identity);
                 houseObject.transform.SetParent(canvasForHouse.transform);
+                int i = 0;
+                foreach (var tile in tiles)
+                {
+                    if (tile == nearesTile)
+                    {
+                        Array.Resize(ref saveAll.state.indexTile, tiles.Length);
+                        saveAll.state.indexTile[countHouses] = i;
+                        Debug.Log(i);
+                    }
+                    i++;
+                }
 
-                houseObject.tile = nearesTile;
 
                 buildingToPlace = null;
                 nearesTile.isOccuped = true;

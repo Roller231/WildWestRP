@@ -56,6 +56,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04044a3b406b714688886dfade3c637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   cost: 10
   storage: 0
   income: 5
@@ -63,6 +72,9 @@ MonoBehaviour:
   level: 1
   upgradeCost: 10
   timeEarn: 2
+  upgradeGoldEarn: 10
+  upgradeNewMaxIncome: 20
+  tile: {fileID: 0}
 --- !u!114 &-273785919875891180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,8 +88,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grindBuild: 1
-  upgradeGoldEarn: 10
-  upgradeNewMaxIncome: 50
 --- !u!114 &2299015597342019234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +124,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930748836087887078}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

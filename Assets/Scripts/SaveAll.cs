@@ -17,10 +17,8 @@ public class SaveAll : MonoBehaviour
 
 
     [SerializeField, HideInInspector]
-    private Data state = new Data();
+    public Data state = new Data();
 
-
-    private RectTransform[] rect = new RectTransform[1536];
 
     public GameObject[] prefabsHouse;
 
@@ -30,33 +28,24 @@ public class SaveAll : MonoBehaviour
 
     private void Start()
     {
+
+
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         filePath = Application.persistentDataPath + "/saves.sv";
+        //LoadState(filePath);
 
         StartCoroutine(EarnGoldCoroutine());
 
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            SaveState(filePath);
-        }
-        if (Input.GetMouseButtonDown(2))
-        {
-            LoadState(filePath);
-        }
 
-
-    }
 
     IEnumerator EarnGoldCoroutine()
     {
 
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
 
 
         SaveState(filePath);
@@ -71,7 +60,8 @@ public class SaveAll : MonoBehaviour
 
     public void SaveState(string filePath)
     {
-        this.state.dataGold = gameManager.gold;
+        state.dataGold = gameManager.gold;
+
 
         for (int i = 0; i < gameManager.buildings.Length; i++)
         {
@@ -81,21 +71,34 @@ public class SaveAll : MonoBehaviour
                 Array.Resize(ref state.posY, gameManager.buildings.Length);
                 Array.Resize(ref state.posX, gameManager.buildings.Length);
                 Array.Resize(ref state.isOccupped, gameManager.buildings.Length);
+                Array.Resize(ref state.indexTile, gameManager.tiles.Length);
+                Array.Resize(ref state.dataStorage, gameManager.buildings.Length);
+                Array.Resize(ref state.dataIncome, gameManager.buildings.Length);
+                Array.Resize(ref state.dataMaxIncome, gameManager.buildings.Length);
+                Array.Resize(ref state.dataLevel, gameManager.buildings.Length);
+                Array.Resize(ref state.dataUpgradeCost, gameManager.buildings.Length);
+                Array.Resize(ref state.dataTimeEarn, gameManager.buildings.Length);
+                Array.Resize(ref state.dataUpgradeGoldEarn, gameManager.buildings.Length);
+                Array.Resize(ref state.dataUpgradeNewMaxIncome, gameManager.buildings.Length);
 
                 state.gameObjects[i] = gameManager.buildings[i].name;
 
-                state.posX[i] = gameManager.buildings[i].tile.transform.position.x;
-                state.posY[i] = gameManager.buildings[i].tile.transform.position.y;
+                state.dataStorage[i] = gameManager.buildings[i].storage;
+                state.dataIncome[i] = gameManager.buildings[i].income;
+                state.dataMaxIncome[i] = gameManager.buildings[i].maxIncome;
+                state.dataLevel[i] = gameManager.buildings[i].level;
+                state.dataUpgradeCost[i] = gameManager.buildings[i].upgradeCost;
+                state.dataTimeEarn[i] = gameManager.buildings[i].timeEarn;
 
-                int l = 0;
-                foreach (var tile in gameManager.tiles)
-                {
-                    state.isOccupped[l] = tile.isOccuped;
-                    if (tile.isOccuped == true)
-                    {
-                        Debug.Log("true");
-                    }
-                }
+                state.dataUpgradeGoldEarn[i] = gameManager.buildings[i].upgradeGoldEarn;
+                state.dataUpgradeNewMaxIncome[i] = gameManager.buildings[i].upgradeNewMaxIncome;
+
+                state.posX[i] = gameManager.tiles[state.indexTile[i]].transform.position.x; 
+                state.posY[i] = gameManager.tiles[state.indexTile[i]].transform.position.y;
+
+                state.isOccupped[i] = gameManager.tiles[state.indexTile[i]].isOccuped;
+            
+
             }
         }
 
@@ -116,7 +119,7 @@ public class SaveAll : MonoBehaviour
 
         for (int i = 0; i < state.gameObjects.Length; i++)
         {
-            Debug.Log(state.gameObjects[i]);
+            
             if (state.gameObjects[i] != null)
             {
                 for (int j = 0; j < prefabsHouse.Length; j++)
@@ -126,16 +129,25 @@ public class SaveAll : MonoBehaviour
                         Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
                         gameManager.countHouses = state.gameObjects.Length;
 
+
+
+
                         var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i], 0), Quaternion.identity);
                         houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
                         gameManager.buildings[i] = houseObject.GetComponent<Building>();
 
+                        gameManager.buildings[i].storage = state.dataStorage[i];
+                        gameManager.buildings[i].income = state.dataIncome[i];
+                        gameManager.buildings[i].maxIncome = state.dataMaxIncome[i];
+                        gameManager.buildings[i].level = state.dataLevel[i];
+                        gameManager.buildings[i].upgradeCost = state.dataUpgradeCost[i];
+                        gameManager.buildings[i].timeEarn = state.dataTimeEarn[i];
 
-                        int l = 0;
-                        foreach (var tile in gameManager.tiles)
-                        {
-                            tile.isOccuped = state.isOccupped[l];
-                        }
+                        gameManager.buildings[i].upgradeGoldEarn = state.dataUpgradeGoldEarn[i];
+                        gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
+
+                        gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
+
                     }
                 }
 
@@ -153,15 +165,27 @@ public class SaveAll : MonoBehaviour
 
 
 [Serializable]
-class Data
+public class Data
 {
 
     [NonSerialized, OdinSerialize]
     public int dataGold;
+    public int[] dataStorage;
+    public int[] dataIncome;
+    public int[] dataMaxIncome;
+    public int[] dataLevel;
+    public int[] dataUpgradeCost;
+    public float[] dataTimeEarn;
+
+    public int[] dataUpgradeGoldEarn;
+    public int[] dataUpgradeNewMaxIncome;
+
     public string[] gameObjects;
 
     public float[] posX;
     public float[] posY;
 
     public bool[] isOccupped;
+
+    public int[] indexTile;
 }
