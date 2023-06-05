@@ -4,10 +4,6 @@ using UnityEngine;
 using System;
 using OdinSerializer;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using UnityEngine.Playables;
-using static UnityEditor.Progress;
-using UnityEngine.UI;
 
 public class SaveAll : MonoBehaviour
 {
@@ -33,7 +29,7 @@ public class SaveAll : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         filePath = Application.persistentDataPath + "/saves.sv";
-        //LoadState(filePath);
+        LoadState(filePath);
 
         StartCoroutine(EarnGoldCoroutine());
 
@@ -45,7 +41,7 @@ public class SaveAll : MonoBehaviour
     {
 
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
 
         SaveState(filePath);

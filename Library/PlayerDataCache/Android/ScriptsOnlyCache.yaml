@@ -3,12 +3,12 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Building
     - BuildingsDoing
-    - CustomCursour
     - EarnResourse
     - GameManager
     - OpenBuildingSettings
     - OpenScene
     - PanZoom
+    - SaveAll
     - SetTextGold
     - ShopOpenClose
     - Tile
@@ -19,6 +19,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
@@ -54,6 +55,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Text
   serializedClasses:
+    Assembly-CSharp:
+    - Data
+    OdinSerializer:
+    - OdinSerializer.SerializationData
     UnityEngine.CoreModule:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
@@ -135,23 +140,20 @@ ScriptsOnlyBuild:
     fullTypeName: OpenBuildingSettings
     methodName: DownCanvas
   - assembly: Assembly-CSharp
-    fullTypeName: BuildingsDoing
-    methodName: BackAllBuildings
+    fullTypeName: SetTextGold
+    methodName: BackCanvasBuildings
   - assembly: Assembly-CSharp
     fullTypeName: OpenBuildingSettings
     methodName: DownCanvas
   - assembly: Assembly-CSharp
-    fullTypeName: BuildingsDoing
-    methodName: BackAllBuildings
+    fullTypeName: SetTextGold
+    methodName: BackCanvasBuildings
   - assembly: Assembly-CSharp
     fullTypeName: SetTextGold
     methodName: ClimeButtonFunc
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: BuildingsDoing
-    methodName: BackAllBuildings
   sceneClasses:
     Assets/Scenes/Main.unity:
     - Class: 1
@@ -179,53 +181,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1544}
     - Class: 114
-      Script: {instanceID: 1612}
+      Script: {instanceID: 1616}
     - Class: 114
-      Script: {instanceID: 1722}
+      Script: {instanceID: 1736}
     - Class: 114
-      Script: {instanceID: 1782}
+      Script: {instanceID: 1800}
     - Class: 114
-      Script: {instanceID: 2196}
+      Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2304}
+      Script: {instanceID: 2376}
     - Class: 114
-      Script: {instanceID: 2552}
+      Script: {instanceID: 2658}
     - Class: 114
-      Script: {instanceID: 2666}
+      Script: {instanceID: 2784}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 3032}
     - Class: 114
-      Script: {instanceID: 3092}
+      Script: {instanceID: 3288}
     - Class: 114
-      Script: {instanceID: 3100}
+      Script: {instanceID: 3392}
     - Class: 114
-      Script: {instanceID: 3194}
+      Script: {instanceID: 3600}
     - Class: 114
-      Script: {instanceID: 3384}
+      Script: {instanceID: 3916}
     - Class: 114
-      Script: {instanceID: 3684}
+      Script: {instanceID: 3924}
     - Class: 114
-      Script: {instanceID: 3692}
+      Script: {instanceID: 4054}
     - Class: 114
-      Script: {instanceID: 3810}
+      Script: {instanceID: 4076}
     - Class: 114
-      Script: {instanceID: 3832}
+      Script: {instanceID: 4146}
     - Class: 114
-      Script: {instanceID: 3894}
+      Script: {instanceID: 4218}
     - Class: 114
-      Script: {instanceID: 3960}
+      Script: {instanceID: 4310}
     - Class: 114
-      Script: {instanceID: 4040}
+      Script: {instanceID: 4480}
     - Class: 114
-      Script: {instanceID: 4196}
+      Script: {instanceID: 4524}
     - Class: 114
-      Script: {instanceID: 4236}
+      Script: {instanceID: 5076}
     - Class: 114
-      Script: {instanceID: 4736}
+      Script: {instanceID: 5324}
     - Class: 114
-      Script: {instanceID: 4978}
+      Script: {instanceID: 5344}
     - Class: 114
-      Script: {instanceID: 5046}
+      Script: {instanceID: 5416}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -266,19 +268,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1544}
     - Class: 114
-      Script: {instanceID: 1800}
+      Script: {instanceID: 1822}
     - Class: 114
-      Script: {instanceID: 2196}
+      Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2552}
+      Script: {instanceID: 2658}
     - Class: 114
-      Script: {instanceID: 2666}
+      Script: {instanceID: 2784}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 3032}
     - Class: 114
-      Script: {instanceID: 3092}
+      Script: {instanceID: 3288}
     - Class: 114
-      Script: {instanceID: 3194}
+      Script: {instanceID: 3392}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -316,7 +318,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 3b7dd672834dfc0b8c4fbcf0dec9736e
+      Hash: 26d5cdc526924568c07393c7ab005f09
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BuildingsDoing
@@ -448,7 +450,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 3707c27f2eab84a81e397ee7295482d3
+      Hash: 86bef67a98c7f15e0ca5a482039a37a3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -742,7 +744,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 703f8b7652262ce7ec3ee33d8a044d1f
+      Hash: 89b58265f68c3f6eaeaf13ecceae43fa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Building
@@ -760,7 +762,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: 27278da79bd4944d571cd86dee83e43d
+      Hash: 076584df3e74f6d8b08c06d3e019e3b1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SetTextGold
@@ -916,6 +918,12 @@ ScriptsOnlyBuild:
     className: GeneralBasic
   - hash:
       serializedVersion: 2
+      Hash: 41823c94b2c84ba5820cd287a29c4dc8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SaveAll
+  - hash:
+      serializedVersion: 2
       Hash: c68c204971f311d342f904f4574fa8a8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -954,4 +962,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Main.unity
-  playerPath: D:/ReadyGamesUnity/WildWest/test'/test7.apk
+  playerPath: C:/rep-git/Builds/test8.apk
