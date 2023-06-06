@@ -47,7 +47,6 @@ public class SaveAll : MonoBehaviour
 
 
         SaveState(filePath);
-        Debug.Log(Application.persistentDataPath);
 
         StartCoroutine(EarnGoldCoroutine());
 
