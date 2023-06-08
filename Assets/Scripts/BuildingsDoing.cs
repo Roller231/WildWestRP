@@ -21,8 +21,9 @@ public class BuildingsDoing : MonoBehaviour
     private Button claimButton;
     [HideInInspector]
     public Button upgradeButton;
-    private Button cancelButtonEarn;
-    private Button cancelButtonHouse;
+
+    public Button destroyButton;
+    public Button destroyButtonEarn;
 
     public bool isOpen;
 
@@ -39,6 +40,11 @@ public class BuildingsDoing : MonoBehaviour
 
         claimButton = GameObject.Find("ClaimButton").GetComponent<Button>();
         upgradeButton = GameObject.FindGameObjectWithTag("UpgradeEarnButton").GetComponent<Button>();
+
+        destroyButton = GameObject.Find("DestroyBuilding").GetComponent<Button>();
+        destroyButtonEarn = GameObject.Find("DestroyBuildingEarn").GetComponent<Button>();
+
+
 
     }
 
@@ -66,6 +72,7 @@ public class BuildingsDoing : MonoBehaviour
                 if (!grindBuild)
                 {
                     canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
+                    destroyButton.onClick.AddListener(() => DestroyBuilding());
 
                 }
                 else if (grindBuild)
@@ -76,6 +83,7 @@ public class BuildingsDoing : MonoBehaviour
                     canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
                     claimButton.onClick.AddListener(() => SetStorageOnButton());
                     upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
+                    destroyButtonEarn.onClick.AddListener(() => DestroyBuilding());
  
 
 
@@ -155,6 +163,14 @@ public class BuildingsDoing : MonoBehaviour
 
         }
 
+    }
+
+    private void DestroyBuilding()
+    {
+        gameObject.GetComponent<Building>().tile.isOccuped = false;  
+        Destroy(gameObject);
+
+      
     }
 
 

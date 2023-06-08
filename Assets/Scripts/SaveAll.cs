@@ -148,6 +148,8 @@ public class SaveAll : MonoBehaviour
 
                             gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
 
+                            houseObject.GetComponent<Building>().tile = gameManager.tiles[state.indexTile[i]];
+
                         }
                     }
 

@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
 
                 Array.Resize(ref buildings, buildings.Length + 1);
                 buildings[countHouses] = houseObject;
+                buildings[countHouses].tile = nearesTile;
                 countHouses++;
 
                 buildingMode = false;
