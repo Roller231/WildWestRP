@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
                     {
                         Array.Resize(ref saveAll.state.indexTile, tiles.Length);
                         saveAll.state.indexTile[countHouses] = i;
-                        Debug.Log(i);
                     }
                     i++;
                 }

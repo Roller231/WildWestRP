@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 using OdinSerializer;
@@ -47,7 +46,6 @@ public class SaveAll : MonoBehaviour
 
 
         SaveState(filePath);
-        Debug.Log(Application.persistentDataPath);
 
         StartCoroutine(EarnGoldCoroutine());
 
