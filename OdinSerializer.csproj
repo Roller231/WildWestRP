@@ -891,11 +891,7 @@
       <HintPath>D:\Unity Versions\2021.3.17f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.XPath.XDocument">
-<<<<<<< HEAD
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
-=======
       <HintPath>D:\Unity Versions\2021.3.17f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
->>>>>>> 6043c6daa9908c44a4d4126d5e2810597e647970
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
