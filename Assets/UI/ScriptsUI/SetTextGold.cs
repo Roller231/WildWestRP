@@ -19,7 +19,22 @@ public class SetTextGold : MonoBehaviour
 
     public void ClimeButtonFunc()
     {
-        GameObject.Find("GameManager").GetComponent<GameManager>().gold += Int32.Parse(GameObject.FindGameObjectWithTag(tagText).GetComponent<Text>().text);
+        foreach (var item in gameManager.buildings)
+        {
+            if (item.gameObject.GetComponent<BuildingsDoing>().isOpen)
+            {
+
+                if (item.gameObject.GetComponent<BuildingsDoing>().gold_OR_oil)
+                {
+                    GameObject.Find("GameManager").GetComponent<GameManager>().gold += Int32.Parse(GameObject.FindGameObjectWithTag(tagText).GetComponent<Text>().text);
+                }
+                else if (!item.gameObject.GetComponent<BuildingsDoing>().gold_OR_oil)
+                {
+                    GameObject.Find("GameManager").GetComponent<GameManager>().oil += Int32.Parse(GameObject.FindGameObjectWithTag(tagText).GetComponent<Text>().text);
+                }
+            }
+        }
+
 
     }
 

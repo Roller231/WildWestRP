@@ -21,8 +21,8 @@ public class BuildingsDoing : MonoBehaviour
     private Button claimButton;
     [HideInInspector]
     public Button upgradeButton;
-    private Button cancelButtonEarn;
-    private Button cancelButtonHouse;
+
+    public bool gold_OR_oil;
 
     public bool isOpen;
 
@@ -70,7 +70,14 @@ public class BuildingsDoing : MonoBehaviour
                 }
                 else if (grindBuild)
                 {
-                    gameManager.gold += buildingThis.storage;
+                    if (gold_OR_oil)
+                    {
+                        gameManager.gold += buildingThis.storage;
+                    }
+                    else if (!gold_OR_oil)
+                    {
+                        gameManager.oil += buildingThis.storage;
+                    }
                     buildingThis.storage = 0;
 
                     canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();

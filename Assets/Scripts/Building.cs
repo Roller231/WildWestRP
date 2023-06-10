@@ -17,6 +17,8 @@ public class Building : SerializedMonoBehaviour
     public int upgradeGoldEarn;
     public int upgradeNewMaxIncome;
 
+    public bool open;
+
     public Tile tile;
 
 }

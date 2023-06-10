@@ -3,6 +3,7 @@ using UnityEngine;
 using System;
 using OdinSerializer;
 using System.IO;
+using JetBrains.Annotations;
 
 public class SaveAll : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class SaveAll : MonoBehaviour
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        filePath = Application.persistentDataPath  + "/save.sav";
+        filePath = Application.persistentDataPath  + "/save.save";
 
 
 
@@ -156,12 +157,11 @@ public class SaveAll : MonoBehaviour
         catch (NullReferenceException)
         {
 
-            throw;
+            Debug.Log("Havent save");
         }
 
 
     }
-
 
 
 

@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 public class GameManager : MonoBehaviour
 {
     public int gold;
+    public int oil;
 
     private Building buildingToPlace;
     public GameObject grid;
