@@ -7,14 +7,16 @@ using UnityEngine.UI;
 public class SetTextGold : MonoBehaviour
 {
     [SerializeField] private Text textGold;
-    [SerializeField] private GameManager gold;
+    [SerializeField] private Text textOil;
+
     [SerializeField] private string tagText;
 
     public GameManager gameManager;
 
     private void Update()
     {
-        textGold.text = gold.gold.ToString();
+        textGold.text = gameManager.gold.ToString();
+        textOil.text = gameManager.oil.ToString();
     }
 
     public void ClimeButtonFunc()
@@ -26,11 +28,11 @@ public class SetTextGold : MonoBehaviour
 
                 if (item.gameObject.GetComponent<BuildingsDoing>().gold_OR_oil)
                 {
-                    GameObject.Find("GameManager").GetComponent<GameManager>().gold += Int32.Parse(GameObject.FindGameObjectWithTag(tagText).GetComponent<Text>().text);
+                    gameManager.gold += Int32.Parse(GameObject.FindGameObjectWithTag(tagText).GetComponent<Text>().text);
                 }
                 else if (!item.gameObject.GetComponent<BuildingsDoing>().gold_OR_oil)
                 {
-                    GameObject.Find("GameManager").GetComponent<GameManager>().oil += Int32.Parse(GameObject.FindGameObjectWithTag(tagText).GetComponent<Text>().text);
+                    gameManager.oil += Int32.Parse(GameObject.FindGameObjectWithTag(tagText).GetComponent<Text>().text);
                 }
             }
         }

@@ -146,21 +146,24 @@ public class BuildingsDoing : MonoBehaviour
 
     private void UpgradeEarnBuild()
     {
-        if (gameManager.gold >= this.buildingThis.upgradeCost)
+        if (gameManager.oil >= this.buildingThis.upgradeCost && gold_OR_oil)
+        {
+            gameManager.oil -= this.buildingThis.upgradeCost;
+        }
+        else if (gameManager.gold >= this.buildingThis.upgradeCost && !gold_OR_oil)
         {
             gameManager.gold -= this.buildingThis.upgradeCost;
-
-            this.buildingThis.level += 1;
-
-            this.buildingThis.income = buildingThis.upgradeGoldEarn;
-            this.buildingThis.maxIncome = buildingThis.upgradeNewMaxIncome;
-
-            buildingThis.upgradeGoldEarn *= 2;
-            buildingThis.upgradeNewMaxIncome *= 3;
-
-            this.buildingThis.upgradeCost *= 3;
-
         }
+
+        this.buildingThis.level += 1;
+
+        this.buildingThis.income = buildingThis.upgradeGoldEarn;
+        this.buildingThis.maxIncome = buildingThis.upgradeNewMaxIncome;
+
+        buildingThis.upgradeGoldEarn *= 2;
+        buildingThis.upgradeNewMaxIncome *= 3;
+
+        this.buildingThis.upgradeCost *= 3;
 
     }
 

@@ -12,6 +12,8 @@ ScriptsOnlyBuild:
     - SetTextGold
     - ShopOpenClose
     - Tile
+    Unity.2D.Sprite.Editor.dll:
+    - UnityEditor.U2D.Sprites.SpriteEditorWindow
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridBrushEditor
@@ -133,6 +135,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: BuildingsDoing
     methodName: PlayAnimationOnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: BuildingsDoing
+    methodName: PlayAnimationOnClick
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -171,6 +176,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -318,7 +327,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 26d5cdc526924568c07393c7ab005f09
+      Hash: c15937f315afbe0364115dca8bfd783f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BuildingsDoing
@@ -450,7 +459,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 86bef67a98c7f15e0ca5a482039a37a3
+      Hash: 988138794d99a6ad0399c6aa6606dcd0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -744,7 +753,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 89b58265f68c3f6eaeaf13ecceae43fa
+      Hash: ce0f0c65655119ac572919fc3822d0e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Building
@@ -762,7 +771,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: 076584df3e74f6d8b08c06d3e019e3b1
+      Hash: b4454255dd6daf94a6b328b1da2b87cd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SetTextGold
@@ -918,7 +927,7 @@ ScriptsOnlyBuild:
     className: GeneralBasic
   - hash:
       serializedVersion: 2
-      Hash: 41823c94b2c84ba5820cd287a29c4dc8
+      Hash: bc1ed1dbc8bfccb6c9b2d4f519f484cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SaveAll
@@ -962,4 +971,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Main.unity
-  playerPath: C:/rep-git/Builds/test10.apk
+  playerPath: E:/builds/test11.apk

@@ -28,7 +28,7 @@ public class SaveAll : MonoBehaviour
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        filePath = Application.persistentDataPath  + "/save.save";
+        filePath = Application.persistentDataPath  + "/WildWest.sv";
 
 
 
@@ -58,7 +58,7 @@ public class SaveAll : MonoBehaviour
     public void SaveState(string filePath)
     {
         state.dataGold = gameManager.gold;
-
+        state.dataOil = gameManager.oil;
 
         for (int i = 0; i < gameManager.buildings.Length; i++)
         {
@@ -115,6 +115,7 @@ public class SaveAll : MonoBehaviour
             byte[] bytes = File.ReadAllBytes(filePath);
             this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
             gameManager.gold = this.state.dataGold;
+            gameManager.oil = state.dataOil;
 
             for (int i = 0; i < state.gameObjects.Length; i++)
             {
@@ -174,6 +175,7 @@ public class Data
 {
 
     [NonSerialized, OdinSerialize]
+    public int dataOil;
     public int dataGold;
     public int[] dataStorage;
     public int[] dataIncome;
