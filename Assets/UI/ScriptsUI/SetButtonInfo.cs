@@ -11,4 +11,5 @@ public class SetButtonInfo : MonoBehaviour
     {
         costText.text = buttonBuild.cost.ToString();
     }
+
 }

@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour
 
     private Building buildingToPlace;
     public GameObject grid;
+
     [SerializeField] GameObject canvasForHouse;
+    public GameObject canvasInGame;
+    public GameObject cancelButtonBuild;
 
     public static bool buildingMode = false;
 
@@ -30,7 +33,7 @@ public class GameManager : MonoBehaviour
     {
         //goldDisplay.text = gold.ToString();
 
-        if (Input.GetMouseButtonDown(0) && buildingToPlace != null)
+        if (Input.GetMouseButtonDown(0) && buildingToPlace != null  && buildingMode)
         {
             Tile nearesTile = null;
             float nearestDistance = float.MaxValue;
@@ -66,10 +69,23 @@ public class GameManager : MonoBehaviour
                 }
 
 
+                if (houseObject.gold_OR_oil)
+                {
+                    oil -= houseObject.cost;
+                }
+                else if (!houseObject.gold_OR_oil)
+                {
+                    gold -= houseObject.cost;
+                }
+
                 buildingToPlace = null;
                 nearesTile.isOccuped = true;
+
                 grid.SetActive(false);
-                Cursor.visible = true;
+                canvasInGame.SetActive(true);
+                cancelButtonBuild.SetActive(false);
+
+
 
 
                 Array.Resize(ref buildings, buildings.Length + 1);
@@ -77,6 +93,8 @@ public class GameManager : MonoBehaviour
                 countHouses++;
 
                 buildingMode = false;
+
+
             }
         }
     }
@@ -87,7 +105,6 @@ public class GameManager : MonoBehaviour
         {
 
             buildingMode = true;
-            gold -= building.cost;
             buildingToPlace = building;
             grid.SetActive(true);
         }
@@ -96,10 +113,17 @@ public class GameManager : MonoBehaviour
         {
 
             buildingMode = true;
-            oil -= building.cost;
             buildingToPlace = building;
             grid.SetActive(true);
         }
 
+        canvasInGame.SetActive(false);
+        cancelButtonBuild.SetActive(true);
+
+    }
+
+    public void CancelBuying()
+    {
+        buildingMode = false;
     }
 }
