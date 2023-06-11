@@ -19,6 +19,8 @@ public class Building : SerializedMonoBehaviour
 
     public bool open;
 
+    public bool gold_OR_oil;
+
     public Tile tile;
 
 }

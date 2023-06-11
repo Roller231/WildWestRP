@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - OpenScene
     - PanZoom
     - SaveAll
+    - SetButtonInfo
     - SetTextGold
     - ShopOpenClose
     - Tile
@@ -21,7 +22,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
@@ -84,24 +84,6 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: OpenScene
     methodName: OpenSceneVoid
-  - assembly: Assembly-CSharp
-    fullTypeName: GameManager
-    methodName: BuyBuilding
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: GameManager
-    methodName: BuyBuilding
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: Assembly-CSharp
-    fullTypeName: GameManager
-    methodName: BuyBuilding
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: GameManager
     methodName: BuyBuilding
@@ -200,43 +182,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2376}
     - Class: 114
-      Script: {instanceID: 2658}
+      Script: {instanceID: 2626}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2660}
     - Class: 114
-      Script: {instanceID: 3032}
+      Script: {instanceID: 2786}
     - Class: 114
-      Script: {instanceID: 3288}
+      Script: {instanceID: 3034}
     - Class: 114
-      Script: {instanceID: 3392}
+      Script: {instanceID: 3290}
     - Class: 114
-      Script: {instanceID: 3600}
+      Script: {instanceID: 3394}
     - Class: 114
-      Script: {instanceID: 3916}
+      Script: {instanceID: 3602}
     - Class: 114
-      Script: {instanceID: 3924}
+      Script: {instanceID: 3918}
     - Class: 114
-      Script: {instanceID: 4054}
+      Script: {instanceID: 3926}
     - Class: 114
-      Script: {instanceID: 4076}
+      Script: {instanceID: 4056}
     - Class: 114
-      Script: {instanceID: 4146}
+      Script: {instanceID: 4078}
     - Class: 114
-      Script: {instanceID: 4218}
+      Script: {instanceID: 4148}
     - Class: 114
-      Script: {instanceID: 4310}
+      Script: {instanceID: 4220}
     - Class: 114
-      Script: {instanceID: 4480}
+      Script: {instanceID: 4312}
     - Class: 114
-      Script: {instanceID: 4524}
+      Script: {instanceID: 4482}
     - Class: 114
-      Script: {instanceID: 5076}
+      Script: {instanceID: 4526}
     - Class: 114
-      Script: {instanceID: 5324}
+      Script: {instanceID: 5078}
     - Class: 114
-      Script: {instanceID: 5344}
+      Script: {instanceID: 5326}
     - Class: 114
-      Script: {instanceID: 5416}
+      Script: {instanceID: 5346}
+    - Class: 114
+      Script: {instanceID: 5418}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -281,15 +265,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2658}
+      Script: {instanceID: 2660}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2786}
     - Class: 114
-      Script: {instanceID: 3032}
+      Script: {instanceID: 3034}
     - Class: 114
-      Script: {instanceID: 3288}
+      Script: {instanceID: 3290}
     - Class: 114
-      Script: {instanceID: 3392}
+      Script: {instanceID: 3394}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -327,7 +311,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: c15937f315afbe0364115dca8bfd783f
+      Hash: 26d5cdc526924568c07393c7ab005f09
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BuildingsDoing
@@ -475,6 +459,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GeneralUISpace
+  - hash:
+      serializedVersion: 2
+      Hash: b6b31194e61217c5c0136d33e86995e5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SetButtonInfo
   - hash:
       serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
@@ -753,7 +743,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: ce0f0c65655119ac572919fc3822d0e0
+      Hash: c91f058f90bd33743b9a16c70b924695
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Building
@@ -971,4 +961,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Main.unity
-  playerPath: E:/builds/test11.apk
+  playerPath: C:/rep-git/Builds/test11.apk

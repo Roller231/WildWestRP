@@ -83,11 +83,20 @@ public class GameManager : MonoBehaviour
 
     public void BuyBuilding(Building building)
     {
-        if (gold >= building.cost && !buildingMode)
+        if (gold >= building.cost && !buildingMode && !building.gold_OR_oil)
         {
 
             buildingMode = true;
             gold -= building.cost;
+            buildingToPlace = building;
+            grid.SetActive(true);
+        }
+
+        else if (oil >= building.cost && !buildingMode && building.gold_OR_oil)
+        {
+
+            buildingMode = true;
+            oil -= building.cost;
             buildingToPlace = building;
             grid.SetActive(true);
         }

@@ -22,7 +22,7 @@ public class BuildingsDoing : MonoBehaviour
     [HideInInspector]
     public Button upgradeButton;
 
-    public bool gold_OR_oil;
+
 
     public bool isOpen;
 
@@ -70,11 +70,11 @@ public class BuildingsDoing : MonoBehaviour
                 }
                 else if (grindBuild)
                 {
-                    if (gold_OR_oil)
+                    if (buildingThis.gold_OR_oil)
                     {
                         gameManager.gold += buildingThis.storage;
                     }
-                    else if (!gold_OR_oil)
+                    else if (!buildingThis.gold_OR_oil)
                     {
                         gameManager.oil += buildingThis.storage;
                     }
@@ -146,11 +146,11 @@ public class BuildingsDoing : MonoBehaviour
 
     private void UpgradeEarnBuild()
     {
-        if (gameManager.oil >= this.buildingThis.upgradeCost && gold_OR_oil)
+        if (gameManager.oil >= this.buildingThis.upgradeCost && buildingThis.gold_OR_oil)
         {
             gameManager.oil -= this.buildingThis.upgradeCost;
         }
-        else if (gameManager.gold >= this.buildingThis.upgradeCost && !gold_OR_oil)
+        else if (gameManager.gold >= this.buildingThis.upgradeCost && !buildingThis.gold_OR_oil)
         {
             gameManager.gold -= this.buildingThis.upgradeCost;
         }

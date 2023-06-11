@@ -26,11 +26,11 @@ public class SetTextGold : MonoBehaviour
             if (item.gameObject.GetComponent<BuildingsDoing>().isOpen)
             {
 
-                if (item.gameObject.GetComponent<BuildingsDoing>().gold_OR_oil)
+                if (item.gameObject.GetComponent<Building>().gold_OR_oil)
                 {
                     gameManager.gold += Int32.Parse(GameObject.FindGameObjectWithTag(tagText).GetComponent<Text>().text);
                 }
-                else if (!item.gameObject.GetComponent<BuildingsDoing>().gold_OR_oil)
+                else if (!item.gameObject.GetComponent<Building>().gold_OR_oil)
                 {
                     gameManager.oil += Int32.Parse(GameObject.FindGameObjectWithTag(tagText).GetComponent<Text>().text);
                 }

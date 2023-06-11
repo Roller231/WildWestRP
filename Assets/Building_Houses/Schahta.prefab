@@ -73,6 +73,8 @@ MonoBehaviour:
   timeEarn: 2
   upgradeGoldEarn: 10
   upgradeNewMaxIncome: 20
+  open: 0
+  gold_OR_oil: 1
   tile: {fileID: 0}
 --- !u!114 &-273785919875891180
 MonoBehaviour:
@@ -89,7 +91,6 @@ MonoBehaviour:
   onePlay: 0
   grindBuild: 1
   upgradeButton: {fileID: 0}
-  gold_OR_oil: 1
   isOpen: 0
 --- !u!114 &2299015597342019234
 MonoBehaviour:
