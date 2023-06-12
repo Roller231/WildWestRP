@@ -32,7 +32,7 @@ public class SaveAll : MonoBehaviour
 
 
 
-        //LoadState(filePath);
+        LoadState(filePath);
         StartCoroutine(EarnGoldCoroutine());
 
     }
