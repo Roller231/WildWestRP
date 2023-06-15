@@ -71,6 +71,8 @@ MonoBehaviour:
   level: 1
   upgradeCost: 10
   timeEarn: 2
+  limitBuilding: 6
+  countBuilding: 0
   upgradeGoldEarn: 10
   upgradeNewMaxIncome: 30
   open: 0

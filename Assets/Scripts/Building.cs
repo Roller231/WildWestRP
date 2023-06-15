@@ -15,7 +15,7 @@ public class Building : SerializedMonoBehaviour
     public float timeEarn;
 
     public int limitBuilding;
-    public int countType;
+    public int countBuilding;
 
     public int upgradeGoldEarn;
     public int upgradeNewMaxIncome;

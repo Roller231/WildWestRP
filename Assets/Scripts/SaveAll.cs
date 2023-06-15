@@ -7,6 +7,7 @@ using JetBrains.Annotations;
 
 public class SaveAll : MonoBehaviour
 {
+
     private GameManager gameManager;
 
     string filePath;
@@ -17,6 +18,8 @@ public class SaveAll : MonoBehaviour
 
 
     public GameObject[] prefabsHouse;
+
+    public bool DoLoaD;
 
 
 

@@ -7,9 +7,13 @@ public class SetButtonInfo : MonoBehaviour
 {
     public Building buttonBuild;
     public Text costText;
-    private void Start()
+    public Text countBuildingText;
+    public Text limitBuildingText;
+    private void Update()
     {
         costText.text = buttonBuild.cost.ToString();
+        countBuildingText.text = buttonBuild.countBuilding.ToString();
+        limitBuildingText.text = buttonBuild.limitBuilding.ToString() ;
     }
 
 }

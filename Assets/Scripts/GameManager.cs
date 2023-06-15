@@ -101,26 +101,29 @@ public class GameManager : MonoBehaviour
 
     public void BuyBuilding(Building building)
     {
-        if (gold >= building.cost && !buildingMode && !building.gold_OR_oil)
-        {
+        building.countBuilding++;
+            if (gold >= building.cost && !buildingMode && !building.gold_OR_oil)
+            {
 
-            buildingMode = true;
-            buildingToPlace = building;
-            grid.SetActive(true);
-        }
+                buildingMode = true;
+                buildingToPlace = building;
+                grid.SetActive(true);
+            }
 
-        else if (oil >= building.cost && !buildingMode && building.gold_OR_oil)
-        {
+            else if (oil >= building.cost && !buildingMode && building.gold_OR_oil)
+            {
 
-            buildingMode = true;
-            buildingToPlace = building;
-            grid.SetActive(true);
-        }
+                buildingMode = true;
+                buildingToPlace = building;
+                grid.SetActive(true);
+            }
 
-        canvasInGame.SetActive(false);
-        cancelButtonBuild.SetActive(true);
+            canvasInGame.SetActive(false);
+            cancelButtonBuild.SetActive(true);
+
 
     }
+
 
     public void CancelBuying()
     {

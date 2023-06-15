@@ -70,8 +70,12 @@ MonoBehaviour:
   level: 1
   upgradeCost: 10
   timeEarn: 0
+  limitBuilding: 2
+  countBuilding: 0
   upgradeGoldEarn: 0
   upgradeNewMaxIncome: 100
+  open: 0
+  gold_OR_oil: 0
   tile: {fileID: 0}
 --- !u!114 &2906757360307730004
 MonoBehaviour:
