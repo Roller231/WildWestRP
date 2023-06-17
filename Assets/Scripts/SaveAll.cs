@@ -19,7 +19,7 @@ public class SaveAll : MonoBehaviour
 
     public GameObject[] prefabsHouse;
 
-    public bool DoLoaD;
+    public bool DoLoad;
 
 
 
@@ -34,8 +34,11 @@ public class SaveAll : MonoBehaviour
         filePath = Application.persistentDataPath  + "/WildWest.sv";
 
 
+        if (DoLoad)
+        {
+            LoadState(filePath);
+        }
 
-        LoadState(filePath);
         StartCoroutine(EarnGoldCoroutine());
 
     }
