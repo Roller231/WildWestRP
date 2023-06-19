@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -75,7 +75,7 @@ MonoBehaviour:
   upgradeGoldEarn: 100
   upgradeNewMaxIncome: 0
   open: 0
-  gold_OR_oil: 0
+  gold_OR_oil: 1
   tile: {fileID: 0}
 --- !u!114 &2513792069076785706
 MonoBehaviour:

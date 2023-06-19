@@ -14,6 +14,7 @@ public class SetButtonInfo : MonoBehaviour
 
     private void OnEnable()
     {
+        costText.text = buttonBuild.cost.ToString();
         if (!buttonBuild.gold_OR_oil)
         {
             goldImage.SetActive(true);
@@ -22,18 +23,15 @@ public class SetButtonInfo : MonoBehaviour
         {
             oilImage.SetActive(true);
         }
-    }
-
-
-    private void Update()
-    {
-        costText.text = buttonBuild.cost.ToString();
         countBuildingText.text = buttonBuild.countBuilding.ToString();
-        limitBuildingText.text = buttonBuild.limitBuilding.ToString() ;
+        limitBuildingText.text = buttonBuild.limitBuilding.ToString();
         if (buttonBuild.countBuilding >= buttonBuild.limitBuilding)
         {
             gameObject.GetComponent<Button>().interactable = false;
         }
     }
+
+
+
 
 }
