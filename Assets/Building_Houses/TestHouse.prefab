@@ -68,6 +68,7 @@ MonoBehaviour:
   income: 0
   maxIncome: 0
   level: 1
+  maxLevel: 1
   upgradeCost: 10
   timeEarn: 0
   limitBuilding: 2
