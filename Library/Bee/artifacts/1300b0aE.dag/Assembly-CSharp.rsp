@@ -379,7 +379,6 @@
 "Assets/Scripts/PanZoom.cs"
 "Assets/Scripts/SaveAll.cs"
 "Assets/Scripts/Tile.cs"
-"Assets/UI/ScriptsUI/ClaimButton.cs"
 "Assets/UI/ScriptsUI/OpenBuildingSettings.cs"
 "Assets/UI/ScriptsUI/OpenScene.cs"
 "Assets/UI/ScriptsUI/SetButtonInfo.cs"

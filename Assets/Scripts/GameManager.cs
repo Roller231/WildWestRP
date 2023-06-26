@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     private Building buildingToPlace;
     public GameObject grid;
 
+    private Building _building;
+
     [SerializeField] GameObject canvasForHouse;
     public GameObject canvasInGame;
     public GameObject cancelButtonBuild;
@@ -55,7 +57,7 @@ public class GameManager : MonoBehaviour
 
             if (nearesTile.isOccuped == false)
             {
-                var houseObject = Instantiate(buildingToPlace, nearesTile.transform.position, Quaternion.identity);
+                var houseObject = Instantiate(buildingToPlace, new Vector3(nearesTile.transform.position.x, nearesTile.transform.position.y + 0.3f, 0), Quaternion.identity);
                 houseObject.transform.SetParent(canvasForHouse.transform);
                 int i = 0;
                 foreach (var tile in tiles)
@@ -72,10 +74,12 @@ public class GameManager : MonoBehaviour
                 if (houseObject.gold_OR_oil)
                 {
                     oil -= houseObject.cost;
+                    _building.countBuilding++;
                 }
                 else if (!houseObject.gold_OR_oil)
                 {
                     gold -= houseObject.cost;
+                    _building.countBuilding++;
                 }
 
                 buildingToPlace = null;
@@ -101,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void BuyBuilding(Building building)
     {
-        building.countBuilding++;
+
             if (gold >= building.cost && !buildingMode && !building.gold_OR_oil)
             {
 
@@ -117,6 +121,8 @@ public class GameManager : MonoBehaviour
                 buildingToPlace = building;
                 grid.SetActive(true);
             }
+
+        _building = building;
 
             canvasInGame.SetActive(false);
             cancelButtonBuild.SetActive(true);
