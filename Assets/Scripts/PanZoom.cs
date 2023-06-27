@@ -26,7 +26,7 @@ public class PanZoom : MonoBehaviour
 
     void Awake()
     {
-        cam = GetComponent<Camera>();
+        cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         current = this;
     }
 

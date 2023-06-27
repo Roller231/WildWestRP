@@ -137,7 +137,7 @@ public class SaveAll : MonoBehaviour
 
 
 
-                            var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i], 0), Quaternion.identity);
+                            var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i] + 0.3f, 0), Quaternion.identity);
                             houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
                             gameManager.buildings[i] = houseObject.GetComponent<Building>();
 

@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Linq;
-using System.Text.RegularExpressions;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -35,7 +33,7 @@ public class GameManager : MonoBehaviour
     {
         //goldDisplay.text = gold.ToString();
 
-        if (Input.GetMouseButtonDown(0) && buildingToPlace != null  && buildingMode)
+        if (Input.GetMouseButtonDown(0) && buildingToPlace != null  && buildingMode && !EventSystem.current.IsPointerOverGameObject())
         {
             Tile nearesTile = null;
             float nearestDistance = float.MaxValue;
