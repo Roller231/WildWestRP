@@ -74,6 +74,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline.cs" />
+    <Compile Include="Assets\Scripts\NeedScripts.cs" />
     <Compile Include="Assets\Scripts\CustomCursour.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />

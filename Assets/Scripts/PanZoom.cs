@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PanZoom : MonoBehaviour
 {
+    public bool isPointerOverGameObject;
+
     public static PanZoom current;
     
     [SerializeField] private float zoomMin = 2;
@@ -16,7 +19,11 @@ public class PanZoom : MonoBehaviour
     [SerializeField] private float bottomLimit;
     [SerializeField] private float upperLimit;
 
+    [SerializeField] private Canvas canvas;
+
     private Camera cam;
+
+    bool isOneTouch;
 
     private bool moveAllowed;
     private Vector3 touchPos;
@@ -31,7 +38,26 @@ public class PanZoom : MonoBehaviour
     }
 
     void Update()
-    {
+    {            
+        if (Input.touchCount == 0 && isOneTouch)
+        {
+            StartCoroutine(SetDelayRaycastTrue());
+            isOneTouch = false;
+        }
+
+
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            isPointerOverGameObject = true;
+
+        }
+        else
+            isPointerOverGameObject = false;
+
+
+
+
+
         if (objectToFollow != null)
         {
             Vector3 objPos = cam.WorldToViewportPoint(objectToFollow.position + objectBounds.max);
@@ -62,6 +88,8 @@ public class PanZoom : MonoBehaviour
         {
             if (Input.touchCount == 2)
             {
+                isOneTouch = true;
+
                 Touch touchZero = Input.GetTouch(0);
                 Touch touchOne = Input.GetTouch(1);
             
@@ -78,29 +106,30 @@ public class PanZoom : MonoBehaviour
                 float currentDistTouch = (touchZero.position - touchOne.position).magnitude;
 
                 float difference = currentDistTouch - distTouch;
+                StartCoroutine(SetDelayRaycastFalse());
 
                 Zoom(difference * 0.01f);
             }
-            else
+
+
+            else 
             {
+
                 Touch touch = Input.GetTouch(0);
 
                 switch (touch.phase)
                 {
                     case TouchPhase.Began:
-                        if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
-                        {
-                            moveAllowed = false;
-                        }
-                        else
-                        {
-                            moveAllowed = true;
-                        }
+                        StartCoroutine(SetDelayRaycastFalse());
+                        Debug.Log(canvas.GetComponent<GraphicRaycaster>().enabled);
                         touchPos = cam.ScreenToWorldPoint(Input.mousePosition);
                         break;
+
                     case TouchPhase.Moved:
-                        if (moveAllowed)
+                        if (true )
                         {
+
+
                             Vector3 direction = touchPos - cam.ScreenToWorldPoint(touch.position);
                             cam.transform.position += direction;
                     
@@ -110,7 +139,16 @@ public class PanZoom : MonoBehaviour
                                 Mathf.Clamp(transform.position.y, bottomLimit, upperLimit),
                                 transform.position.z
                             );
+
                         }
+                        break;
+                    case TouchPhase.Stationary:
+                        StartCoroutine(SetDelayRaycastFalse());
+
+                        break;
+                    case TouchPhase.Ended:
+                        StartCoroutine(SetDelayRaycastTrue());
+
                         break;
                 }
             }
@@ -118,6 +156,7 @@ public class PanZoom : MonoBehaviour
     }
     void Zoom(float increment)
     {
+
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize - increment, zoomMin, zoomMax);
     }
 
@@ -155,5 +194,33 @@ public class PanZoom : MonoBehaviour
                 (upperLimit - Mathf.Abs(bottomLimit)) / 2.0f), 
             new Vector3(rightLimit - leftLimit, upperLimit - bottomLimit));
     }
+
+    IEnumerator SetDelayRaycastTrue()
+    {
+        //Print the time of when the function is first called.
+        //Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(0.2f);
+        canvas.GetComponent<GraphicRaycaster>().enabled = true;
+        Debug.Log("RFEWFD");
+
+
+
+    }
+    IEnumerator SetDelayRaycastFalse()
+    {
+        //Print the time of when the function is first called.
+        //Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(0.1f);
+        canvas.GetComponent<GraphicRaycaster>().enabled = false;
+
+
+
+    }
+
+
 }
 

@@ -8,6 +8,7 @@ public class BuildingsDoing : MonoBehaviour
 {
 
     public bool onePlay = false;
+    public bool isMoving = false;
 
     private GameObject canvasSettingsNotGrind;
     private GameObject canvasSettingsYesGrind;
@@ -61,6 +62,7 @@ public class BuildingsDoing : MonoBehaviour
     {
         if (!onePlay && !GameManager.buildingMode)
         {
+            isMoving = true;
             try
             {
                 if (!grindBuild)
