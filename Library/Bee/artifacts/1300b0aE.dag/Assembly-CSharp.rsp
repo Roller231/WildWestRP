@@ -379,6 +379,7 @@
 "Assets/Scripts/NeedScripts.cs"
 "Assets/Scripts/PanZoom.cs"
 "Assets/Scripts/SaveAll.cs"
+"Assets/Scripts/TestOnAndroidTouchs.cs"
 "Assets/Scripts/Tile.cs"
 "Assets/UI/ScriptsUI/OpenBuildingSettings.cs"
 "Assets/UI/ScriptsUI/OpenScene.cs"

@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onePlay: 0
+  isMoving: 0
   grindBuild: 0
   upgradeButton: {fileID: 0}
   isOpen: 0
