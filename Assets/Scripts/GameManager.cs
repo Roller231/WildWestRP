@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class GameManager : MonoBehaviour
 {
     public int gold;
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         //goldDisplay.text = gold.ToString();
 
-        if (Input.GetMouseButtonDown(0) && buildingToPlace != null  && buildingMode && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButtonDown(0) && buildingToPlace != null  && buildingMode && !NeedScripts.IsPointerOverUIObject())
         {
             Tile nearesTile = null;
             float nearestDistance = float.MaxValue;
@@ -133,4 +134,6 @@ public class GameManager : MonoBehaviour
     {
         buildingMode = false;
     }
+
+
 }

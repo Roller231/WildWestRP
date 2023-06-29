@@ -46,13 +46,6 @@ public class PanZoom : MonoBehaviour
         }
 
 
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            isPointerOverGameObject = true;
-
-        }
-        else
-            isPointerOverGameObject = false;
 
 
 
@@ -86,7 +79,7 @@ public class PanZoom : MonoBehaviour
         
         if (Input.touchCount > 0)
         {
-            if (Input.touchCount == 2)
+            if (Input.touchCount == 2 && !NeedScripts.IsPointerOverUIObject())
             {
                 isOneTouch = true;
 
@@ -107,7 +100,7 @@ public class PanZoom : MonoBehaviour
 
                 float difference = currentDistTouch - distTouch;
                 StartCoroutine(SetDelayRaycastFalse());
-
+                
                 Zoom(difference * 0.01f);
             }
 
@@ -121,12 +114,12 @@ public class PanZoom : MonoBehaviour
                 {
                     case TouchPhase.Began:
                         StartCoroutine(SetDelayRaycastFalse());
-                        Debug.Log(canvas.GetComponent<GraphicRaycaster>().enabled);
+
                         touchPos = cam.ScreenToWorldPoint(Input.mousePosition);
                         break;
 
                     case TouchPhase.Moved:
-                        if (true )
+                        if (!NeedScripts.IsPointerOverUIObject())
                         {
 
 
@@ -203,7 +196,7 @@ public class PanZoom : MonoBehaviour
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(0.2f);
         canvas.GetComponent<GraphicRaycaster>().enabled = true;
-        Debug.Log("RFEWFD");
+
 
 
 
