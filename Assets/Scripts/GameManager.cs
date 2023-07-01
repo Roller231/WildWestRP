@@ -111,7 +111,10 @@ public class GameManager : MonoBehaviour
                 buildingMode = true;
                 buildingToPlace = building;
                 grid.SetActive(true);
-            }
+
+                canvasInGame.SetActive(false);
+                cancelButtonBuild.SetActive(true);
+        }
 
             else if (oil >= building.cost && !buildingMode && building.gold_OR_oil)
             {
@@ -119,12 +122,13 @@ public class GameManager : MonoBehaviour
                 buildingMode = true;
                 buildingToPlace = building;
                 grid.SetActive(true);
-            }
+                canvasInGame.SetActive(false);
+                cancelButtonBuild.SetActive(true);
+        }
 
         _building = building;
 
-            canvasInGame.SetActive(false);
-            cancelButtonBuild.SetActive(true);
+
 
 
     }
