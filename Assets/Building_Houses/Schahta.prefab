@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -73,8 +73,8 @@ MonoBehaviour:
   maxLevel: 3
   upgradeCost: 10
   timeEarn: 2
-  limitBuilding: 55
-  countBuilding: 0
+  limitBuilding: 44
+  countBuilding: 5
   upgradeGoldEarn: 10
   upgradeNewMaxIncome: 20
   open: 0

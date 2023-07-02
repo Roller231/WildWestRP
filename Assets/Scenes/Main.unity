@@ -5726,6 +5726,8 @@ MonoBehaviour:
     dataLevel: 
     dataUpgradeCost: 
     dataTimeEarn: []
+    dataCountBuilding: 
+    dataLimitBuilding: 
     dataUpgradeGoldEarn: 
     dataUpgradeNewMaxIncome: 
     gameObjects: []
@@ -5738,7 +5740,7 @@ MonoBehaviour:
   - {fileID: 930748836087887078, guid: cbd6f27f1a78b4e4bb9bbc685b5ede83, type: 3}
   - {fileID: 4393860098255582706, guid: 27629b1cb98b04b4797a802b4d0351c2, type: 3}
   - {fileID: 4393860098255582706, guid: d19c4c020f89d074daf8ea46f8dc4a96, type: 3}
-  DoLoad: 0
+  DoLoad: 1
 --- !u!82 &519420036
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5746,7 +5748,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e19b3b9d76855064a9abae648ed25706, type: 3}
@@ -6141,10 +6143,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 66
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 98
     m_Alignment: 2
     m_AlignByGeometry: 0
@@ -6179,8 +6181,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56.831, y: -32.8}
-  m_SizeDelta: {x: 383.182, y: 84.9595}
+  m_AnchoredPosition: {x: -82, y: -37.651}
+  m_SizeDelta: {x: 339.6238, y: 75.3017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &536544065
 GameObject:
@@ -6729,8 +6731,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 246, y: 0.9}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 215.8, y: 16.4}
+  m_SizeDelta: {x: 55.9454, y: 55.9454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &577664311
 MonoBehaviour:
@@ -12390,8 +12392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -276, y: -142.13086}
-  m_SizeDelta: {x: 496.84497, y: 239.88623}
+  m_AnchoredPosition: {x: -198.76392, y: -104.83978}
+  m_SizeDelta: {x: 342.3727, y: 165.3041}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1062125075
 MonoBehaviour:
@@ -15919,8 +15921,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56.831, y: 65}
-  m_SizeDelta: {x: 383.182, y: 84.9595}
+  m_AnchoredPosition: {x: -82, y: 29}
+  m_SizeDelta: {x: 339.6238, y: 75.3017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1356435224
 MonoBehaviour:
@@ -15944,10 +15946,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 66
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 4
     m_MaxSize: 98
     m_Alignment: 2
     m_AlignByGeometry: 0
@@ -20642,8 +20644,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.137}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 243.5452, y: 0.3373}
-  m_SizeDelta: {x: 102.149, y: 102.149}
+  m_AnchoredPosition: {x: 214, y: 13.1}
+  m_SizeDelta: {x: 66.7327, y: 67.9205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1738072548
 MonoBehaviour:

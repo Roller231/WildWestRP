@@ -56,7 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BuildingsDoing.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\BuildingsDoing.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\LogoCinematic.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralCameraShake.cs" />
@@ -66,17 +66,18 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\GameManager.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />
     <Compile Include="Assets\UI\ScriptsUI\SetButtonInfo.cs" />
-    <Compile Include="Assets\Scripts\TestOnAndroidTouchs.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\MoveBuilding.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\TestOnAndroidTouchs.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline.cs" />
-    <Compile Include="Assets\Scripts\NeedScripts.cs" />
-    <Compile Include="Assets\Scripts\CustomCursour.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\NeedScripts.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\CustomCursour.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasics2d.cs" />
@@ -85,26 +86,25 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
     <Compile Include="Assets\UI\ScriptsUI\OpenBuildingSettings.cs" />
     <Compile Include="Assets\UI\ScriptsUI\ShopOpenClose.cs" />
-    <Compile Include="Assets\Scripts\Building.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\Building.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\UI\ScriptsUI\SetTextGold.cs" />
-    <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\Tile.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier2d.cs" />
-    <Compile Include="Assets\Scripts\EarnResourse.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\EarnResourse.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEasingTypes.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
     <Compile Include="Assets\Scripts\SaveAll.cs" />
-    <Compile Include="Assets\Scripts\PanZoom.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\PanZoom.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\Scripts\MoveBuilding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LeanTween\ReadMe.txt" />

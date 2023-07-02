@@ -8,6 +8,7 @@ public class SaveAll : MonoBehaviour
 {
 
     private GameManager gameManager;
+    
 
     string filePath;
 
@@ -83,6 +84,15 @@ public class SaveAll : MonoBehaviour
                 Array.Resize(ref state.dataUpgradeGoldEarn, gameManager.buildings.Length);
                 Array.Resize(ref state.dataUpgradeNewMaxIncome, gameManager.buildings.Length);
 
+                Array.Resize(ref state.dataCountBuilding, prefabsHouse.Length);
+                Array.Resize(ref state.dataLimitBuilding, prefabsHouse.Length);
+
+                for (int j = 0; j < prefabsHouse.Length; j++)
+                {
+                    state.dataCountBuilding[j] = prefabsHouse[j].GetComponent<Building>().countBuilding;
+                    state.dataLimitBuilding[j] = prefabsHouse[j].GetComponent<Building>().limitBuilding;
+                }
+
                 state.gameObjects[i] = gameManager.buildings[i].name;
 
                 state.dataStorage[i] = gameManager.buildings[i].storage;
@@ -153,6 +163,9 @@ public class SaveAll : MonoBehaviour
 
                             gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
 
+                            prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
+                            prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];
+
                         }
                     }
 
@@ -188,6 +201,9 @@ public class Data
     public int[] dataLevel;
     public int[] dataUpgradeCost;
     public float[] dataTimeEarn;
+
+    public int[] dataCountBuilding;
+    public int[] dataLimitBuilding;
 
     public int[] dataUpgradeGoldEarn;
     public int[] dataUpgradeNewMaxIncome;
