@@ -39,13 +39,13 @@ public class SaveAll : MonoBehaviour
             LoadState(filePath);
         }
 
-        StartCoroutine(EarnGoldCoroutine());
+        StartCoroutine(SaveCoroutine());
 
     }
 
 
 
-    IEnumerator EarnGoldCoroutine()
+    IEnumerator SaveCoroutine()
     {
 
 
@@ -54,7 +54,7 @@ public class SaveAll : MonoBehaviour
 
         SaveState(filePath);
 
-        StartCoroutine(EarnGoldCoroutine());
+        StartCoroutine(SaveCoroutine());
 
 
 
@@ -109,8 +109,10 @@ public class SaveAll : MonoBehaviour
                 state.posY[i] = gameManager.tiles[state.indexTile[i]].transform.position.y;
 
                 state.isOccupped[i] = gameManager.tiles[state.indexTile[i]].isOccuped;
-            
 
+
+
+                UtilScripts.SetDateTime("LastSaveTime", DateTime.UtcNow);
             }
         }
 
@@ -177,6 +179,25 @@ public class SaveAll : MonoBehaviour
         {
 
             Debug.Log("Havent save");
+        }
+
+        DateTime lastSaveTime = UtilScripts.GetDateTime("LastSaveTime", DateTime.UtcNow);
+        TimeSpan timePassed = DateTime.UtcNow - lastSaveTime;
+        int secondsPassed = (int)timePassed.TotalSeconds;
+        secondsPassed = Math.Clamp(secondsPassed, 0, 7 * 24 * 60 * 60);
+        Debug.Log(secondsPassed);
+        foreach (var count in gameManager.buildings)
+        {
+            if (secondsPassed / 2 * count.income > count.maxIncome)
+            {
+                count.storage = count.maxIncome;
+            }
+            else
+            {
+                count.storage += (secondsPassed / 2 * count.income);
+            }
+            
+
         }
 
 

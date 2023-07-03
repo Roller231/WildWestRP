@@ -79,7 +79,7 @@ public class PanZoom : MonoBehaviour
         
         if (Input.touchCount > 0)
         {
-            if (Input.touchCount == 2 && !NeedScripts.IsPointerOverUIObject())
+            if (Input.touchCount == 2 && !UtilScripts.IsPointerOverUIObject())
             {
                 isOneTouch = true;
 
@@ -119,7 +119,7 @@ public class PanZoom : MonoBehaviour
                         break;
 
                     case TouchPhase.Moved:
-                        if (!NeedScripts.IsPointerOverUIObject())
+                        if (!UtilScripts.IsPointerOverUIObject())
                         {
 
 

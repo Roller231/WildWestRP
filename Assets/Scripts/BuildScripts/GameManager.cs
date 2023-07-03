@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         //goldDisplay.text = gold.ToString();
 
-        if (Input.GetMouseButtonDown(0) && buildingToPlace != null  && buildingMode && !NeedScripts.IsPointerOverUIObject())
+        if (Input.GetMouseButtonDown(0) && buildingToPlace != null  && buildingMode && !UtilScripts.IsPointerOverUIObject())
         {
             Tile nearesTile = null;
             float nearestDistance = float.MaxValue;

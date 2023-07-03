@@ -67,16 +67,16 @@ MonoBehaviour:
     SerializationNodes: []
   cost: 20
   storage: 0
-  income: 5
-  maxIncome: 10
+  income: 2
+  maxIncome: 5000
   level: 1
   maxLevel: 3
   upgradeCost: 10
   timeEarn: 2
   limitBuilding: 55
-  countBuilding: 0
-  upgradeGoldEarn: 10
-  upgradeNewMaxIncome: 30
+  countBuilding: 5
+  upgradeGoldEarn: 5
+  upgradeNewMaxIncome: 10000
   open: 0
   gold_OR_oil: 0
   tile: {fileID: 0}
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onePlay: 0
+  isMoving: 0
   grindBuild: 1
   upgradeButton: {fileID: 0}
   isOpen: 0

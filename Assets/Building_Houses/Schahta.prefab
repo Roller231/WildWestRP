@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -67,16 +67,16 @@ MonoBehaviour:
     SerializationNodes: []
   cost: 20
   storage: 0
-  income: 5
-  maxIncome: 10
+  income: 2
+  maxIncome: 5000
   level: 1
   maxLevel: 3
   upgradeCost: 10
   timeEarn: 2
   limitBuilding: 44
-  countBuilding: 5
-  upgradeGoldEarn: 10
-  upgradeNewMaxIncome: 20
+  countBuilding: 11
+  upgradeGoldEarn: 5
+  upgradeNewMaxIncome: 10000
   open: 0
   gold_OR_oil: 1
   tile: {fileID: 0}
