@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
+    
     public int gold;
     public int oil;
 
@@ -58,6 +59,8 @@ public class GameManager : MonoBehaviour
             {
                 var houseObject = Instantiate(buildingToPlace, new Vector3(nearesTile.transform.position.x, nearesTile.transform.position.y + 0.3f, 0), Quaternion.identity);
                 houseObject.transform.SetParent(canvasForHouse.transform);
+                houseObject.tile = nearesTile;
+
                 int i = 0;
                 foreach (var tile in tiles)
                 {
