@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\rep_Git\\WildWestRP\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\rep-git\\WildWestRP\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\rep_Git\\WildWestRP\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\rep-git\\WildWestRP\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "2,2",
-                        "startOffsets": "53,99",
+                        "startOffsets": "55,102",
                         "endColumns": "45,65",
-                        "endOffsets": "96,162"
+                        "endOffsets": "98,165"
                     },
                     "to": {
                         "startLines": "8,9",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "D:\\rep_Git\\WildWestRP\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\unityLibrary\\build\\intermediates\\packaged_res\\release\\values\\values.xml",
+                    "source": "C:\\rep-git\\WildWestRP\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\unityLibrary\\build\\intermediates\\packaged_res\\release\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -31,14 +31,14 @@
                     }
                 },
                 {
-                    "source": "D:\\rep_Git\\WildWestRP\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\rep-git\\WildWestRP\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "5,2,7",
                         "startColumns": "0,0,0",
-                        "startOffsets": "185,51,281",
+                        "startOffsets": "190,53,288",
                         "endLines": "6,4,10",
                         "endColumns": "8,8,8",
-                        "endOffsets": "280,184,503"
+                        "endOffsets": "286,188,513"
                     },
                     "to": {
                         "startLines": "10,12,15",

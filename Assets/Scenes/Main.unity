@@ -5726,6 +5726,8 @@ MonoBehaviour:
     dataLevel: 
     dataUpgradeCost: 
     dataTimeEarn: []
+    dataTimeForUpgrade: []
+    dataIsBuilt: 
     dataCountBuilding: 
     dataLimitBuilding: 
     dataUpgradeGoldEarn: 
@@ -24514,8 +24516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7821c7344378a0f44b97d04aa4d5a813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 1000000
-  oil: 1110000
+  gold: 1000
+  oil: 1000
   grid: {fileID: 1602619887}
   canvasForHouse: {fileID: 1747247341}
   canvasInGame: {fileID: 2123348328}

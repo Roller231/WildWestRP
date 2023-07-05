@@ -13,11 +13,11 @@ ScriptsOnlyBuild:
     - SetTextGold
     - ShopOpenClose
     - Tile
+    - constructionScript
     Unity.2D.Sprite.Editor.dll:
     - UnityEditor.U2D.Sprites.SpriteEditorWindow
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -31,13 +31,19 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
+    Unity.Timeline.Editor.dll:
+    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -64,11 +70,31 @@ ScriptsOnlyBuild:
     - Data
     OdinSerializer:
     - OdinSerializer.SerializationData
+    Unity.TextMeshPro:
+    - TMPro.FaceInfo_Legacy
+    - TMPro.FontAssetCreationSettings
+    - TMPro.KerningTable
+    - TMPro.TMP_Character
+    - TMPro.TMP_FontFeatureTable
+    - TMPro.TMP_FontWeightPair
+    - TMPro.TMP_GlyphAdjustmentRecord
+    - TMPro.TMP_GlyphPairAdjustmentRecord
+    - TMPro.TMP_GlyphValueRecord
+    - TMPro.TMP_Sprite
+    - TMPro.TMP_SpriteCharacter
+    - TMPro.TMP_SpriteGlyph
+    - TMPro.TMP_Style
+    - TMPro.VertexGradient
     UnityEngine.CoreModule:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
     - UnityEngine.Events.PersistentListenerMode
     - UnityEngine.RectOffset
+    UnityEngine.TextCoreFontEngineModule:
+    - UnityEngine.TextCore.FaceInfo
+    - UnityEngine.TextCore.Glyph
+    - UnityEngine.TextCore.GlyphMetrics
+    - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
     - UnityEngine.EventSystems.EventTrigger/Entry
     - UnityEngine.EventSystems.EventTrigger/TriggerEvent
@@ -185,59 +211,65 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 656}
+      Script: {instanceID: 660}
     - Class: 114
-      Script: {instanceID: 1544}
+      Script: {instanceID: 1548}
     - Class: 114
-      Script: {instanceID: 1616}
+      Script: {instanceID: 1620}
     - Class: 114
-      Script: {instanceID: 1734}
+      Script: {instanceID: 1738}
     - Class: 114
-      Script: {instanceID: 1798}
+      Script: {instanceID: 1802}
     - Class: 114
-      Script: {instanceID: 2250}
+      Script: {instanceID: 1892}
     - Class: 114
-      Script: {instanceID: 2374}
+      Script: {instanceID: 2254}
     - Class: 114
-      Script: {instanceID: 2624}
+      Script: {instanceID: 2378}
     - Class: 114
-      Script: {instanceID: 2658}
+      Script: {instanceID: 2628}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2662}
     - Class: 114
-      Script: {instanceID: 3036}
+      Script: {instanceID: 2790}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 3398}
+      Script: {instanceID: 3040}
     - Class: 114
-      Script: {instanceID: 3606}
+      Script: {instanceID: 3298}
     - Class: 114
-      Script: {instanceID: 3922}
+      Script: {instanceID: 3402}
     - Class: 114
-      Script: {instanceID: 3930}
+      Script: {instanceID: 3610}
     - Class: 114
-      Script: {instanceID: 4060}
+      Script: {instanceID: 3926}
     - Class: 114
-      Script: {instanceID: 4082}
+      Script: {instanceID: 3934}
     - Class: 114
-      Script: {instanceID: 4152}
+      Script: {instanceID: 3990}
     - Class: 114
-      Script: {instanceID: 4224}
+      Script: {instanceID: 4066}
     - Class: 114
-      Script: {instanceID: 4316}
+      Script: {instanceID: 4088}
     - Class: 114
-      Script: {instanceID: 4486}
+      Script: {instanceID: 4158}
     - Class: 114
-      Script: {instanceID: 4530}
+      Script: {instanceID: 4230}
     - Class: 114
-      Script: {instanceID: 5082}
+      Script: {instanceID: 4322}
     - Class: 114
-      Script: {instanceID: 5330}
+      Script: {instanceID: 4492}
     - Class: 114
-      Script: {instanceID: 5350}
+      Script: {instanceID: 4536}
     - Class: 114
-      Script: {instanceID: 5422}
+      Script: {instanceID: 5088}
+    - Class: 114
+      Script: {instanceID: 5336}
+    - Class: 114
+      Script: {instanceID: 5356}
+    - Class: 114
+      Script: {instanceID: 5428}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -277,26 +309,36 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1544}
+      Script: {instanceID: 1548}
     - Class: 114
-      Script: {instanceID: 1820}
+      Script: {instanceID: 1824}
+    - Class: 114
+      Script: {instanceID: 1892}
     - Class: 114
       Script: {instanceID: 2250}
     - Class: 114
-      Script: {instanceID: 2658}
+      Script: {instanceID: 2254}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2662}
     - Class: 114
-      Script: {instanceID: 3036}
+      Script: {instanceID: 2790}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3040}
     - Class: 114
-      Script: {instanceID: 3398}
+      Script: {instanceID: 3298}
+    - Class: 114
+      Script: {instanceID: 3402}
+    - Class: 114
+      Script: {instanceID: 4614}
+    - Class: 114
+      Script: {instanceID: 4940}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -595,7 +637,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: NeedScripts
+    className: UtilScripts
   - hash:
       serializedVersion: 2
       Hash: e09e8bebc0fcd32bb8af1287a6b44816
@@ -766,6 +808,12 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 72143ed894f091e48e2db540c225ffc5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: constructionScript
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -778,7 +826,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: e2c0016afd3161efe7693a12b2087f79
+      Hash: 9fdccbf420434958bdc2a23473ec26b0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Building
@@ -952,7 +1000,7 @@ ScriptsOnlyBuild:
     className: GeneralBasic
   - hash:
       serializedVersion: 2
-      Hash: 93ebd00a53ff75c44b2f6275ad32a299
+      Hash: 2bc2f713e8ad6a2c42ad1d3400453fa2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SaveAll
@@ -996,4 +1044,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Main.unity
-  playerPath: E:/miniBuild.apk
+  playerPath: C:/rep-git/Builds/MiniBuild2.apk

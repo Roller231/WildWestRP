@@ -17,6 +17,7 @@ public class BuildingsDoing : MonoBehaviour
     private Building buildingThis;
     private GameManager gameManager;
 
+
     public bool grindBuild;
 
     private Button claimButton;
@@ -153,21 +154,41 @@ public class BuildingsDoing : MonoBehaviour
             if (gameManager.oil >= this.buildingThis.upgradeCost && buildingThis.gold_OR_oil)
             {
                 gameManager.oil -= this.buildingThis.upgradeCost;
+
+                this.buildingThis.level += 1;
+
+                this.buildingThis.income = buildingThis.upgradeGoldEarn;
+                this.buildingThis.maxIncome = buildingThis.upgradeNewMaxIncome;
+
+                buildingThis.upgradeGoldEarn *= 2;
+                buildingThis.upgradeNewMaxIncome *= 3;
+
+                this.buildingThis.upgradeCost *= 3;
+                buildingThis.upgradeTime *= 2;
+
+
+                buildingThis.constructionScript.SetUpgradeBuilding(buildingThis.upgradeTime);
             }
             else if (gameManager.gold >= this.buildingThis.upgradeCost && !buildingThis.gold_OR_oil)
             {
                 gameManager.gold -= this.buildingThis.upgradeCost;
+
+                this.buildingThis.level += 1;
+
+                this.buildingThis.income = buildingThis.upgradeGoldEarn;
+                this.buildingThis.maxIncome = buildingThis.upgradeNewMaxIncome;
+
+                buildingThis.upgradeGoldEarn *= 2;
+                buildingThis.upgradeNewMaxIncome *= 3;
+
+                this.buildingThis.upgradeCost *= 3;
+                buildingThis.upgradeTime *= 3;
+
+
+                buildingThis.constructionScript.SetUpgradeBuilding(buildingThis.upgradeTime);
             }
 
-            this.buildingThis.level += 1;
 
-            this.buildingThis.income = buildingThis.upgradeGoldEarn;
-            this.buildingThis.maxIncome = buildingThis.upgradeNewMaxIncome;
-
-            buildingThis.upgradeGoldEarn *= 2;
-            buildingThis.upgradeNewMaxIncome *= 3;
-
-            this.buildingThis.upgradeCost *= 3;
         }
     }
 

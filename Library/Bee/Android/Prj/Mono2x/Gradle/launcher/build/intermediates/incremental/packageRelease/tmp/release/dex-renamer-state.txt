@@ -1,7 +1,7 @@
-#Sun Jul 02 23:13:03 MSK 2023
+#Wed Jul 05 14:05:25 MSK 2023
 base.0=C\:\\rep-git\\WildWestRP\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
-renamed.0=classes.dex
+renamed.0=classes3.dex
 base.1=D\:\\rep_Git\\WildWestRP\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex

@@ -27,7 +27,7 @@ public class SaveAll : MonoBehaviour
 
     private void Start()
     {
-
+        Application.targetFrameRate = 60;
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
@@ -83,6 +83,8 @@ public class SaveAll : MonoBehaviour
                 Array.Resize(ref state.dataTimeEarn, gameManager.buildings.Length);
                 Array.Resize(ref state.dataUpgradeGoldEarn, gameManager.buildings.Length);
                 Array.Resize(ref state.dataUpgradeNewMaxIncome, gameManager.buildings.Length);
+                Array.Resize(ref state.dataTimeForUpgrade, gameManager.buildings.Length);
+                Array.Resize(ref state.dataIsBuilt, gameManager.buildings.Length);
 
                 Array.Resize(ref state.dataCountBuilding, prefabsHouse.Length);
                 Array.Resize(ref state.dataLimitBuilding, prefabsHouse.Length);
@@ -109,6 +111,9 @@ public class SaveAll : MonoBehaviour
                 state.posY[i] = gameManager.tiles[state.indexTile[i]].transform.position.y;
 
                 state.isOccupped[i] = gameManager.tiles[state.indexTile[i]].isOccuped;
+
+                state.dataTimeForUpgrade[i] = gameManager.buildings[i].constructionScript.timeStart;
+                state.dataIsBuilt[i] = gameManager.buildings[i].isBuilt;
 
 
 
@@ -163,6 +168,9 @@ public class SaveAll : MonoBehaviour
                             gameManager.buildings[i].upgradeGoldEarn = state.dataUpgradeGoldEarn[i];
                             gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
 
+                            gameManager.buildings[i].constructionScript.timeStart = state.dataTimeForUpgrade[i];
+                            gameManager.buildings[i].isBuilt = state.dataIsBuilt[i];
+
                             gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
 
                             prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
@@ -195,6 +203,11 @@ public class SaveAll : MonoBehaviour
             else
             {
                 count.storage += (secondsPassed / 2 * count.income);
+                if (!count.isBuilt)
+                {
+                    count.constructionScript.timeStart -= secondsPassed;
+                    count.storage = 0;
+                }
             }
             
 
@@ -222,6 +235,8 @@ public class Data
     public int[] dataLevel;
     public int[] dataUpgradeCost;
     public float[] dataTimeEarn;
+    public float[] dataTimeForUpgrade;
+    public bool[] dataIsBuilt;
 
     public int[] dataCountBuilding;
     public int[] dataLimitBuilding;
