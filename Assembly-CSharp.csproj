@@ -67,8 +67,6 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />
     <Compile Include="Assets\UI\ScriptsUI\SetButtonInfo.cs" />
-    <Compile Include="Assets\Scripts\BuildScripts\MoveBuilding.cs" />
-    <Compile Include="Assets\Scripts\BuildScripts\TestOnAndroidTouchs.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
@@ -83,7 +81,7 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
     <Compile Include="Assets\UI\ScriptsUI\OpenBuildingSettings.cs" />
     <Compile Include="Assets\UI\ScriptsUI\ShopOpenClose.cs" />
-    <Compile Include="Assets\Scripts\BuildScripts\constructionScript.cs" />
+    <Compile Include="Assets\Scripts\BuildScripts\ConstructionScript.cs" />
     <Compile Include="Assets\Scripts\BuildScripts\Building.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
     <Compile Include="Assets\UI\ScriptsUI\SetTextGold.cs" />
@@ -103,6 +101,7 @@
     <Compile Include="Assets\Scripts\BuildScripts\PanZoom.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
+    <Compile Include="Assets\UI\ScriptsUI\SetProgressBarBuilding.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

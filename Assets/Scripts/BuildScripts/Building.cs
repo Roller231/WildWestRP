@@ -34,7 +34,7 @@ public class Building : SerializedMonoBehaviour
     public bool gold_OR_oil;
 
     public Tile tile;
-    public constructionScript constructionScript;
+    public ConstructionScript constructionScript;
     public bool isBuilt;
 
 }

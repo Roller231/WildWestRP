@@ -129,8 +129,10 @@ public class BuildingsDoing : MonoBehaviour
             isOpen = false;
             foreach (Building t in gameManager.buildings)
             {
-                t.GetComponent<Animator>().SetBool("OnClick", onePlay);
+                t.GetComponent<Animator>().SetBool("OnClick", false);
                 t.GetComponent<BuildingsDoing>().onePlay = false;
+                t.GetComponent<BuildingsDoing>().isOpen = false;
+                t.GetComponent<BuildingsDoing>().upgradeButton.onClick.RemoveAllListeners();
 
             }
         }
@@ -166,7 +168,8 @@ public class BuildingsDoing : MonoBehaviour
                 this.buildingThis.upgradeCost *= 3;
                 buildingThis.upgradeTime *= 2;
 
-
+                BackAllBuildings();
+                
                 buildingThis.constructionScript.SetUpgradeBuilding(buildingThis.upgradeTime);
             }
             else if (gameManager.gold >= this.buildingThis.upgradeCost && !buildingThis.gold_OR_oil)
@@ -183,6 +186,8 @@ public class BuildingsDoing : MonoBehaviour
 
                 this.buildingThis.upgradeCost *= 3;
                 buildingThis.upgradeTime *= 3;
+
+                BackAllBuildings();
 
 
                 buildingThis.constructionScript.SetUpgradeBuilding(buildingThis.upgradeTime);
