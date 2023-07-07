@@ -14,11 +14,14 @@ public class ConstructionScript : MonoBehaviour
     public Image imageBuild;
     public BuildingsDoing doingBuild;
 
+    [HideInInspector]
+    public Image barImage;
+
 
     private void Start()
     {
         timeMemory = timeStart;
-
+        barImage = GetComponent<SetProgressBarBuilding>().progressBar;
     }
 
     private void Update()

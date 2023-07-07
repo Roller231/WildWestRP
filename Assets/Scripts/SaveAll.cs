@@ -85,6 +85,7 @@ public class SaveAll : MonoBehaviour
                 Array.Resize(ref state.dataUpgradeNewMaxIncome, gameManager.buildings.Length);
                 Array.Resize(ref state.dataTimeForUpgrade, gameManager.buildings.Length);
                 Array.Resize(ref state.dataIsBuilt, gameManager.buildings.Length);
+                Array.Resize(ref state.dataFillAmountBar, gameManager.buildings.Length);
 
                 Array.Resize(ref state.dataCountBuilding, prefabsHouse.Length);
                 Array.Resize(ref state.dataLimitBuilding, prefabsHouse.Length);
@@ -110,9 +111,21 @@ public class SaveAll : MonoBehaviour
                 state.posX[i] = gameManager.tiles[state.indexTile[i]].transform.position.x; 
                 state.posY[i] = gameManager.tiles[state.indexTile[i]].transform.position.y;
 
-                state.isOccupped[i] = gameManager.tiles[state.indexTile[i]].isOccuped;
 
-                state.dataTimeForUpgrade[i] = gameManager.buildings[i].constructionScript.timeStart;
+
+                state.isOccupped[i] = gameManager.tiles[state.indexTile[i]].isOccuped;
+                try
+                {
+                    state.dataTimeForUpgrade[i] = gameManager.buildings[i].constructionScript.timeStart;
+                }
+                catch (NullReferenceException)
+                {
+
+                    throw;
+                }
+
+
+
                 state.dataIsBuilt[i] = gameManager.buildings[i].isBuilt;
 
 
@@ -169,6 +182,9 @@ public class SaveAll : MonoBehaviour
                             gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
 
                             gameManager.buildings[i].constructionScript.timeStart = state.dataTimeForUpgrade[i];
+
+
+
                             gameManager.buildings[i].isBuilt = state.dataIsBuilt[i];
 
                             gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
@@ -243,6 +259,7 @@ public class Data
 
     public int[] dataUpgradeGoldEarn;
     public int[] dataUpgradeNewMaxIncome;
+    public float[] dataFillAmountBar;
 
     public string[] gameObjects;
 

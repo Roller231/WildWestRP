@@ -61,11 +61,12 @@ public class BuildingsDoing : MonoBehaviour
 
     public void PlayAnimationOnClick(Animator animator)
     {
-        if (!onePlay && !GameManager.buildingMode)
+        try
         {
-            isMoving = true;
-            try
+            if (!onePlay && !GameManager.buildingMode && buildingThis.isBuilt)
             {
+                isMoving = true;
+
                 if (!grindBuild)
                 {
                     canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
@@ -86,7 +87,7 @@ public class BuildingsDoing : MonoBehaviour
                     canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
                     claimButton.onClick.AddListener(() => SetStorageOnButton());
                     upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
- 
+
 
 
 
@@ -106,21 +107,21 @@ public class BuildingsDoing : MonoBehaviour
                 {
                     t.GetComponent<BuildingsDoing>().onePlay = true;
                 }
-            }
-            catch (NullReferenceException)
-            {
 
-                Debug.Log("catch");
+
             }
 
+        }
+        catch (NullReferenceException)
+        {
 
-
-
-
-
+            Debug.Log("catch");
         }
 
     }
+
+
+
 
     public  void BackAllBuildings()
     {
