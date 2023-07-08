@@ -92,7 +92,7 @@ public class BuildingsDoing : MonoBehaviour
 
 
 
-                    isOpen = true;
+                    buildingThis.open = isOpen = true;
 
                 }
 
@@ -127,12 +127,13 @@ public class BuildingsDoing : MonoBehaviour
     {
         try
         {
-            isOpen = false;
+            buildingThis.open = isOpen = false;
             foreach (Building t in gameManager.buildings)
             {
                 t.GetComponent<Animator>().SetBool("OnClick", false);
                 t.GetComponent<BuildingsDoing>().onePlay = false;
-                t.GetComponent<BuildingsDoing>().isOpen = false;
+                t.open = t.GetComponent<BuildingsDoing>().isOpen = false;
+                
                 t.GetComponent<BuildingsDoing>().upgradeButton.onClick.RemoveAllListeners();
 
             }

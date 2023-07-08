@@ -42,7 +42,7 @@ public class ConstructionScript : MonoBehaviour
         doingBuild.gameObject.GetComponent<Building>().isBuilt = true;
         imageBuild.enabled = true;
         doingBuild.enabled = true;
-
+        doingBuild.onePlay = false;
         gameObject.SetActive(false); 
         
 

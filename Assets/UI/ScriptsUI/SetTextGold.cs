@@ -49,7 +49,7 @@ public class SetTextGold : MonoBehaviour
             {
                 t.GetComponent<Animator>().SetBool("OnClick", false);
                 t.GetComponent<BuildingsDoing>().onePlay = false;
-                t.GetComponent<BuildingsDoing>().isOpen = false;
+                t.open = t.GetComponent<BuildingsDoing>().isOpen = false;
                 t.GetComponent<BuildingsDoing>().upgradeButton.onClick.RemoveAllListeners();
 
             }

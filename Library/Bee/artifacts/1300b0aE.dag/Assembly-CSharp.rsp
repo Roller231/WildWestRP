@@ -377,6 +377,7 @@
 "Assets/Scripts/BuildScripts/CustomCursour.cs"
 "Assets/Scripts/BuildScripts/EarnResourse.cs"
 "Assets/Scripts/BuildScripts/GameManager.cs"
+"Assets/Scripts/BuildScripts/MoveBuilding.cs"
 "Assets/Scripts/BuildScripts/PanZoom.cs"
 "Assets/Scripts/BuildScripts/Tile.cs"
 "Assets/Scripts/SaveAll.cs"
