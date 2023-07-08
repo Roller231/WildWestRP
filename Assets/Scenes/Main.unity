@@ -2205,6 +2205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 270934675}
   - component: {fileID: 270934674}
+  - component: {fileID: 270934676}
   m_Layer: 0
   m_Name: Utils
   m_TagString: Untagged
@@ -2228,6 +2229,7 @@ MonoBehaviour:
   nowMoving: 0
   canvasForHouse: {fileID: 1747247341}
   canvasInGame: {fileID: 2123348328}
+  utilScripts: {fileID: 270934673}
 --- !u!4 &270934675
 Transform:
   m_ObjectHideFlags: 0
@@ -2243,6 +2245,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &270934676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270934673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913b0e505b2671641a3bef1dd283cb60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &274346473
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,6 +5792,7 @@ MonoBehaviour:
     dataIsBuilt: 
     dataCountBuilding: 
     dataLimitBuilding: 
+    dataCountMemory: 
     dataUpgradeGoldEarn: 
     dataUpgradeNewMaxIncome: 
     dataFillAmountBar: []
@@ -24783,6 +24798,7 @@ MonoBehaviour:
   buildings: []
   saveAll: {fileID: 519420035}
   countHouses: 0
+  setNewTile: 0
 --- !u!1 &1920663436
 GameObject:
   m_ObjectHideFlags: 0

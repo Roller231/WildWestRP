@@ -28,12 +28,14 @@ public class GameManager : MonoBehaviour
     public int countHouses = 0;
 
 
+    public bool setNewTile;
 
 
 
     private void Update()
     {
-        //goldDisplay.text = gold.ToString();
+
+
 
         if (Input.GetMouseButtonDown(0) && buildingToPlace != null  && buildingMode && !UtilScripts.IsPointerOverUIObject())
         {
@@ -55,12 +57,13 @@ public class GameManager : MonoBehaviour
             }
 
 
+
             if (nearesTile.isOccuped == false)
             {
                 var houseObject = Instantiate(buildingToPlace, new Vector3(nearesTile.transform.position.x, nearesTile.transform.position.y + 0.3f, 0), Quaternion.identity);
                 houseObject.transform.SetParent(canvasForHouse.transform);
                 houseObject.tile = nearesTile;
-
+                houseObject.memoryCountHouse = countHouses;
                 int i = 0;
                 foreach (var tile in tiles)
                 {

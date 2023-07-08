@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638217261220000000
-    m_Hash: 545522793
+      ticks: 638244438379760498
+    m_Hash: 1213952303
   m_LockFileStatus:
     m_FilePath: D:/rep_Git/WildWestRP/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638217261220000000
-    m_Hash: 3347124506
+      ticks: 638244438379760498
+    m_Hash: 2351053648
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

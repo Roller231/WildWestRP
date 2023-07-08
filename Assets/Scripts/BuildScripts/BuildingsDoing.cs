@@ -130,7 +130,11 @@ public class BuildingsDoing : MonoBehaviour
             buildingThis.open = isOpen = false;
             foreach (Building t in gameManager.buildings)
             {
-                t.GetComponent<Animator>().SetBool("OnClick", false);
+                if (buildingThis.isBuilt)
+                {
+                    GetComponent<Animator>().SetBool("OnClick", false);
+                }
+
                 t.GetComponent<BuildingsDoing>().onePlay = false;
                 t.open = t.GetComponent<BuildingsDoing>().isOpen = false;
                 

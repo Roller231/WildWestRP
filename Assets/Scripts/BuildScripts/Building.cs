@@ -33,6 +33,7 @@ public class Building : SerializedMonoBehaviour
 
     public bool gold_OR_oil;
 
+    public int memoryCountHouse;
     public Tile tile;
     public ConstructionScript constructionScript;
     public bool isBuilt;

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using System.Collections;
 
 public class MoveBuilding : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class MoveBuilding : MonoBehaviour
 
     [SerializeField] GameObject canvasForHouse;
     public GameObject canvasInGame;
+    public GameObject utilScripts;
 
 
     private void Start()
@@ -59,9 +61,8 @@ public class MoveBuilding : MonoBehaviour
                 canvasInGame.SetActive(true);
 
 
-
                 GameManager.buildingMode = false;
-
+                nowMoving = false;
 
             }
         }

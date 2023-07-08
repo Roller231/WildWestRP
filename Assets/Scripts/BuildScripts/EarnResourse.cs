@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,17 @@ using UnityEngine;
 public class EarnResourse : MonoBehaviour
 {
 
-    void Start()
-    {
-        StartCoroutine(EarnGoldCoroutine());
-    }
 
-    IEnumerator EarnGoldCoroutine()
+    public void OnEnable()
+    {
+
+
+        StartCoroutine(EarnGoldCoroutine());
+
+
+
+    }
+    public IEnumerator EarnGoldCoroutine()
     {
         //Print the time of when the function is first called.
         //Debug.Log("Started Coroutine at timestamp : " + Time.time);

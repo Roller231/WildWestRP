@@ -32,7 +32,7 @@ public class ConstructionScript : MonoBehaviour
         if (timeStart <= 0 || doingBuild.gameObject.GetComponent<Building>().isBuilt)
         {
             SpawnBuildingTimeLeft();
-            doingBuild.BackAllBuildings();
+
         }
     }
 
@@ -43,13 +43,16 @@ public class ConstructionScript : MonoBehaviour
         imageBuild.enabled = true;
         doingBuild.enabled = true;
         doingBuild.onePlay = false;
-        gameObject.SetActive(false); 
-        
+        gameObject.SetActive(false);
+
+
+
 
     }
 
     public void SetUpgradeBuilding(float timeForUpgrade)
     { 
+        doingBuild.BackAllBuildings();
         doingBuild.gameObject.GetComponent<Building>().isBuilt = false;
         imageBuild.enabled = false;
         doingBuild.enabled = false;
