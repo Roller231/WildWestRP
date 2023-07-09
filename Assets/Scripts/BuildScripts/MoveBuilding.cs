@@ -46,7 +46,8 @@ public class MoveBuilding : MonoBehaviour
 
                     }
 
-                }
+
+            }
 
 
             if (nearesTile.isOccuped == false)
@@ -56,14 +57,28 @@ public class MoveBuilding : MonoBehaviour
                 _building.tile = nearesTile;
 
                 nearesTile.isOccuped = true;
+                int i = 0;
+                foreach (var tile in gameManager.tiles)
+                {
+                    foreach (var item in gameManager.buildings)
+                    {
+                        if (tile == nearesTile && item.nowMove)
+                        {
+                            Array.Resize(ref gameManager.saveAll.state.indexTile, gameManager.tiles.Length);
+                            gameManager.saveAll.state.indexTile[_building.memoryCountHouse] = i;
+                            Debug.Log(gameManager.saveAll.state.indexTile[_building.memoryCountHouse]);
+                        }
+                    }
 
+                    i++;
+                }
                 grid.SetActive(false);
                 canvasInGame.SetActive(true);
 
 
                 GameManager.buildingMode = false;
-                nowMoving = false;
-
+                _building.nowMove = nowMoving = false;
+                
             }
         }
     }
@@ -80,6 +95,6 @@ public class MoveBuilding : MonoBehaviour
         _building.tile.isOccuped = false;
         GameManager.buildingMode = true;
         _building.gameObject.SetActive(false);
-        nowMoving = true;
+        _building.nowMove = nowMoving = true;
     }
 }

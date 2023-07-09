@@ -40,9 +40,11 @@ public class ConstructionScript : MonoBehaviour
     public void SpawnBuildingTimeLeft()
     {
         doingBuild.gameObject.GetComponent<Building>().isBuilt = true;
+        doingBuild.onePlay = false;
         imageBuild.enabled = true;
         doingBuild.enabled = true;
         doingBuild.onePlay = false;
+        doingBuild.BackAllBuildings();
         gameObject.SetActive(false);
 
 

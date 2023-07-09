@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
-    
+
     public int gold;
     public int oil;
 
@@ -28,16 +28,14 @@ public class GameManager : MonoBehaviour
     public int countHouses = 0;
 
 
-    public bool setNewTile;
 
 
 
     private void Update()
     {
+        //goldDisplay.text = gold.ToString();
 
-
-
-        if (Input.GetMouseButtonDown(0) && buildingToPlace != null  && buildingMode && !UtilScripts.IsPointerOverUIObject())
+        if (Input.GetMouseButtonDown(0) && buildingToPlace != null && buildingMode && !UtilScripts.IsPointerOverUIObject())
         {
             Tile nearesTile = null;
             float nearestDistance = float.MaxValue;
@@ -45,17 +43,16 @@ public class GameManager : MonoBehaviour
 
             foreach (Tile tile in tiles)
             {
-                
+
                 float dist = Vector2.Distance(tile.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 if (dist < nearestDistance)
                 {
                     nearestDistance = dist;
                     nearesTile = tile;
-                    
+
                 }
 
             }
-
 
 
             if (nearesTile.isOccuped == false)
@@ -63,7 +60,8 @@ public class GameManager : MonoBehaviour
                 var houseObject = Instantiate(buildingToPlace, new Vector3(nearesTile.transform.position.x, nearesTile.transform.position.y + 0.3f, 0), Quaternion.identity);
                 houseObject.transform.SetParent(canvasForHouse.transform);
                 houseObject.tile = nearesTile;
-                houseObject.memoryCountHouse = countHouses;
+                
+
                 int i = 0;
                 foreach (var tile in tiles)
                 {
@@ -71,6 +69,7 @@ public class GameManager : MonoBehaviour
                     {
                         Array.Resize(ref saveAll.state.indexTile, tiles.Length);
                         saveAll.state.indexTile[countHouses] = i;
+                        Debug.Log(saveAll.state.indexTile[countHouses]);
                     }
                     i++;
                 }
@@ -99,6 +98,7 @@ public class GameManager : MonoBehaviour
 
                 Array.Resize(ref buildings, buildings.Length + 1);
                 buildings[countHouses] = houseObject;
+                houseObject.memoryCountHouse = countHouses;
                 countHouses++;
 
                 buildingMode = false;
@@ -111,25 +111,25 @@ public class GameManager : MonoBehaviour
     public void BuyBuilding(Building building)
     {
 
-            if (gold >= building.cost && !buildingMode && !building.gold_OR_oil)
-            {
+        if (gold >= building.cost && !buildingMode && !building.gold_OR_oil)
+        {
 
-                buildingMode = true;
-                buildingToPlace = building;
-                grid.SetActive(true);
+            buildingMode = true;
+            buildingToPlace = building;
+            grid.SetActive(true);
 
-                canvasInGame.SetActive(false);
-                cancelButtonBuild.SetActive(true);
+            canvasInGame.SetActive(false);
+            cancelButtonBuild.SetActive(true);
         }
 
-            else if (oil >= building.cost && !buildingMode && building.gold_OR_oil)
-            {
+        else if (oil >= building.cost && !buildingMode && building.gold_OR_oil)
+        {
 
-                buildingMode = true;
-                buildingToPlace = building;
-                grid.SetActive(true);
-                canvasInGame.SetActive(false);
-                cancelButtonBuild.SetActive(true);
+            buildingMode = true;
+            buildingToPlace = building;
+            grid.SetActive(true);
+            canvasInGame.SetActive(false);
+            cancelButtonBuild.SetActive(true);
         }
 
         _building = building;

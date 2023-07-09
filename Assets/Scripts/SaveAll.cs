@@ -8,7 +8,7 @@ public class SaveAll : MonoBehaviour
 {
 
     private GameManager gameManager;
-    
+
 
     string filePath;
 
@@ -31,7 +31,7 @@ public class SaveAll : MonoBehaviour
 
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        filePath = Application.persistentDataPath  + "/WildWest.sv";
+        filePath = Application.persistentDataPath + "/WildWest.sv";
 
 
         if (DoLoad)
@@ -86,17 +86,18 @@ public class SaveAll : MonoBehaviour
                 Array.Resize(ref state.dataTimeForUpgrade, gameManager.buildings.Length);
                 Array.Resize(ref state.dataIsBuilt, gameManager.buildings.Length);
                 Array.Resize(ref state.dataFillAmountBar, gameManager.buildings.Length);
-                Array.Resize(ref state.dataCountMemory, gameManager.tiles.Length);
+                Array.Resize(ref state.dataCountHouseMemory, gameManager.buildings.Length);
 
                 Array.Resize(ref state.dataCountBuilding, prefabsHouse.Length);
                 Array.Resize(ref state.dataLimitBuilding, prefabsHouse.Length);
-
 
                 for (int j = 0; j < prefabsHouse.Length; j++)
                 {
                     state.dataCountBuilding[j] = prefabsHouse[j].GetComponent<Building>().countBuilding;
                     state.dataLimitBuilding[j] = prefabsHouse[j].GetComponent<Building>().limitBuilding;
                 }
+
+                state.dataCountHouseMemory[i] = gameManager.buildings[i].memoryCountHouse;
 
                 state.gameObjects[i] = gameManager.buildings[i].name;
 
@@ -110,15 +111,20 @@ public class SaveAll : MonoBehaviour
                 state.dataUpgradeGoldEarn[i] = gameManager.buildings[i].upgradeGoldEarn;
                 state.dataUpgradeNewMaxIncome[i] = gameManager.buildings[i].upgradeNewMaxIncome;
 
-                state.posX[i] = gameManager.tiles[state.indexTile[i]].transform.position.x; 
-                state.posY[i] = gameManager.tiles[state.indexTile[i]].transform.position.y;
+                state.posX[i] = gameManager.tiles[state.indexTile[gameManager.buildings[i].memoryCountHouse]].transform.position.x;
+                state.posY[i] = gameManager.tiles[state.indexTile[gameManager.buildings[i].memoryCountHouse]].transform.position.y;
 
-                state.dataCountMemory[i] = gameManager.buildings[i].memoryCountHouse;
 
-                state.isOccupped[i] = gameManager.tiles[state.dataCountMemory[i]].isOccuped;
-                if (!gameManager.buildings[i].isBuilt)
+
+                state.isOccupped[i] = gameManager.tiles[state.indexTile[i]].isOccuped;
+                try
                 {
                     state.dataTimeForUpgrade[i] = gameManager.buildings[i].constructionScript.timeStart;
+                }
+                catch (NullReferenceException)
+                {
+
+                    throw;
                 }
 
 
@@ -133,8 +139,8 @@ public class SaveAll : MonoBehaviour
 
         byte[] bytes = SerializationUtility.SerializeValue(this.state, DataFormat.Binary);
         File.WriteAllBytes(filePath, bytes);
-        
-        
+
+
 
     }
 
@@ -166,10 +172,10 @@ public class SaveAll : MonoBehaviour
 
                             var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i] + 0.3f, 0), Quaternion.identity);
                             houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
-                            houseObject.GetComponent<Building>().memoryCountHouse = state.dataCountMemory[i];
-
                             gameManager.buildings[i] = houseObject.GetComponent<Building>();
-                            houseObject.GetComponent<Building>().tile = gameManager.tiles[state.dataCountMemory[i]];
+
+                            gameManager.buildings[i].memoryCountHouse = state.dataCountHouseMemory[i];
+
                             gameManager.buildings[i].storage = state.dataStorage[i];
                             gameManager.buildings[i].income = state.dataIncome[i];
                             gameManager.buildings[i].maxIncome = state.dataMaxIncome[i];
@@ -182,11 +188,11 @@ public class SaveAll : MonoBehaviour
 
                             gameManager.buildings[i].constructionScript.timeStart = state.dataTimeForUpgrade[i];
 
-
+                            gameManager.buildings[i].tile = gameManager.tiles[state.indexTile[i]];
 
                             gameManager.buildings[i].isBuilt = state.dataIsBuilt[i];
 
-                            gameManager.tiles[state.dataCountMemory[i]].isOccuped = state.isOccupped[i];
+                            gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
 
                             prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
                             prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];
@@ -224,7 +230,7 @@ public class SaveAll : MonoBehaviour
                     count.storage = 0;
                 }
             }
-            
+
 
         }
 
@@ -254,8 +260,8 @@ public class Data
     public bool[] dataIsBuilt;
 
     public int[] dataCountBuilding;
+    public int[] dataCountHouseMemory;
     public int[] dataLimitBuilding;
-    public int[] dataCountMemory;
 
     public int[] dataUpgradeGoldEarn;
     public int[] dataUpgradeNewMaxIncome;

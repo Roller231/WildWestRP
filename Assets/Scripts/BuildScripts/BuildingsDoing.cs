@@ -9,6 +9,7 @@ public class BuildingsDoing : MonoBehaviour
 
     public bool onePlay = false;
     public bool isMoving = false;
+    bool setOne;
 
     private GameObject canvasSettingsNotGrind;
     private GameObject canvasSettingsYesGrind;
@@ -24,6 +25,8 @@ public class BuildingsDoing : MonoBehaviour
     [HideInInspector]
     public Button upgradeButton;
 
+    public Button cancelButtonEarn;
+    public Button cancelButton;
 
 
     public bool isOpen;
@@ -42,6 +45,9 @@ public class BuildingsDoing : MonoBehaviour
         claimButton = GameObject.Find("ClaimButton").GetComponent<Button>();
         upgradeButton = GameObject.FindGameObjectWithTag("UpgradeEarnButton").GetComponent<Button>();
 
+        cancelButton = GameObject.Find("CloseButtonHouse").GetComponent<Button>();
+        cancelButtonEarn = GameObject.Find("CloseButtonEarn").GetComponent<Button>(); 
+
     }
 
     private void Update()
@@ -54,10 +60,34 @@ public class BuildingsDoing : MonoBehaviour
 
         }
 
+        
+        if (!isOpen && !setOne)
+        {
 
+            onePlay = false;
+            setOne = true;
+
+            int l = 0;
+            foreach (var item in gameManager.buildings)
+            {
+                if (item.gameObject.GetComponent<BuildingsDoing>().onePlay == true)
+                {
+                    Debug.Log("s");
+                    foreach (Building t in gameManager.buildings)
+                    {
+                        t.GetComponent<BuildingsDoing>().onePlay = true;
+                    }
+                }
+                l++;
+            }
+        }
+        
 
 
     }
+
+
+
 
     public void PlayAnimationOnClick(Animator animator)
     {
@@ -65,12 +95,12 @@ public class BuildingsDoing : MonoBehaviour
         {
             if (!onePlay && !GameManager.buildingMode && buildingThis.isBuilt)
             {
-                isMoving = true;
+
 
                 if (!grindBuild)
                 {
                     canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
-
+                    cancelButton.onClick.AddListener(() => BackAllBuildings());
                 }
                 else if (grindBuild)
                 {
@@ -87,7 +117,8 @@ public class BuildingsDoing : MonoBehaviour
                     canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
                     claimButton.onClick.AddListener(() => SetStorageOnButton());
                     upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
-
+                    
+                    cancelButtonEarn.onClick.AddListener(() => BackAllBuildings());
 
 
 

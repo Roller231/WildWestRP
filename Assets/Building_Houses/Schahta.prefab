@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -71,7 +71,7 @@ MonoBehaviour:
   maxLevel: 3
   upgradeCost: 10
   limitBuilding: 44
-  countBuilding: 3
+  countBuilding: 0
   upgradeGoldEarn: 5
   upgradeNewMaxIncome: 10000
   upgradeTime: 5
@@ -81,9 +81,11 @@ MonoBehaviour:
   timeEarn: 2
   open: 0
   gold_OR_oil: 1
+  memoryCountHouse: 0
   tile: {fileID: 0}
   constructionScript: {fileID: 7544235257770099258}
   isBuilt: 0
+  nowMove: 0
 --- !u!114 &-273785919875891180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +102,8 @@ MonoBehaviour:
   isMoving: 0
   grindBuild: 1
   upgradeButton: {fileID: 0}
+  cancelButtonEarn: {fileID: 0}
+  cancelButton: {fileID: 0}
   isOpen: 0
 --- !u!114 &2299015597342019234
 MonoBehaviour:

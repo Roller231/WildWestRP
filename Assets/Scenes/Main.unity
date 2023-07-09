@@ -1250,7 +1250,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 136130237}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 270934674}
+        m_TargetAssemblyTypeName: MoveBuilding, Assembly-CSharp
+        m_MethodName: MoveBuildingVoid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &136130237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5791,8 +5803,8 @@ MonoBehaviour:
     dataTimeForUpgrade: []
     dataIsBuilt: 
     dataCountBuilding: 
+    dataCountHouseMemory: 
     dataLimitBuilding: 
-    dataCountMemory: 
     dataUpgradeGoldEarn: 
     dataUpgradeNewMaxIncome: 
     dataFillAmountBar: []
@@ -5814,7 +5826,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e19b3b9d76855064a9abae648ed25706, type: 3}
@@ -6110,18 +6122,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1690453405}
         m_TargetAssemblyTypeName: OpenBuildingSettings, Assembly-CSharp
         m_MethodName: DownCanvas
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2141400420}
-        m_TargetAssemblyTypeName: SetTextGold, Assembly-CSharp
-        m_MethodName: BackCanvasBuildings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9086,18 +9086,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1118128102}
         m_TargetAssemblyTypeName: OpenBuildingSettings, Assembly-CSharp
         m_MethodName: DownCanvas
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2141400420}
-        m_TargetAssemblyTypeName: SetTextGold, Assembly-CSharp
-        m_MethodName: BackCanvasBuildings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24798,7 +24786,6 @@ MonoBehaviour:
   buildings: []
   saveAll: {fileID: 519420035}
   countHouses: 0
-  setNewTile: 0
 --- !u!1 &1920663436
 GameObject:
   m_ObjectHideFlags: 0

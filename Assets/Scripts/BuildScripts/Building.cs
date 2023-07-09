@@ -38,4 +38,6 @@ public class Building : SerializedMonoBehaviour
     public ConstructionScript constructionScript;
     public bool isBuilt;
 
+    public bool nowMove;
+
 }

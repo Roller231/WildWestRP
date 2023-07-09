@@ -532,9 +532,11 @@ MonoBehaviour:
   timeEarn: 2
   open: 0
   gold_OR_oil: 0
+  memoryCountHouse: 0
   tile: {fileID: 0}
   constructionScript: {fileID: 4612163484090663925}
   isBuilt: 0
+  nowMove: 0
 --- !u!114 &2906757360307730004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +553,8 @@ MonoBehaviour:
   isMoving: 0
   grindBuild: 1
   upgradeButton: {fileID: 0}
+  cancelButtonEarn: {fileID: 0}
+  cancelButton: {fileID: 0}
   isOpen: 0
 --- !u!114 &1121024742721722786
 MonoBehaviour:
