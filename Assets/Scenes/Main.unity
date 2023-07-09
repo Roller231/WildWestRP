@@ -5699,11 +5699,11 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420038}
   - component: {fileID: 519420036}
   - component: {fileID: 519420029}
   - component: {fileID: 519420034}
   - component: {fileID: 519420037}
-  - component: {fileID: 519420038}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -24015,7 +24015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18063345dad4dc44a1e9d43a571afaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNickname: Roller
+  playerNickname: "\u041B\u044B\u0441\u0430\u0447"
 --- !u!4 &1829880589
 Transform:
   m_ObjectHideFlags: 0

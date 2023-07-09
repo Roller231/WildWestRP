@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Database;
+using System;
 
 public class DB : MonoBehaviour
 {
@@ -83,17 +84,31 @@ public class DB : MonoBehaviour
         {
             Debug.LogError(user.Exception);
         }
+
+
         else if(user.Result == null)
         {
             Debug.Log("Null");
         }
+
+
         else
         {
             DataSnapshot snapshot = user.Result;
 
             gameManager.gold = int.Parse(snapshot.Child("dataGold").Value.ToString());
             gameManager.oil = int.Parse(snapshot.Child("dataOil").Value.ToString());
-            Debug.Log(snapshot.Child("dataGold").Value);
+            playerInfo.playerNickname = snapshot.Child("dataNickname").Value.ToString();
+
+            //gameOjects
+            List<string> gameObjectsList = new List<string>();
+            foreach (var childSnapshot in snapshot.Child("gameObjects").Children)
+            {
+                gameObjectsList.Add(childSnapshot.Value.ToString());
+            }
+            string[] gameObjectsArray = gameObjectsList.ToArray();
+            gameManager.countHouses = gameObjectsArray.Length;
+
         }
     }
 }

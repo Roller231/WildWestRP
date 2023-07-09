@@ -147,7 +147,6 @@ public class SaveAll : MonoBehaviour
             byte[] bytes = File.ReadAllBytes(filePath);
             this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
             
-            playerInfo.playerNickname = state.dataNick;
 
             for (int i = 0; i < state.gameObjects.Length; i++)
             {
@@ -159,7 +158,7 @@ public class SaveAll : MonoBehaviour
                         if (state.gameObjects[i] == prefabsHouse[j].name + "(Clone)")
                         {
                             Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
-                            gameManager.countHouses = state.gameObjects.Length;
+
 
 
 
