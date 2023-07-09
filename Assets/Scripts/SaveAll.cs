@@ -117,15 +117,8 @@ public class SaveAll : MonoBehaviour
 
 
                 state.isOccupped[i] = gameManager.tiles[state.indexTile[i]].isOccuped;
-                try
-                {
-                    state.dataTimeForUpgrade[i] = gameManager.buildings[i].constructionScript.timeStart;
-                }
-                catch (NullReferenceException)
-                {
 
-                    throw;
-                }
+                    state.dataTimeForUpgrade[i] = gameManager.buildings[i].constructionScript.timeStart;
 
 
 

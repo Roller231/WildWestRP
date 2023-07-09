@@ -78,6 +78,7 @@ public class MoveBuilding : MonoBehaviour
 
                 GameManager.buildingMode = false;
                 _building.nowMove = nowMoving = false;
+                _building.GetComponent<BuildingsDoing>().BackAllBuildings();
                 
             }
         }
