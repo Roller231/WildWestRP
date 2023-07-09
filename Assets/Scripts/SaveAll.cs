@@ -8,7 +8,7 @@ public class SaveAll : MonoBehaviour
 {
 
     private GameManager gameManager;
-
+    public PlayerInfo playerInfo;
 
     string filePath;
 
@@ -16,6 +16,7 @@ public class SaveAll : MonoBehaviour
     [SerializeField, HideInInspector]
     public Data state = new Data();
 
+    public DB dB;
 
     public GameObject[] prefabsHouse;
 
@@ -63,8 +64,8 @@ public class SaveAll : MonoBehaviour
 
     public void SaveState(string filePath)
     {
-        state.dataGold = gameManager.gold;
-        state.dataOil = gameManager.oil;
+        state.dataNick = playerInfo.playerNickname;
+
 
         for (int i = 0; i < gameManager.buildings.Length; i++)
         {
@@ -145,8 +146,8 @@ public class SaveAll : MonoBehaviour
 
             byte[] bytes = File.ReadAllBytes(filePath);
             this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
-            gameManager.gold = this.state.dataGold;
-            gameManager.oil = state.dataOil;
+            
+            playerInfo.playerNickname = state.dataNick;
 
             for (int i = 0; i < state.gameObjects.Length; i++)
             {
@@ -207,7 +208,6 @@ public class SaveAll : MonoBehaviour
         TimeSpan timePassed = DateTime.UtcNow - lastSaveTime;
         int secondsPassed = (int)timePassed.TotalSeconds;
         secondsPassed = Math.Clamp(secondsPassed, 0, 7 * 24 * 60 * 60);
-        Debug.Log(secondsPassed);
         foreach (var count in gameManager.buildings)
         {
             if (secondsPassed / 2 * count.income > count.maxIncome)
@@ -268,4 +268,6 @@ public class Data
     public bool[] isOccupped;
 
     public int[] indexTile;
+
+    public string dataNick;
 }

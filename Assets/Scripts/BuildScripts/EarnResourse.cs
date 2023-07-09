@@ -6,29 +6,43 @@ using UnityEngine;
 public class EarnResourse : MonoBehaviour
 {
 
-
-    public void OnEnable()
+    bool oneEarn = true;
+    public void Update()
     {
+        if (gameObject.activeSelf && oneEarn)
+        {
+            StartCoroutine(EarnGoldCoroutine());
+            oneEarn = false;
+        }
 
 
-        StartCoroutine(EarnGoldCoroutine());
 
-
-
+    }
+    private void OnEnable()
+    {
+        oneEarn = true;
     }
     public IEnumerator EarnGoldCoroutine()
     {
         //Print the time of when the function is first called.
         //Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(gameObject.GetComponent<Building>().timeEarn);
-        if (gameObject.GetComponent<Building>().storage < gameObject.GetComponent<Building>().maxIncome)
+        try
         {
-            gameObject.GetComponent<Building>().storage += gameObject.GetComponent<Building>().income;
+
+            if (gameObject.GetComponent<Building>().storage < gameObject.GetComponent<Building>().maxIncome)
+            {
+                gameObject.GetComponent<Building>().storage += gameObject.GetComponent<Building>().income;
+            }
+
+            StartCoroutine(EarnGoldCoroutine());
+        }
+        catch (Exception)
+        {
+
+            
         }
 
-        StartCoroutine(EarnGoldCoroutine());
 
     }
 }

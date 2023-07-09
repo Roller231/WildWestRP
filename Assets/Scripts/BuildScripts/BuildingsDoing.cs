@@ -176,7 +176,7 @@ public class BuildingsDoing : MonoBehaviour
         catch (NullReferenceException)
         {
 
-            Debug.Log("catch");
+            
         }
 
     }
