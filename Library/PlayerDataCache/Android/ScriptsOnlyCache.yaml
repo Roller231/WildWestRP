@@ -224,71 +224,71 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1616}
     - Class: 114
-      Script: {instanceID: 1690}
+      Script: {instanceID: 1692}
     - Class: 114
-      Script: {instanceID: 1808}
+      Script: {instanceID: 1810}
     - Class: 114
-      Script: {instanceID: 1872}
+      Script: {instanceID: 1874}
     - Class: 114
-      Script: {instanceID: 1964}
+      Script: {instanceID: 1966}
     - Class: 114
-      Script: {instanceID: 2332}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 2462}
+      Script: {instanceID: 2464}
     - Class: 114
-      Script: {instanceID: 2624}
+      Script: {instanceID: 2626}
     - Class: 114
-      Script: {instanceID: 2718}
+      Script: {instanceID: 2720}
     - Class: 114
-      Script: {instanceID: 2754}
+      Script: {instanceID: 2756}
     - Class: 114
-      Script: {instanceID: 2880}
+      Script: {instanceID: 2882}
     - Class: 114
-      Script: {instanceID: 2942}
+      Script: {instanceID: 2944}
     - Class: 114
-      Script: {instanceID: 3140}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 3198}
+      Script: {instanceID: 3200}
     - Class: 114
-      Script: {instanceID: 3400}
+      Script: {instanceID: 3402}
     - Class: 114
-      Script: {instanceID: 3504}
+      Script: {instanceID: 3506}
     - Class: 114
-      Script: {instanceID: 3722}
+      Script: {instanceID: 3724}
     - Class: 114
-      Script: {instanceID: 3728}
+      Script: {instanceID: 3730}
     - Class: 114
-      Script: {instanceID: 4040}
+      Script: {instanceID: 4042}
     - Class: 114
-      Script: {instanceID: 4048}
+      Script: {instanceID: 4050}
     - Class: 114
-      Script: {instanceID: 4108}
+      Script: {instanceID: 4110}
     - Class: 114
-      Script: {instanceID: 4184}
+      Script: {instanceID: 4186}
     - Class: 114
-      Script: {instanceID: 4206}
+      Script: {instanceID: 4208}
     - Class: 114
-      Script: {instanceID: 4278}
+      Script: {instanceID: 4280}
     - Class: 114
-      Script: {instanceID: 4350}
+      Script: {instanceID: 4352}
     - Class: 114
-      Script: {instanceID: 4446}
+      Script: {instanceID: 4448}
     - Class: 114
-      Script: {instanceID: 4530}
+      Script: {instanceID: 4532}
     - Class: 114
-      Script: {instanceID: 4600}
+      Script: {instanceID: 4602}
     - Class: 114
-      Script: {instanceID: 4624}
+      Script: {instanceID: 4626}
     - Class: 114
-      Script: {instanceID: 4678}
+      Script: {instanceID: 4680}
     - Class: 114
-      Script: {instanceID: 5240}
+      Script: {instanceID: 5242}
     - Class: 114
-      Script: {instanceID: 5498}
+      Script: {instanceID: 5500}
     - Class: 114
-      Script: {instanceID: 5518}
+      Script: {instanceID: 5520}
     - Class: 114
-      Script: {instanceID: 5592}
+      Script: {instanceID: 5594}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -337,27 +337,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1616}
     - Class: 114
-      Script: {instanceID: 1896}
+      Script: {instanceID: 1898}
     - Class: 114
-      Script: {instanceID: 1964}
+      Script: {instanceID: 1966}
     - Class: 114
-      Script: {instanceID: 2328}
+      Script: {instanceID: 2330}
     - Class: 114
-      Script: {instanceID: 2332}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 2754}
+      Script: {instanceID: 2756}
     - Class: 114
-      Script: {instanceID: 2880}
+      Script: {instanceID: 2882}
     - Class: 114
-      Script: {instanceID: 3140}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 3400}
+      Script: {instanceID: 3402}
     - Class: 114
-      Script: {instanceID: 3504}
+      Script: {instanceID: 3506}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4758}
     - Class: 114
-      Script: {instanceID: 5090}
+      Script: {instanceID: 5092}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1081,4 +1081,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Main.unity
-  playerPath: "C:/Users/\u043A\u0443\u043A\u043E\u043B\u0434/Desktop/BuildWithFirebase.apk"
+  playerPath: E:/BuildWithFirebase.apk

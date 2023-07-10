@@ -6033,7 +6033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1916821932}
   saveAll: {fileID: 519420035}
-  DoLoad: 0
+  DoLoad: 1
   oneLoad: 0
   oneSave: 1
   playerInfo: {fileID: 1829880588}
@@ -11180,10 +11180,10 @@ RectTransform:
   m_Father: {fileID: 979462508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.8096, y: 1.9265}
-  m_SizeDelta: {x: 770.691, y: 98.9957}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 58}
+  m_SizeDelta: {x: -31.309021, y: 98.9957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &914810786
 MonoBehaviour:
@@ -19180,8 +19180,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000028849, y: -135}
-  m_SizeDelta: {x: 157.4891, y: 140.4766}
+  m_AnchoredPosition: {x: 0, y: -113.92}
+  m_SizeDelta: {x: 157.48907, y: 132.70709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1534223240
 MonoBehaviour:
