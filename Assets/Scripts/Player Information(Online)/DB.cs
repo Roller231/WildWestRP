@@ -34,7 +34,7 @@ public class DB : MonoBehaviour
 
     IEnumerator SaveCoroutine()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         SaveStateFire();
         StartCoroutine(SaveCoroutine());
     }

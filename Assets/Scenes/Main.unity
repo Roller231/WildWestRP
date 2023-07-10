@@ -2250,6 +2250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 1602619887}
+  _building: {fileID: 0}
   nowMoving: 0
   canvasForHouse: {fileID: 1747247341}
   canvasInGame: {fileID: 2123348328}

@@ -109,6 +109,8 @@ public class BuildingsDoing : MonoBehaviour
                 {
                     canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
                     cancelButton.onClick.AddListener(() => BackAllBuildings());
+
+                    buildingThis.open = isOpen = true;
                 }
                 else if (grindBuild)
                 {
