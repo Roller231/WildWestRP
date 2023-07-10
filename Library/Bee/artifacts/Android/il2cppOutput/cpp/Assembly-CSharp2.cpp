@@ -23053,9 +23053,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ConstructionScript_Update_mAFDEB7D70B473
 		L_5 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972((&V_0), NULL);
 		NullCheck(L_2);
 		VirtualActionInvoker1< String_t* >::Invoke(66 /* System.Void TMPro.TMP_Text::set_text(System.String) */, L_2, L_5);
-		// if (timeStart <= 0 || doingBuild.gameObject.GetComponent<Building>().isBuilt)
+		// if (timeStart < 1 || doingBuild.gameObject.GetComponent<Building>().isBuilt)
 		float L_6 = __this->___timeStart_4;
-		if ((((float)L_6) <= ((float)(0.0f))))
+		if ((((float)L_6) < ((float)(1.0f))))
 		{
 			goto IL_0054;
 		}

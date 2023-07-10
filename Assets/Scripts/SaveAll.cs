@@ -60,8 +60,6 @@ public class SaveAll : MonoBehaviour
 
     public void SaveState(string filePath)
     {
-        state.dataGold = gameManager.gold;
-        state.dataOil = gameManager.oil;
 
         for (int i = 0; i < gameManager.buildings.Length; i++)
         {
@@ -129,8 +127,8 @@ public class SaveAll : MonoBehaviour
             }
         }
 
-        byte[] bytes = SerializationUtility.SerializeValue(this.state, DataFormat.Binary);
-        File.WriteAllBytes(filePath, bytes);
+
+
 
 
 
@@ -138,6 +136,60 @@ public class SaveAll : MonoBehaviour
 
     public void LoadState()
     {
+
+        
+
+        for (int i = 0; i < state.gameObjects.Length; i++)
+        {
+
+            if (state.gameObjects[i] != null)
+            {
+                for (int j = 0; j < prefabsHouse.Length; j++)
+                {
+                    if (state.gameObjects[i] == prefabsHouse[j].name + "(Clone)")
+                    {
+
+
+                        Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
+                        gameManager.countHouses = state.gameObjects.Length;
+
+
+
+
+                        var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i] + 0.3f, 0), Quaternion.identity);
+                        houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
+                        gameManager.buildings[i] = houseObject.GetComponent<Building>();
+
+                        gameManager.buildings[i].memoryCountHouse = state.dataCountHouseMemory[i];
+
+                        gameManager.buildings[i].storage = state.dataStorage[i];
+                        gameManager.buildings[i].income = state.dataIncome[i];
+                        gameManager.buildings[i].maxIncome = state.dataMaxIncome[i];
+                        gameManager.buildings[i].level = state.dataLevel[i];
+                        gameManager.buildings[i].upgradeCost = state.dataUpgradeCost[i];
+                        gameManager.buildings[i].timeEarn = state.dataTimeEarn[i];
+
+                        gameManager.buildings[i].upgradeGoldEarn = state.dataUpgradeGoldEarn[i];
+                        gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
+
+                        gameManager.buildings[i].constructionScript.timeStart = state.dataTimeForUpgrade[i];
+
+                        gameManager.buildings[i].tile = gameManager.tiles[state.indexTile[i]];
+
+                        gameManager.buildings[i].isBuilt = state.dataIsBuilt[i];
+
+                        gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
+
+                        prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
+                        prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];
+
+                    }
+                }
+
+            }
+
+        }
+    
 
 
         DateTime lastSaveTime = UtilScripts.GetDateTime("LastSaveTime", DateTime.UtcNow);
@@ -160,16 +212,16 @@ public class SaveAll : MonoBehaviour
                     count.storage = 0;
                 }
             }
-
-
         }
+
+    }
 
 
     }
 
 
 
-}
+
 
 
 

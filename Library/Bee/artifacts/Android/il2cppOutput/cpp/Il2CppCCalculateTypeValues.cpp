@@ -3008,8 +3008,8 @@ struct ColorTweenCallback_tBE6685495BFEE2763BED5BF7EFC9571F7F1D724E;
 struct StateChanged_t6DC116251B1ED50EC475CFF0195AB6625478485F;
 // System.Reflection.CustomAttributeData/LazyCAttrData
 struct LazyCAttrData_t4F8036F83C070762609DB213B69F7FAA2D34ACA3;
-// DB/<>c__DisplayClass9_0
-struct U3CU3Ec__DisplayClass9_0_t3E0E904824D444C4C8FBAF45F15D471F101C7C1D;
+// DB/<>c__DisplayClass13_0
+struct U3CU3Ec__DisplayClass13_0_t460F79D15B44EE158906486D5E1DDD24B89C85EA;
 // Firebase.Database.DataSnapshot/DataSnapshotList
 struct DataSnapshotList_t507B53E9191BB3AF6C5884F76D37DDE0FA99B5C7;
 // Firebase.Database.DatabaseInternalPINVOKE/SWIGExceptionHelper
@@ -11982,34 +11982,34 @@ struct ContextRestoreSink_t90408F45E2600D80B18822634394D557CEB71F95  : public Ru
 	RuntimeObject* ____call_2;
 };
 
-// DB/<>c__DisplayClass9_0
-struct U3CU3Ec__DisplayClass9_0_t3E0E904824D444C4C8FBAF45F15D471F101C7C1D  : public RuntimeObject
+// DB/<>c__DisplayClass13_0
+struct U3CU3Ec__DisplayClass13_0_t460F79D15B44EE158906486D5E1DDD24B89C85EA  : public RuntimeObject
 {
-	// System.Threading.Tasks.Task`1<Firebase.Database.DataSnapshot> DB/<>c__DisplayClass9_0::user
+	// System.Threading.Tasks.Task`1<Firebase.Database.DataSnapshot> DB/<>c__DisplayClass13_0::user
 	Task_1_tEF384421AF949B7843F34F35E8C31D2400026E50* ___user_0;
 };
 
-// DB/<LoadStateFire>d__9
-struct U3CLoadStateFireU3Ed__9_t6947B8846D320D917E2A39BDEA204FD9289A2F20  : public RuntimeObject
+// DB/<LoadStateFire>d__13
+struct U3CLoadStateFireU3Ed__13_tED28C8530C8DC454B2893F2756ABBCF69E1445B0  : public RuntimeObject
 {
-	// System.Int32 DB/<LoadStateFire>d__9::<>1__state
+	// System.Int32 DB/<LoadStateFire>d__13::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object DB/<LoadStateFire>d__9::<>2__current
+	// System.Object DB/<LoadStateFire>d__13::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// DB DB/<LoadStateFire>d__9::<>4__this
+	// DB DB/<LoadStateFire>d__13::<>4__this
 	DB_tDCDD9426C82218F716C4EBA17033987B810A6DB3* ___U3CU3E4__this_2;
-	// DB/<>c__DisplayClass9_0 DB/<LoadStateFire>d__9::<>8__1
-	U3CU3Ec__DisplayClass9_0_t3E0E904824D444C4C8FBAF45F15D471F101C7C1D* ___U3CU3E8__1_3;
+	// DB/<>c__DisplayClass13_0 DB/<LoadStateFire>d__13::<>8__1
+	U3CU3Ec__DisplayClass13_0_t460F79D15B44EE158906486D5E1DDD24B89C85EA* ___U3CU3E8__1_3;
 };
 
-// DB/<SaveCoroutine>d__7
-struct U3CSaveCoroutineU3Ed__7_t6AD40E697F64883E56063489218E3C356F70D138  : public RuntimeObject
+// DB/<SaveCoroutine>d__11
+struct U3CSaveCoroutineU3Ed__11_tCA461184960BCEA021556308D150A66869A7BE4F  : public RuntimeObject
 {
-	// System.Int32 DB/<SaveCoroutine>d__7::<>1__state
+	// System.Int32 DB/<SaveCoroutine>d__11::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object DB/<SaveCoroutine>d__7::<>2__current
+	// System.Object DB/<SaveCoroutine>d__11::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// DB DB/<SaveCoroutine>d__7::<>4__this
+	// DB DB/<SaveCoroutine>d__11::<>4__this
 	DB_tDCDD9426C82218F716C4EBA17033987B810A6DB3* ___U3CU3E4__this_2;
 };
 
@@ -46025,12 +46025,18 @@ struct DB_tDCDD9426C82218F716C4EBA17033987B810A6DB3  : public MonoBehaviour_t532
 	SaveAll_t566BC10313A37E1B6EF78473AEF3DEF4F7946D01* ___saveAll_5;
 	// System.Boolean DB::DoLoad
 	bool ___DoLoad_6;
+	// System.Boolean DB::oneLoad
+	bool ___oneLoad_7;
+	// System.Boolean DB::oneSave
+	bool ___oneSave_8;
 	// Firebase.Database.DatabaseReference DB::dbRef
-	DatabaseReference_tD6F9941BEAE8109991B814490DA64099EECBFA6D* ___dbRef_7;
+	DatabaseReference_tD6F9941BEAE8109991B814490DA64099EECBFA6D* ___dbRef_9;
 	// PlayerInfo DB::playerInfo
-	PlayerInfo_tC66DD3EB75091432EAF7085658AC2B0065A41223* ___playerInfo_8;
+	PlayerInfo_tC66DD3EB75091432EAF7085658AC2B0065A41223* ___playerInfo_10;
 	// System.String DB::filePath
-	String_t* ___filePath_9;
+	String_t* ___filePath_11;
+	// System.Single DB::time
+	float ___time_12;
 };
 
 // UnityEngine.UIElements.DropdownField
@@ -46653,6 +46659,16 @@ struct PlayerInfo_tC66DD3EB75091432EAF7085658AC2B0065A41223  : public MonoBehavi
 {
 	// System.String PlayerInfo::playerNickname
 	String_t* ___playerNickname_4;
+	// System.Boolean PlayerInfo::newUser
+	bool ___newUser_5;
+	// System.Boolean PlayerInfo::haveName
+	bool ___haveName_6;
+	// UnityEngine.UI.Text PlayerInfo::inputField
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___inputField_7;
+	// UnityEngine.GameObject PlayerInfo::inputPanel
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___inputPanel_8;
+	// DB PlayerInfo::dB
+	DB_tDCDD9426C82218F716C4EBA17033987B810A6DB3* ___dB_9;
 };
 
 // UnityEngine.PolygonCollider2D
@@ -55307,17 +55323,17 @@ struct WindowsConsole_tB86E0FCA935FA2C612E2EE8A0153781E4023D17D_StaticFields
 
 // System.Runtime.Remoting.Contexts.CrossContextChannel/ContextRestoreSink
 
-// DB/<>c__DisplayClass9_0
+// DB/<>c__DisplayClass13_0
 
-// DB/<>c__DisplayClass9_0
+// DB/<>c__DisplayClass13_0
 
-// DB/<LoadStateFire>d__9
+// DB/<LoadStateFire>d__13
 
-// DB/<LoadStateFire>d__9
+// DB/<LoadStateFire>d__13
 
-// DB/<SaveCoroutine>d__7
+// DB/<SaveCoroutine>d__11
 
-// DB/<SaveCoroutine>d__7
+// DB/<SaveCoroutine>d__11
 
 // Firebase.Database.DataSnapshot/DataSnapshotEnumerator
 
@@ -76604,11 +76620,11 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize3442 = { sizeof(PanZoom_t1DE
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3443;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3443 = { sizeof(Tile_t192D2F5511792792FB74C37341AFAA9F6B77AE64), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3444;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3444 = { sizeof(U3CSaveCoroutineU3Ed__7_t6AD40E697F64883E56063489218E3C356F70D138), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3444 = { sizeof(U3CSaveCoroutineU3Ed__11_tCA461184960BCEA021556308D150A66869A7BE4F), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3445;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3445 = { sizeof(U3CU3Ec__DisplayClass9_0_t3E0E904824D444C4C8FBAF45F15D471F101C7C1D), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3445 = { sizeof(U3CU3Ec__DisplayClass13_0_t460F79D15B44EE158906486D5E1DDD24B89C85EA), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3446;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3446 = { sizeof(U3CLoadStateFireU3Ed__9_t6947B8846D320D917E2A39BDEA204FD9289A2F20), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3446 = { sizeof(U3CLoadStateFireU3Ed__13_tED28C8530C8DC454B2893F2756ABBCF69E1445B0), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3447;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3447 = { sizeof(DB_tDCDD9426C82218F716C4EBA17033987B810A6DB3), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3448;

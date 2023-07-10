@@ -29,7 +29,7 @@ public class ConstructionScript : MonoBehaviour
         timeStart -= Time.deltaTime;
         
         timeText.text = Mathf.Round(timeStart).ToString();
-        if (timeStart <= 0 || doingBuild.gameObject.GetComponent<Building>().isBuilt)
+        if (timeStart < 1 || doingBuild.gameObject.GetComponent<Building>().isBuilt)
         {
             SpawnBuildingTimeLeft();
 

@@ -63,6 +63,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
@@ -104,6 +105,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.FontData
+    - UnityEngine.UI.InputField/EndEditEvent
+    - UnityEngine.UI.InputField/OnChangeEvent
+    - UnityEngine.UI.InputField/SubmitEvent
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.ScrollRect/ScrollRectEvent
@@ -152,9 +156,6 @@ ScriptsOnlyBuild:
     fullTypeName: BuildingsDoing
     methodName: PlayAnimationOnClick
   - assembly: Assembly-CSharp
-    fullTypeName: MoveBuilding
-    methodName: MoveBuildingVoid
-  - assembly: Assembly-CSharp
     fullTypeName: OpenBuildingSettings
     methodName: DownCanvas
   - assembly: UnityEngine.CoreModule
@@ -179,14 +180,14 @@ ScriptsOnlyBuild:
     fullTypeName: OpenBuildingSettings
     methodName: DownCanvas
   - assembly: Assembly-CSharp
-    fullTypeName: MoveBuilding
-    methodName: MoveBuildingVoid
-  - assembly: Assembly-CSharp
     fullTypeName: OpenBuildingSettings
     methodName: DownCanvas
   - assembly: Assembly-CSharp
     fullTypeName: SetTextGold
     methodName: ClimeButtonFunc
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerInfo
+    methodName: SetNicknamefunc
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -246,6 +247,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2942}
     - Class: 114
       Script: {instanceID: 3140}
+    - Class: 114
+      Script: {instanceID: 3198}
     - Class: 114
       Script: {instanceID: 3400}
     - Class: 114
@@ -902,7 +905,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 91b22b645f16a4fba00d0a7ede19f968
+      Hash: 04195bf3974c6e9df96022a74642e72a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DB
@@ -926,7 +929,7 @@ ScriptsOnlyBuild:
     className: PathSplinePerformance
   - hash:
       serializedVersion: 2
-      Hash: dc6c495558236ae72388bdb01ea2836e
+      Hash: 0a1fc7debd82db8936a398d23cd40716
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerInfo
