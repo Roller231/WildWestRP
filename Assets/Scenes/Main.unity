@@ -5805,7 +5805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbf9d110af904449bc244a8e6dd5d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInfo: {fileID: 1829880588}
+  filePath: 
   state:
     dataGold: 0
     dataStorage: 
@@ -5828,7 +5828,6 @@ MonoBehaviour:
     isOccupped: 
     indexTile: 
     dataNick: 
-  dB: {fileID: 519420038}
   prefabsHouse:
   - {fileID: 7572353982424131600, guid: 3db32998fbee3954cb5f33db9f91246a, type: 3}
   - {fileID: 930748836087887078, guid: cbd6f27f1a78b4e4bb9bbc685b5ede83, type: 3}
@@ -5964,6 +5963,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1916821932}
+  saveAll: {fileID: 519420035}
+  DoLoad: 1
   playerInfo: {fileID: 1829880588}
 --- !u!1 &525958240
 GameObject:

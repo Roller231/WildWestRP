@@ -14,9 +14,9 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 22
+        minSdkVersion 23
         targetSdkVersion 30
-        applicationId 'com.DefaultCompany.WildWestRP'
+        applicationId 'com.Mystificationstudio.RiseOfWest'
         ndk {
             abiFilters 'armeabi-v7a'
         }
@@ -35,7 +35,7 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt')
             signingConfig signingConfigs.debug
             jniDebuggable true

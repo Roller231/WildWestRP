@@ -3,21 +3,26 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Building
     - BuildingsDoing
+    - ConstructionScript
+    - DB
     - EarnResourse
     - GameManager
+    - MoveBuilding
     - OpenBuildingSettings
     - OpenScene
     - PanZoom
+    - PlayerInfo
     - SaveAll
     - SetButtonInfo
+    - SetProgressBarBuilding
     - SetTextGold
     - ShopOpenClose
     - Tile
-    - constructionScript
     Unity.2D.Sprite.Editor.dll:
     - UnityEditor.U2D.Sprites.SpriteEditorWindow
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
@@ -37,13 +42,13 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    Unity.Timeline.Editor.dll:
-    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -149,6 +154,12 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: BuildingsDoing
     methodName: PlayAnimationOnClick
+  - assembly: Assembly-CSharp
+    fullTypeName: MoveBuilding
+    methodName: MoveBuildingVoid
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenBuildingSettings
+    methodName: DownCanvas
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -168,14 +179,14 @@ ScriptsOnlyBuild:
     fullTypeName: OpenBuildingSettings
     methodName: DownCanvas
   - assembly: Assembly-CSharp
-    fullTypeName: SetTextGold
-    methodName: BackCanvasBuildings
-  - assembly: Assembly-CSharp
     fullTypeName: OpenBuildingSettings
     methodName: DownCanvas
   - assembly: Assembly-CSharp
-    fullTypeName: SetTextGold
-    methodName: BackCanvasBuildings
+    fullTypeName: MoveBuilding
+    methodName: MoveBuildingVoid
+  - assembly: Assembly-CSharp
+    fullTypeName: OpenBuildingSettings
+    methodName: DownCanvas
   - assembly: Assembly-CSharp
     fullTypeName: SetTextGold
     methodName: ClimeButtonFunc
@@ -211,65 +222,73 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 660}
+      Script: {instanceID: 728}
     - Class: 114
-      Script: {instanceID: 1548}
+      Script: {instanceID: 1616}
     - Class: 114
-      Script: {instanceID: 1620}
+      Script: {instanceID: 1690}
     - Class: 114
-      Script: {instanceID: 1738}
+      Script: {instanceID: 1808}
     - Class: 114
-      Script: {instanceID: 1802}
+      Script: {instanceID: 1872}
     - Class: 114
-      Script: {instanceID: 1892}
+      Script: {instanceID: 1964}
     - Class: 114
-      Script: {instanceID: 2254}
+      Script: {instanceID: 2332}
     - Class: 114
-      Script: {instanceID: 2378}
+      Script: {instanceID: 2462}
     - Class: 114
-      Script: {instanceID: 2628}
+      Script: {instanceID: 2624}
     - Class: 114
-      Script: {instanceID: 2662}
+      Script: {instanceID: 2718}
     - Class: 114
-      Script: {instanceID: 2790}
+      Script: {instanceID: 2754}
     - Class: 114
-      Script: {instanceID: 2850}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 3040}
+      Script: {instanceID: 2942}
     - Class: 114
-      Script: {instanceID: 3298}
+      Script: {instanceID: 3140}
     - Class: 114
-      Script: {instanceID: 3402}
+      Script: {instanceID: 3400}
     - Class: 114
-      Script: {instanceID: 3610}
+      Script: {instanceID: 3504}
     - Class: 114
-      Script: {instanceID: 3926}
+      Script: {instanceID: 3722}
     - Class: 114
-      Script: {instanceID: 3934}
+      Script: {instanceID: 3728}
     - Class: 114
-      Script: {instanceID: 3990}
+      Script: {instanceID: 4040}
     - Class: 114
-      Script: {instanceID: 4066}
+      Script: {instanceID: 4048}
     - Class: 114
-      Script: {instanceID: 4088}
+      Script: {instanceID: 4108}
     - Class: 114
-      Script: {instanceID: 4158}
+      Script: {instanceID: 4184}
     - Class: 114
-      Script: {instanceID: 4230}
+      Script: {instanceID: 4206}
     - Class: 114
-      Script: {instanceID: 4322}
+      Script: {instanceID: 4278}
     - Class: 114
-      Script: {instanceID: 4492}
+      Script: {instanceID: 4350}
     - Class: 114
-      Script: {instanceID: 4536}
+      Script: {instanceID: 4446}
     - Class: 114
-      Script: {instanceID: 5088}
+      Script: {instanceID: 4530}
     - Class: 114
-      Script: {instanceID: 5336}
+      Script: {instanceID: 4600}
     - Class: 114
-      Script: {instanceID: 5356}
+      Script: {instanceID: 4624}
     - Class: 114
-      Script: {instanceID: 5428}
+      Script: {instanceID: 4678}
+    - Class: 114
+      Script: {instanceID: 5240}
+    - Class: 114
+      Script: {instanceID: 5498}
+    - Class: 114
+      Script: {instanceID: 5518}
+    - Class: 114
+      Script: {instanceID: 5592}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -316,29 +335,29 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1548}
+      Script: {instanceID: 1616}
     - Class: 114
-      Script: {instanceID: 1824}
+      Script: {instanceID: 1896}
     - Class: 114
-      Script: {instanceID: 1892}
+      Script: {instanceID: 1964}
     - Class: 114
-      Script: {instanceID: 2250}
+      Script: {instanceID: 2328}
     - Class: 114
-      Script: {instanceID: 2254}
+      Script: {instanceID: 2332}
     - Class: 114
-      Script: {instanceID: 2662}
+      Script: {instanceID: 2754}
     - Class: 114
-      Script: {instanceID: 2790}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 3040}
+      Script: {instanceID: 3140}
     - Class: 114
-      Script: {instanceID: 3298}
+      Script: {instanceID: 3400}
     - Class: 114
-      Script: {instanceID: 3402}
+      Script: {instanceID: 3504}
     - Class: 114
-      Script: {instanceID: 4614}
+      Script: {instanceID: 4756}
     - Class: 114
-      Script: {instanceID: 4940}
+      Script: {instanceID: 5090}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -376,7 +395,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 38ac06aa1c25a33d4112db3cd7a08f67
+      Hash: bd9fa54ff012b82773407cfe9bcddab8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BuildingsDoing
@@ -520,6 +539,12 @@ ScriptsOnlyBuild:
     className: GeneralUISpace
   - hash:
       serializedVersion: 2
+      Hash: 09597dfcdc0395b6635e721ff04243db
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SetProgressBarBuilding
+  - hash:
+      serializedVersion: 2
       Hash: fec72c468248f068819336fc267049f4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -530,12 +555,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MoveBuilding
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -566,12 +585,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TestOnAndroidTouchs
   - hash:
       serializedVersion: 2
       Hash: 760787567e1b60d64a3e421ab83ee14a
@@ -700,6 +713,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Firebase.Platform.dll
+    namespaceName: Firebase.Platform
+    className: FirebaseMonoBehaviour
+  - hash:
+      serializedVersion: 2
       Hash: 40aeefc42dfa427357f3518925654d60
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -716,6 +735,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ContentSizeFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 00250cc8917c2baad55b8afb87448cf9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MoveBuilding
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -808,10 +833,10 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 72143ed894f091e48e2db540c225ffc5
+      Hash: f2338b721e008d032426ac4e724782f7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: constructionScript
+    className: ConstructionScript
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -826,7 +851,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 9fdccbf420434958bdc2a23473ec26b0
+      Hash: 1ce12db2949f82532aadc686a2081c6c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Building
@@ -880,6 +905,12 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+      Hash: 91b22b645f16a4fba00d0a7ede19f968
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DB
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -896,6 +927,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PathSplinePerformance
+  - hash:
+      serializedVersion: 2
+      Hash: dc6c495558236ae72388bdb01ea2836e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerInfo
   - hash:
       serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
@@ -1000,7 +1037,7 @@ ScriptsOnlyBuild:
     className: GeneralBasic
   - hash:
       serializedVersion: 2
-      Hash: 2bc2f713e8ad6a2c42ad1d3400453fa2
+      Hash: 5a61b79cdecac34e3cafa63068ae488d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SaveAll
@@ -1044,4 +1081,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Main.unity
-  playerPath: C:/rep-git/Builds/MiniBuild2.apk
+  playerPath: C:/rep-git/Builds/BuildWithFireBase.apk

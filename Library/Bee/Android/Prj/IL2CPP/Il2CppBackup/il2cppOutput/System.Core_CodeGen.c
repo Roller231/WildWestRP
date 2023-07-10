@@ -202,7 +202,8 @@ extern void Enumerable_Max_mF33848068459BE74BF534D16F6B678BB677EE704 (void);
 // 0x000000B7 T System.Collections.Generic.HashSet`1/Enumerator::get_Current()
 // 0x000000B8 System.Object System.Collections.Generic.HashSet`1/Enumerator::System.Collections.IEnumerator.get_Current()
 // 0x000000B9 System.Void System.Collections.Generic.HashSet`1/Enumerator::System.Collections.IEnumerator.Reset()
-static Il2CppMethodPointer s_methodPointers[185] = 
+// 0x000000BA System.Threading.Tasks.Task`1<TResult> System.Threading.Tasks.TaskExtensions::Unwrap(System.Threading.Tasks.Task`1<System.Threading.Tasks.Task`1<TResult>>)
+static Il2CppMethodPointer s_methodPointers[186] = 
 {
 	Error_ArgumentNull_m1141D2C9AF8AB6ACC45E7488789598C5283D4EEE,
 	Error_MoreThanOneMatch_mE8ABBCC1C5FBA4D7BBE5B0647992D20F005F7A97,
@@ -389,12 +390,13 @@ static Il2CppMethodPointer s_methodPointers[185] =
 	NULL,
 	NULL,
 	NULL,
+	NULL,
 };
-static const int32_t s_InvokerIndices[185] = 
+static const int32_t s_InvokerIndices[186] = 
 {
-	5566,
-	5790,
-	5790,
+	5663,
+	5889,
+	5889,
 	0,
 	0,
 	0,
@@ -427,8 +429,9 @@ static const int32_t s_InvokerIndices[185] =
 	0,
 	0,
 	0,
-	5508,
-	5508,
+	5599,
+	5599,
+	0,
 	0,
 	0,
 	0,
@@ -578,7 +581,7 @@ static const int32_t s_InvokerIndices[185] =
 	0,
 	0,
 };
-static const Il2CppTokenRangePair s_rgctxIndices[61] = 
+static const Il2CppTokenRangePair s_rgctxIndices[62] = 
 {
 	{ 0x02000004, { 142, 5 } },
 	{ 0x02000005, { 147, 13 } },
@@ -641,6 +644,7 @@ static const Il2CppTokenRangePair s_rgctxIndices[61] =
 	{ 0x0600004A, { 219, 3 } },
 	{ 0x0600004F, { 238, 3 } },
 	{ 0x06000080, { 296, 2 } },
+	{ 0x060000BA, { 378, 4 } },
 };
 extern const uint32_t g_rgctx_Iterator_1_tAFB7558C92D3848C170203685AA45B10B6035464;
 extern const uint32_t g_rgctx_Iterator_1_Where_mB33345A6D2213AB59B7B357292542E752C9AEEF2;
@@ -1020,7 +1024,11 @@ extern const uint32_t g_rgctx_T_t1A61667A2FF6D68BB3DAC186281F928B7ED2DB94;
 extern const uint32_t g_rgctx_IEqualityComparer_1_GetHashCode_mB43AB2E622EB30D675693CDC96CA5D836DE43336;
 extern const uint32_t g_rgctx_Enumerator_get_Current_m6F22509C5AEA1EA15942F7F9C9866256CB3EA347;
 extern const uint32_t g_rgctx_T_t6D22409F37413B725563BF484486F55FB7202BB8;
-static const Il2CppRGCTXDefinition s_rgctxValues[378] = 
+extern const uint32_t g_rgctx_Task_1_t469C83F4D45A95FDEBF803F34B9C5799CCFE87BC;
+extern const uint32_t g_rgctx_Task_1_get_Result_mF3C7FC01C2E5323C40953CC309EB9F123D198C64;
+extern const uint32_t g_rgctx_Task_FromCanceled_TisTResult_tDEC99DE5A2FCE1E0F89D438D15010530E50F66BA_mA744696BCE87DB77EA198527BAA6D7C7BADDC97C;
+extern const uint32_t g_rgctx_Task_CreateUnwrapPromise_TisTResult_tDEC99DE5A2FCE1E0F89D438D15010530E50F66BA_mC6FD58D47A69FFB032F6B8DA0D9727722780A9B9;
+static const Il2CppRGCTXDefinition s_rgctxValues[382] = 
 {
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_Iterator_1_tAFB7558C92D3848C170203685AA45B10B6035464 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Iterator_1_Where_mB33345A6D2213AB59B7B357292542E752C9AEEF2 },
@@ -1400,21 +1408,25 @@ static const Il2CppRGCTXDefinition s_rgctxValues[378] =
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_IEqualityComparer_1_GetHashCode_mB43AB2E622EB30D675693CDC96CA5D836DE43336 },
 	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Enumerator_get_Current_m6F22509C5AEA1EA15942F7F9C9866256CB3EA347 },
 	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_T_t6D22409F37413B725563BF484486F55FB7202BB8 },
+	{ (Il2CppRGCTXDataType)2, (const void *)&g_rgctx_Task_1_t469C83F4D45A95FDEBF803F34B9C5799CCFE87BC },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Task_1_get_Result_mF3C7FC01C2E5323C40953CC309EB9F123D198C64 },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Task_FromCanceled_TisTResult_tDEC99DE5A2FCE1E0F89D438D15010530E50F66BA_mA744696BCE87DB77EA198527BAA6D7C7BADDC97C },
+	{ (Il2CppRGCTXDataType)3, (const void *)&g_rgctx_Task_CreateUnwrapPromise_TisTResult_tDEC99DE5A2FCE1E0F89D438D15010530E50F66BA_mC6FD58D47A69FFB032F6B8DA0D9727722780A9B9 },
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_System_Core_CodeGenModule;
 const Il2CppCodeGenModule g_System_Core_CodeGenModule = 
 {
 	"System.Core.dll",
-	185,
+	186,
 	s_methodPointers,
 	0,
 	NULL,
 	s_InvokerIndices,
 	0,
 	NULL,
-	61,
+	62,
 	s_rgctxIndices,
-	378,
+	382,
 	s_rgctxValues,
 	NULL,
 	NULL, // module initializer,

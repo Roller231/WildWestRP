@@ -8,15 +8,14 @@ public class SaveAll : MonoBehaviour
 {
 
     private GameManager gameManager;
-    public PlayerInfo playerInfo;
 
-    string filePath;
+    [HideInInspector]
+    public string filePath;
 
 
     [SerializeField, HideInInspector]
     public Data state = new Data();
 
-    public DB dB;
 
     public GameObject[] prefabsHouse;
 
@@ -35,10 +34,7 @@ public class SaveAll : MonoBehaviour
         filePath = Application.persistentDataPath + "/WildWest.sv";
 
 
-        if (DoLoad)
-        {
-            LoadState(filePath);
-        }
+
 
         StartCoroutine(SaveCoroutine());
 
@@ -64,8 +60,8 @@ public class SaveAll : MonoBehaviour
 
     public void SaveState(string filePath)
     {
-        state.dataNick = playerInfo.playerNickname;
-
+        state.dataGold = gameManager.gold;
+        state.dataOil = gameManager.oil;
 
         for (int i = 0; i < gameManager.buildings.Length; i++)
         {
@@ -123,6 +119,8 @@ public class SaveAll : MonoBehaviour
 
 
 
+
+
                 state.dataIsBuilt[i] = gameManager.buildings[i].isBuilt;
 
 
@@ -138,75 +136,15 @@ public class SaveAll : MonoBehaviour
 
     }
 
-    public void LoadState(string filePath)
+    public void LoadState()
     {
-        try
-        {
-            if (!File.Exists(filePath)) return; // No state to load
 
-            byte[] bytes = File.ReadAllBytes(filePath);
-            this.state = SerializationUtility.DeserializeValue<Data>(bytes, DataFormat.Binary);
-            
-
-            for (int i = 0; i < state.gameObjects.Length; i++)
-            {
-
-                if (state.gameObjects[i] != null)
-                {
-                    for (int j = 0; j < prefabsHouse.Length; j++)
-                    {
-                        if (state.gameObjects[i] == prefabsHouse[j].name + "(Clone)")
-                        {
-                            Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
-
-
-
-
-
-                            var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i] + 0.3f, 0), Quaternion.identity);
-                            houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
-                            gameManager.buildings[i] = houseObject.GetComponent<Building>();
-
-                            gameManager.buildings[i].memoryCountHouse = state.dataCountHouseMemory[i];
-
-                            gameManager.buildings[i].storage = state.dataStorage[i];
-                            gameManager.buildings[i].income = state.dataIncome[i];
-                            gameManager.buildings[i].maxIncome = state.dataMaxIncome[i];
-                            gameManager.buildings[i].level = state.dataLevel[i];
-                            gameManager.buildings[i].upgradeCost = state.dataUpgradeCost[i];
-                            gameManager.buildings[i].timeEarn = state.dataTimeEarn[i];
-
-                            gameManager.buildings[i].upgradeGoldEarn = state.dataUpgradeGoldEarn[i];
-                            gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
-
-                            gameManager.buildings[i].constructionScript.timeStart = state.dataTimeForUpgrade[i];
-
-                            gameManager.buildings[i].tile = gameManager.tiles[state.indexTile[i]];
-
-                            gameManager.buildings[i].isBuilt = state.dataIsBuilt[i];
-
-                            gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
-
-                            prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
-                            prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];
-
-                        }
-                    }
-
-                }
-
-            }
-        }
-        catch (NullReferenceException)
-        {
-
-            Debug.Log("Havent save");
-        }
 
         DateTime lastSaveTime = UtilScripts.GetDateTime("LastSaveTime", DateTime.UtcNow);
         TimeSpan timePassed = DateTime.UtcNow - lastSaveTime;
         int secondsPassed = (int)timePassed.TotalSeconds;
         secondsPassed = Math.Clamp(secondsPassed, 0, 7 * 24 * 60 * 60);
+        Debug.Log(secondsPassed);
         foreach (var count in gameManager.buildings)
         {
             if (secondsPassed / 2 * count.income > count.maxIncome)

@@ -2,125 +2,174 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Database;
+using System.IO;
 using System;
 
 public class DB : MonoBehaviour
 {
     public GameManager gameManager;
+    public SaveAll saveAll;
+
+    public bool DoLoad;
 
     DatabaseReference dbRef;
 
-    [SerializeField] public PlayerInfo playerInfo;
+    [SerializeField]
+    public PlayerInfo playerInfo;
 
+    private string filePath;
 
-    void Start() 
+    void Start()
     {
         dbRef = FirebaseDatabase.DefaultInstance.RootReference;
+        filePath = Application.persistentDataPath + "/gameData.json";
 
-        StartCoroutine(LoadStateFire());
+        if (DoLoad)
+        {
+            StartCoroutine(LoadStateFire());
+        }
 
         StartCoroutine(SaveCoroutine());
-
-        
-
     }
-
-
 
     IEnumerator SaveCoroutine()
     {
-
-
-        yield return new WaitForSeconds(0.5f);
-
-
+        yield return new WaitForSeconds(1.5f);
         SaveStateFire();
-        
-
         StartCoroutine(SaveCoroutine());
-
     }
 
     public void SaveStateFire()
     {
-        UserInfo user = new UserInfo(gameManager.oil,
-    gameManager.gold,
-    gameManager.saveAll.state.dataStorage,
-    gameManager.saveAll.state.dataIncome,
- gameManager.saveAll.state.dataMaxIncome,
- gameManager.saveAll.state.dataLevel,
- gameManager.saveAll.state.dataUpgradeCost,
- gameManager.saveAll.state.dataTimeEarn,
- gameManager.saveAll.state.dataTimeForUpgrade,
- gameManager.saveAll.state.dataIsBuilt,
- gameManager.saveAll.state.dataCountBuilding,
- gameManager.saveAll.state.dataCountHouseMemory,
- gameManager.saveAll.state.dataLimitBuilding,
- gameManager.saveAll.state.dataUpgradeGoldEarn,
- gameManager.saveAll.state.dataUpgradeNewMaxIncome,
- gameManager.saveAll.state.dataFillAmountBar,
- gameManager.saveAll.state.gameObjects,
- gameManager.saveAll.state.posX,
- gameManager.saveAll.state.posY,
- gameManager.saveAll.state.isOccupped,
- gameManager.saveAll.state.indexTile,
+        GameData data = new GameData();
+        data.dataOil = gameManager.oil;
+        data.dataGold = gameManager.gold;
+        data.dataStorage = saveAll.state.dataStorage;
+        data.dataIncome = saveAll.state.dataIncome;
+        data.dataMaxIncome = saveAll.state.dataMaxIncome;
+        data.dataLevel = saveAll.state.dataLevel;
+        data.dataUpgradeCost = saveAll.state.dataUpgradeCost;
+        data.dataTimeEarn = saveAll.state.dataTimeEarn;
+        data.dataTimeForUpgrade = saveAll.state.dataTimeForUpgrade;
+        data.dataIsBuilt = saveAll.state.dataIsBuilt;
+        data.dataCountBuilding = saveAll.state.dataCountBuilding;
+        data.dataCountHouseMemory = saveAll.state.dataCountHouseMemory;
+        data.dataLimitBuilding = saveAll.state.dataLimitBuilding;
+        data.dataUpgradeGoldEarn = saveAll.state.dataUpgradeGoldEarn;
+        data.dataUpgradeNewMaxIncome = saveAll.state.dataUpgradeNewMaxIncome;
+        data.dataFillAmountBar = saveAll.state.dataFillAmountBar;
+        data.gameObjects = saveAll.state.gameObjects;
+        data.posX = saveAll.state.posX;
+        data.posY = saveAll.state.posY;
+        data.isOccupped = saveAll.state.isOccupped;
+        data.indexTile = saveAll.state.indexTile;
+        data.dataNick = saveAll.state.dataNick;
 
- playerInfo.playerNickname
- );
+        // Заполните остальные переменные из gameManager
 
-        string json = JsonUtility.ToJson(user);
+        // Сериализация данных в JSON
+        string json = JsonUtility.ToJson(data);
+
+        // Сохранение JSON-файла по указанному пути
+        File.WriteAllText(filePath, json);
+
+        // Сохранение данных в Firebase Realtime Database
         dbRef.Child("users").Child(playerInfo.playerNickname).SetRawJsonValueAsync(json);
     }
 
-
     IEnumerator LoadStateFire()
     {
-        
-        var user = dbRef.Child("users").Child(gameManager.saveAll.state.dataNick).GetValueAsync();
+        var user = dbRef.Child("users").Child(playerInfo.playerNickname).GetValueAsync();
 
         yield return new WaitUntil(predicate: () => user.IsCompleted);
 
-        if(user.Exception != null)
-        {
-            Debug.LogError(user.Exception);
-        }
-
-
-        else if(user.Result == null)
-        {
-            Debug.Log("Null");
-        }
-
-
-        else
+        try
         {
             DataSnapshot snapshot = user.Result;
 
-            gameManager.gold = int.Parse(snapshot.Child("dataGold").Value.ToString());
-            gameManager.oil = int.Parse(snapshot.Child("dataOil").Value.ToString());
-            playerInfo.playerNickname = snapshot.Child("dataNickname").Value.ToString();
-
-            //gameOjects
-            List<string> gameObjectsList = new List<string>();
-            foreach (var childSnapshot in snapshot.Child("gameObjects").Children)
+            // Загрузка JSON-файла по указанному пути
+            if (File.Exists(filePath))
             {
-                gameObjectsList.Add(childSnapshot.Value.ToString());
+                string json = File.ReadAllText(filePath);
+                GameData data = JsonUtility.FromJson<GameData>(json);
+
+                gameManager.oil = data.dataOil;
+                gameManager.gold = data.dataGold;
+                saveAll.state.indexTile = data.indexTile;
+
+
+                for (int i = 0; i < data.gameObjects.Length; i++)
+                {
+
+                    if (data.gameObjects[i] != null)
+                    {
+                        for (int j = 0; j < saveAll.prefabsHouse.Length; j++)
+                        {
+                            if (data.gameObjects[i] == saveAll.prefabsHouse[j].name + "(Clone)")
+                            {
+                                Array.Resize(ref gameManager.buildings, data.gameObjects.Length);
+                                gameManager.countHouses = data.gameObjects.Length;
+
+
+
+
+                                var houseObject = Instantiate(saveAll.prefabsHouse[j], new Vector3(data.posX[i], data.posY[i] + 0.3f, 0), Quaternion.identity);
+                                houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
+                                gameManager.buildings[i] = houseObject.GetComponent<Building>();
+
+                                gameManager.buildings[i].memoryCountHouse = data.dataCountHouseMemory[i];
+
+                                gameManager.buildings[i].storage = data.dataStorage[i];
+                                gameManager.buildings[i].income = data.dataIncome[i];
+                                gameManager.buildings[i].maxIncome = data.dataMaxIncome[i];
+                                gameManager.buildings[i].level = data.dataLevel[i];
+                                gameManager.buildings[i].upgradeCost = data.dataUpgradeCost[i];
+                                gameManager.buildings[i].timeEarn = data.dataTimeEarn[i];
+
+                                gameManager.buildings[i].upgradeGoldEarn = data.dataUpgradeGoldEarn[i];
+                                gameManager.buildings[i].upgradeNewMaxIncome = data.dataUpgradeNewMaxIncome[i];
+
+                                gameManager.buildings[i].constructionScript.timeStart = data.dataTimeForUpgrade[i];
+
+                                gameManager.buildings[i].tile = gameManager.tiles[data.indexTile[i]];
+
+                                gameManager.buildings[i].isBuilt = data.dataIsBuilt[i];
+
+                                gameManager.tiles[data.indexTile[i]].isOccuped = data.isOccupped[i];
+
+                                saveAll.prefabsHouse[j].GetComponent<Building>().countBuilding = data.dataCountBuilding[j];
+                                saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding = data.dataLimitBuilding[j];
+
+                            }
+                        }
+
+                    }
+
+                }
+
+
+
+
+
+
+                // Загрузите остальные переменные в gameManager
             }
-            string[] gameObjectsArray = gameObjectsList.ToArray();
-            gameManager.countHouses = gameObjectsArray.Length;
+
+            // Загрузка данных из Firebase Realtime Database
+            saveAll.LoadState();
+            // Загрузите остальные переменные из snapshot
+
+        }
+        catch (NullReferenceException)
+        {
 
         }
     }
 }
 
-
-
-
-
-
-
-//Класс с нужными значениями, которые заносятся в базу данных
-public class UserInfo
+// Класс с данными игры, который будет сериализоваться в JSON
+[System.Serializable]
+public class GameData
 {
     public int dataOil;
     public int dataGold;
@@ -133,9 +182,9 @@ public class UserInfo
     public float[] dataTimeForUpgrade;
     public bool[] dataIsBuilt;
 
-    public int[] dataCountbuildings;
+    public int[] dataCountBuilding;
     public int[] dataCountHouseMemory;
-    public int[] dataLimitbuildings;
+    public int[] dataLimitBuilding;
 
     public int[] dataUpgradeGoldEarn;
     public int[] dataUpgradeNewMaxIncome;
@@ -150,39 +199,7 @@ public class UserInfo
 
     public int[] indexTile;
 
-    //Player Info
-    public string dataNickname;
+    public string dataNick;
 
-    public UserInfo(int dataOil, int dataGold, int[] dataStorage, int[] dataIncome,
-        int[] dataMaxIncome, int[] dataLevel, int[] dataUpgradeCost, float[] dataTimeEarn, float[] dataTimeForUpgrade, 
-        bool[] dataIsBuilt, int[] dataCountbuildings, int[] dataCountHouseMemory, int[] dataLimitbuildings, int[] dataUpgradeGoldEarn, 
-        int[] dataUpgradeNewMaxIncome, float[] dataFillAmountBar, string[] gameObjects, float[] posX, float[] posY, bool[] isOccupped, 
-        int[] indexTile, string dataNickname)
-    {
-        this.dataOil = dataOil;
-        this.dataGold = dataGold;
-        this.dataStorage = dataStorage;
-        this.dataIncome = dataIncome;
-        this.dataMaxIncome = dataMaxIncome;
-        this.dataLevel = dataLevel;
-        this.dataUpgradeCost = dataUpgradeCost;
-        this.dataTimeEarn = dataTimeEarn;
-        this.dataTimeForUpgrade = dataTimeForUpgrade;
-        this.dataIsBuilt = dataIsBuilt;
-        this.dataCountbuildings = dataCountbuildings;
-        this.dataCountHouseMemory = dataCountHouseMemory;
-        this.dataLimitbuildings = dataLimitbuildings;
-        this.dataUpgradeGoldEarn = dataUpgradeGoldEarn;
-        this.dataUpgradeNewMaxIncome = dataUpgradeNewMaxIncome;
-        this.dataFillAmountBar = dataFillAmountBar;
-        this.gameObjects = gameObjects;
-        this.posX = posX;
-        this.posY = posY;
-        this.isOccupped = isOccupped;
-        this.indexTile = indexTile;
-
-        //Player info
-        this.dataNickname = dataNickname;
-    }
+    // Добавьте остальные переменные для сохранения и загрузки
 }
-
