@@ -60,27 +60,35 @@ public class BuildingsDoing : MonoBehaviour
 
         }
 
-        
-        if (!isOpen && !setOne)
+        try
         {
-
-            onePlay = false;
-            setOne = true;
-
-            int l = 0;
-            foreach (var item in gameManager.buildings)
+            if (!isOpen && !setOne)
             {
-                if (item.gameObject.GetComponent<BuildingsDoing>().onePlay == true)
+
+                onePlay = false;
+                setOne = true;
+
+                int l = 0;
+                foreach (var item in gameManager.buildings)
                 {
-                    Debug.Log("s");
-                    foreach (Building t in gameManager.buildings)
+                    if (item.gameObject.GetComponent<BuildingsDoing>().onePlay == true)
                     {
-                        t.GetComponent<BuildingsDoing>().onePlay = true;
+                        Debug.Log("s");
+                        foreach (Building t in gameManager.buildings)
+                        {
+                            t.GetComponent<BuildingsDoing>().onePlay = true;
+                        }
                     }
+                    l++;
                 }
-                l++;
             }
         }
+        catch (NullReferenceException)
+        {
+
+            
+        }
+
         
 
 
@@ -101,6 +109,8 @@ public class BuildingsDoing : MonoBehaviour
                 {
                     canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
                     cancelButton.onClick.AddListener(() => BackAllBuildings());
+
+                    buildingThis.open = isOpen = true;
                 }
                 else if (grindBuild)
                 {
@@ -176,7 +186,7 @@ public class BuildingsDoing : MonoBehaviour
         catch (NullReferenceException)
         {
 
-            Debug.Log("catch");
+            
         }
 
     }

@@ -10,7 +10,7 @@ public class MoveBuilding : MonoBehaviour
 
     public GameObject grid;
 
-    private Building _building;
+    public Building _building;
 
     private GameManager gameManager;
     public bool nowMoving;
@@ -33,9 +33,9 @@ public class MoveBuilding : MonoBehaviour
             {
                 Tile nearesTile = null;
                 float nearestDistance = float.MaxValue;
+            _building.GetComponent<BuildingsDoing>().BackAllBuildings();
 
-
-                foreach (Tile tile in gameManager.tiles)
+            foreach (Tile tile in gameManager.tiles)
                 {
 
                     float dist = Vector2.Distance(tile.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
@@ -78,6 +78,9 @@ public class MoveBuilding : MonoBehaviour
 
                 GameManager.buildingMode = false;
                 _building.nowMove = nowMoving = false;
+                _building.GetComponent<BuildingsDoing>().BackAllBuildings();
+
+
                 
             }
         }
@@ -96,5 +99,7 @@ public class MoveBuilding : MonoBehaviour
         GameManager.buildingMode = true;
         _building.gameObject.SetActive(false);
         _building.nowMove = nowMoving = true;
+
+        _building.GetComponent<BuildingsDoing>().BackAllBuildings();
     }
 }

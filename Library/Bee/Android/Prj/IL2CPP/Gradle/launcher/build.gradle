@@ -14,11 +14,11 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 22
+        minSdkVersion 23
         targetSdkVersion 30
-        applicationId 'com.DefaultCompany.WildWestRP'
+        applicationId 'com.Mystificationstudio.RiseOfWest'
         ndk {
-            abiFilters 'armeabi-v7a'
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
         versionCode 1
         versionName '0.1'
@@ -35,7 +35,7 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt')
             signingConfig signingConfigs.debug
             jniDebuggable true
@@ -49,6 +49,7 @@ android {
 
     packagingOptions {
         doNotStrip '*/armeabi-v7a/*.so'
+        doNotStrip '*/arm64-v8a/*.so'
     }
 
     bundle {

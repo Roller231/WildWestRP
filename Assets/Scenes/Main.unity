@@ -1180,7 +1180,7 @@ GameObject:
   - component: {fileID: 136130237}
   - component: {fileID: 136130236}
   m_Layer: 5
-  m_Name: InfoButton
+  m_Name: Move Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1254,6 +1254,18 @@ MonoBehaviour:
       - m_Target: {fileID: 270934674}
         m_TargetAssemblyTypeName: MoveBuilding, Assembly-CSharp
         m_MethodName: MoveBuildingVoid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1690453405}
+        m_TargetAssemblyTypeName: OpenBuildingSettings, Assembly-CSharp
+        m_MethodName: DownCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2238,6 +2250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 1602619887}
+  _building: {fileID: 0}
   nowMoving: 0
   canvasForHouse: {fileID: 1747247341}
   canvasInGame: {fileID: 2123348328}
@@ -2255,7 +2268,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &270934676
 MonoBehaviour:
@@ -4057,7 +4070,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &372967731
 MonoBehaviour:
@@ -5687,6 +5700,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420038}
   - component: {fileID: 519420036}
   - component: {fileID: 519420029}
   - component: {fileID: 519420034}
@@ -5792,6 +5806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbf9d110af904449bc244a8e6dd5d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  filePath: 
   state:
     dataGold: 0
     dataStorage: 
@@ -5813,6 +5828,7 @@ MonoBehaviour:
     posY: []
     isOccupped: 
     indexTile: 
+    dataNick: 
   prefabsHouse:
   - {fileID: 7572353982424131600, guid: 3db32998fbee3954cb5f33db9f91246a, type: 3}
   - {fileID: 930748836087887078, guid: cbd6f27f1a78b4e4bb9bbc685b5ede83, type: 3}
@@ -5935,6 +5951,22 @@ MonoBehaviour:
   bottomLimit: -7.8
   upperLimit: 7.72
   canvas: {fileID: 1747247344}
+--- !u!114 &519420038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111537d83f362ba4791fc2eb56add238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1916821932}
+  saveAll: {fileID: 519420035}
+  DoLoad: 1
+  playerInfo: {fileID: 1829880588}
 --- !u!1 &525958240
 GameObject:
   m_ObjectHideFlags: 0
@@ -14613,7 +14645,7 @@ GameObject:
   - component: {fileID: 1262835024}
   - component: {fileID: 1262835023}
   m_Layer: 5
-  m_Name: InfoButton
+  m_Name: Move Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14687,6 +14719,18 @@ MonoBehaviour:
       - m_Target: {fileID: 270934674}
         m_TargetAssemblyTypeName: MoveBuilding, Assembly-CSharp
         m_MethodName: MoveBuildingVoid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1118128102}
+        m_TargetAssemblyTypeName: OpenBuildingSettings, Assembly-CSharp
+        m_MethodName: DownCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18979,7 +19023,7 @@ Transform:
   m_Children:
   - {fileID: 1827949479}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1567885804
 GameObject:
@@ -19111,7 +19155,7 @@ Transform:
   m_Children:
   - {fileID: 1602619888}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1597204289
 GameObject:
@@ -20945,7 +20989,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -23944,6 +23988,51 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1829880587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1829880589}
+  - component: {fileID: 1829880588}
+  m_Layer: 0
+  m_Name: Player Information
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1829880588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829880587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18063345dad4dc44a1e9d43a571afaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNickname: "\u041B\u044B\u0441\u0430\u0447"
+--- !u!4 &1829880589
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829880587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8955126, y: 0.9932027, z: -39.11234}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1844726183 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4899542237575067581, guid: 8582ade987a79034caeeb0630e3a01a1,
@@ -27681,7 +27770,7 @@ RectTransform:
   - {fileID: 1690453404}
   - {fileID: 1118128100}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
