@@ -6,12 +6,17 @@ using UnityEngine.UI;
 public class PlayerInfo : MonoBehaviour
 {
     public string playerNickname;
+    public string pass;
     public bool newUser;
 
 
     public bool haveName;
+
     public Text inputField;
     public GameObject inputPanel;
+    public Text inputFieldPASS;
+
+
     public DB dB;
 
     private void Start()
@@ -37,11 +42,13 @@ public class PlayerInfo : MonoBehaviour
         newUser = true;
         inputPanel.SetActive(false);
         playerNickname = inputField.text;
+        pass = inputFieldPASS.text;
         haveName = true;
         dB.oneLoad = true;
         dB.oneSave = true;
 
         PlayerPrefs.SetString("dataNick", playerNickname);
+        PlayerPrefs.SetString("dataPass", pass);
         PlayerPrefs.Save();
 
     }

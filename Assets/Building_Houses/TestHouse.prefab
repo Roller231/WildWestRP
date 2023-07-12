@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28459fc6865478e429953bea1b826832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStart: 10
+  timeStart: 1
   timeMemory: 0
   timeText: {fileID: 1390169042727672010}
   imageBuild: {fileID: 3444890851059340703}
@@ -439,8 +439,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1.5042857, y: 1.5428572}
+  m_AnchoredPosition: {x: -0.000026755, y: -0.000015333}
+  m_SizeDelta: {x: 1.4849, y: 1.5541}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8108864948639870096
 MonoBehaviour:
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
