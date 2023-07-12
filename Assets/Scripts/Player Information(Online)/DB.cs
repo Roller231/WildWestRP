@@ -58,6 +58,7 @@ public class DB : MonoBehaviour
         if (DoLoad)
         {
             playerInfo.playerNickname = PlayerPrefs.GetString("dataNick");
+            playerInfo.pass = PlayerPrefs.GetString("dataPass");
 
         }
 
@@ -97,6 +98,7 @@ public class DB : MonoBehaviour
         data.isOccupped = saveAll.state.isOccupped;
         data.indexTile = saveAll.state.indexTile;
         data.dataNick = playerInfo.playerNickname;
+        data.pass = playerInfo.pass;
 
 
 
@@ -116,6 +118,7 @@ public class DB : MonoBehaviour
 
     IEnumerator LoadStateFire()
     {
+        
         var user = dbRef.Child("users").Child(playerInfo.playerNickname).GetValueAsync();
 
         yield return new WaitUntil(predicate: () => user.IsCompleted);
@@ -133,6 +136,8 @@ public class DB : MonoBehaviour
 
             gameManager.gold = int.Parse(snapshot.Child("dataGold").Value.ToString());
             gameManager.oil = int.Parse(snapshot.Child("dataOil").Value.ToString());
+            playerInfo.playerNickname = data.dataNick;
+            playerInfo.pass = data.pass;
 
             saveAll.state.gameObjects = data.gameObjects;
             saveAll.state.dataStorage = data.dataStorage;
@@ -154,6 +159,7 @@ public class DB : MonoBehaviour
             saveAll.state.posY = data.posY;
             saveAll.state.isOccupped = data.isOccupped;
            saveAll.state.indexTile = data.indexTile;
+
 
             saveAll.LoadState();
         }
@@ -207,7 +213,9 @@ public class GameData
 
     public int[] indexTile;
 
+    //Player Info
     public string dataNick;
+    public string pass;
 
     // Добавьте остальные переменные для сохранения и загрузки
 }

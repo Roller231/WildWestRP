@@ -94,7 +94,7 @@ public class MoveBuilding : MonoBehaviour
                 _building = build;
             }
         }
-        grid.SetActive(true );
+        grid.SetActive(true);
         _building.tile.isOccuped = false;
         GameManager.buildingMode = true;
         _building.gameObject.SetActive(false);
