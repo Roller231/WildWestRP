@@ -6045,7 +6045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1916821932}
   saveAll: {fileID: 519420035}
-  DoLoad: 0
+  DoLoad: 1
   oneLoad: 0
   oneSave: 1
   playerInfo: {fileID: 1829880588}
@@ -12040,13 +12040,14 @@ RectTransform:
   - {fileID: 914810785}
   - {fileID: 898331140}
   - {fileID: 1534223239}
+  - {fileID: 1886870710}
   m_Father: {fileID: 2141400418}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -22, y: 0}
-  m_SizeDelta: {x: -1117.6897, y: -628.7004}
+  m_AnchoredPosition: {x: -22, y: -1.619873}
+  m_SizeDelta: {x: -977.0803, y: -474.2604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &979462509
 MonoBehaviour:
@@ -19642,7 +19643,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1829880588}
         m_TargetAssemblyTypeName: PlayerInfo, Assembly-CSharp
-        m_MethodName: SetNicknamefunc
+        m_MethodName: SignUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24929,11 +24930,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNickname: 
   pass: 
-  newUser: 0
+  logined: 0
   haveName: 0
   inputField: {fileID: 716826785}
   inputPanel: {fileID: 979462507}
   inputFieldPASS: {fileID: 724848542}
+  erorText: {fileID: 1886870709}
   dB: {fileID: 519420038}
 --- !u!4 &1829880589
 Transform:
@@ -24962,6 +24964,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1886870709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1886870710}
+  - component: {fileID: 1886870713}
+  - component: {fileID: 1886870712}
+  - component: {fileID: 1886870711}
+  m_Layer: 5
+  m_Name: Eror
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1886870710
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886870709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 979462508}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.000013351, y: 59}
+  m_SizeDelta: {x: 719.277, y: 98.9303}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!111 &1886870711
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886870709}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c17d750a3d5006a46a20b1f18b44cdf8, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: c17d750a3d5006a46a20b1f18b44cdf8, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &1886870712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886870709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Invalid Login or Password, please try again!
+
+    If you don''t have accont
+    register him.'
+--- !u!222 &1886870713
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886870709}
+  m_CullTransparentMesh: 1
 --- !u!1 &1894618216
 GameObject:
   m_ObjectHideFlags: 0

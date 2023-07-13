@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Android.Gradle;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class PlayerInfo : MonoBehaviour
 {
     public string playerNickname;
     public string pass;
-    public bool newUser;
+    public bool logined;
 
 
     public bool haveName;
@@ -15,6 +16,8 @@ public class PlayerInfo : MonoBehaviour
     public Text inputField;
     public GameObject inputPanel;
     public Text inputFieldPASS;
+
+    public GameObject erorText;
 
 
     public DB dB;
@@ -37,13 +40,16 @@ public class PlayerInfo : MonoBehaviour
 
         }
     }
-    public void SetNicknamefunc()
-    {
-        newUser = true;
+    public void Register()
+    {        
         inputPanel.SetActive(false);
         playerNickname = inputField.text;
         pass = inputFieldPASS.text;
         haveName = true;
+
+
+
+
         dB.oneLoad = true;
         dB.oneSave = true;
 
@@ -52,5 +58,21 @@ public class PlayerInfo : MonoBehaviour
         PlayerPrefs.Save();
 
     }
+
+    public void SignUp()
+    {
+
+        playerNickname = inputField.text;
+        pass = inputFieldPASS.text;
+        haveName = true;
+
+        StartCoroutine(dB.CheckUser(playerNickname, pass, logined));
+
+        PlayerPrefs.SetString("dataNick", playerNickname);
+        PlayerPrefs.SetString("dataPass", pass);
+        PlayerPrefs.Save();
+    }
+
+    
 
 }

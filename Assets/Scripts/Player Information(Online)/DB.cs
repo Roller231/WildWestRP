@@ -118,14 +118,25 @@ public class DB : MonoBehaviour
 
     IEnumerator LoadStateFire()
     {
+
         
         var user = dbRef.Child("users").Child(playerInfo.playerNickname).GetValueAsync();
+
+
 
         yield return new WaitUntil(predicate: () => user.IsCompleted);
 
         try
         {
+
             DataSnapshot snapshot = user.Result;
+
+
+
+
+
+
+
             string json = snapshot.GetRawJsonValue();
 
             // Сохранение JSON-файла по указанному пути
@@ -172,6 +183,52 @@ public class DB : MonoBehaviour
 
 
 
+    }
+
+    public IEnumerator CheckUser(string inputLogin, string inputPass, bool agreeSignUp)
+    {
+        var account = dbRef.Child("users").GetValueAsync();
+
+
+        yield return new WaitUntil(predicate: () => account.IsCompleted);
+
+        var snapshotAcc = account.Result;
+
+        bool loginTrue = false;
+
+        foreach (var userData in snapshotAcc.Children)
+        {
+            string value = userData.Key.ToString();
+            if (value == inputLogin)
+            {
+                loginTrue = true;
+
+                if (inputPass == snapshotAcc.Child(value).Child("pass").Value.ToString())
+                {
+
+                    playerInfo.logined = true;
+
+                    if (playerInfo.logined)
+                    {
+                        playerInfo.inputPanel.SetActive(false);
+                        oneLoad = true;
+                        oneSave = true;
+                        Debug.Log("Успешный вход в аккаунт!");
+                    }
+                }
+                else
+                {
+                    playerInfo.erorText.SetActive(true);
+                    playerInfo.erorText.GetComponent<Animation>().Play();
+                }
+            }
+            else if (!loginTrue) 
+            {
+
+                playerInfo.erorText.SetActive(true);
+                playerInfo.erorText.GetComponent<Animation>().Play();
+            }
+        }
     }
 
 
