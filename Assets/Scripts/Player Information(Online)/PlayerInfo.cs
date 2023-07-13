@@ -6,21 +6,29 @@ using UnityEngine.UI;
 
 public class PlayerInfo : MonoBehaviour
 {
+    [Header("Основное")]
     public string playerNickname;
     public string pass;
+
     public bool logined;
-
-
     public bool haveName;
 
     public Text inputField;
-    public GameObject inputPanel;
     public Text inputFieldPASS;
+    public GameObject inputPanel;
 
     public GameObject erorText;
 
-
     public DB dB;
+
+    [Header("Для настройки входа/регистрации")]
+    public GameObject buttonSignUp;
+    public GameObject buttonSignIn;
+    public GameObject buttonChangeSignUp;
+    public GameObject buttonChangeSignIn;
+    public GameObject signUpText;
+    public GameObject signInText;
+
 
     private void Start()
     {
@@ -73,6 +81,35 @@ public class PlayerInfo : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    
+    public void ChangeOnSignIn()
+    {
+        buttonSignUp.SetActive(false);
+        buttonSignIn.SetActive(true);
+
+        buttonChangeSignUp.SetActive(true);
+        buttonChangeSignIn.SetActive(false);
+
+        signInText.SetActive(true);
+        signUpText.SetActive(false);
+
+        erorText.SetActive(false);
+
+    }
+
+    public void ChangeOnSignUp()
+    {
+        buttonSignUp.SetActive(true);
+        buttonSignIn.SetActive(false);
+
+        buttonChangeSignUp.SetActive(false);
+        buttonChangeSignIn.SetActive(true);
+
+        signInText.SetActive(false);
+        signUpText.SetActive(true);
+
+        erorText.SetActive(false);
+    }
+
+
 
 }
