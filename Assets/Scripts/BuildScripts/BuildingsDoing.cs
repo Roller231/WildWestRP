@@ -68,19 +68,7 @@ public class BuildingsDoing : MonoBehaviour
                 onePlay = false;
                 setOne = true;
 
-                int l = 0;
-                foreach (var item in gameManager.buildings)
-                {
-                    if (item.gameObject.GetComponent<BuildingsDoing>().onePlay == true)
-                    {
-                        Debug.Log("s");
-                        foreach (Building t in gameManager.buildings)
-                        {
-                            t.GetComponent<BuildingsDoing>().onePlay = true;
-                        }
-                    }
-                    l++;
-                }
+
             }
         }
         catch (NullReferenceException)

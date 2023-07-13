@@ -23459,7 +23459,6 @@ const Il2CppGenericMethodFunctionsDefinitions g_Il2CppGenericMethodFunctions[234
 { 26847, 23362, 5660, -1},
 { 26848, 23363, 5660, -1},
 { 26849, 23364, 5660, -1},
-{ 29078, 0, 0, -1},
 { 29079, 0, 0, -1},
 { 29080, 0, 0, -1},
 { 29081, 0, 0, -1},
@@ -23487,4 +23486,5 @@ const Il2CppGenericMethodFunctionsDefinitions g_Il2CppGenericMethodFunctions[234
 { 29103, 0, 0, -1},
 { 29104, 0, 0, -1},
 { 29105, 0, 0, -1},
+{ 29106, 0, 0, -1},
 };

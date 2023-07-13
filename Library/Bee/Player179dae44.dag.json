@@ -1203,8 +1203,7 @@
         1195,
         1196,
         1197,
-        1198,
-        1199
+        1198
       ],
       "AllowUnexpectedOutput": true,
       "DebugActionIndex": 0
@@ -23145,20 +23144,6 @@
       "DebugActionIndex": 1095
     },
     {
-      "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/icallsummary.txt",
-      "ActionType": "CopyFiles",
-      "Inputs": [
-        "Library/Bee/artifacts/Android/ManagedStripped/icallsummary.txt"
-      ],
-      "Outputs": [
-        "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/icallsummary.txt"
-      ],
-      "ToBuildDependencies": [
-        12
-      ],
-      "DebugActionIndex": 1096
-    },
-    {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Mono.Security.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
@@ -23170,7 +23155,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1097
+      "DebugActionIndex": 1096
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/mscorlib.dll",
@@ -23184,7 +23169,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1098
+      "DebugActionIndex": 1097
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/OdinSerializer.dll",
@@ -23198,7 +23183,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1099
+      "DebugActionIndex": 1098
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/OdinSerializer.pdb",
@@ -23212,7 +23197,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1100
+      "DebugActionIndex": 1099
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/System.Configuration.dll",
@@ -23226,7 +23211,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1101
+      "DebugActionIndex": 1100
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/System.Core.dll",
@@ -23240,7 +23225,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1102
+      "DebugActionIndex": 1101
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/System.dll",
@@ -23254,7 +23239,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1103
+      "DebugActionIndex": 1102
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/System.Xml.dll",
@@ -23268,7 +23253,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1104
+      "DebugActionIndex": 1103
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Unity.TextMeshPro.dll",
@@ -23282,7 +23267,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1105
+      "DebugActionIndex": 1104
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/Unity.TextMeshPro.pdb",
@@ -23296,7 +23281,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1106
+      "DebugActionIndex": 1105
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AndroidJNIModule.dll",
@@ -23310,7 +23295,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1107
+      "DebugActionIndex": 1106
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AndroidJNIModule.pdb",
@@ -23324,7 +23309,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1108
+      "DebugActionIndex": 1107
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AnimationModule.dll",
@@ -23338,7 +23323,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1109
+      "DebugActionIndex": 1108
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AnimationModule.pdb",
@@ -23352,7 +23337,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1110
+      "DebugActionIndex": 1109
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AudioModule.dll",
@@ -23366,7 +23351,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1111
+      "DebugActionIndex": 1110
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.AudioModule.pdb",
@@ -23380,7 +23365,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1112
+      "DebugActionIndex": 1111
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.CoreModule.dll",
@@ -23394,7 +23379,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1113
+      "DebugActionIndex": 1112
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.CoreModule.pdb",
@@ -23408,7 +23393,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1114
+      "DebugActionIndex": 1113
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.dll",
@@ -23422,7 +23407,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1115
+      "DebugActionIndex": 1114
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.GridModule.dll",
@@ -23436,7 +23421,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1116
+      "DebugActionIndex": 1115
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.GridModule.pdb",
@@ -23450,7 +23435,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1117
+      "DebugActionIndex": 1116
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.IMGUIModule.dll",
@@ -23464,7 +23449,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1118
+      "DebugActionIndex": 1117
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.IMGUIModule.pdb",
@@ -23478,7 +23463,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1119
+      "DebugActionIndex": 1118
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.InputLegacyModule.dll",
@@ -23492,7 +23477,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1120
+      "DebugActionIndex": 1119
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.InputLegacyModule.pdb",
@@ -23506,7 +23491,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1121
+      "DebugActionIndex": 1120
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.JSONSerializeModule.dll",
@@ -23520,7 +23505,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1122
+      "DebugActionIndex": 1121
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.JSONSerializeModule.pdb",
@@ -23534,7 +23519,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1123
+      "DebugActionIndex": 1122
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.pdb",
@@ -23548,7 +23533,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1124
+      "DebugActionIndex": 1123
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.Physics2DModule.dll",
@@ -23562,7 +23547,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1125
+      "DebugActionIndex": 1124
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.Physics2DModule.pdb",
@@ -23576,7 +23561,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1126
+      "DebugActionIndex": 1125
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.PhysicsModule.dll",
@@ -23590,7 +23575,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1127
+      "DebugActionIndex": 1126
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.PhysicsModule.pdb",
@@ -23604,7 +23589,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1128
+      "DebugActionIndex": 1127
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SharedInternalsModule.dll",
@@ -23618,7 +23603,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1129
+      "DebugActionIndex": 1128
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SharedInternalsModule.pdb",
@@ -23632,7 +23617,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1130
+      "DebugActionIndex": 1129
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SpriteShapeModule.dll",
@@ -23646,7 +23631,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1131
+      "DebugActionIndex": 1130
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.SpriteShapeModule.pdb",
@@ -23660,7 +23645,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1132
+      "DebugActionIndex": 1131
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextCoreFontEngineModule.dll",
@@ -23674,7 +23659,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1133
+      "DebugActionIndex": 1132
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextCoreFontEngineModule.pdb",
@@ -23688,7 +23673,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1134
+      "DebugActionIndex": 1133
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextCoreTextEngineModule.dll",
@@ -23702,7 +23687,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1135
+      "DebugActionIndex": 1134
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextCoreTextEngineModule.pdb",
@@ -23716,7 +23701,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1136
+      "DebugActionIndex": 1135
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextRenderingModule.dll",
@@ -23730,7 +23715,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1137
+      "DebugActionIndex": 1136
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TextRenderingModule.pdb",
@@ -23744,7 +23729,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1138
+      "DebugActionIndex": 1137
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TilemapModule.dll",
@@ -23758,7 +23743,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1139
+      "DebugActionIndex": 1138
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.TilemapModule.pdb",
@@ -23772,7 +23757,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1140
+      "DebugActionIndex": 1139
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UI.dll",
@@ -23786,7 +23771,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1141
+      "DebugActionIndex": 1140
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UI.pdb",
@@ -23800,7 +23785,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1142
+      "DebugActionIndex": 1141
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIElementsModule.dll",
@@ -23814,7 +23799,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1143
+      "DebugActionIndex": 1142
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIElementsModule.pdb",
@@ -23828,7 +23813,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1144
+      "DebugActionIndex": 1143
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIElementsNativeModule.dll",
@@ -23842,7 +23827,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1145
+      "DebugActionIndex": 1144
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIElementsNativeModule.pdb",
@@ -23856,7 +23841,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1146
+      "DebugActionIndex": 1145
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIModule.dll",
@@ -23870,7 +23855,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1147
+      "DebugActionIndex": 1146
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityEngine.UIModule.pdb",
@@ -23884,7 +23869,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1148
+      "DebugActionIndex": 1147
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/UnityLinkerToEditorData.json",
@@ -23898,7 +23883,7 @@
       "ToBuildDependencies": [
         12
       ],
-      "DebugActionIndex": 1149
+      "DebugActionIndex": 1148
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity default resources",
@@ -23909,7 +23894,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity default resources"
       ],
-      "DebugActionIndex": 1150
+      "DebugActionIndex": 1149
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/build.gradle_a19u.info",
@@ -23920,7 +23905,7 @@
         "Library/Bee/artifacts/csharpactions/build.gradle_a19u.info"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 1151
+      "DebugActionIndex": 1150
     },
     {
       "Annotation": "ActionGenerateProjectFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/build.gradle (+7 others)",
@@ -23952,11 +23937,11 @@
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/gradle/wrapper/gradle-wrapper.properties"
       ],
       "ToBuildDependencies": [
-        1151
+        1150
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1152
+      "DebugActionIndex": 1151
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/proguard-unity.txt",
@@ -23967,7 +23952,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/proguard-unity.txt"
       ],
-      "DebugActionIndex": 1153
+      "DebugActionIndex": 1152
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/java/com/unity3d/player/UnityPlayerActivity.java",
@@ -23978,7 +23963,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/java/com/unity3d/player/UnityPlayerActivity.java"
       ],
-      "DebugActionIndex": 1154
+      "DebugActionIndex": 1153
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/libs/unity-classes.jar",
@@ -23989,7 +23974,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/libs/unity-classes.jar"
       ],
-      "DebugActionIndex": 1155
+      "DebugActionIndex": 1154
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/ids.xml",
@@ -24000,7 +23985,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/ids.xml"
       ],
-      "DebugActionIndex": 1156
+      "DebugActionIndex": 1155
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/styles.xml",
@@ -24011,7 +23996,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/styles.xml"
       ],
-      "DebugActionIndex": 1157
+      "DebugActionIndex": 1156
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values-v21/styles.xml",
@@ -24022,7 +24007,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values-v21/styles.xml"
       ],
-      "DebugActionIndex": 1158
+      "DebugActionIndex": 1157
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values-v28/styles.xml",
@@ -24033,7 +24018,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values-v28/styles.xml"
       ],
-      "DebugActionIndex": 1159
+      "DebugActionIndex": 1158
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/styles.xml",
@@ -24044,7 +24029,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/styles.xml"
       ],
-      "DebugActionIndex": 1160
+      "DebugActionIndex": 1159
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v21/styles.xml",
@@ -24055,7 +24040,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v21/styles.xml"
       ],
-      "DebugActionIndex": 1161
+      "DebugActionIndex": 1160
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v28/styles.xml",
@@ -24066,7 +24051,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v28/styles.xml"
       ],
-      "DebugActionIndex": 1162
+      "DebugActionIndex": 1161
     },
     {
       "Annotation": "WriteText D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/strings.xml",
@@ -24077,7 +24062,7 @@
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/strings.xml"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 1163
+      "DebugActionIndex": 1162
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/freeformwindow.xml",
@@ -24088,7 +24073,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/freeformwindow.xml"
       ],
-      "DebugActionIndex": 1164
+      "DebugActionIndex": 1163
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v30/freeformwindow.xml",
@@ -24099,7 +24084,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v30/freeformwindow.xml"
       ],
-      "DebugActionIndex": 1165
+      "DebugActionIndex": 1164
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon.xml",
@@ -24110,7 +24095,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon.xml"
       ],
-      "DebugActionIndex": 1166
+      "DebugActionIndex": 1165
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon_round.xml",
@@ -24121,7 +24106,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon_round.xml"
       ],
-      "DebugActionIndex": 1167
+      "DebugActionIndex": 1166
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon.png",
@@ -24132,7 +24117,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon.png"
       ],
-      "DebugActionIndex": 1168
+      "DebugActionIndex": 1167
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_background.png",
@@ -24143,7 +24128,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_background.png"
       ],
-      "DebugActionIndex": 1169
+      "DebugActionIndex": 1168
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
@@ -24154,7 +24139,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
       ],
-      "DebugActionIndex": 1170
+      "DebugActionIndex": 1169
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmain.so",
@@ -24165,7 +24150,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libmain.so"
       ],
-      "DebugActionIndex": 1171
+      "DebugActionIndex": 1170
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libmain.so",
@@ -24176,7 +24161,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libmain.so"
       ],
-      "DebugActionIndex": 1172
+      "DebugActionIndex": 1171
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/LauncherManifestDiag.txt_zvqu.info",
@@ -24187,7 +24172,7 @@
         "Library/Bee/artifacts/csharpactions/LauncherManifestDiag.txt_zvqu.info"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 1173
+      "DebugActionIndex": 1172
     },
     {
       "Annotation": "Generate Manifests Library/Bee/artifacts/Android/Manifest/LauncherManifestDiag.txt (+3 others)",
@@ -24279,11 +24264,11 @@
         77,
         79,
         81,
-        1173
+        1172
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1174
+      "DebugActionIndex": 1173
     },
     {
       "Annotation": "ClassRegistrationGenerator D:/rep_Git/WildWestRP/Library/Bee/artifacts/Android/il2cppOutput/UnityClassRegistration.cpp",
@@ -24301,7 +24286,7 @@
         12
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1175
+      "DebugActionIndex": 1174
     },
     {
       "Annotation": "Compile UnityClassRegistration Library/Bee/artifacts/Android/libunity/armeabi-v7a/UnityClassRegistration.o",
@@ -24315,10 +24300,10 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/UnityClassRegistration.o"
       ],
       "ToBuildDependencies": [
-        1175
+        1174
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1176
+      "DebugActionIndex": 1175
     },
     {
       "Annotation": "ICallRegistrationGenerator D:/rep_Git/WildWestRP/Library/Bee/artifacts/Android/il2cppOutput/UnityICallRegistration.cpp",
@@ -24352,7 +24337,7 @@
         12
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1177
+      "DebugActionIndex": 1176
     },
     {
       "Annotation": "Compile UnityICallRegistration Library/Bee/artifacts/Android/libunity/armeabi-v7a/UnityICallRegistration.o",
@@ -24366,10 +24351,10 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/UnityICallRegistration.o"
       ],
       "ToBuildDependencies": [
-        1177
+        1176
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1178
+      "DebugActionIndex": 1177
     },
     {
       "Annotation": "Link libunity Library/Bee/artifacts/Android/libunity/armeabi-v7a/unstripped/libunity.so",
@@ -24386,11 +24371,11 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/unstripped/libunity.so"
       ],
       "ToBuildDependencies": [
-        1176,
-        1178
+        1175,
+        1177
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1179
+      "DebugActionIndex": 1178
     },
     {
       "Annotation": "Generate Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.dbg.so from Library/Bee/artifacts/Android/libunity/armeabi-v7a/unstripped/libunity.so Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.dbg.so",
@@ -24403,10 +24388,10 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.dbg.so"
       ],
       "ToBuildDependencies": [
-        1179
+        1178
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1180
+      "DebugActionIndex": 1179
     },
     {
       "Annotation": "Generate Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.sym.so from Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.dbg.so Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.sym.so",
@@ -24419,10 +24404,10 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/libunity.sym.so"
       ],
       "ToBuildDependencies": [
-        1180
+        1179
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1181
+      "DebugActionIndex": 1180
     },
     {
       "Annotation": "Stripping Library/Bee/artifacts/Android/libunity/armeabi-v7a/unstripped/libunity.so -> Library/Bee/artifacts/Android/libunity/armeabi-v7a/stripped/libunity.so Library/Bee/artifacts/Android/libunity/armeabi-v7a/stripped/libunity.so",
@@ -24435,10 +24420,10 @@
         "Library/Bee/artifacts/Android/libunity/armeabi-v7a/stripped/libunity.so"
       ],
       "ToBuildDependencies": [
-        1179
+        1178
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1182
+      "DebugActionIndex": 1181
     },
     {
       "Annotation": "Adding note Library/Bee/artifacts/Android/libunity/armeabi-v7a/stripped/libunity.so -> D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libunity.so D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libunity.so",
@@ -24453,11 +24438,11 @@
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/armeabi-v7a/libunity.so"
       ],
       "ToBuildDependencies": [
-        1181,
-        1182
+        1180,
+        1181
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1183
+      "DebugActionIndex": 1182
     },
     {
       "Annotation": "Compile UnityClassRegistration Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityClassRegistration.o",
@@ -24471,10 +24456,10 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityClassRegistration.o"
       ],
       "ToBuildDependencies": [
-        1175
+        1174
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1184
+      "DebugActionIndex": 1183
     },
     {
       "Annotation": "Compile UnityICallRegistration Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityICallRegistration.o",
@@ -24488,10 +24473,10 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityICallRegistration.o"
       ],
       "ToBuildDependencies": [
-        1177
+        1176
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1185
+      "DebugActionIndex": 1184
     },
     {
       "Annotation": "Link libunity Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so",
@@ -24508,11 +24493,11 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so"
       ],
       "ToBuildDependencies": [
-        1184,
-        1185
+        1183,
+        1184
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1186
+      "DebugActionIndex": 1185
     },
     {
       "Annotation": "Generate Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so from Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so",
@@ -24525,10 +24510,10 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so"
       ],
       "ToBuildDependencies": [
-        1186
+        1185
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1187
+      "DebugActionIndex": 1186
     },
     {
       "Annotation": "Generate Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so from Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so",
@@ -24541,10 +24526,10 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so"
       ],
       "ToBuildDependencies": [
-        1187
+        1186
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1188
+      "DebugActionIndex": 1187
     },
     {
       "Annotation": "Stripping Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so -> Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so",
@@ -24557,10 +24542,10 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so"
       ],
       "ToBuildDependencies": [
-        1186
+        1185
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1189
+      "DebugActionIndex": 1188
     },
     {
       "Annotation": "Adding note Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so -> D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so",
@@ -24575,11 +24560,11 @@
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so"
       ],
       "ToBuildDependencies": [
-        1188,
-        1189
+        1187,
+        1188
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1190
+      "DebugActionIndex": 1189
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/armeabi-v7a/libmain.so",
@@ -24590,7 +24575,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/armeabi-v7a/libmain.so"
       ],
-      "DebugActionIndex": 1191
+      "DebugActionIndex": 1190
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/armeabi-v7a/libil2cpp.so",
@@ -24604,7 +24589,7 @@
       "ToBuildDependencies": [
         482
       ],
-      "DebugActionIndex": 1192
+      "DebugActionIndex": 1191
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/armeabi-v7a/libunity.so",
@@ -24616,9 +24601,9 @@
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/armeabi-v7a/libunity.so"
       ],
       "ToBuildDependencies": [
-        1181
+        1180
       ],
-      "DebugActionIndex": 1193
+      "DebugActionIndex": 1192
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libmain.so",
@@ -24629,7 +24614,7 @@
       "Outputs": [
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libmain.so"
       ],
-      "DebugActionIndex": 1194
+      "DebugActionIndex": 1193
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libil2cpp.so",
@@ -24643,7 +24628,7 @@
       "ToBuildDependencies": [
         883
       ],
-      "DebugActionIndex": 1195
+      "DebugActionIndex": 1194
     },
     {
       "Annotation": "CopyFiles D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libunity.so",
@@ -24655,9 +24640,9 @@
         "D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libunity.so"
       ],
       "ToBuildDependencies": [
-        1188
+        1187
       ],
-      "DebugActionIndex": 1196
+      "DebugActionIndex": 1195
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/unity_app_guid_7cw7.info",
@@ -24668,7 +24653,7 @@
         "Library/Bee/artifacts/csharpactions/unity_app_guid_7cw7.info"
       ],
       "AllowUnwrittenOutputFiles": true,
-      "DebugActionIndex": 1197
+      "DebugActionIndex": 1196
     },
     {
       "Annotation": "GuidGenerator D:/rep_Git/WildWestRP/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid",
@@ -24699,11 +24684,11 @@
       ],
       "ToBuildDependencies": [
         82,
-        1197
+        1196
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1198
+      "DebugActionIndex": 1197
     },
     {
       "Annotation": "Player",
@@ -25016,7 +25001,7 @@
         1147,
         1148,
         1149,
-        1150,
+        1151,
         1152,
         1153,
         1154,
@@ -25037,14 +25022,13 @@
         1169,
         1170,
         1171,
-        1172,
-        1174,
-        1183,
-        1190,
-        1198
+        1173,
+        1182,
+        1189,
+        1197
       ],
       "AllowUnexpectedOutput": true,
-      "DebugActionIndex": 1199
+      "DebugActionIndex": 1198
     }
   ],
   "FileSignatures": [
@@ -25592,7 +25576,7 @@
   ],
         "NamedNodes": {
           "all_tundra_nodes": 0,
-          "Player": 1199
+          "Player": 1198
         }
 ,  "DefaultNodes": [
     0

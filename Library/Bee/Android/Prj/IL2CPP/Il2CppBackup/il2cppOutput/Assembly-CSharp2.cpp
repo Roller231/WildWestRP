@@ -448,7 +448,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralC2709AA0C28F6EB1C22D259A1C58EE24B9F460B9
 IL2CPP_EXTERN_C String_t* _stringLiteralC5920CB2542D2F952C53BB74E19D3CDA960F7EA1;
 IL2CPP_EXTERN_C String_t* _stringLiteralD42CA74FD2FD51A463A57B97F3C4E75F730F782C;
 IL2CPP_EXTERN_C String_t* _stringLiteralD770F84D9753004F366FC226E7221317ECD88B4F;
-IL2CPP_EXTERN_C String_t* _stringLiteralDAF2BD03270A51BF9C135F3694DCAD2D3E66F465;
 IL2CPP_EXTERN_C String_t* _stringLiteralDD6F4F2CA85360E9C72B6B619D0D5E11D934F3DF;
 IL2CPP_EXTERN_C String_t* _stringLiteralDF463DBB9C7684725DB749317007BFA0339E9B63;
 IL2CPP_EXTERN_C String_t* _stringLiteralF670642A8E3D41D38EEDDDB6D1731BA1E544EBD9;
@@ -468,7 +467,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisSetProgressBarBui
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisSpriteRenderer_t1DD7FE258F072E1FA87D6577BA27225892B8047B_m6181F10C09FC1650DAE0EF2308D344A2F170AA45_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_mB85C5C0EEF6535E3FC0DBFC14E39FA5A51B6F888_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisBuilding_t950D5394E080624D7E96B158EF852EA16ADB3650_m5BD940A7BA4550D0BFABEEE95DE8BF555726484C_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisBuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7_m9EA5C53B69F38EEA1A2D3F7CD1ADE280C65F7735_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisButton_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098_mB997CBF78A37938DC1624352E12D0205078CB290_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisGameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6_m4F2EAFB3E0C0416DA99DFB2E267D2984B15B9DF6_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* GameObject_GetComponent_TisOpenBuildingSettings_t636B8DB4ED4B32CE20A33874EE515058515CBD44_m7D2276489E27FACD9152043D4D445F0BE9CAFDEE_RuntimeMethod_var;
@@ -4917,18 +4915,6 @@ inline Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* GameObject_GetComponent_T
 {
 	return ((  Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_GetComponent_TisRuntimeObject_m6EAED4AA356F0F48288F67899E5958792395563B_gshared)(__this, method);
 }
-// T UnityEngine.GameObject::GetComponent<BuildingsDoing>()
-inline BuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7* GameObject_GetComponent_TisBuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7_m9EA5C53B69F38EEA1A2D3F7CD1ADE280C65F7735 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
-{
-	return ((  BuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7* (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))GameObject_GetComponent_TisRuntimeObject_m6EAED4AA356F0F48288F67899E5958792395563B_gshared)(__this, method);
-}
-// System.Void UnityEngine.Debug::Log(System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
-// T UnityEngine.Component::GetComponent<BuildingsDoing>()
-inline BuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7* Component_GetComponent_TisBuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7_mACB7F3CBF72C0598839660E56C0EB45D26A02380 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
-{
-	return ((  BuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared)(__this, method);
-}
 // T UnityEngine.GameObject::GetComponent<OpenBuildingSettings>()
 inline OpenBuildingSettings_t636B8DB4ED4B32CE20A33874EE515058515CBD44* GameObject_GetComponent_TisOpenBuildingSettings_t636B8DB4ED4B32CE20A33874EE515058515CBD44_m7D2276489E27FACD9152043D4D445F0BE9CAFDEE (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method)
 {
@@ -4944,6 +4930,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnityAction__ctor_mC53E20D6B66E0D5688CD8
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UnityEvent_AddListener_m8AA4287C16628486B41DA41CA5E7A856A706D302 (UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* __this, UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* ___0_call, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Animator::SetBool(System.String,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetBool_m6F8D4FAF0770CD4EC1F54406249785DE7391E42B (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, bool ___1_value, const RuntimeMethod* method) ;
+// T UnityEngine.Component::GetComponent<BuildingsDoing>()
+inline BuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7* Component_GetComponent_TisBuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7_mACB7F3CBF72C0598839660E56C0EB45D26A02380 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
+{
+	return ((  BuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared)(__this, method);
+}
+// System.Void UnityEngine.Debug::Log(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB (RuntimeObject* ___0_message, const RuntimeMethod* method) ;
 // T UnityEngine.Component::GetComponent<UnityEngine.Animator>()
 inline Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* Component_GetComponent_TisAnimator_t8A52E42AE54F76681838FE9E632683EF3952E883_m1C9FCB4BBE56BEC6BDEF6E4BA1E5DFF91614D7CE (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
 {
@@ -22111,19 +22104,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BuildingsDoing_Update_mF657ADC7B6F9370A4
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponent_TisBuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7_mACB7F3CBF72C0598839660E56C0EB45D26A02380_RuntimeMethod_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisBuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7_m9EA5C53B69F38EEA1A2D3F7CD1ADE280C65F7735_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&GameObject_GetComponent_TisText_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62_mBE6B722369FF149589D3D42A6A8435A9C5045B3F_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralC5920CB2542D2F952C53BB74E19D3CDA960F7EA1);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDAF2BD03270A51BF9C135F3694DCAD2D3E66F465);
 		s_Il2CppMethodInitialized = true;
 	}
-	int32_t V_0 = 0;
-	BuildingU5BU5D_t2224E8D46E2056B6FC47768923ABD833D25EA923* V_1 = NULL;
-	int32_t V_2 = 0;
-	BuildingU5BU5D_t2224E8D46E2056B6FC47768923ABD833D25EA923* V_3 = NULL;
-	int32_t V_4 = 0;
 	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
 	{
 		// if (grindBuild && isOpen)
@@ -22166,14 +22150,14 @@ IL_0034:
 			bool L_7 = __this->___isOpen_17;
 			if (L_7)
 			{
-				goto IL_00c1_1;
+				goto IL_0053_1;
 			}
 		}
 		{
 			bool L_8 = __this->___setOne_6;
 			if (L_8)
 			{
-				goto IL_00c1_1;
+				goto IL_0053_1;
 			}
 		}
 		{
@@ -22181,107 +22165,12 @@ IL_0034:
 			__this->___onePlay_4 = (bool)0;
 			// setOne = true;
 			__this->___setOne_6 = (bool)1;
-			// int l = 0;
-			V_0 = 0;
-			// foreach (var item in gameManager.buildings)
-			GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* L_9 = __this->___gameManager_11;
-			NullCheck(L_9);
-			BuildingU5BU5D_t2224E8D46E2056B6FC47768923ABD833D25EA923* L_10 = L_9->___buildings_14;
-			V_1 = L_10;
-			V_2 = 0;
-			goto IL_00bb_1;
 		}
 
-IL_0068_1:
-		{
-			// foreach (var item in gameManager.buildings)
-			BuildingU5BU5D_t2224E8D46E2056B6FC47768923ABD833D25EA923* L_11 = V_1;
-			int32_t L_12 = V_2;
-			NullCheck(L_11);
-			int32_t L_13 = L_12;
-			Building_t950D5394E080624D7E96B158EF852EA16ADB3650* L_14 = (L_11)->GetAt(static_cast<il2cpp_array_size_t>(L_13));
-			// if (item.gameObject.GetComponent<BuildingsDoing>().onePlay == true)
-			NullCheck(L_14);
-			GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15;
-			L_15 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_14, NULL);
-			NullCheck(L_15);
-			BuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7* L_16;
-			L_16 = GameObject_GetComponent_TisBuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7_m9EA5C53B69F38EEA1A2D3F7CD1ADE280C65F7735(L_15, GameObject_GetComponent_TisBuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7_m9EA5C53B69F38EEA1A2D3F7CD1ADE280C65F7735_RuntimeMethod_var);
-			NullCheck(L_16);
-			bool L_17 = L_16->___onePlay_4;
-			if (!L_17)
-			{
-				goto IL_00b3_1;
-			}
-		}
-		{
-			// Debug.Log("s");
-			il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-			Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralDAF2BD03270A51BF9C135F3694DCAD2D3E66F465, NULL);
-			// foreach (Building t in gameManager.buildings)
-			GameManager_tFE129A0017AF5BBD30FDCD4403B9CCEAE064C6B6* L_18 = __this->___gameManager_11;
-			NullCheck(L_18);
-			BuildingU5BU5D_t2224E8D46E2056B6FC47768923ABD833D25EA923* L_19 = L_18->___buildings_14;
-			V_3 = L_19;
-			V_4 = 0;
-			goto IL_00ac_1;
-		}
-
-IL_0097_1:
-		{
-			// foreach (Building t in gameManager.buildings)
-			BuildingU5BU5D_t2224E8D46E2056B6FC47768923ABD833D25EA923* L_20 = V_3;
-			int32_t L_21 = V_4;
-			NullCheck(L_20);
-			int32_t L_22 = L_21;
-			Building_t950D5394E080624D7E96B158EF852EA16ADB3650* L_23 = (L_20)->GetAt(static_cast<il2cpp_array_size_t>(L_22));
-			// t.GetComponent<BuildingsDoing>().onePlay = true;
-			NullCheck(L_23);
-			BuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7* L_24;
-			L_24 = Component_GetComponent_TisBuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7_mACB7F3CBF72C0598839660E56C0EB45D26A02380(L_23, Component_GetComponent_TisBuildingsDoing_tBE503B8D7CC672AD8EFA6E3B8CD28176D46D95E7_mACB7F3CBF72C0598839660E56C0EB45D26A02380_RuntimeMethod_var);
-			NullCheck(L_24);
-			L_24->___onePlay_4 = (bool)1;
-			int32_t L_25 = V_4;
-			V_4 = ((int32_t)il2cpp_codegen_add(L_25, 1));
-		}
-
-IL_00ac_1:
-		{
-			// foreach (Building t in gameManager.buildings)
-			int32_t L_26 = V_4;
-			BuildingU5BU5D_t2224E8D46E2056B6FC47768923ABD833D25EA923* L_27 = V_3;
-			NullCheck(L_27);
-			if ((((int32_t)L_26) < ((int32_t)((int32_t)(((RuntimeArray*)L_27)->max_length)))))
-			{
-				goto IL_0097_1;
-			}
-		}
-
-IL_00b3_1:
-		{
-			// l++;
-			int32_t L_28 = V_0;
-			V_0 = ((int32_t)il2cpp_codegen_add(L_28, 1));
-			int32_t L_29 = V_2;
-			V_2 = ((int32_t)il2cpp_codegen_add(L_29, 1));
-		}
-
-IL_00bb_1:
-		{
-			// foreach (var item in gameManager.buildings)
-			int32_t L_30 = V_2;
-			BuildingU5BU5D_t2224E8D46E2056B6FC47768923ABD833D25EA923* L_31 = V_1;
-			NullCheck(L_31);
-			if ((((int32_t)L_30) < ((int32_t)((int32_t)(((RuntimeArray*)L_31)->max_length)))))
-			{
-				goto IL_0068_1;
-			}
-		}
-
-IL_00c1_1:
+IL_0053_1:
 		{
 			// }
-			goto IL_00c6;
+			goto IL_0058;
 		}
 	}// end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
@@ -22289,20 +22178,20 @@ IL_00c1_1:
 		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NullReferenceException_tBDE63A6D24569B964908408389070C6A9F5005BB_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
 		{
 			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_00c3;
+			goto CATCH_0055;
 		}
 		throw e;
 	}
 
-CATCH_00c3:
+CATCH_0055:
 	{// begin catch(System.NullReferenceException)
 		// catch (NullReferenceException)
 		// }
 		IL2CPP_POP_ACTIVE_EXCEPTION();
-		goto IL_00c6;
+		goto IL_0058;
 	}// end catch (depth: 1)
 
-IL_00c6:
+IL_0058:
 	{
 		// }
 		return;

@@ -160,6 +160,9 @@ UnityEngine.AndroidJNI::SetStaticStringField
 UnityEngine.AndroidJNI::SetStringField
 UnityEngine.AndroidJNIHelper::get_debug
 UnityEngine.AndroidJNIHelper::set_debug
+UnityEngine.Animation::PlayDefaultAnimation
+UnityEngine.Animation::GetStateCount
+UnityEngine.Animation::GetStateAtIndex
 UnityEngine.AnimationCurve::Internal_Equals
 UnityEngine.AnimationCurve::get_length
 UnityEngine.AnimationCurve::Internal_Create
@@ -632,6 +635,7 @@ UnityEngine.PlayerConnectionInternal::UnregisterInternal
 UnityEngine.PlayerPrefs::HasKey
 UnityEngine.PlayerPrefs::TrySetSetString
 UnityEngine.PlayerPrefs::GetString
+UnityEngine.PlayerPrefs::DeleteAll
 UnityEngine.PlayerPrefs::Save
 UnityEngine.PropertyNameUtils::PropertyNameFromString_Injected
 UnityEngine.QualitySettings::get_activeColorSpace

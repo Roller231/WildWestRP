@@ -7,6 +7,8 @@ using System;
 using System.Linq;
 using Google.MiniJSON;
 using System.Xml.Linq;
+using UnityEngine.UI;
+using Newtonsoft.Json.Linq;
 
 public class DB : MonoBehaviour
 {
@@ -33,6 +35,10 @@ public class DB : MonoBehaviour
     {
         time -= Time.deltaTime;
 
+        if(!DoLoad)
+        {
+            PlayerPrefs.DeleteAll();
+        }
 
         if (oneLoad)
         {
@@ -185,7 +191,7 @@ public class DB : MonoBehaviour
 
     }
 
-    public IEnumerator CheckUser(string inputLogin, string inputPass, bool agreeSignUp)
+    public IEnumerator CheckUser(string inputLogin, string inputPass)
     {
         var account = dbRef.Child("users").GetValueAsync();
 
@@ -203,28 +209,30 @@ public class DB : MonoBehaviour
             {
                 loginTrue = true;
 
+
+
                 if (inputPass == snapshotAcc.Child(value).Child("pass").Value.ToString())
                 {
 
                     playerInfo.logined = true;
 
-                    if (playerInfo.logined)
-                    {
+
                         playerInfo.inputPanel.SetActive(false);
                         oneLoad = true;
                         oneSave = true;
                         Debug.Log("Успешный вход в аккаунт!");
-                    }
+
                 }
                 else
                 {
+                    playerInfo.erorText.GetComponent<Text>().text = "Such an account does not exist, please check again.";
                     playerInfo.erorText.SetActive(true);
                     playerInfo.erorText.GetComponent<Animation>().Play();
                 }
             }
             else if (!loginTrue) 
             {
-
+                playerInfo.erorText.GetComponent<Text>().text = "Such an account does not exist, please check again.";
                 playerInfo.erorText.SetActive(true);
                 playerInfo.erorText.GetComponent<Animation>().Play();
             }
@@ -232,10 +240,109 @@ public class DB : MonoBehaviour
     }
 
 
+    public IEnumerator CheckUserRegistered(string inputLogin, string inputPass)
+    {
+        var account = dbRef.Child("users").GetValueAsync();
+
+
+        yield return new WaitUntil(predicate: () => account.IsCompleted);
+
+        var snapshotAcc = account.Result;
+
+        bool loginTrue = true;
+
+        foreach (var userData in snapshotAcc.Children)
+        {
+            string value = userData.Key.ToString();
+            Debug.Log($"{value}");
+            if (value == inputLogin)
+            {
+                playerInfo.erorText.GetComponent<Text>().text = "Account with this username already exists.";
+                loginTrue = false;
+                playerInfo.erorText.SetActive(true);
+                playerInfo.erorText.GetComponent<Animation>().Play();
+
+                
+
+                if (inputPass == snapshotAcc.Child(value).Child("pass").Value.ToString())
+                {
+
+                    playerInfo.logined = true;
+
+
+                        playerInfo.erorText.SetActive(true);
+                        playerInfo.erorText.GetComponent<Animation>().Play();
+
+                        playerInfo.erorText.GetComponent<Text>().text = "Account with this username already exists.";
+
+                }
+
+
+            }
+
+            else
+            {
+                bool haveSpace = false;
+
+                foreach (var nameSpace in value)
+                {
+                    if (nameSpace.ToString() == " ")
+                    {
+                        haveSpace = true;
+                    }
+                }
 
 
 
-    
+
+                if (inputPass.Length > 15 || inputLogin.Length > 15)
+                {
+                    loginTrue = false;
+                    playerInfo.erorText.GetComponent<Text>().text = "Please enter password and login less than 15 characters";
+                    playerInfo.erorText.SetActive(true);
+                    playerInfo.erorText.GetComponent<Animation>().Play();
+                }
+                else if (haveSpace)
+                {
+                    loginTrue = false;
+                    playerInfo.erorText.GetComponent<Text>().text = "Please enter password and login without spaces!";
+                    playerInfo.erorText.SetActive(true);
+                    playerInfo.erorText.GetComponent<Animation>().Play();
+                }
+                else if (inputPass == "" || inputLogin == "")
+                {
+                    loginTrue = false;
+                    playerInfo.erorText.GetComponent<Text>().text = "Please fill in all fields!";
+                    playerInfo.erorText.SetActive(true);
+                    playerInfo.erorText.GetComponent<Animation>().Play();
+                }
+
+
+
+            }
+
+
+
+
+
+        }
+        if (loginTrue)
+        {
+
+            playerInfo.inputPanel.SetActive(false);
+            oneLoad = true;
+            oneSave = true;
+            Debug.Log("Успешный рег!");
+
+        }
+
+
+    }
+
+
+
+
+
 }
 
 // Класс с данными игры, который будет сериализоваться в JSON
