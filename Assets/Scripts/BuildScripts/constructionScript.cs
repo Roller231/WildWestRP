@@ -48,8 +48,6 @@ public class ConstructionScript : MonoBehaviour
         gameObject.SetActive(false);
 
 
-
-
     }
 
     public void SetUpgradeBuilding(float timeForUpgrade)

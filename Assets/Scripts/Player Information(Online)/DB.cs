@@ -1,14 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Database;
 using System.IO;
 using System;
-using System.Linq;
-using Google.MiniJSON;
-using System.Xml.Linq;
 using UnityEngine.UI;
-using Newtonsoft.Json.Linq;
 
 public class DB : MonoBehaviour
 {

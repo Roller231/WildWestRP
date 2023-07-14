@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28459fc6865478e429953bea1b826832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStart: 10
+  timeStart: 5
   timeMemory: 0
   timeText: {fileID: 5014974153380954590}
   imageBuild: {fileID: 3444890851059340703}
