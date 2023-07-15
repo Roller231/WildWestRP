@@ -279,14 +279,21 @@ public class DB : MonoBehaviour
             {
                 bool haveSpace = false;
 
-                foreach (var nameSpace in value)
+                foreach (var nameSpace in playerInfo.inputField.text)
+                {
+                    if (nameSpace.ToString() == " ")
+                    {
+                        haveSpace = true;
+                    }
+                    Debug.Log(nameSpace.ToString());
+                }
+                foreach (var nameSpace in playerInfo.inputFieldPASS.text)
                 {
                     if (nameSpace.ToString() == " ")
                     {
                         haveSpace = true;
                     }
                 }
-
 
 
 
@@ -304,7 +311,7 @@ public class DB : MonoBehaviour
                     playerInfo.erorText.SetActive(true);
                     playerInfo.erorText.GetComponent<Animation>().Play();
                 }
-                else if (inputPass == "" || inputLogin == "")
+                else if (playerInfo.inputField.text == "" || playerInfo.inputFieldPASS.text == "")
                 {
                     loginTrue = false;
                     playerInfo.erorText.GetComponent<Text>().text = "Please fill in all fields!";
