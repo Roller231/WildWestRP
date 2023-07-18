@@ -538,10 +538,11 @@ MonoBehaviour:
     SerializationNodes: []
   cost: 20
   level: 1
+  nextLevel: 2
   maxLevel: 3
   upgradeCost: 10
   limitBuilding: 55
-  countBuilding: 0
+  countBuilding: 1
   upgradeGoldEarn: 5
   upgradeNewMaxIncome: 10000
   upgradeTime: 10

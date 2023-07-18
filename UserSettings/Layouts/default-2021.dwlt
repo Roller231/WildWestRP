@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 103
+  controlID: 19515
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 73
+  controlID: 19516
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,8 +165,8 @@ MonoBehaviour:
     y: 0
     width: 1144
     height: 609
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 104
+  controlID: 19415
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,8 +245,8 @@ MonoBehaviour:
     y: 0
     width: 738
     height: 560
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -298,8 +298,8 @@ MonoBehaviour:
     y: 0
     width: 678
     height: 1307
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -680,9 +680,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 985.9478, y: 568.533, z: -2.7113228}
+    m_Target: {x: 670.885, y: 493.38107, z: -1.1127844}
     speed: 2
-    m_Value: {x: 976.66296, y: 573.54144, z: -2.9278405}
+    m_Value: {x: 670.885, y: 493.38107, z: -1.1127844}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -733,9 +733,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 459.4994
+    m_Target: 579.0052
     speed: 2
-    m_Value: 481.15118
+    m_Value: 579.0052
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -753,7 +753,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: 0.088589095, y: 0.78132206, z: -0.11395584, w: 0.6073325}
+  m_LastSceneViewRotation: {x: -0.27363527, y: -0.5429664, z: 0.19292794, w: -0.7701399}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -893,7 +893,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -13050
+  m_LastSelectedObjectID: -26284
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -926,23 +926,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 16c3ffff
-      m_LastClickedID: -15594
-      m_ExpandedIDs: 12cdffff24ceffff02cfffffc6e5ffff2afbffffa651000040570000ce580000
+      m_SelectedIDs: 2a580000
+      m_LastClickedID: 22570
+      m_ExpandedIDs: be87ffff6ca4ffffa6b1ffff2afbffff18510000f0520000b6540000ce54000048550000cc550000e4560000ec56000016570000465700007657000004590000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Upgradepanel
+        m_OriginalName: Upgradepanel
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 22244
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -994,22 +994,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/UI/ScriptsUI
+    - Assets/Building_Houses
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/UI/ScriptsUI
+  - Assets/Building_Houses
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\rep_Git\WildWestRP
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b6610000
-    m_LastClickedID: 25014
-    m_ExpandedIDs: 00000000b85e0000ba5e0000bc5e0000be5e0000c05e000000ca9a3b
+    m_SelectedIDs: 125f0000
+    m_LastClickedID: 24338
+    m_ExpandedIDs: 00000000ee5e0000f05e0000f25e0000f45e0000f65e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1037,7 +1037,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b85e0000ba5e0000bc5e0000be5e0000c05e0000
+    m_ExpandedIDs: 00000000ee5e0000f05e0000f25e0000f45e0000f65e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

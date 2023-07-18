@@ -15,6 +15,7 @@ public class BuildingsDoing : MonoBehaviour
     private GameObject canvasSettingsYesGrind;
     private GameObject canvasInGame;
 
+
     private Building buildingThis;
     private GameManager gameManager;
 
@@ -43,8 +44,13 @@ public class BuildingsDoing : MonoBehaviour
         buildingThis = gameObject.GetComponent<Building>();
 
         claimButton = GameObject.Find("ClaimButton").GetComponent<Button>();
-        upgradeButton = GameObject.FindGameObjectWithTag("UpgradeEarnButton").GetComponent<Button>();
-
+        foreach (var item in Resources.FindObjectsOfTypeAll<UpgradeButton>())
+        {
+            if (item != null)
+            {
+                upgradeButton = item.GetComponent<Button>();
+            }
+        }
         cancelButton = GameObject.Find("CloseButtonHouse").GetComponent<Button>();
         cancelButtonEarn = GameObject.Find("CloseButtonEarn").GetComponent<Button>(); 
 
@@ -118,7 +124,7 @@ public class BuildingsDoing : MonoBehaviour
                     
                     cancelButtonEarn.onClick.AddListener(() => BackAllBuildings());
 
-
+                    upgradeButton.GetComponent<UpgradeButton>().OnEnableFunk(buildingThis.gold_OR_oil, buildingThis, gameManager.gold, gameManager.oil);
 
 
                     buildingThis.open = isOpen = true;
@@ -193,14 +199,15 @@ public class BuildingsDoing : MonoBehaviour
                 gameManager.oil -= this.buildingThis.upgradeCost;
 
                 this.buildingThis.level += 1;
+                buildingThis.nextLevel += 1;
 
                 this.buildingThis.income = buildingThis.upgradeGoldEarn;
                 this.buildingThis.maxIncome = buildingThis.upgradeNewMaxIncome;
 
                 buildingThis.upgradeGoldEarn *= 2;
-                buildingThis.upgradeNewMaxIncome *= 3;
+                buildingThis.upgradeNewMaxIncome *= 2;
 
-                this.buildingThis.upgradeCost *= 3;
+                this.buildingThis.upgradeCost *= 2;
                 buildingThis.upgradeTime *= 2;
 
                 BackAllBuildings();
@@ -212,15 +219,17 @@ public class BuildingsDoing : MonoBehaviour
                 gameManager.gold -= this.buildingThis.upgradeCost;
 
                 this.buildingThis.level += 1;
+                buildingThis.nextLevel += 1;
+
 
                 this.buildingThis.income = buildingThis.upgradeGoldEarn;
                 this.buildingThis.maxIncome = buildingThis.upgradeNewMaxIncome;
 
                 buildingThis.upgradeGoldEarn *= 2;
-                buildingThis.upgradeNewMaxIncome *= 3;
+                buildingThis.upgradeNewMaxIncome *= 2;
 
-                this.buildingThis.upgradeCost *= 3;
-                buildingThis.upgradeTime *= 3;
+                this.buildingThis.upgradeCost *= 2;
+                buildingThis.upgradeTime *= 2;
 
                 BackAllBuildings();
 

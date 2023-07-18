@@ -465,6 +465,7 @@ MonoBehaviour:
     SerializationNodes: []
   cost: 40
   level: 1
+  nextLevel: 2
   maxLevel: 1
   upgradeCost: 10
   limitBuilding: 55

@@ -5246,7 +5246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -5256,6 +5256,7 @@ MonoBehaviour:
     SerializationNodes: []
   cost: 50
   level: 1
+  nextLevel: 2
   maxLevel: 10
   upgradeCost: 10
   limitBuilding: 55

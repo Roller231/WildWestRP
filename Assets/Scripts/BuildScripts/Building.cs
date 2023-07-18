@@ -8,7 +8,8 @@ public class Building : SerializedMonoBehaviour
 
     [Header("Основные свойства здания")]
     public int cost;
-    public int level;
+    public int level = 1;
+    public int nextLevel = 2;
     public int maxLevel;
     public int upgradeCost;
     public int limitBuilding;

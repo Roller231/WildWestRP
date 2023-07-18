@@ -44,7 +44,6 @@ public class ConstructionScript : MonoBehaviour
         imageBuild.enabled = true;
         doingBuild.enabled = true;
         doingBuild.onePlay = false;
-        doingBuild.BackAllBuildings();
         gameObject.SetActive(false);
 
 
