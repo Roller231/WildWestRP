@@ -13,7 +13,7 @@ public class CameraTo3D : MonoBehaviour
         if (do3D)
         {
             mainCamera.GetComponent<Camera>().orthographic = false;
-            mainCamera.GetComponent<Camera>().fieldOfView = 60;
+            mainCamera.GetComponent<Camera>().fieldOfView = 39.6f;
 
             mainCamera.transform.position = new Vector3(0, 0, 50);
             mainCamera.transform.rotation = new Quaternion(180, 0, 0, 0);

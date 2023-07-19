@@ -29,6 +29,24 @@ public class SetButtonInfo : MonoBehaviour
         if (buttonBuild.countBuilding >= buttonBuild.limitBuilding)
         {
             gameObject.GetComponent<Button>().interactable = false;
+            costText.color = Color.red;
+
+        }
+        else if (buttonBuild.countBuilding >= buttonBuild.limitBuilding)
+        {
+            gameObject.GetComponent<Button>().interactable = true;
+            costText.color = Color.white;
+        }
+
+        else if (GameObject.Find("GameManager").GetComponent<GameManager>().gold < buttonBuild.cost && !buttonBuild.gold_OR_oil || GameObject.Find("GameManager").GetComponent<GameManager>().oil < buttonBuild.cost && buttonBuild.gold_OR_oil)
+        {
+            gameObject.GetComponent<Button>().interactable = false;
+            costText.color = Color.red;
+        }
+        else if (GameObject.Find("GameManager").GetComponent<GameManager>().gold > buttonBuild.cost && !buttonBuild.gold_OR_oil || GameObject.Find("GameManager").GetComponent<GameManager>().oil > buttonBuild.cost && buttonBuild.gold_OR_oil)
+        {
+            gameObject.GetComponent<Button>().interactable = true;
+            costText.color = Color.white;
         }
 
         costText.text = buttonBuild.cost.ToString();
