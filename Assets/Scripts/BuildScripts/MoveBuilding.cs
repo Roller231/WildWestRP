@@ -102,4 +102,7 @@ public class MoveBuilding : MonoBehaviour
 
         _building.GetComponent<BuildingsDoing>().BackAllBuildings();
     }
+
+
+
 }

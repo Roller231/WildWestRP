@@ -37,6 +37,16 @@ public class UtilScripts : MonoBehaviour
         }
     }
 
+    public static void DestroyObjectWithComponent3D()
+    {
+        MeshRenderer[] meshRenderers = FindObjectsOfType<MeshRenderer>();
+
+        // Удаляем каждый объект с компонентом MeshRenderer
+        foreach (MeshRenderer renderer in meshRenderers)
+        {
+            Destroy(renderer.gameObject);
+        }
+    }
 
 
 
