@@ -27,6 +27,7 @@ public class EnemyAttack : MonoBehaviour
         Vector3 movement = (target.position - transform.position).normalized; ; // Ќаправление движени€ врага (в данном случае, назад)
         enemyRigidbody.velocity = movement * moveSpeed;
 
+        gameObject.transform.rotation = new Quaternion(90, gameObject.transform.rotation.y, gameObject.transform.rotation.z, gameObject.transform.rotation.w);
         gameObject.transform.LookAt(target);
     } 
 

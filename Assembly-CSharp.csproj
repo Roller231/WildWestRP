@@ -65,14 +65,17 @@
     <Compile Include="Assets\UI\ScriptsUI\OpenScene.cs" />
     <Compile Include="Assets\Scripts\3D Attack Scripts\CameraTo3D.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
+    <Compile Include="Assets\Scripts\3D Attack Scripts\EnemyAttack.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
     <Compile Include="Assets\Scripts\BuildScripts\GameManager.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />
+    <Compile Include="Assets\Scripts\3D Attack Scripts\SpawnKrips.cs" />
     <Compile Include="Assets\UI\ScriptsUI\SetProgressBarBuilding.cs" />
     <Compile Include="Assets\UI\ScriptsUI\SetButtonInfo.cs" />
+    <Compile Include="Assets\Scripts\3D Attack Scripts\BuildingToAttack.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
@@ -110,9 +113,6 @@
     <Compile Include="Assets\Scripts\BuildScripts\PanZoom.cs" />
     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-    <Compile Include="Assets\Scripts\3D Attack Scripts\EnemyAttack.cs" />
-    <Compile Include="Assets\Scripts\3D Attack Scripts\BuildingToAttack.cs" />
-    <Compile Include="Assets\Scripts\3D Attack Scripts\SpawnKrips.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
