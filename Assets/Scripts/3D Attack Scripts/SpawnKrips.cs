@@ -18,7 +18,9 @@ public class SpawnKrips : MonoBehaviour
         {
             Vector3 clickPosition = hit.point; // Получаем позицию нажатия в мировых координатах
             Debug.Log("Нажатие на позицию: " + clickPosition);
-            Instantiate(krips, new Vector3(clickPosition.x, clickPosition.y, clickPosition.z + 2), Quaternion.identity);
+
+            Quaternion quaternion = new Quaternion(krips.transform.rotation.x, krips.transform.rotation.y, krips.transform.rotation.z, krips.transform.rotation.w);
+            Instantiate(krips, new Vector3(clickPosition.x, clickPosition.y, clickPosition.z + 2), quaternion);
         }
     }
 }

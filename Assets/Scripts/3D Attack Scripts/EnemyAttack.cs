@@ -20,15 +20,17 @@ public class EnemyAttack : MonoBehaviour
 
     private void Update()
     {
-        
+
 
 
         // Ћогика перемещени€ врага
-        Vector3 movement = (target.position - transform.position).normalized; ; // Ќаправление движени€ врага (в данном случае, назад)
-        enemyRigidbody.velocity = movement * moveSpeed;
+        //Vector3 movement = (target.position - transform.position ).normalized; ; // Ќаправление движени€ врага (в данном случае, назад)
+        //enemyRigidbody.velocity = movement * moveSpeed;
 
-        gameObject.transform.rotation = new Quaternion(90, gameObject.transform.rotation.y, gameObject.transform.rotation.z, gameObject.transform.rotation.w);
-        gameObject.transform.LookAt(target);
+        Vector3 targetPosition = new Vector3(transform.position.x, target.transform.position.y, target.transform.position.z);
+
+        transform.LookAt(targetPosition);
+
     } 
 
 
