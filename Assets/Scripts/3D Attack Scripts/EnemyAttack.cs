@@ -27,9 +27,7 @@ public class EnemyAttack : MonoBehaviour
         //Vector3 movement = (target.position - transform.position ).normalized; ; // Ќаправление движени€ врага (в данном случае, назад)
         //enemyRigidbody.velocity = movement * moveSpeed;
 
-        Vector3 targetPosition = new Vector3(transform.position.x, target.transform.position.y, target.transform.position.z);
-
-        transform.LookAt(targetPosition);
+        transform.LookAt(target);
 
     } 
 
@@ -48,7 +46,7 @@ public class EnemyAttack : MonoBehaviour
             for (int i = 1; i < objectsWithComponent.Length; i++)
             {
                 float distance = Vector3.Distance(transform.position, objectsWithComponent[i].transform.position);
-
+            
                 if (distance < closestDistance)
                 {
                     closestObject = objectsWithComponent[i];
