@@ -114,7 +114,6 @@ public class DB : MonoBehaviour
         // Сохранение данных в Firebase Realtime Database
         dbRef.Child("users").Child(playerInfo.playerNickname).SetRawJsonValueAsync(json);
 
-        Debug.Log("request DB");
     }
 
     IEnumerator LoadStateFire()

@@ -23,23 +23,27 @@ public class EnemyAttack : MonoBehaviour
 
 
 
-        // Логика перемещения врага
-        //Vector3 movement = (target.position - transform.position ).normalized; ; // Направление движения врага (в данном случае, назад)
-        //enemyRigidbody.velocity = movement * moveSpeed;
+        Vector3 movement = (target.position - transform.position).normalized; ;
+        enemyRigidbody.velocity = movement * moveSpeed;
 
-        transform.LookAt(target);
+        // РџРѕР»СѓС‡Р°РµРј РІРµРєС‚РѕСЂ РЅР°РїСЂР°РІР»РµРЅРёСЏ РѕС‚ С‚РµРєСѓС‰РµР№ РїРѕР·РёС†РёРё С†РµР»РµРІРѕР№ РїРѕР·РёС†РёРё
+        Vector3 direction = target.position - transform.position;
+
+        // Р’С‹С‡РёСЃР»СЏРµРј СѓРіРѕР» РјРµР¶РґСѓ РІРµРєС‚РѕСЂРѕРј РЅР°РїСЂР°РІР»РµРЅРёСЏ Рё РѕСЃСЊСЋ z
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // РџСЂРёРјРµРЅСЏРµРј СѓРіРѕР» Рє РєРѕРѕСЂРґРёРЅР°С‚Рµ rotation z
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
     } 
 
 
     public void FindNearestBuilding()
     {
-        // Найти все объекты с компонентом MyComponent
         BuildingToAttack[] objectsWithComponent = FindObjectsOfType<BuildingToAttack>();
 
         if (objectsWithComponent.Length > 0)
         {
-            // Найти ближайший объект из найденных
             BuildingToAttack closestObject = objectsWithComponent[0];
             float closestDistance = Vector3.Distance(transform.position, closestObject.transform.position);
 
@@ -54,14 +58,30 @@ public class EnemyAttack : MonoBehaviour
                 }
             }
 
-            // Делайте что-то с найденным объектом
-            Debug.Log("Найден ближайший объект: " + closestObject.name);
+            Debug.Log("Р‘Р»РёР¶Р°Р№С€РёР№ РѕР±СЉРµРєС‚: " + closestObject.name);
 
             target = closestObject.transform;
         }
         else
         {
-            Debug.Log("Объекты с компонентом Attack не найдены");
+        }
+    }
+
+    public void StartRayCast()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        float maxDistance = 10f; // Р—Р°РґР°Р№С‚Рµ Р¶РµР»Р°РµРјСѓСЋ РґРёСЃС‚Р°РЅС†РёСЋ
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, maxDistance))
+        {
+            // РћР±СЂР°Р±РѕС‚РєР° СЃС‚РѕР»РєРЅРѕРІРµРЅРёСЏ СЃ РѕР±СЉРµРєС‚РѕРј
+            Debug.Log("Р Р°Р№РєР°СЃС‚ РїРѕРїР°Р» РІ РѕР±СЉРµРєС‚: " + hit.collider.gameObject.name);
+        }
+        else
+        {
+            // Р Р°Р№РєР°СЃС‚ РЅРµ РїРѕРїР°Р» РЅРё РІ РѕРґРёРЅ РѕР±СЉРµРєС‚
+            Debug.Log("Р Р°Р№РєР°СЃС‚ РЅРµ РїРѕРїР°Р» РІ РѕР±СЉРµРєС‚");
         }
     }
 }

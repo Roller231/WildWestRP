@@ -379,6 +379,7 @@
 "Assets/LeanTween/Framework/LTDescr.cs"
 "Assets/LeanTween/Framework/LTDescrOptional.cs"
 "Assets/LeanTween/Framework/LTSeq.cs"
+"Assets/Scripts/3D Attack Scripts/AttackNear.cs"
 "Assets/Scripts/3D Attack Scripts/BuildingToAttack.cs"
 "Assets/Scripts/3D Attack Scripts/CameraTo3D.cs"
 "Assets/Scripts/3D Attack Scripts/EnemyAttack.cs"
