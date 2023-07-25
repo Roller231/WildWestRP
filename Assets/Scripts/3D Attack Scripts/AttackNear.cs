@@ -20,12 +20,11 @@ public class AttackNear : MonoBehaviour
         if (Physics.Raycast(ray, out hit, maxDistance))
         {
             // Обработка столкновения с объектом
-            Debug.Log("Райкаст попал в объект: " + hit.collider.gameObject.name);
+            //Debug.Log("Райкаст попал в объект: " + hit.collider.gameObject.name);
         }
         else
         {
             // Райкаст не попал ни в один объект
-            Debug.Log("Райкаст не попал в объект");
         }
     }
 }

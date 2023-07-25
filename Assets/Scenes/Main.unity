@@ -9107,7 +9107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &429371618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11044,7 +11044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1916821932}
   saveAll: {fileID: 519420035}
-  DoLoad: 0
+  DoLoad: 1
   oneLoad: 0
   oneSave: 1
   playerInfo: {fileID: 1829880588}
@@ -11062,7 +11062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420028}
-  do3D: 0
+  do3D: 1
 --- !u!1 &525958240
 GameObject:
   m_ObjectHideFlags: 0
@@ -46656,7 +46656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1829880588
 MonoBehaviour:
   m_ObjectHideFlags: 0
