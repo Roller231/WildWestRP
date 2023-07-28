@@ -386,7 +386,7 @@
 "Assets/Scripts/3D Attack Scripts/SpawnKrips.cs"
 "Assets/Scripts/BuildScripts/Building.cs"
 "Assets/Scripts/BuildScripts/BuildingsDoing.cs"
-"Assets/Scripts/BuildScripts/ConstructionScript.cs"
+"Assets/Scripts/BuildScripts/constructionScript.cs"
 "Assets/Scripts/BuildScripts/CustomCursour.cs"
 "Assets/Scripts/BuildScripts/EarnResourse.cs"
 "Assets/Scripts/BuildScripts/GameManager.cs"
