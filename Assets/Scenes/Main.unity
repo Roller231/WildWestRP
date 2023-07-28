@@ -9107,7 +9107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &429371618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11030,6 +11030,7 @@ MonoBehaviour:
   bottomLimit: -7.8
   upperLimit: 7.72
   canvas: {fileID: 1747247344}
+  collider: {fileID: 387248693}
 --- !u!114 &519420038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11044,7 +11045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1916821932}
   saveAll: {fileID: 519420035}
-  DoLoad: 1
+  DoLoad: 0
   oneLoad: 0
   oneSave: 1
   playerInfo: {fileID: 1829880588}
@@ -46656,7 +46657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1829880588
 MonoBehaviour:
   m_ObjectHideFlags: 0

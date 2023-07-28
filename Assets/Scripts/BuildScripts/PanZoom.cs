@@ -20,6 +20,8 @@ public class PanZoom : MonoBehaviour
     [SerializeField] private float upperLimit;
 
     [SerializeField] private Canvas canvas;
+    [SerializeField] private MeshCollider collider;
+
 
     private Camera cam;
 
@@ -86,11 +88,7 @@ public class PanZoom : MonoBehaviour
                 Touch touchZero = Input.GetTouch(0);
                 Touch touchOne = Input.GetTouch(1);
             
-                if (EventSystem.current.IsPointerOverGameObject(touchZero.fingerId)
-                    || EventSystem.current.IsPointerOverGameObject(touchOne.fingerId))
-                {
-                    return;
-                }
+ 
 
                 Vector2 touchZeroLastPos = touchZero.position - touchZero.deltaPosition;
                 Vector2 touchOneLastPos = touchOne.position - touchOne.deltaPosition;
@@ -196,9 +194,6 @@ public class PanZoom : MonoBehaviour
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(0.2f);
         canvas.GetComponent<GraphicRaycaster>().enabled = true;
-
-
-
 
     }
     IEnumerator SetDelayRaycastFalse()

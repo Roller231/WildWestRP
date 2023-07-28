@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using UnityEngine;
 
 public class SpawnKrips : MonoBehaviour
@@ -7,8 +8,9 @@ public class SpawnKrips : MonoBehaviour
     [SerializeField] Camera mainCamera;
     [SerializeField] GameObject krips;
 
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
+
         Vector3 mousePosition = Input.mousePosition; // Получаемозицию мыши экранных координатах
 
         Ray ray = Camera.main.ScreenPointToRay(mousePosition); // Создаем луч из позиции мыши
@@ -16,6 +18,9 @@ public class SpawnKrips : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit)) //роверяем, пересек ли луч какой-либо объект
         {
+
+
+
             Vector3 clickPosition = hit.point; // Получаем позицию нажатия в мировых координатах
             Debug.Log("Нажатие на позицию: " + clickPosition);
 
