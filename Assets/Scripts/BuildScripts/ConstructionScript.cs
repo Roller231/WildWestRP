@@ -17,11 +17,13 @@ public class ConstructionScript : MonoBehaviour
     [HideInInspector]
     public Image barImage;
 
+    public GameManager gameManager;
 
     private void Start()
     {
         timeMemory = timeStart;
         barImage = GetComponent<SetProgressBarBuilding>().progressBar;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Update()
@@ -40,11 +42,21 @@ public class ConstructionScript : MonoBehaviour
     public void SpawnBuildingTimeLeft()
     {
         doingBuild.gameObject.GetComponent<Building>().isBuilt = true;
-        doingBuild.onePlay = false;
         imageBuild.enabled = true;
         doingBuild.enabled = true;
-        doingBuild.onePlay = false;
         gameObject.SetActive(false);
+
+        foreach (Building item in gameManager.buildings)
+        {
+            if (item.gameObject.GetComponent<BuildingsDoing>().onePlay)
+            {
+                doingBuild.onePlay = true;
+            }
+            else
+            {
+                doingBuild.onePlay = false;
+            }
+        }
 
 
     }

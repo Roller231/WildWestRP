@@ -206,7 +206,6 @@ public class PanZoom : MonoBehaviour
         canvas.GetComponent<GraphicRaycaster>().enabled = false;
 
 
-
     }
 
 

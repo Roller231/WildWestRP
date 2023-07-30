@@ -17,7 +17,9 @@ public class BuildingsDoing : MonoBehaviour
 
 
     private Building buildingThis;
-    private GameManager gameManager;
+    [HideInInspector]
+    public GameManager gameManager;
+    public GameObject mainCamera;
 
 
     public bool grindBuild;
@@ -40,6 +42,7 @@ public class BuildingsDoing : MonoBehaviour
         canvasSettingsNotGrind = GameObject.Find("BuildingSettings");
         canvasSettingsYesGrind = GameObject.Find("EarnBuildingSettings");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        mainCamera = GameObject.Find("Main Camera");
 
         buildingThis = gameObject.GetComponent<Building>();
 
@@ -66,22 +69,7 @@ public class BuildingsDoing : MonoBehaviour
 
         }
 
-        try
-        {
-            if (!isOpen && !setOne)
-            {
 
-                onePlay = false;
-                setOne = true;
-
-
-            }
-        }
-        catch (NullReferenceException)
-        {
-
-            
-        }
 
         
 
@@ -95,7 +83,7 @@ public class BuildingsDoing : MonoBehaviour
     {
         try
         {
-            if (!onePlay && !GameManager.buildingMode && buildingThis.isBuilt)
+            if (!onePlay && !GameManager.buildingMode && buildingThis.isBuilt && !mainCamera.GetComponent<CameraTo3D>().do3D)
             {
 
 

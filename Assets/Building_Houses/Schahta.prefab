@@ -284,7 +284,7 @@ MonoBehaviour:
   maxLevel: 3
   upgradeCost: 10
   limitBuilding: 44
-  countBuilding: 0
+  countBuilding: 22
   upgradeGoldEarn: 5
   upgradeNewMaxIncome: 10000
   upgradeTime: 5
@@ -313,6 +313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onePlay: 0
   isMoving: 0
+  gameManager: {fileID: 0}
+  mainCamera: {fileID: 0}
   grindBuild: 1
   upgradeButton: {fileID: 0}
   cancelButtonEarn: {fileID: 0}
@@ -344,7 +346,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Gold house set
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!222 &911155021781442415
@@ -712,6 +714,7 @@ MonoBehaviour:
   imageBuild: {fileID: 906812644005392672}
   doingBuild: {fileID: -273785919875891180}
   barImage: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!114 &4273857778272994912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,6 +934,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4510321013090458052}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &2140070878456918376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3627236914352989333}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2790734, y: 0.1814513, z: 0.17288505}
+  m_Center: {x: 0.05428902, y: 0.023132648, z: 0.074915886}
 --- !u!114 &3769567577519716761
 MonoBehaviour:
   m_ObjectHideFlags: 0

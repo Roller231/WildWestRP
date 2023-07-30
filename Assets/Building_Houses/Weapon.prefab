@@ -431,6 +431,7 @@ MonoBehaviour:
   imageBuild: {fileID: 9113240994449851251}
   doingBuild: {fileID: 2513792069076785706}
   barImage: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!114 &3618679115765855337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -919,7 +920,7 @@ MonoBehaviour:
   maxLevel: 10
   upgradeCost: 10
   limitBuilding: 55
-  countBuilding: 0
+  countBuilding: 2
   upgradeGoldEarn: 100
   upgradeNewMaxIncome: 0
   upgradeTime: 0
@@ -948,6 +949,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onePlay: 0
   isMoving: 0
+  gameManager: {fileID: 0}
+  mainCamera: {fileID: 0}
   grindBuild: 0
   upgradeButton: {fileID: 0}
   cancelButtonEarn: {fileID: 0}
@@ -979,7 +982,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Animator, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Bar house set
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!222 &5269604272961493682
@@ -1099,6 +1102,7 @@ MonoBehaviour:
   imageBuild: {fileID: 9113240994449851251}
   doingBuild: {fileID: 2513792069076785706}
   barImage: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!114 &2452004600056928907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,37 +1392,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 50dd79227cece844fa5591c789469edc,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.020095674
+      value: -0.020495623
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50dd79227cece844fa5591c789469edc,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.99931264
+      value: -0.9996717
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50dd79227cece844fa5591c789469edc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.015854
+      value: 0.015333513
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50dd79227cece844fa5591c789469edc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.026818521
+      value: 0.0011860481
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50dd79227cece844fa5591c789469edc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -182.253
+      value: -182.346
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50dd79227cece844fa5591c789469edc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 3.1119995
+      value: 0.17199707
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 50dd79227cece844fa5591c789469edc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.8789978
+      value: 1.7610016
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 50dd79227cece844fa5591c789469edc,
         type: 3}
@@ -1439,6 +1443,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6039089194862331956}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &4352267008107655410
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6849498333579736421}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.0338116, y: 6.817186, z: 6.650627}
+  m_Center: {x: 3.4469144, y: -0.25217444, z: -2.0724843}
 --- !u!114 &4203984067342679599
 MonoBehaviour:
   m_ObjectHideFlags: 0
