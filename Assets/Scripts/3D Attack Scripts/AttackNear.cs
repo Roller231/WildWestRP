@@ -8,7 +8,7 @@ public class AttackNear : MonoBehaviour
     [SerializeField] private GameObject root;
     [SerializeField] private SpawnKrips kripsList;
 
-
+    public float maxDistance = 1f;
 
 
     public int damage;
@@ -17,6 +17,7 @@ public class AttackNear : MonoBehaviour
     {
         kripsList = GameObject.Find("Plane").GetComponent<SpawnKrips>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -32,7 +33,6 @@ public class AttackNear : MonoBehaviour
     {
 
         Ray ray = new Ray(transform.position, transform.forward);
-        float maxDistance = 1f; // Задайте желаемую дистанцию
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, maxDistance))
@@ -44,7 +44,7 @@ public class AttackNear : MonoBehaviour
             {
                 finedObject = true;
                 gameObject.GetComponent<Animator>().SetBool("isAttack", true);
-                root.GetComponent<EnemyMoovement>().moveSpeed = 0;
+                root.GetComponent<Enemy>().moveSpeed = 0;
             }
 
 
@@ -52,16 +52,14 @@ public class AttackNear : MonoBehaviour
         }
         else
         {
-            Debug.Log("dont hit");
 
         }
     }
 
-    public void MeeleAttack()
+    public void Attack()
     {
 
         Ray ray = new Ray(transform.position, transform.forward);
-        float maxDistance = 1f; // Задайте желаемую дистанцию
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, maxDistance))
@@ -82,7 +80,6 @@ public class AttackNear : MonoBehaviour
                 if (hit.collider.gameObject.GetComponent<BuildingToAttack>().health <= 0)
                 {
 
-                    Debug.Log("ыыыыыыы");
 
 
                     foreach (var enemy in kripsList.kripsList)
@@ -91,7 +88,7 @@ public class AttackNear : MonoBehaviour
 
 
                             enemy.GetComponentInChildren<Animator>().SetBool("isAttack", false);
-                            enemy.GetComponent<EnemyMoovement>().moveSpeed = enemy.GetComponent<EnemyMoovement>().memSpeed;
+                            enemy.GetComponent<Enemy>().moveSpeed = enemy.GetComponent<Enemy>().memSpeed;
                             enemy.GetComponentInChildren<AttackNear>().finedObject = false;
                             Debug.Log(enemy.gameObject.name);
 

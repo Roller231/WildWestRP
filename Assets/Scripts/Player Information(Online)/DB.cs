@@ -24,11 +24,9 @@ public class DB : MonoBehaviour
 
     private string filePath;
 
-    public float time = 0f;
 
     private void Update()
     {
-        time -= Time.deltaTime;
 
         if(!DoLoad)
         {

@@ -284,7 +284,7 @@ MonoBehaviour:
   maxLevel: 3
   upgradeCost: 10
   limitBuilding: 44
-  countBuilding: 22
+  countBuilding: 30
   upgradeGoldEarn: 5
   upgradeNewMaxIncome: 10000
   upgradeTime: 5
@@ -945,8 +945,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2790734, y: 0.1814513, z: 0.17288505}
-  m_Center: {x: 0.05428902, y: 0.023132648, z: 0.074915886}
+  m_Size: {x: 0.34571454, y: 0.22096011, z: 0.17288505}
+  m_Center: {x: 0.051231295, y: 0.0073279124, z: 0.074867345}
 --- !u!114 &3769567577519716761
 MonoBehaviour:
   m_ObjectHideFlags: 0

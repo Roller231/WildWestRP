@@ -28,7 +28,6 @@ public class CameraTo3D : MonoBehaviour
 
             mainCamera.transform.position.Set(0, 3, 18);
             mainCamera.transform.rotation = Quaternion.Euler(122, 0, 0);
-            Debug.Log(mainCamera.transform.rotation.x);
 
 
         }

@@ -1,0 +1,270 @@
+Using pre-set license
+Built from '2021.3/release' branch; Version is '2021.3.17f1 (3e8111cac19d) revision 4096273'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'ru' Physical Memory: 16286 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+D:/rep_Git/WildWestRP
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+56847
+Successfully changed project path to: D:/rep_Git/WildWestRP
+D:/rep_Git/WildWestRP
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [24924] Host "[IP] 192.168.0.27 [Port] 0 [Flags] 2 [Guid] 1651138236 [EditorId] 1651138236 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-E7O3QUI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [24924] Host "[IP] 192.168.0.27 [Port] 0 [Flags] 2 [Guid] 1651138236 [EditorId] 1651138236 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-E7O3QUI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 83.37 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.17f1 (3e8111cac19d)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/rep_Git/WildWestRP/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3050 (ID=0x2507)
+    Vendor:   NVIDIA
+    VRAM:     8056 MB
+    Driver:   31.0.15.3667
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56992
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.030024 seconds.
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 466 ms
+Refreshing native plugins compatible for Editor in 52.21 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.658 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1658ms)
+		BeginReloadAssembly (191ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (1219ms)
+			LoadAssemblies (182ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (188ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (39ms)
+			SetupLoadedEditorAssemblies (901ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (614ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (52ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (160ms)
+				ProcessInitializeOnLoadMethodAttributes (72ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.018181 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.92 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.507 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3508ms)
+		BeginReloadAssembly (247ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (3025ms)
+			LoadAssemblies (174ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (341ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (70ms)
+			SetupLoadedEditorAssemblies (2397ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (74ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (129ms)
+				ProcessInitializeOnLoadAttributes (600ms)
+				ProcessInitializeOnLoadMethodAttributes (1566ms)
+				AfterProcessingInitializeOnLoad (26ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.88 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2095 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 109 unused Assets / (56.8 KB). Loaded Objects now: 2500.
+Memory consumption went from 89.4 MB to 89.4 MB.
+Total: 6.821200 ms (FindLiveObjects: 0.421000 ms CreateObjectMapping: 0.258700 ms MarkObjects: 5.985400 ms  DeleteObjects: 0.154300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 182631.403197 seconds.
+  path: Assets/Models/Attacker/Arrower/Erika Archer With Bow Arrow.fbx
+  artifactKey: Guid(d0ded83defcc5464e9fb777cd1cd1fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Erika Archer With Bow Arrow.fbx using Guid(d0ded83defcc5464e9fb777cd1cd1fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bb8eb6c078044c706f53a271d7380b3') in 0.393115 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 148.308857 seconds.
+  path: Assets/Models/Attacker/Arrower/Unarmed Idle 01.fbx
+  artifactKey: Guid(f130974da989bcc4589a727486fc682f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Unarmed Idle 01.fbx using Guid(f130974da989bcc4589a727486fc682f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01c1c79feb9dafe8d74e557b9ac7712b') in 0.030281 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 91.434700 seconds.
+  path: Assets/Models/Attacker/Arrower/Akai_MAT1.mat
+  artifactKey: Guid(78872a153a3fc4b418118ae6d9413208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Akai_MAT1.mat using Guid(78872a153a3fc4b418118ae6d9413208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10c7443ff04557beedc9ef526e4e0eff') in 0.033986 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.024493 seconds.
+  path: Assets/Models/Attacker/Arrower/Bow_MAT.mat
+  artifactKey: Guid(efc266499325f84428cd576b5b837d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Bow_MAT.mat using Guid(efc266499325f84428cd576b5b837d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9e44a1fdc711f3e37e63be8e35c56b5') in 0.025224 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Models/Attacker/Arrower/Arrow_MAT 1.mat
+  artifactKey: Guid(81a601724f026674cb0b74da0671a6b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Arrow_MAT 1.mat using Guid(81a601724f026674cb0b74da0671a6b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9507a459ec297ef58219638d19c3b6af') in 0.021393 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Models/Attacker/Arrower/Body_MAT1.mat
+  artifactKey: Guid(8ff35d51c40f9b941acb1d99102c727c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Body_MAT1.mat using Guid(8ff35d51c40f9b941acb1d99102c727c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cceaeda12301b35c824a27af45c94705') in 0.025028 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 359.782086 seconds.
+  path: Assets/Models/Attacker/Arrower/Arrow_DIFF.png
+  artifactKey: Guid(f00e9c8af483cd842b4c1ece7372ae0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Arrow_DIFF.png using Guid(f00e9c8af483cd842b4c1ece7372ae0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c7ae2b7be5ec2022350e60b9f96a9c0') in 0.854663 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Models/Attacker/Arrower/Bow_DIFF.jpg
+  artifactKey: Guid(a60b31d914893f946b2708c6e09f1668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Bow_DIFF.jpg using Guid(a60b31d914893f946b2708c6e09f1668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19273c4674575d21e1a62dbaacc9506f') in 1.196514 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Models/Attacker/Arrower/Erika_Archer_Clothes_diffuse.png
+  artifactKey: Guid(d0e4c90f8a7c0be4cb068176c83ddceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Erika_Archer_Clothes_diffuse.png using Guid(d0e4c90f8a7c0be4cb068176c83ddceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4875563b8a1576ac3b0dfa880eab701') in 1.042300 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Models/Attacker/Arrower/FemaleFitA_StdNM.png
+  artifactKey: Guid(6591503da6f67fa4f830e77af3129ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/FemaleFitA_StdNM.png using Guid(6591503da6f67fa4f830e77af3129ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d98c65267a88356eace053314ea3c67') in 0.902525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Models/Attacker/Arrower/Arrow_NM.jpg
+  artifactKey: Guid(a353796547a5d2e46bc1db0a062f22f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Arrow_NM.jpg using Guid(a353796547a5d2e46bc1db0a062f22f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf1f6b1ce3e1c0d2533f0a3c046ce024') in 0.065155 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.046325 seconds.
+  path: Assets/Models/Attacker/Arrower/Erika Archer With Bow Arrow.fbx
+  artifactKey: Guid(d0ded83defcc5464e9fb777cd1cd1fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Erika Archer With Bow Arrow.fbx using Guid(d0ded83defcc5464e9fb777cd1cd1fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0d4f75bd0f6d2e13cb43a9e4ef542fc') in 1.492887 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.171514 seconds.
+  path: Assets/Models/Attacker/Arrower/Arrow_MAT 1.mat
+  artifactKey: Guid(81a601724f026674cb0b74da0671a6b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Arrow_MAT 1.mat using Guid(81a601724f026674cb0b74da0671a6b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a397d755a1aa93664a6b9239b2ecb6b1') in 0.037852 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Models/Attacker/Arrower/Erika_Archer_Clothes_normal.png
+  artifactKey: Guid(c6eec1f20f8f45341a9fecf264a1c96d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Erika_Archer_Clothes_normal.png using Guid(c6eec1f20f8f45341a9fecf264a1c96d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bd77db7b47826e72b3c9150c07114a7') in 0.117852 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Models/Attacker/Arrower/FemaleFitA_StdNM.png
+  artifactKey: Guid(6591503da6f67fa4f830e77af3129ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/FemaleFitA_StdNM.png using Guid(6591503da6f67fa4f830e77af3129ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ed063fbba9ec4ad59cb4c85d9f29a0a') in 0.128618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Models/Attacker/Arrower/Bow_NM.jpg
+  artifactKey: Guid(1ba2e2a4cb4ccac4f91350321e16eefa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Attacker/Arrower/Bow_NM.jpg using Guid(1ba2e2a4cb4ccac4f91350321e16eefa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a541e2ab5798cf929915b2de1b0f58c8') in 0.116342 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
