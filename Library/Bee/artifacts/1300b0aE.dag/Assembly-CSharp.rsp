@@ -404,6 +404,7 @@
 "Assets/UI/ScriptsUI/SetProgressBarBuilding.cs"
 "Assets/UI/ScriptsUI/SetTextGold.cs"
 "Assets/UI/ScriptsUI/ShopOpenClose.cs"
+"Assets/UI/ScriptsUI/trainButton.cs"
 "Assets/UI/ScriptsUI/UpgradeButton.cs"
 -langversion:9.0
 

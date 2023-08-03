@@ -16,7 +16,7 @@ public class TouchCameraControl : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount == 2)
+        if (Input.touchCount == 2 && !UtilScripts.IsPointerOverUIObject())
         {
             Touch touchZero = Input.GetTouch(0);
             Touch touchOne = Input.GetTouch(1);
@@ -31,12 +31,12 @@ public class TouchCameraControl : MonoBehaviour
 
             Zoom(difference * 0.01f);
         }
-        else if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        else if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Moved && !UtilScripts.IsPointerOverUIObject())
         {
             Vector3 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
             PanCamera(-touchDeltaPosition);
         }
-        else if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0) && !UtilScripts.IsPointerOverUIObject())
         {
             Vector3 touchDeltaPosition = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0);
             PanCamera(-touchDeltaPosition);

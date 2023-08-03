@@ -18,6 +18,8 @@ public class SaveAll : MonoBehaviour
 
 
     public GameObject[] prefabsHouse;
+    public GameObject[] prefabsPawns;
+    public GameObject[] prefabsPawnsCards;
 
     public bool DoLoad;
 
@@ -61,6 +63,16 @@ public class SaveAll : MonoBehaviour
     public void SaveState(string filePath)
     {
 
+
+        for (int l = 0; l < prefabsPawns.Length; l++)
+        {
+            Array.Resize(ref state.dataCountPawns, prefabsPawns.Length);
+
+
+            state.dataCountPawns[l] = prefabsPawns[l].GetComponent<Enemy>().countInArmy;
+            Debug.Log(state.dataCountPawns[l]);
+        }
+
         for (int i = 0; i < gameManager.buildings.Length; i++)
         {
             if (gameManager.buildings[i] != null)
@@ -86,11 +98,15 @@ public class SaveAll : MonoBehaviour
                 Array.Resize(ref state.dataCountBuilding, prefabsHouse.Length);
                 Array.Resize(ref state.dataLimitBuilding, prefabsHouse.Length);
 
+
+
                 for (int j = 0; j < prefabsHouse.Length; j++)
                 {
                     state.dataCountBuilding[j] = prefabsHouse[j].GetComponent<Building>().countBuilding;
                     state.dataLimitBuilding[j] = prefabsHouse[j].GetComponent<Building>().limitBuilding;
                 }
+
+
 
                 state.dataCountHouseMemory[i] = gameManager.buildings[i].memoryCountHouse;
 
@@ -137,7 +153,17 @@ public class SaveAll : MonoBehaviour
     public void LoadState()
     {
 
-        
+        for (int l = 0; l < prefabsPawns.Length; l++)
+        {
+            Array.Resize(ref state.dataCountPawns, prefabsPawns.Length);
+
+
+            prefabsPawns[l].GetComponent<Enemy>().countInArmy = state.dataCountPawns[l];
+
+            if (state.dataCountPawns[l] != 0)
+                prefabsPawnsCards[l].GetComponent<trainButton>().trainPawnsOnLoad();
+            
+        }
 
         for (int i = 0; i < state.gameObjects.Length; i++)
         {
@@ -182,6 +208,8 @@ public class SaveAll : MonoBehaviour
 
                         prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
                         prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];
+
+
 
                     }
                 }
@@ -244,6 +272,8 @@ public class Data
     public int[] dataCountBuilding;
     public int[] dataCountHouseMemory;
     public int[] dataLimitBuilding;
+
+    public int[] dataCountPawns;
 
     public int[] dataUpgradeGoldEarn;
     public int[] dataUpgradeNewMaxIncome;

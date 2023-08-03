@@ -96,6 +96,8 @@ public class DB : MonoBehaviour
         data.posY = saveAll.state.posY;
         data.isOccupped = saveAll.state.isOccupped;
         data.indexTile = saveAll.state.indexTile;
+        data.dataCountPawns = saveAll.state.dataCountPawns;
+
         data.dataNick = playerInfo.playerNickname;
         data.pass = playerInfo.pass;
 
@@ -168,6 +170,7 @@ public class DB : MonoBehaviour
             saveAll.state.posY = data.posY;
             saveAll.state.isOccupped = data.isOccupped;
            saveAll.state.indexTile = data.indexTile;
+            saveAll.state.dataCountPawns = data.dataCountPawns;
 
 
             saveAll.LoadState();
@@ -362,6 +365,8 @@ public class GameData
     public int[] dataCountBuilding;
     public int[] dataCountHouseMemory;
     public int[] dataLimitBuilding;
+
+    public int[] dataCountPawns;
 
     public int[] dataUpgradeGoldEarn;
     public int[] dataUpgradeNewMaxIncome;

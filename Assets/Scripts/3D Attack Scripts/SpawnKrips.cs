@@ -18,7 +18,7 @@ public class SpawnKrips : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(mousePosition); // Создаем луч из позиции мыши
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit)) //роверяем, пересек ли луч какой-либо объект
+        if (Physics.Raycast(ray, out hit) && !UtilScripts.IsPointerOverUIObject()) //роверяем, пересек ли луч какой-либо объект
         {
 
             Vector3 clickPosition = hit.point; // Получаем позицию нажатия в мировых координатах

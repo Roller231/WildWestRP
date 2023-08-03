@@ -13,6 +13,10 @@ public class Enemy : MonoBehaviour
 
     public Transform target;
 
+    public int cost;
+    public int countInArmy;
+    public int maxCount;
+
     private void Start()
     {
         memSpeed = moveSpeed;
