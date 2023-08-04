@@ -401,6 +401,7 @@
 "Assets/UI/ScriptsUI/OpenBuildingSettings.cs"
 "Assets/UI/ScriptsUI/OpenScene.cs"
 "Assets/UI/ScriptsUI/SetButtonInfo.cs"
+"Assets/UI/ScriptsUI/SetPlayerInfo.cs"
 "Assets/UI/ScriptsUI/SetProgressBarBuilding.cs"
 "Assets/UI/ScriptsUI/SetTextGold.cs"
 "Assets/UI/ScriptsUI/ShopOpenClose.cs"

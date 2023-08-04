@@ -94,6 +94,9 @@ public class SaveAll : MonoBehaviour
                 Array.Resize(ref state.dataIsBuilt, gameManager.buildings.Length);
                 Array.Resize(ref state.dataFillAmountBar, gameManager.buildings.Length);
                 Array.Resize(ref state.dataCountHouseMemory, gameManager.buildings.Length);
+                Array.Resize(ref state.dataNextLevel, gameManager.buildings.Length);
+
+
 
                 Array.Resize(ref state.dataCountBuilding, prefabsHouse.Length);
                 Array.Resize(ref state.dataLimitBuilding, prefabsHouse.Length);
@@ -129,10 +132,11 @@ public class SaveAll : MonoBehaviour
 
                 state.isOccupped[i] = gameManager.tiles[state.indexTile[i]].isOccuped;
 
+                if (gameManager.buildings[i] != null)
                     state.dataTimeForUpgrade[i] = gameManager.buildings[i].constructionScript.timeStart;
 
 
-
+                state.dataNextLevel[i] = gameManager.buildings[i].nextLevel;
 
 
                 state.dataIsBuilt[i] = gameManager.buildings[i].isBuilt;
@@ -206,6 +210,8 @@ public class SaveAll : MonoBehaviour
 
                         gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
 
+                        gameManager.buildings[i].nextLevel = state.dataNextLevel[i];
+
                         prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
                         prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];
 
@@ -264,10 +270,12 @@ public class Data
     public int[] dataIncome;
     public int[] dataMaxIncome;
     public int[] dataLevel;
+    public int[] dataNextLevel;
     public int[] dataUpgradeCost;
     public float[] dataTimeEarn;
     public float[] dataTimeForUpgrade;
     public bool[] dataIsBuilt;
+
 
     public int[] dataCountBuilding;
     public int[] dataCountHouseMemory;

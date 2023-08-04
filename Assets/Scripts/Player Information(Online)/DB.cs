@@ -97,6 +97,7 @@ public class DB : MonoBehaviour
         data.isOccupped = saveAll.state.isOccupped;
         data.indexTile = saveAll.state.indexTile;
         data.dataCountPawns = saveAll.state.dataCountPawns;
+        data.dataNextLevel = saveAll.state.dataNextLevel;
 
         data.dataNick = playerInfo.playerNickname;
         data.pass = playerInfo.pass;
@@ -171,6 +172,7 @@ public class DB : MonoBehaviour
             saveAll.state.isOccupped = data.isOccupped;
            saveAll.state.indexTile = data.indexTile;
             saveAll.state.dataCountPawns = data.dataCountPawns;
+            saveAll.state.dataNextLevel = data.dataNextLevel;
 
 
             saveAll.LoadState();
@@ -358,6 +360,8 @@ public class GameData
     public int[] dataMaxIncome;
     public int[] dataLevel;
     public int[] dataUpgradeCost;
+    public int[] dataNextLevel;
+
     public float[] dataTimeEarn;
     public float[] dataTimeForUpgrade;
     public bool[] dataIsBuilt;

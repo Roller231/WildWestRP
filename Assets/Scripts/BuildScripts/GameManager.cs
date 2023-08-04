@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public int gold;
     public int oil;
 
+    public int LEVEL;
+
     private Building buildingToPlace;
     public GameObject grid;
 

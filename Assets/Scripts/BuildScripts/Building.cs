@@ -41,6 +41,10 @@ public class Building : SerializedMonoBehaviour
 
     public bool nowMove;
 
+    public int plasesInArmy;
+
     public string typeBuilding;
+
+ 
 
 }

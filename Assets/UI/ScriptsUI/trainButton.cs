@@ -37,6 +37,12 @@ public class trainButton : MonoBehaviour
 
     public void TrainPawns()
     {
+        int placesInArmyMax = 0;
+        foreach (var item in gameManager.buildings)
+        {
+            placesInArmyMax += item.plasesInArmy;
+        }
+
         if (enemy.countInArmy <= 0 && gameManager.oil > enemy.cost)
         {
             enemy.countInArmy++;
