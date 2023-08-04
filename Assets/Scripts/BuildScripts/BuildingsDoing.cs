@@ -31,6 +31,8 @@ public class BuildingsDoing : MonoBehaviour
     public Button cancelButtonEarn;
     public Button cancelButton;
 
+    public Button doingButton;
+
 
     public bool isOpen;
 
@@ -56,6 +58,8 @@ public class BuildingsDoing : MonoBehaviour
         }
         cancelButton = GameObject.Find("CloseButtonHouse").GetComponent<Button>();
         cancelButtonEarn = GameObject.Find("CloseButtonEarn").GetComponent<Button>(); 
+
+        doingButton = GameObject.Find("DoAny").GetComponent<Button>(); ;
 
     }
 
@@ -90,6 +94,8 @@ public class BuildingsDoing : MonoBehaviour
                 if (!grindBuild)
                 {
                     canvasSettingsNotGrind.GetComponent<OpenBuildingSettings>().Enable();
+
+                    doingButton.onClick.AddListener(() => DoAnyFunc());
                     cancelButton.onClick.AddListener(() => BackAllBuildings());
 
                     buildingThis.open = isOpen = true;
@@ -162,6 +168,7 @@ public class BuildingsDoing : MonoBehaviour
                 t.open = t.GetComponent<BuildingsDoing>().isOpen = false;
                 
                 t.GetComponent<BuildingsDoing>().upgradeButton.onClick.RemoveAllListeners();
+                t.GetComponent<BuildingsDoing>().doingButton.onClick.RemoveAllListeners();
 
             }
         }
@@ -226,6 +233,19 @@ public class BuildingsDoing : MonoBehaviour
             }
 
 
+        }
+    }
+
+    private void DoAnyFunc()
+    {
+        BackAllBuildings();
+        if (buildingThis.typeBuilding == "weapon")
+        {
+            
+            foreach (Transform child in GameObject.Find("rootWeapon").transform)
+            {
+                child.gameObject.SetActive(true);
+            }
         }
     }
 

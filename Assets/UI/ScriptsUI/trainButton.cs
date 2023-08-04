@@ -26,6 +26,12 @@ public class trainButton : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+    private void Update()
+    {
+        countInArmyText.GetComponentInChildren<Text>().text = enemy.countInArmy.ToString();
+
+    }
+
     public void TrainPawns()
     {
         if (enemy.countInArmy <= 0 && gameManager.oil > enemy.cost)
@@ -61,7 +67,6 @@ public class trainButton : MonoBehaviour
     public void trainPawnsOnLoad()
     {
 
-            countInArmyText.GetComponentInChildren<Text>().text = enemy.countInArmy.ToString();
 
 
             var pawnCard = Instantiate(gameObject);

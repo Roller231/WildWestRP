@@ -935,6 +935,7 @@ MonoBehaviour:
   constructionScript: {fileID: 4432022357430589309}
   isBuilt: 0
   nowMove: 0
+  typeBuilding: weapon
 --- !u!114 &2513792069076785706
 MonoBehaviour:
   m_ObjectHideFlags: 0
