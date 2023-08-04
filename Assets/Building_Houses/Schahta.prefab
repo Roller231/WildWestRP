@@ -284,7 +284,7 @@ MonoBehaviour:
   maxLevel: 3
   upgradeCost: 10
   limitBuilding: 44
-  countBuilding: 30
+  countBuilding: 0
   upgradeGoldEarn: 5
   upgradeNewMaxIncome: 10000
   upgradeTime: 5
@@ -299,6 +299,7 @@ MonoBehaviour:
   constructionScript: {fileID: 5213867130516896296}
   isBuilt: 0
   nowMove: 0
+  typeBuilding: 
 --- !u!114 &-273785919875891180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +320,7 @@ MonoBehaviour:
   upgradeButton: {fileID: 0}
   cancelButtonEarn: {fileID: 0}
   cancelButton: {fileID: 0}
+  doingButton: {fileID: 0}
   isOpen: 0
 --- !u!114 &2299015597342019234
 MonoBehaviour:

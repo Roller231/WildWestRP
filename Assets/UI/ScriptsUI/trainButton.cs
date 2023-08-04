@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +31,8 @@ public class trainButton : MonoBehaviour
     {
         countInArmyText.GetComponentInChildren<Text>().text = enemy.countInArmy.ToString();
 
+        costObj.GetComponentInChildren<Text>().text = enemy.cost.ToString();
+
     }
 
     public void TrainPawns()
@@ -39,14 +42,17 @@ public class trainButton : MonoBehaviour
             enemy.countInArmy++;
             countInArmyText.GetComponentInChildren<Text>().text = enemy.countInArmy.ToString();
 
+            if (newCard == null)
+            {
+                var pawnCard = Instantiate(gameObject);
+                pawnCard.transform.SetParent(contentScroll.transform);
 
-            var pawnCard = Instantiate(gameObject);
-            pawnCard.transform.SetParent(contentScroll.transform);
+                pawnCard.GetComponent<trainButton>().costObj.SetActive(false);
+                pawnCard.GetComponent<trainButton>().countInArmyObj.SetActive(true);
+                pawnCard.GetComponent<Button>().enabled = false;
+                newCard = pawnCard;
+            }
 
-            pawnCard.GetComponent<trainButton>().costObj.SetActive(false);
-            pawnCard.GetComponent<trainButton>().countInArmyObj.SetActive(true);
-            pawnCard.GetComponent<Button>().enabled = false;
-            newCard = pawnCard;
 
 
             gameManager.oil -= enemy.cost;
