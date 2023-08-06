@@ -480,10 +480,10 @@ MonoBehaviour:
   cost: 50
   level: 1
   nextLevel: 2
-  maxLevel: 10
+  maxLevel: 3
   upgradeCost: 10
-  limitBuilding: 55
-  countBuilding: 18
+  limitBuilding: 30
+  countBuilding: 1
   upgradeGoldEarn: 100
   upgradeNewMaxIncome: 0
   upgradeTime: 60

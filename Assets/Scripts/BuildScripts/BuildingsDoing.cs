@@ -21,6 +21,8 @@ public class BuildingsDoing : MonoBehaviour
     public GameManager gameManager;
     public GameObject mainCamera;
 
+    [HideInInspector]
+    public bool canUpBar;
 
     public bool grindBuild;
 
@@ -83,6 +85,7 @@ public class BuildingsDoing : MonoBehaviour
         if (buildingThis.typeBuilding == "bar")
         {
             gameManager.LEVEL = buildingThis.level;
+
         }
 
 

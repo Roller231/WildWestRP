@@ -1,0 +1,275 @@
+Using pre-set license
+Built from '2021.3/release' branch; Version is '2021.3.17f1 (3e8111cac19d) revision 4096273'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'ru' Physical Memory: 16286 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+D:/rep_Git/WildWestRP
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+60330
+Successfully changed project path to: D:/rep_Git/WildWestRP
+D:/rep_Git/WildWestRP
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [24236] Host "[IP] 192.168.0.27 [Port] 0 [Flags] 2 [Guid] 1624619973 [EditorId] 1624619973 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-E7O3QUI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [24236] Host "[IP] 192.168.0.27 [Port] 0 [Flags] 2 [Guid] 1624619973 [EditorId] 1624619973 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-E7O3QUI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 127.49 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.17f1 (3e8111cac19d)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/rep_Git/WildWestRP/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3050 (ID=0x2507)
+    Vendor:   NVIDIA
+    VRAM:     8056 MB
+    Driver:   31.0.15.3667
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56048
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.490121 seconds.
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 1205 ms
+Refreshing native plugins compatible for Editor in 133.16 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.731 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2732ms)
+		BeginReloadAssembly (131ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1951ms)
+			LoadAssemblies (127ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (154ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (1659ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (1308ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (133ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (140ms)
+				ProcessInitializeOnLoadMethodAttributes (76ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.015876 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\rep_Git\WildWestRP\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image D:\rep_Git\WildWestRP\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.32 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+System.IO.IOException: Sharing violation on path D:\rep_Git\WildWestRP\ProjectSettings\GvhProjectSettings.xml
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <75633565436c42f0a6426b33f0132ade>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <75633565436c42f0a6426b33f0132ade>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00055] in <75633565436c42f0a6426b33f0132ade>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Boolean detectEncodingFromByteOrderMarks) [0x00007] in <75633565436c42f0a6426b33f0132ade>:0 
+  at System.IO.StreamReader..ctor (System.String path) [0x00000] in <75633565436c42f0a6426b33f0132ade>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string)
+  at Google.XmlUtilities.ParseXmlTextFileElements (System.String filename, Google.Logger logger, Google.XmlUtilities+ParseElement parseElement) [0x0000f] in /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/XmlUtilities.cs:104 
+  at Google.ProjectSettings.Load () [0x00012] in /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:777 
+  at Google.ProjectSettings.LoadIfEmpty () [0x0001b] in /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:558 
+  at Google.ProjectSettings.GetBool (System.String name, System.Boolean defaultValue, Google.SettingsLocation location) [0x0002b] in /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:606 
+  at Google.ProjectSettings.GetBool (System.String name, System.Boolean defaultValue) [0x00000] in /Users/chkuang/Workspace/git/unity-jar-resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:619 
+  at Google.IOSResolver.get_VerboseLoggingEnabled () [0x00000] in /Users/chkuang/Workspace/git/unity-jar-resolver/source/IOSResolver/src/IOSResolver.cs:1038 
+  at Google.IOSResolver..cctor () [0x00215] in /Users/chkuang/Workspace/git/unity-jar-resolver/source/IOSResolver/src/IOSResolver.cs:726 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.719 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1720ms)
+		BeginReloadAssembly (203ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (1357ms)
+			LoadAssemblies (159ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (350ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (75ms)
+			SetupLoadedEditorAssemblies (736ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (69ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (113ms)
+				ProcessInitializeOnLoadAttributes (480ms)
+				ProcessInitializeOnLoadMethodAttributes (50ms)
+				AfterProcessingInitializeOnLoad (21ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 2.19 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3595 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 110 unused Assets / (57.7 KB). Loaded Objects now: 3991.
+Memory consumption went from 128.8 MB to 128.7 MB.
+Total: 13.785900 ms (FindLiveObjects: 1.336500 ms CreateObjectMapping: 0.300000 ms MarkObjects: 11.946400 ms  DeleteObjects: 0.201700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 91717.143120 seconds.
+  path: Assets/Building_Houses/Houses_Sprites/puskhka.png
+  artifactKey: Guid(c4710a6bab8db4f4eb1058894ea2d6d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Houses_Sprites/puskhka.png using Guid(c4710a6bab8db4f4eb1058894ea2d6d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ad3cee93f58cb29db85545e81206d87') in 0.964840 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.622730 seconds.
+  path: Assets/Building_Houses/Houses_Sprites/puskhka.png
+  artifactKey: Guid(c4710a6bab8db4f4eb1058894ea2d6d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Houses_Sprites/puskhka.png using Guid(c4710a6bab8db4f4eb1058894ea2d6d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f49ca8ab500e3e62afbc0c5c7377ace1') in 0.102817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 554.827996 seconds.
+  path: Assets/Building_Houses/Houses_Sprites/Materials/CampFire.png
+  artifactKey: Guid(a01fc5c4cf9b3054a87ad957c8d82859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Houses_Sprites/Materials/CampFire.png using Guid(a01fc5c4cf9b3054a87ad957c8d82859) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9949acf38f180dbba292d9aa9dc620e9') in 0.157207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Building_Houses/Houses_Sprites/Materials/Plane_mat.mat
+  artifactKey: Guid(8c37c1e1388e30148880aa5792c667c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Houses_Sprites/Materials/Plane_mat.mat using Guid(8c37c1e1388e30148880aa5792c667c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1749bdc04541e01c8432e5b4171cad5') in 0.362424 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Building_Houses/Houses_Sprites/Materials/Kaktus_Model.mat
+  artifactKey: Guid(77038bd7bb9752f46b19e43cbdbbe320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Houses_Sprites/Materials/Kaktus_Model.mat using Guid(77038bd7bb9752f46b19e43cbdbbe320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca248f7aee2971f0582ca71681dcb591') in 0.025947 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002565 seconds.
+  path: Assets/Building_Houses/Model_FBX/GUNCreate.fbx
+  artifactKey: Guid(50dd79227cece844fa5591c789469edc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Model_FBX/GUNCreate.fbx using Guid(50dd79227cece844fa5591c789469edc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f246ea17811a657ee910e7d66a8923e') in 0.337121 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Building_Houses/Model_FBX/bar.fbx
+  artifactKey: Guid(1d77eed71bb8e424ebf48117f120e194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Model_FBX/bar.fbx using Guid(1d77eed71bb8e424ebf48117f120e194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ad3c6d329b7d097ddb533c7eabb37a1') in 0.896589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Building_Houses/Model_FBX/camp.prefab
+  artifactKey: Guid(8fadfb930af15a046879dd8a5673c099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Model_FBX/camp.prefab using Guid(8fadfb930af15a046879dd8a5673c099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3388dc6ea145b2f05d68cac5d47e56f') in 0.035263 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Building_Houses/Model_FBX/neftianka.fbx
+  artifactKey: Guid(c0eef6d2fe97885479c68cf7b87481c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Model_FBX/neftianka.fbx using Guid(c0eef6d2fe97885479c68cf7b87481c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9793a2d9a746e94c0e3e78ed8168bd7') in 0.057132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Building_Houses/Model_FBX/pushka.fbx
+  artifactKey: Guid(cc721961f5160fc4fa1c042b65eaa56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Model_FBX/pushka.fbx using Guid(cc721961f5160fc4fa1c042b65eaa56e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9432effdc3c66bd4e2240d3c049582e0') in 0.039528 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Building_Houses/Model_FBX/zolotodrobilka.fbx
+  artifactKey: Guid(a931cb9c4df065d4883a10770bf15442) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Model_FBX/zolotodrobilka.fbx using Guid(a931cb9c4df065d4883a10770bf15442) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1870eafa3dc5c08fd12ce0366acd93b5') in 0.080097 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Building_Houses/Model_FBX/PlainTER.fbx
+  artifactKey: Guid(cad7e432cc251484e92c0935af652a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Model_FBX/PlainTER.fbx using Guid(cad7e432cc251484e92c0935af652a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80e66880ece78944aaf67cc05ef1a340') in 0.163969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Building_Houses/Model_FBX/camp.fbx
+  artifactKey: Guid(52382e9de1a69344fa979f4086d35780) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Building_Houses/Model_FBX/camp.fbx using Guid(52382e9de1a69344fa979f4086d35780) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '912a0dd57b15082055b8128e18e548bf') in 0.066785 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

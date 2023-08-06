@@ -520,7 +520,7 @@ MonoBehaviour:
   maxLevel: 10
   upgradeCost: 10
   limitBuilding: 55
-  countBuilding: 9
+  countBuilding: 0
   upgradeGoldEarn: 100
   upgradeNewMaxIncome: 0
   upgradeTime: 0
