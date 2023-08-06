@@ -17,6 +17,7 @@ public class OpenBuildingSettings : MonoBehaviour
     {
         box.localPosition = new Vector2(0, -Screen.height);
         canvasInGame.SetActive(true);
+        Debug.Log("ssdsad");
     }
 
 }

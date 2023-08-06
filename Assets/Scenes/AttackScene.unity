@@ -46002,7 +46002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 99999
   oil: 99999
-  LEVEL: 0
+  LEVEL: 1
   grid: {fileID: 1602619887}
   canvasForHouse: {fileID: 1747247341}
   canvasInGame: {fileID: 2123348328}
@@ -48274,9 +48274,9 @@ RectTransform:
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -421.65604}
-  m_SizeDelta: {x: 0, y: -843.312}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 118.34396}
+  m_SizeDelta: {x: 0, y: 236.68799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1985941406
 MonoBehaviour:

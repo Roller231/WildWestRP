@@ -215,9 +215,13 @@ public class SaveAll : MonoBehaviour
 
                             gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
 
+                        if (!gameObject.GetComponent<CameraTo3D>().do3D)
+                        {
                             gameManager.buildings[i].nextLevel = state.dataNextLevel[i];
 
-                            prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
+                        }
+
+                        prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
                             prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];
 
 
@@ -230,7 +234,8 @@ public class SaveAll : MonoBehaviour
             }
 
 
-
+        if (!gameObject.GetComponent<DB>().cameraTo3D.do3D)
+        {
             DateTime lastSaveTime = UtilScripts.GetDateTime("LastSaveTime", DateTime.UtcNow);
             TimeSpan timePassed = DateTime.UtcNow - lastSaveTime;
             int secondsPassed = (int)timePassed.TotalSeconds;
@@ -252,6 +257,8 @@ public class SaveAll : MonoBehaviour
                     }
                 }
             }
+        }
+
         }
 
 

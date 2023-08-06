@@ -28,6 +28,7 @@ public class BuildingsDoing : MonoBehaviour
     [HideInInspector]
     public Button upgradeButton;
 
+
     public Button cancelButtonEarn;
     public Button cancelButton;
 
@@ -54,8 +55,13 @@ public class BuildingsDoing : MonoBehaviour
             if (item != null)
             {
                 upgradeButton = item.GetComponent<Button>();
+                Debug.Log(item.name);
             }
         }
+
+
+
+
         cancelButton = GameObject.Find("CloseButtonHouse").GetComponent<Button>();
         cancelButtonEarn = GameObject.Find("CloseButtonEarn").GetComponent<Button>(); 
 
@@ -74,8 +80,11 @@ public class BuildingsDoing : MonoBehaviour
         }
 
 
+        if (buildingThis.typeBuilding == "bar")
+        {
+            gameManager.LEVEL = buildingThis.level;
+        }
 
-        
 
 
     }
@@ -99,7 +108,13 @@ public class BuildingsDoing : MonoBehaviour
                     doingButton.onClick.AddListener(() => DoAnyFunc());
                     cancelButton.onClick.AddListener(() => BackAllBuildings());
 
+
+
+
+
                     buildingThis.open = isOpen = true;
+
+
                 }
                 else if (grindBuild)
                 {
@@ -115,17 +130,18 @@ public class BuildingsDoing : MonoBehaviour
 
                     canvasSettingsYesGrind.GetComponent<OpenBuildingSettings>().Enable();
                     claimButton.onClick.AddListener(() => SetStorageOnButton());
-                    upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
+
                     
                     cancelButtonEarn.onClick.AddListener(() => BackAllBuildings());
 
-                    upgradeButton.GetComponent<UpgradeButton>().OnEnableFunk(buildingThis.gold_OR_oil, buildingThis, gameManager.gold, gameManager.oil);
 
 
                     buildingThis.open = isOpen = true;
 
                 }
 
+                upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
+                upgradeButton.GetComponent<UpgradeButton>().OnEnableFunk(buildingThis.gold_OR_oil, buildingThis, gameManager.gold, gameManager.oil);
 
 
                 onePlay = true;
@@ -240,16 +256,58 @@ public class BuildingsDoing : MonoBehaviour
         }
     }
 
+    private void UpgradeBar()
+    {
+        if (buildingThis.maxLevel > buildingThis.level)
+        {
+            if (gameManager.oil >= this.buildingThis.upgradeCost && buildingThis.gold_OR_oil)
+            {
+                gameManager.oil -= this.buildingThis.upgradeCost;
+
+                this.buildingThis.level += 1;
+                buildingThis.nextLevel += 1;
+
+                this.buildingThis.upgradeCost *= 2;
+                buildingThis.upgradeTime *= 2;
+
+                BackAllBuildings();
+
+                buildingThis.constructionScript.SetUpgradeBuilding(buildingThis.upgradeTime);
+            }
+            else if (gameManager.gold >= this.buildingThis.upgradeCost && !buildingThis.gold_OR_oil)
+            {
+                gameManager.gold -= this.buildingThis.upgradeCost;
+
+                this.buildingThis.level += 1;
+                buildingThis.nextLevel += 1;
+
+                this.buildingThis.upgradeCost *= 2;
+                buildingThis.upgradeTime *= 2;
+
+                BackAllBuildings();
+
+
+                buildingThis.constructionScript.SetUpgradeBuilding(buildingThis.upgradeTime);
+            }
+
+
+        }
+    }
+
+
     private void DoAnyFunc()
     {
         BackAllBuildings();
         if (buildingThis.typeBuilding == "weapon")
         {
-            
             foreach (Transform child in GameObject.Find("rootWeapon").transform)
             {
                 child.gameObject.SetActive(true);
             }
+        }
+        else if(buildingThis.typeBuilding == "bar")
+        {
+
         }
     }
 

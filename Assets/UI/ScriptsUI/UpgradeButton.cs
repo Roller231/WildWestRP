@@ -15,6 +15,7 @@ public class UpgradeButton : MonoBehaviour
     public Text upgradeText;
     public void OnEnableFunk(bool gold_OR_oil, Building buildingThis, int gold, int oil)
     {
+        Debug.Log("s");
 
         cost.text = buildingThis.upgradeCost.ToString();
 

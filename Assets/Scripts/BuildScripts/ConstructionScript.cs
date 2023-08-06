@@ -48,7 +48,8 @@ public class ConstructionScript : MonoBehaviour
 
         foreach (Building item in gameManager.buildings)
         {
-
+            if (!GameObject.Find("Main Camera").GetComponent<CameraTo3D>().do3D)
+            {
                 if (item.gameObject.GetComponent<BuildingsDoing>().onePlay)
                 {
                     doingBuild.onePlay = true;
@@ -57,6 +58,8 @@ public class ConstructionScript : MonoBehaviour
                 {
                     doingBuild.onePlay = false;
                 }
+            }
+
 
 
         }

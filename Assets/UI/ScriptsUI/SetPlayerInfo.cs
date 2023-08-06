@@ -17,6 +17,8 @@ public class SetPlayerInfo : MonoBehaviour
     {
         nickname.text = playerInfo.playerNickname;
         
+
+
         LEVELtext.text = gameManager.LEVEL.ToString();
     }
 

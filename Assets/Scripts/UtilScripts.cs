@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UtilScripts : MonoBehaviour
 {
@@ -72,26 +73,29 @@ public class UtilScripts : MonoBehaviour
 
     public static void BackComponentFromAllObjects(BuildingsDoing buildingsDoing)
     {
-        // Получаем все объекты в сцене (включая неактивные объекты)
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
 
         foreach (GameObject obj in allObjects)
         {
-            // Проверяем наличие компонента в объекте
             EventTrigger component = obj.GetComponent<EventTrigger>();
             if (component != null)
             {
                 Animator animator = buildingsDoing.gameObject.GetComponent<Animator>();
 
-                // Создайте новое событие Pointer Click
                 EventTrigger.Entry clickEntry = new EventTrigger.Entry();
                 clickEntry.eventID = EventTriggerType.PointerClick;
                 clickEntry.callback.AddListener((data) => { buildingsDoing.PlayAnimationOnClick(animator); });
 
-                // Добавьте событие в компонент EventTrigger
                 component.triggers.Add(clickEntry);
             }
         }
+    }
+
+
+
+    public static void OpenSceneVoid(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 
 

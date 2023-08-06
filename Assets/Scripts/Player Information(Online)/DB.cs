@@ -15,7 +15,7 @@ public class DB : MonoBehaviour
     public bool DoLoad;
 
     [HideInInspector]
-    public bool doLoadAttack = false;
+    public bool doLoadAttack = true;
 
 
 
@@ -142,9 +142,6 @@ public class DB : MonoBehaviour
 
 
 
-        // Заполните остальные переменные из gameManager
-
-        // Сериализация данных в JSON
         string json = JsonUtility.ToJson(data);
 
         // Сохранение JSON-файла по указанному пути
@@ -426,10 +423,11 @@ public class DB : MonoBehaviour
 
             foreach (var item in snaphotAllUsers.Children)
             {
-
-            if (int.Parse(item.Child("dataLEVEL").Value.ToString()) == gameManager.LEVEL && item.Key.ToString() != playerInfo.playerNickname || int.Parse(item.Child("dataLEVEL").Value.ToString()) == gameManager.LEVEL - 2 && item.Key.ToString() != playerInfo.playerNickname || int.Parse(item.Child("dataLEVEL").Value.ToString()) == gameManager.LEVEL + 2 && item.Key.ToString() != playerInfo.playerNickname)
+            if (int.Parse(item.Child("dataLEVEL").Value.ToString()) == int.Parse(snapshot.Child("dataLEVEL").Value.ToString()) && item.Key.ToString() != playerInfo.playerNickname)
                 {
-                    doLoadAttack = true;
+                Debug.Log(int.Parse(item.Child("dataLEVEL").Value.ToString()));
+
+                doLoadAttack = true;
                     Debug.Log(item.Key.ToString());
 
                     otherPlayerNick = item.Key.ToString();
@@ -478,16 +476,18 @@ public class DB : MonoBehaviour
                 saveAll.state.isOccupped = data2.isOccupped;
                 saveAll.state.indexTile = data2.indexTile;
             saveAll.state.dataNextLevel = data.dataNextLevel;
+            gameManager.LEVEL = data.dataLEVEL;
 
 
 
             saveAll.state.dataCountPawns = data.dataCountPawns;
 
                 saveAll.LoadState();
+
             }
             else
             {
-                Debug.Log("Проивник не найден(");
+            UtilScripts.OpenSceneVoid(1);
             }
 
 
