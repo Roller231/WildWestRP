@@ -8,7 +8,10 @@ public class CameraTo3D : MonoBehaviour
 {
     public GameObject mainCamera;
     public GameManager gameManager;
+    public GameObject PlayerInfoPanel;
     public bool do3D;
+
+
 
 
     private void Update()
@@ -16,15 +19,7 @@ public class CameraTo3D : MonoBehaviour
         if (do3D)
         {
 
-            //if (!do3D)
-            //{
-            //    UtilScripts.DestroyObjectWithComponent3D();
-            //}
-
-
-            //mainCamera.GetComponent<Camera>().orthographic = false;
-            //mainCamera.GetComponent<Camera>().fieldOfView = 39.6f;
-
+            PlayerInfoPanel.SetActive(false);
 
             mainCamera.transform.position.Set(0, 3, 18);
             mainCamera.transform.rotation = Quaternion.Euler(122, 0, 0);

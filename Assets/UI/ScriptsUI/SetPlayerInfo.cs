@@ -9,10 +9,15 @@ public class SetPlayerInfo : MonoBehaviour
     [SerializeField] private Text nickname;
     [SerializeField] private Text LEVELtext;
 
+    [SerializeField] private PlayerInfo playerInfo;
+    [SerializeField] private GameManager gameManager;
+
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        nickname.text = PlayerPrefs.GetString("dataNick");
+        nickname.text = playerInfo.playerNickname;
+        
+        LEVELtext.text = gameManager.LEVEL.ToString();
     }
 
 

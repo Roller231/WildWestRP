@@ -53,22 +53,22 @@ public class UtilScripts : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public static void RemoveComponentFromAllObjects()
-    {
-        // Получаем все объекты в сцене (включая неактивные объекты)
-        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+    //public static void RemoveComponentFromAllObjects()
+    //{
+    //    // Получаем все объекты в сцене (включая неактивные объекты)
+    //    GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
 
-        foreach (GameObject obj in allObjects)
-        {
-            // Проверяем наличие компонента в объекте
-            EventTrigger component = obj.GetComponent<EventTrigger>();
-            if (component != null)
-            {
-                component.triggers.Clear();
-                UnityEditor.EditorUtility.SetDirty(component);
-            }
-        }
-    }
+    //    foreach (GameObject obj in allObjects)
+    //    {
+    //        // Проверяем наличие компонента в объекте
+    //        EventTrigger component = obj.GetComponent<EventTrigger>();
+    //        if (component != null)
+    //        {
+    //            component.triggers.Clear();
+    //            UnityEditor.EditorUtility.SetDirty(component);
+    //        }
+    //    }
+    //}
 
     public static void BackComponentFromAllObjects(BuildingsDoing buildingsDoing)
     {

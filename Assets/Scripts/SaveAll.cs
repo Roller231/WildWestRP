@@ -37,7 +37,10 @@ public class SaveAll : MonoBehaviour
 
 
 
+        if (!GameObject.Find("Main Camera").GetComponent<CameraTo3D>().do3D)
+        {
 
+        }
         StartCoroutine(SaveCoroutine());
 
     }
@@ -70,7 +73,6 @@ public class SaveAll : MonoBehaviour
 
 
             state.dataCountPawns[l] = prefabsPawns[l].GetComponent<Enemy>().countInArmy;
-            Debug.Log(state.dataCountPawns[l]);
         }
 
         for (int i = 0; i < gameManager.buildings.Length; i++)
@@ -157,98 +159,110 @@ public class SaveAll : MonoBehaviour
     public void LoadState()
     {
 
-        for (int l = 0; l < prefabsPawns.Length; l++)
-        {
-            Array.Resize(ref state.dataCountPawns, prefabsPawns.Length);
+            for (int l = 0; l < prefabsPawns.Length; l++)
+            {
+                Array.Resize(ref state.dataCountPawns, prefabsPawns.Length);
 
 
-            prefabsPawns[l].GetComponent<Enemy>().countInArmy = state.dataCountPawns[l];
+                prefabsPawns[l].GetComponent<Enemy>().countInArmy = state.dataCountPawns[l];
 
-            if (state.dataCountPawns[l] != 0)
-                prefabsPawnsCards[l].GetComponent<trainButton>().trainPawnsOnLoad();
-            
+                if (state.dataCountPawns[l] != 0 && !gameObject.GetComponent<CameraTo3D>().do3D)
+                    prefabsPawnsCards[l].GetComponent<trainButton>().trainPawnsOnLoad();
+                else if(gameObject.GetComponent<CameraTo3D>().do3D)
+                    prefabsPawnsCards[l].GetComponent<trainButton>().trainPawnsOnLoadInAttack();
+
+
         }
 
         for (int i = 0; i < state.gameObjects.Length; i++)
-        {
-
-            if (state.gameObjects[i] != null)
             {
-                for (int j = 0; j < prefabsHouse.Length; j++)
+
+                if (state.gameObjects[i] != null)
                 {
-                    if (state.gameObjects[i] == prefabsHouse[j].name + "(Clone)")
+                    for (int j = 0; j < prefabsHouse.Length; j++)
                     {
+                        if (state.gameObjects[i] == prefabsHouse[j].name + "(Clone)")
+                        {
 
 
-                        Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
-                        gameManager.countHouses = state.gameObjects.Length;
-
-
-
-
-                        var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i] + 0.3f, 0), Quaternion.identity);
-                        houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
-                        gameManager.buildings[i] = houseObject.GetComponent<Building>();
-
-                        gameManager.buildings[i].memoryCountHouse = state.dataCountHouseMemory[i];
-
-                        gameManager.buildings[i].storage = state.dataStorage[i];
-                        gameManager.buildings[i].income = state.dataIncome[i];
-                        gameManager.buildings[i].maxIncome = state.dataMaxIncome[i];
-                        gameManager.buildings[i].level = state.dataLevel[i];
-                        gameManager.buildings[i].upgradeCost = state.dataUpgradeCost[i];
-                        gameManager.buildings[i].timeEarn = state.dataTimeEarn[i];
-
-                        gameManager.buildings[i].upgradeGoldEarn = state.dataUpgradeGoldEarn[i];
-                        gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
-
-                        gameManager.buildings[i].constructionScript.timeStart = state.dataTimeForUpgrade[i];
-
-                        gameManager.buildings[i].tile = gameManager.tiles[state.indexTile[i]];
-
-                        gameManager.buildings[i].isBuilt = state.dataIsBuilt[i];
-
-                        gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
-
-                        gameManager.buildings[i].nextLevel = state.dataNextLevel[i];
-
-                        prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
-                        prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];
+                            Array.Resize(ref gameManager.buildings, state.gameObjects.Length);
+                            gameManager.countHouses = state.gameObjects.Length;
 
 
 
+
+                            var houseObject = Instantiate(prefabsHouse[j], new Vector3(state.posX[i], state.posY[i] + 0.3f, 0), Quaternion.identity);
+                            houseObject.transform.SetParent(GameObject.Find("CanvasForHouse").transform);
+                            gameManager.buildings[i] = houseObject.GetComponent<Building>();
+
+                            gameManager.buildings[i].memoryCountHouse = state.dataCountHouseMemory[i];
+
+                            gameManager.buildings[i].storage = state.dataStorage[i];
+                            gameManager.buildings[i].income = state.dataIncome[i];
+                            gameManager.buildings[i].maxIncome = state.dataMaxIncome[i];
+                            gameManager.buildings[i].level = state.dataLevel[i];
+                            gameManager.buildings[i].upgradeCost = state.dataUpgradeCost[i];
+                            gameManager.buildings[i].timeEarn = state.dataTimeEarn[i];
+
+                            gameManager.buildings[i].upgradeGoldEarn = state.dataUpgradeGoldEarn[i];
+                            gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
+
+                            gameManager.buildings[i].constructionScript.timeStart = state.dataTimeForUpgrade[i];
+
+                            gameManager.buildings[i].tile = gameManager.tiles[state.indexTile[i]];
+
+                            gameManager.buildings[i].isBuilt = state.dataIsBuilt[i];
+
+                            gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
+
+                            gameManager.buildings[i].nextLevel = state.dataNextLevel[i];
+
+                            prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
+                            prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];
+
+
+
+                        }
+                    }
+
+                }
+
+            }
+
+
+
+            DateTime lastSaveTime = UtilScripts.GetDateTime("LastSaveTime", DateTime.UtcNow);
+            TimeSpan timePassed = DateTime.UtcNow - lastSaveTime;
+            int secondsPassed = (int)timePassed.TotalSeconds;
+            secondsPassed = Math.Clamp(secondsPassed, 0, 7 * 24 * 60 * 60);
+            Debug.Log(secondsPassed);
+            foreach (var count in gameManager.buildings)
+            {
+                if (secondsPassed / 2 * count.income > count.maxIncome)
+                {
+                    count.storage = count.maxIncome;
+                }
+                else
+                {
+                    count.storage += (secondsPassed / 2 * count.income);
+                    if (!count.isBuilt)
+                    {
+                        count.constructionScript.timeStart -= secondsPassed;
+                        count.storage = 0;
                     }
                 }
-
-            }
-
-        }
-    
-
-
-        DateTime lastSaveTime = UtilScripts.GetDateTime("LastSaveTime", DateTime.UtcNow);
-        TimeSpan timePassed = DateTime.UtcNow - lastSaveTime;
-        int secondsPassed = (int)timePassed.TotalSeconds;
-        secondsPassed = Math.Clamp(secondsPassed, 0, 7 * 24 * 60 * 60);
-        Debug.Log(secondsPassed);
-        foreach (var count in gameManager.buildings)
-        {
-            if (secondsPassed / 2 * count.income > count.maxIncome)
-            {
-                count.storage = count.maxIncome;
-            }
-            else
-            {
-                count.storage += (secondsPassed / 2 * count.income);
-                if (!count.isBuilt)
-                {
-                    count.constructionScript.timeStart -= secondsPassed;
-                    count.storage = 0;
-                }
             }
         }
 
-    }
+
+
+
+
+
+
+
+
+
 
 
     }
@@ -266,6 +280,8 @@ public class Data
     [NonSerialized, OdinSerialize]
     public int dataOil;
     public int dataGold;
+    public int dataLEVEL;
+
     public int[] dataStorage;
     public int[] dataIncome;
     public int[] dataMaxIncome;

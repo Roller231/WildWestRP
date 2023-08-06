@@ -520,7 +520,7 @@ MonoBehaviour:
   maxLevel: 10
   upgradeCost: 10
   limitBuilding: 55
-  countBuilding: 2
+  countBuilding: 9
   upgradeGoldEarn: 100
   upgradeNewMaxIncome: 0
   upgradeTime: 0
@@ -535,6 +535,7 @@ MonoBehaviour:
   constructionScript: {fileID: 4432022357430589309}
   isBuilt: 0
   nowMove: 0
+  plasesInArmy: 0
   typeBuilding: weapon
 --- !u!114 &2513792069076785706
 MonoBehaviour:
@@ -543,7 +544,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7572353982424131600}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb038cd54f425b04a975e62ed7f84ab0, type: 3}
   m_Name: 

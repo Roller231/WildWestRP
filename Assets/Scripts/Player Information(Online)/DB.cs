@@ -9,9 +9,15 @@ public class DB : MonoBehaviour
 {
     public GameManager gameManager;
     public SaveAll saveAll;
+    public CameraTo3D cameraTo3D;
 
 
     public bool DoLoad;
+
+    [HideInInspector]
+    public bool doLoadAttack = false;
+
+
 
     [HideInInspector] public bool oneLoad = false, oneSave = false;
 
@@ -23,7 +29,11 @@ public class DB : MonoBehaviour
     public PlayerInfo playerInfo;
 
     private string filePath;
+    private string filePath2;
 
+    public bool do3D;
+
+    string otherPlayerNick;
 
     private void Update()
     {
@@ -33,16 +43,34 @@ public class DB : MonoBehaviour
             PlayerPrefs.DeleteAll();
         }
 
-        if (oneLoad)
+        if (oneLoad && !cameraTo3D.do3D)
         {
             StartCoroutine(LoadStateFire());
             oneLoad = false;
+            Debug.Log("LoadStateFire");
+
         }
 
-        if (!oneLoad && playerInfo.haveName && oneSave)
+        if (!oneLoad && playerInfo.haveName && oneSave && !cameraTo3D.do3D)
         {
             StartCoroutine(SaveCoroutine());
             oneSave = false;
+            Debug.Log("SaveCoroutine");
+
+        }
+
+        if (oneLoad && cameraTo3D.do3D)
+        {
+            StartCoroutine(LoadStateFireInAttack());
+            oneLoad = false;
+            Debug.Log("LoadStateFireInAttack");
+        }
+        if (!oneLoad && playerInfo.haveName && oneSave && cameraTo3D.do3D)
+        {
+            StartCoroutine(SaveCoroutineInAttack());
+            oneSave = false;
+            Debug.Log("SaveStateFireInAttack");
+
         }
 
 
@@ -53,6 +81,8 @@ public class DB : MonoBehaviour
          
         dbRef = FirebaseDatabase.DefaultInstance.RootReference;
         filePath = Application.persistentDataPath + "/gameData.json";
+        filePath2 = Application.persistentDataPath + "/gameDataAttack.json";
+
 
         if (DoLoad)
         {
@@ -72,11 +102,19 @@ public class DB : MonoBehaviour
         StartCoroutine(SaveCoroutine());
     }
 
+    IEnumerator SaveCoroutineInAttack()
+    {
+        yield return new WaitForSeconds(1f);
+        SaveStateFireInAttack();
+        StartCoroutine(SaveCoroutineInAttack());
+    }
+
     public void SaveStateFire()
     {
         GameData data = new GameData();
         data.dataOil = gameManager.oil;
         data.dataGold = gameManager.gold;
+        data.dataLEVEL = gameManager.LEVEL;
         data.dataStorage = saveAll.state.dataStorage;
         data.dataIncome = saveAll.state.dataIncome;
         data.dataMaxIncome = saveAll.state.dataMaxIncome;
@@ -287,7 +325,6 @@ public class DB : MonoBehaviour
                     {
                         haveSpace = true;
                     }
-                    Debug.Log(nameSpace.ToString());
                 }
                 foreach (var nameSpace in playerInfo.inputFieldPASS.text)
                 {
@@ -341,9 +378,125 @@ public class DB : MonoBehaviour
         }
 
 
+
+    }
+
+    public void SaveStateFireInAttack()
+    {
+        GameData data = new GameData();
+        data.dataOil = gameManager.oil;
+        data.dataGold = gameManager.gold;
+        
+        data.dataCountPawns = saveAll.state.dataCountPawns;
+
+
+
+
+
+        // Заполните остальные переменные из gameManager
+
+
+        // Сохранение данных в Firebase Realtime Database
+        dbRef.Child("users").Child(playerInfo.playerNickname).Child("dataOil").SetValueAsync(gameManager.oil);
+        dbRef.Child("users").Child(playerInfo.playerNickname).Child("dataGold").SetValueAsync(gameManager.gold);
+        dbRef.Child("users").Child(playerInfo.playerNickname).Child("dataCountPawns").SetValueAsync(saveAll.state.dataCountPawns);
+
+
+
     }
 
 
+    IEnumerator LoadStateFireInAttack()
+    {
+
+
+        var allUsers = dbRef.Child("users").GetValueAsync();
+
+        var user = dbRef.Child("users").Child(playerInfo.playerNickname).GetValueAsync();
+
+
+
+        yield return new WaitUntil(predicate: () => user.IsCompleted);
+        yield return new WaitUntil(predicate: () => allUsers.IsCompleted);
+
+
+
+            DataSnapshot snapshot = user.Result;
+            DataSnapshot snaphotAllUsers = allUsers.Result;
+
+            foreach (var item in snaphotAllUsers.Children)
+            {
+
+            if (int.Parse(item.Child("dataLEVEL").Value.ToString()) == gameManager.LEVEL && item.Key.ToString() != playerInfo.playerNickname || int.Parse(item.Child("dataLEVEL").Value.ToString()) == gameManager.LEVEL - 2 && item.Key.ToString() != playerInfo.playerNickname || int.Parse(item.Child("dataLEVEL").Value.ToString()) == gameManager.LEVEL + 2 && item.Key.ToString() != playerInfo.playerNickname)
+                {
+                    doLoadAttack = true;
+                    Debug.Log(item.Key.ToString());
+
+                    otherPlayerNick = item.Key.ToString();
+                    break;
+                }
+            }
+
+
+            if (doLoadAttack)
+            {
+                string json = snapshot.GetRawJsonValue();
+                string jsonOtherPlayer = snaphotAllUsers.Child(otherPlayerNick).GetRawJsonValue();
+
+                // Сохранение JSON-файла по указанному пути
+                File.WriteAllText(filePath, json);
+                File.WriteAllText(filePath2, jsonOtherPlayer);
+
+
+                GameData data = JsonUtility.FromJson<GameData>(json);
+                GameData data2 = JsonUtility.FromJson<GameData>(jsonOtherPlayer);
+
+
+                gameManager.gold = int.Parse(snapshot.Child("dataGold").Value.ToString());
+                gameManager.oil = int.Parse(snapshot.Child("dataOil").Value.ToString());
+                playerInfo.playerNickname = data.dataNick;
+                playerInfo.pass = data.pass;
+
+                saveAll.state.gameObjects = data2.gameObjects;
+                saveAll.state.dataStorage = data2.dataStorage;
+                saveAll.state.dataIncome = data2.dataIncome;
+                saveAll.state.dataMaxIncome = data2.dataMaxIncome;
+                saveAll.state.dataLevel = data2.dataLevel;
+                saveAll.state.dataUpgradeCost = data2.dataUpgradeCost;
+                saveAll.state.dataTimeEarn = data2.dataTimeEarn;
+                saveAll.state.dataTimeForUpgrade = data2.dataTimeForUpgrade;
+                saveAll.state.dataIsBuilt = data2.dataIsBuilt;
+                saveAll.state.dataCountBuilding = data2.dataCountBuilding;
+                saveAll.state.dataCountHouseMemory = data2.dataCountHouseMemory;
+                saveAll.state.dataLimitBuilding = data2.dataLimitBuilding;
+                saveAll.state.dataUpgradeGoldEarn = data2.dataUpgradeGoldEarn;
+                saveAll.state.dataUpgradeNewMaxIncome = data2.dataUpgradeNewMaxIncome;
+                saveAll.state.dataFillAmountBar = data2.dataFillAmountBar;
+                saveAll.state.gameObjects = data2.gameObjects;
+                saveAll.state.posX = data2.posX;
+                saveAll.state.posY = data2.posY;
+                saveAll.state.isOccupped = data2.isOccupped;
+                saveAll.state.indexTile = data2.indexTile;
+            saveAll.state.dataNextLevel = data.dataNextLevel;
+
+
+
+            saveAll.state.dataCountPawns = data.dataCountPawns;
+
+                saveAll.LoadState();
+            }
+            else
+            {
+                Debug.Log("Проивник не найден(");
+            }
+
+
+
+
+
+
+
+    }
 
 
 
@@ -355,6 +508,8 @@ public class GameData
 {
     public int dataOil;
     public int dataGold;
+    public int dataLEVEL;
+
     public int[] dataStorage;
     public int[] dataIncome;
     public int[] dataMaxIncome;

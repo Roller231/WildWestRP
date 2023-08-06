@@ -94,6 +94,8 @@ public class MoveBuilding : MonoBehaviour
                 _building = build;
             }
         }
+
+
         grid.SetActive(true);
         _building.tile.isOccuped = false;
         GameManager.buildingMode = true;
@@ -101,6 +103,9 @@ public class MoveBuilding : MonoBehaviour
         _building.nowMove = nowMoving = true;
 
         _building.GetComponent<BuildingsDoing>().BackAllBuildings();
+
+
+        canvasInGame.SetActive(false);
     }
 
 

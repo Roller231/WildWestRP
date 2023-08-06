@@ -48,14 +48,17 @@ public class ConstructionScript : MonoBehaviour
 
         foreach (Building item in gameManager.buildings)
         {
-            if (item.gameObject.GetComponent<BuildingsDoing>().onePlay)
-            {
-                doingBuild.onePlay = true;
-            }
-            else
-            {
-                doingBuild.onePlay = false;
-            }
+
+                if (item.gameObject.GetComponent<BuildingsDoing>().onePlay)
+                {
+                    doingBuild.onePlay = true;
+                }
+                else
+                {
+                    doingBuild.onePlay = false;
+                }
+
+
         }
 
 

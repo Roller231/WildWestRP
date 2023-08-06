@@ -7,7 +7,7 @@ using UnityEngine;
 public class SpawnKrips : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
-    [SerializeField] GameObject krips;
+    [SerializeField] public GameObject krips;
     public List<GameObject> kripsList;
 
     private void OnMouseUp()

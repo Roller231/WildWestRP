@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -299,6 +299,7 @@ MonoBehaviour:
   constructionScript: {fileID: 5213867130516896296}
   isBuilt: 0
   nowMove: 0
+  plasesInArmy: 0
   typeBuilding: 
 --- !u!114 &-273785919875891180
 MonoBehaviour:
@@ -307,7 +308,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930748836087887078}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb038cd54f425b04a975e62ed7f84ab0, type: 3}
   m_Name: 

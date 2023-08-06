@@ -360,7 +360,7 @@ MonoBehaviour:
   maxLevel: 3
   upgradeCost: 10
   limitBuilding: 10
-  countBuilding: 4
+  countBuilding: 0
   upgradeGoldEarn: 5
   upgradeNewMaxIncome: 10000
   upgradeTime: 20
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4393860098255582706}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb038cd54f425b04a975e62ed7f84ab0, type: 3}
   m_Name: 

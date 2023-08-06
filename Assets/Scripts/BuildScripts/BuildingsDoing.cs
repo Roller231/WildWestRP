@@ -39,7 +39,7 @@ public class BuildingsDoing : MonoBehaviour
     private void Start()
     {
 
-        canvasInGame = GameObject.Find("ButtonShop");
+        canvasInGame = GameObject.Find("ButtonsIngame");
 
         canvasSettingsNotGrind = GameObject.Find("BuildingSettings");
         canvasSettingsYesGrind = GameObject.Find("EarnBuildingSettings");
@@ -90,6 +90,7 @@ public class BuildingsDoing : MonoBehaviour
             if (!onePlay && !GameManager.buildingMode && buildingThis.isBuilt && !mainCamera.GetComponent<CameraTo3D>().do3D)
             {
 
+                canvasInGame.SetActive(false);
 
                 if (!grindBuild)
                 {
@@ -154,6 +155,9 @@ public class BuildingsDoing : MonoBehaviour
 
     public  void BackAllBuildings()
     {
+        canvasInGame.SetActive(true);
+
+
         try
         {
             buildingThis.open = isOpen = false;

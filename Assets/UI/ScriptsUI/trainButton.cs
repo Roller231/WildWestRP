@@ -1,7 +1,6 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +14,8 @@ public class trainButton : MonoBehaviour
     public GameObject costObj;
 
     public GameObject contentScroll;
+    public GameObject contentScrollInAttack;
+
 
     [HideInInspector]
     public GameManager gameManager;
@@ -29,7 +30,7 @@ public class trainButton : MonoBehaviour
 
     private void Update()
     {
-        countInArmyText.GetComponentInChildren<Text>().text = enemy.countInArmy.ToString();
+        countInArmyText.text = enemy.countInArmy.ToString();
 
         costObj.GetComponentInChildren<Text>().text = enemy.cost.ToString();
 
@@ -91,6 +92,34 @@ public class trainButton : MonoBehaviour
 
 
         
+    }
+
+    public void trainPawnsOnLoadInAttack()
+    {
+
+        if (enemy.countInArmy > 0)
+        {
+            var pawnCard = Instantiate(gameObject);
+            pawnCard.transform.SetParent(contentScrollInAttack.transform);
+
+            pawnCard.GetComponent<trainButton>().costObj.SetActive(false);
+            pawnCard.GetComponent<trainButton>().countInArmyObj.SetActive(true);
+            pawnCard.GetComponent<Button>().onClick.RemoveAllListeners();
+
+
+            pawnCard.GetComponent<Button>().onClick.AddListener(() => addSpawnKrip());
+
+
+            newCard = pawnCard;
+        }
+
+
+
+    }
+
+    void addSpawnKrip()
+    {
+        GameObject.Find("Plane").GetComponent<SpawnKrips>().krips = enemy.gameObject;
     }
 
 }
