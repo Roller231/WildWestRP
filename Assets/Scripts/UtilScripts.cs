@@ -41,13 +41,21 @@ public class UtilScripts : MonoBehaviour
     public static void DestroyObjectWithComponent3D()
     {
         MeshRenderer[] meshRenderers = FindObjectsOfType<MeshRenderer>();
+        SphereCollider[] sphereRenders = FindObjectsOfType<SphereCollider>();
+
 
         // Удаляем каждый объект с компонентом MeshRenderer
         foreach (MeshRenderer renderer in meshRenderers)
         {
             Destroy(renderer.gameObject);
         }
+
+        foreach (SphereCollider renderer in sphereRenders)
+        {
+            Destroy(renderer.gameObject);
+        }
     }
+
 
     public static void DestroyObject(GameObject gameObject)
     {

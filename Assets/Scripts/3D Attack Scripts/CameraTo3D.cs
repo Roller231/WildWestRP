@@ -31,6 +31,8 @@ public class CameraTo3D : MonoBehaviour
             mainCamera.transform.position.Set(0, 0, -400);
             mainCamera.transform.rotation = Quaternion.identity;
 
+            UtilScripts.DestroyObjectWithComponent3D();
+
         }
 
 

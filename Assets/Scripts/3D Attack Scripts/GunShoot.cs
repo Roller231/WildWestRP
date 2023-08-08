@@ -7,11 +7,12 @@ public class GunShoot : MonoBehaviour
 {
 
     public Transform target;
+    bool enemyInCollision;
+
 
 
     private void Start()
     {
-
         FindNearestBuilding();
 
 
@@ -19,24 +20,42 @@ public class GunShoot : MonoBehaviour
 
     private void Update()
     {
+        FindNearestBuilding();
 
         if (target != null)
         {
+            Vector3 center = transform.position; // Центральная позиция объекта\
+            Vector3 targretVector = target.position;
+            float radius = 5f; // Радиус желаемой области
 
-            GetComponentInChildren<Transform>().rotation = Quaternion.Euler(0, 0, 0);
+
+            float distance = Vector3.Distance(center, targretVector);
+            Debug.Log(distance);
+            if (distance <= 5)
+            {
+
+                GetComponentInChildren<Transform>().rotation = Quaternion.Euler(0, 0, 0);
 
 
-            // Получаем вектор направления от текущей позиции целевой позиции
-            Vector3 direction = target.position - transform.position;
+                // Получаем вектор направления от текущей позиции целевой позиции
+                Vector3 direction = target.position - transform.position;
 
-            // Вычисляем угол между вектором направления и осью z
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                // Вычисляем угол между вектором направления и осью z
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            // Применяем угол к координате rotation z
-            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                // Применяем угол к координате rotation z
+                transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+
+            }
 
 
         }
+
+
+
+        // Проверяем, находится ли точка в радиусе
+
 
         else if (target == null)
         {
@@ -73,4 +92,7 @@ public class GunShoot : MonoBehaviour
         {
         }
     }
+
+
+
 }
