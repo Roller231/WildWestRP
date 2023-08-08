@@ -62,6 +62,7 @@
     <Compile Include="Assets\UI\ScriptsUI\UpgradeButton.cs" />
     <Compile Include="Assets\UI\ScriptsUI\OpenScene.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
+    <Compile Include="Assets\Scripts\3D Attack Scripts\GunShoot.cs" />
     <Compile Include="Assets\Scripts\3D Attack Scripts\Enemy.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />

@@ -11261,10 +11261,11 @@ MonoBehaviour:
   - {fileID: 930748836087887078, guid: cbd6f27f1a78b4e4bb9bbc685b5ede83, type: 3}
   - {fileID: 4393860098255582706, guid: d19c4c020f89d074daf8ea46f8dc4a96, type: 3}
   - {fileID: 7572353982424131600, guid: 39de3a590cd09a04b93a76432a941a81, type: 3}
+  - {fileID: 7572353982424131600, guid: c80bafaecda26f348b0dafffb6282531, type: 3}
   prefabsPawns:
   - {fileID: 962561814842324878, guid: 22678cd9025c31c44899cf49dbf17d74, type: 3}
   - {fileID: 962561814842324878, guid: e2f50ec4bbd57474080a429b3994a2bb, type: 3}
-  - {fileID: 962561814842324878, guid: e52e266724ce09049bc4bf8b2f2c1121, type: 3}
+  - {fileID: 962561814842324878, guid: 550dd92762ad4cc4caa89602d9a6c3fd, type: 3}
   prefabsPawnsCards:
   - {fileID: 1792253659}
   - {fileID: 232321559}
@@ -21931,6 +21932,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6000067800596060122, guid: cd2cf62883d4b994caa304cda1299efa,
+        type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 962561814842324873, guid: 550dd92762ad4cc4caa89602d9a6c3fd,
+        type: 3}
     - target: {fileID: 6000067800596060122, guid: cd2cf62883d4b994caa304cda1299efa,
         type: 3}
       propertyPath: contentScroll

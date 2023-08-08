@@ -390,6 +390,7 @@
 "Assets/Scripts/3D Attack Scripts/BuildingToAttack.cs"
 "Assets/Scripts/3D Attack Scripts/CameraTo3D.cs"
 "Assets/Scripts/3D Attack Scripts/Enemy.cs"
+"Assets/Scripts/3D Attack Scripts/GunShoot.cs"
 "Assets/Scripts/3D Attack Scripts/SpawnKrips.cs"
 "Assets/Scripts/3D Attack Scripts/TouchCameraControl.cs"
 "Assets/Scripts/BuildScripts/Building.cs"
