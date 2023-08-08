@@ -424,10 +424,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  health: 80
   memSpeed: 0
   target: {fileID: 0}
   cost: 20
-  countInArmy: 0
+  countInArmy: 6
   maxCount: 10
 --- !u!54 &6494159561365949141
 Rigidbody:

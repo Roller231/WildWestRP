@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     private Rigidbody enemyRigidbody;
     public float moveSpeed = 3f;
 
+    public int health;
+
     [HideInInspector]
     public float memSpeed;
 
@@ -61,6 +63,13 @@ public class Enemy : MonoBehaviour
             }
 
 
+        }
+
+
+        if (health <= 0)
+        {
+            GameObject.Find("Plane").GetComponent<SpawnKrips>().kripsList.Remove(gameObject);
+            Destroy(gameObject); 
         }
 
 

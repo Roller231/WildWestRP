@@ -455,6 +455,8 @@ public class DB : MonoBehaviour
                 playerInfo.playerNickname = data.dataNick;
                 playerInfo.pass = data.pass;
 
+                GameObject.Find("Nicks").GetComponent<Text>().text = data2.dataNick + "'s";
+
                 saveAll.state.gameObjects = data2.gameObjects;
                 saveAll.state.dataStorage = data2.dataStorage;
                 saveAll.state.dataIncome = data2.dataIncome;
@@ -481,6 +483,8 @@ public class DB : MonoBehaviour
 
 
             saveAll.state.dataCountPawns = data.dataCountPawns;
+
+
 
                 saveAll.LoadState();
 

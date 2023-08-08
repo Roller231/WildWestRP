@@ -9,7 +9,14 @@ public class GunShoot : MonoBehaviour
     public Transform target;
     bool enemyInCollision;
 
+    [SerializeField] GameObject prefab;
+    [SerializeField] Transform shootPoint;
 
+    [SerializeField] public float timeToAttack;
+
+
+
+    private bool finded;
 
     private void Start()
     {
@@ -20,22 +27,23 @@ public class GunShoot : MonoBehaviour
 
     private void Update()
     {
-        FindNearestBuilding();
 
         if (target != null)
         {
+            FindNearestBuilding();
+
+
             Vector3 center = transform.position; // Центральная позиция объекта\
             Vector3 targretVector = target.position;
             float radius = 5f; // Радиус желаемой области
 
 
             float distance = Vector3.Distance(center, targretVector);
-            Debug.Log(distance);
             if (distance <= 5)
             {
 
-                GetComponentInChildren<Transform>().rotation = Quaternion.Euler(0, 0, 0);
 
+                GetComponentInChildren<Transform>().rotation = Quaternion.Euler(0, 0, 0);
 
                 // Получаем вектор направления от текущей позиции целевой позиции
                 Vector3 direction = target.position - transform.position;
@@ -45,6 +53,17 @@ public class GunShoot : MonoBehaviour
 
                 // Применяем угол к координате rotation z
                 transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+
+                //Vector3 shootPointVector = shootPoint.
+
+                if (!finded)
+                {
+                    finded = true;
+
+                    StartCoroutine(SpawnAmmo());
+                }
+
 
 
             }
@@ -91,6 +110,19 @@ public class GunShoot : MonoBehaviour
         else
         {
         }
+    }
+
+
+    IEnumerator SpawnAmmo()
+    {
+        yield return new WaitForSeconds(timeToAttack);
+
+        GameObject newPrefab = Instantiate(prefab, shootPoint.position, Quaternion.identity);
+        newPrefab.transform.SetParent(gameObject.transform);
+
+
+        StartCoroutine(SpawnAmmo());
+
     }
 
 
