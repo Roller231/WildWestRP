@@ -80,7 +80,6 @@ public class GunShoot : MonoBehaviour
         {
             FindNearestBuilding();
 
-
         }
 
 
@@ -117,8 +116,10 @@ public class GunShoot : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToAttack);
 
-        GameObject newPrefab = Instantiate(prefab, shootPoint.position, Quaternion.identity);
-        newPrefab.transform.SetParent(gameObject.transform);
+
+            GameObject newPrefab = Instantiate(prefab, shootPoint.position, Quaternion.identity);
+            newPrefab.transform.SetParent(gameObject.transform);
+
 
 
         StartCoroutine(SpawnAmmo());

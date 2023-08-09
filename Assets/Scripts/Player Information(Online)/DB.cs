@@ -141,7 +141,6 @@ public class DB : MonoBehaviour
         data.pass = playerInfo.pass;
 
 
-
         string json = JsonUtility.ToJson(data);
 
         // Сохранение JSON-файла по указанному пути
@@ -386,8 +385,7 @@ public class DB : MonoBehaviour
         
         data.dataCountPawns = saveAll.state.dataCountPawns;
 
-
-
+        
 
 
         // Заполните остальные переменные из gameManager
@@ -397,6 +395,7 @@ public class DB : MonoBehaviour
         dbRef.Child("users").Child(playerInfo.playerNickname).Child("dataOil").SetValueAsync(gameManager.oil);
         dbRef.Child("users").Child(playerInfo.playerNickname).Child("dataGold").SetValueAsync(gameManager.gold);
         dbRef.Child("users").Child(playerInfo.playerNickname).Child("dataCountPawns").SetValueAsync(saveAll.state.dataCountPawns);
+
 
 
 
@@ -421,8 +420,21 @@ public class DB : MonoBehaviour
             DataSnapshot snapshot = user.Result;
             DataSnapshot snaphotAllUsers = allUsers.Result;
 
-            foreach (var item in snaphotAllUsers.Children)
+
+        string json = snapshot.GetRawJsonValue();
+
+        // Сохранение JSON-файла по указанному пути
+        File.WriteAllText(filePath, json);
+
+
+        GameData data = JsonUtility.FromJson<GameData>(json);
+
+
+
+        int i = 0;
+        foreach (var item in snaphotAllUsers.Children)
             {
+
             if (int.Parse(item.Child("dataLEVEL").Value.ToString()) == int.Parse(snapshot.Child("dataLEVEL").Value.ToString()) && item.Key.ToString() != playerInfo.playerNickname)
                 {
                 Debug.Log(int.Parse(item.Child("dataLEVEL").Value.ToString()));
@@ -431,26 +443,28 @@ public class DB : MonoBehaviour
                     Debug.Log(item.Key.ToString());
 
                     otherPlayerNick = item.Key.ToString();
-                    break;
+
+
+
+                break;
                 }
+
+            i++;
+
             }
 
 
-            if (doLoadAttack)
-            {
-                string json = snapshot.GetRawJsonValue();
-                string jsonOtherPlayer = snaphotAllUsers.Child(otherPlayerNick).GetRawJsonValue();
+        if (doLoadAttack)
+        {
+            string jsonOtherPlayer = snaphotAllUsers.Child(otherPlayerNick).GetRawJsonValue();
 
-                // Сохранение JSON-файла по указанному пути
-                File.WriteAllText(filePath, json);
-                File.WriteAllText(filePath2, jsonOtherPlayer);
+            File.WriteAllText(filePath2, jsonOtherPlayer);
 
-
-                GameData data = JsonUtility.FromJson<GameData>(json);
-                GameData data2 = JsonUtility.FromJson<GameData>(jsonOtherPlayer);
+            GameData data2 = JsonUtility.FromJson<GameData>(jsonOtherPlayer);
 
 
-                gameManager.gold = int.Parse(snapshot.Child("dataGold").Value.ToString());
+
+            gameManager.gold = int.Parse(snapshot.Child("dataGold").Value.ToString());
                 gameManager.oil = int.Parse(snapshot.Child("dataOil").Value.ToString());
                 playerInfo.playerNickname = data.dataNick;
                 playerInfo.pass = data.pass;
@@ -547,6 +561,8 @@ public class GameData
     //Player Info
     public string dataNick;
     public string pass;
+
+
 
     // Добавьте остальные переменные для сохранения и загрузки
 }

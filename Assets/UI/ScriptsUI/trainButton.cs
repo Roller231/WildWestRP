@@ -109,6 +109,7 @@ public class trainButton : MonoBehaviour
 
             pawnCard.GetComponent<Button>().onClick.AddListener(() => addSpawnKrip());
 
+            pawnCard.transform.localScale = Vector3.one;
 
             newCard = pawnCard;
         }

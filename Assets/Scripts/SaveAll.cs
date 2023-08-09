@@ -215,6 +215,8 @@ public class SaveAll : MonoBehaviour
 
                             gameManager.tiles[state.indexTile[i]].isOccuped = state.isOccupped[i];
 
+                            
+
                         if (!gameObject.GetComponent<CameraTo3D>().do3D)
                         {
                             gameManager.buildings[i].nextLevel = state.dataNextLevel[i];
@@ -320,4 +322,6 @@ public class Data
     public int[] indexTile;
 
     public string dataNick;
+
+
 }

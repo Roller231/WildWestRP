@@ -19,10 +19,10 @@ public class CameraTo3D : MonoBehaviour
         if (do3D)
         {
 
-            PlayerInfoPanel.SetActive(false);
+            //PlayerInfoPanel.SetActive(false);
 
-            mainCamera.transform.position.Set(0, 3, 18);
-            mainCamera.transform.rotation = Quaternion.Euler(122, 0, 0);
+            //mainCamera.transform.position.Set(0, 12, 18);
+            //mainCamera.transform.rotation = Quaternion.Euler(122, 0, 0);
 
 
         }
