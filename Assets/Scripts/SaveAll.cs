@@ -70,9 +70,13 @@ public class SaveAll : MonoBehaviour
         for (int l = 0; l < prefabsPawns.Length; l++)
         {
             Array.Resize(ref state.dataCountPawns, prefabsPawns.Length);
+            Array.Resize(ref state.dataMaxCountPawns, prefabsPawns.Length);
+
 
 
             state.dataCountPawns[l] = prefabsPawns[l].GetComponent<Enemy>().countInArmy;
+            state.dataMaxCountPawns[l] = prefabsPawns[l].GetComponent<Enemy>().maxCount;
+
         }
 
         for (int i = 0; i < gameManager.buildings.Length; i++)
@@ -97,6 +101,7 @@ public class SaveAll : MonoBehaviour
                 Array.Resize(ref state.dataFillAmountBar, gameManager.buildings.Length);
                 Array.Resize(ref state.dataCountHouseMemory, gameManager.buildings.Length);
                 Array.Resize(ref state.dataNextLevel, gameManager.buildings.Length);
+                Array.Resize(ref state.dataDamage, gameManager.buildings.Length);
 
 
 
@@ -123,6 +128,7 @@ public class SaveAll : MonoBehaviour
                 state.dataLevel[i] = gameManager.buildings[i].level;
                 state.dataUpgradeCost[i] = gameManager.buildings[i].upgradeCost;
                 state.dataTimeEarn[i] = gameManager.buildings[i].timeEarn;
+                state.dataDamage[i] = gameManager.buildings[i].damage;
 
                 state.dataUpgradeGoldEarn[i] = gameManager.buildings[i].upgradeGoldEarn;
                 state.dataUpgradeNewMaxIncome[i] = gameManager.buildings[i].upgradeNewMaxIncome;
@@ -162,9 +168,12 @@ public class SaveAll : MonoBehaviour
             for (int l = 0; l < prefabsPawns.Length; l++)
             {
                 Array.Resize(ref state.dataCountPawns, prefabsPawns.Length);
+            Array.Resize(ref state.dataMaxCountPawns, prefabsPawns.Length);
 
 
-                prefabsPawns[l].GetComponent<Enemy>().countInArmy = state.dataCountPawns[l];
+
+            prefabsPawns[l].GetComponent<Enemy>().countInArmy = state.dataCountPawns[l];
+            prefabsPawns[l].GetComponent<Enemy>().maxCount = state.dataMaxCountPawns[l];
 
                 if (state.dataCountPawns[l] != 0 && !gameObject.GetComponent<CameraTo3D>().do3D)
                     prefabsPawnsCards[l].GetComponent<trainButton>().trainPawnsOnLoad();
@@ -203,6 +212,7 @@ public class SaveAll : MonoBehaviour
                             gameManager.buildings[i].level = state.dataLevel[i];
                             gameManager.buildings[i].upgradeCost = state.dataUpgradeCost[i];
                             gameManager.buildings[i].timeEarn = state.dataTimeEarn[i];
+                        gameManager.buildings[i].damage = state.dataDamage[i];
 
                             gameManager.buildings[i].upgradeGoldEarn = state.dataUpgradeGoldEarn[i];
                             gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
@@ -300,6 +310,7 @@ public class Data
     public float[] dataTimeEarn;
     public float[] dataTimeForUpgrade;
     public bool[] dataIsBuilt;
+    public float[] dataDamage;
 
 
     public int[] dataCountBuilding;
@@ -307,6 +318,8 @@ public class Data
     public int[] dataLimitBuilding;
 
     public int[] dataCountPawns;
+    public int[] dataMaxCountPawns;
+
 
     public int[] dataUpgradeGoldEarn;
     public int[] dataUpgradeNewMaxIncome;

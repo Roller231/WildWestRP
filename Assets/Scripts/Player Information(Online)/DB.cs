@@ -136,6 +136,8 @@ public class DB : MonoBehaviour
         data.indexTile = saveAll.state.indexTile;
         data.dataCountPawns = saveAll.state.dataCountPawns;
         data.dataNextLevel = saveAll.state.dataNextLevel;
+        data.dataDamage = saveAll.state.dataDamage;
+        data.dataMaxCountPawns = saveAll.state.dataMaxCountPawns;
 
         data.dataNick = playerInfo.playerNickname;
         data.pass = playerInfo.pass;
@@ -206,7 +208,9 @@ public class DB : MonoBehaviour
             saveAll.state.isOccupped = data.isOccupped;
            saveAll.state.indexTile = data.indexTile;
             saveAll.state.dataCountPawns = data.dataCountPawns;
+            saveAll.state.dataMaxCountPawns = data.dataMaxCountPawns;
             saveAll.state.dataNextLevel = data.dataNextLevel;
+            saveAll.state.dataDamage = data.dataDamage;
 
 
             saveAll.LoadState();
@@ -492,11 +496,15 @@ public class DB : MonoBehaviour
                 saveAll.state.isOccupped = data2.isOccupped;
                 saveAll.state.indexTile = data2.indexTile;
             saveAll.state.dataNextLevel = data.dataNextLevel;
+
+
+            saveAll.state.dataDamage = data.dataDamage;
             gameManager.LEVEL = data.dataLEVEL;
 
 
 
             saveAll.state.dataCountPawns = data.dataCountPawns;
+            saveAll.state.dataMaxCountPawns = data.dataMaxCountPawns;
 
 
 
@@ -534,6 +542,8 @@ public class GameData
     public int[] dataLevel;
     public int[] dataUpgradeCost;
     public int[] dataNextLevel;
+    public float[] dataDamage;
+
 
     public float[] dataTimeEarn;
     public float[] dataTimeForUpgrade;
@@ -544,6 +554,8 @@ public class GameData
     public int[] dataLimitBuilding;
 
     public int[] dataCountPawns;
+    public int[] dataMaxCountPawns;
+
 
     public int[] dataUpgradeGoldEarn;
     public int[] dataUpgradeNewMaxIncome;

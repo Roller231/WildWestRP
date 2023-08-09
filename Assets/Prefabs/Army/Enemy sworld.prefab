@@ -312,7 +312,7 @@ MonoBehaviour:
   memSpeed: 0
   target: {fileID: 0}
   cost: 10
-  countInArmy: 7
+  countInArmy: 10
   maxCount: 10
 --- !u!54 &6494159561365949141
 Rigidbody:

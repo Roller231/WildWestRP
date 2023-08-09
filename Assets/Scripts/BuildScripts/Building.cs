@@ -27,7 +27,8 @@ public class Building : SerializedMonoBehaviour
     public int maxIncome;
     public float timeEarn;
 
-
+    [Header("Атакующие")]
+    public float damage;
 
     [Header("Для других скриптов")]
     public bool open;

@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
+    SerializedFormat: 0
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
@@ -520,14 +520,15 @@ MonoBehaviour:
   maxLevel: 10
   upgradeCost: 10
   limitBuilding: 55
-  countBuilding: 0
+  countBuilding: 4
   upgradeGoldEarn: 100
   upgradeNewMaxIncome: 0
-  upgradeTime: 0
+  upgradeTime: 30
   storage: 0
   income: 0
   maxIncome: 0
   timeEarn: 0
+  damage: 0
   open: 0
   gold_OR_oil: 1
   memoryCountHouse: 0
@@ -553,6 +554,7 @@ MonoBehaviour:
   isMoving: 0
   gameManager: {fileID: 0}
   mainCamera: {fileID: 0}
+  canUpBar: 0
   grindBuild: 0
   upgradeButton: {fileID: 0}
   cancelButtonEarn: {fileID: 0}

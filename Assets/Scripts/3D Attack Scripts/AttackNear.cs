@@ -38,7 +38,6 @@ public class AttackNear : MonoBehaviour
         if (Physics.Raycast(ray, out hit, maxDistance))
         {
             // Обработка столкновения с объектом
-            Debug.Log("Райкаст попал в объект: " + hit.collider.gameObject.name);
 
             if (hit.collider.gameObject.name != "Enemy Model")
             {
@@ -64,10 +63,8 @@ public class AttackNear : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, maxDistance))
         {
-            Debug.Log("Фэйл");
 
             // Обработка столкновения с объектом
-            Debug.Log("Райкаст нанес урон " + hit.collider.gameObject.name);
 
             if (hit.collider.gameObject.name != "Enemy Model")
             {
@@ -84,13 +81,11 @@ public class AttackNear : MonoBehaviour
 
                     foreach (var enemy in kripsList.kripsList)
                     {
-                        Debug.Log(enemy.gameObject.name);
 
 
                             enemy.GetComponentInChildren<Animator>().SetBool("isAttack", false);
                             enemy.GetComponent<Enemy>().moveSpeed = enemy.GetComponent<Enemy>().memSpeed;
                             enemy.GetComponentInChildren<AttackNear>().finedObject = false;
-                            Debug.Log(enemy.gameObject.name);
 
 
                     }
@@ -102,7 +97,6 @@ public class AttackNear : MonoBehaviour
 
             else
             {
-                Debug.Log("ыыыыыыы");
 
             }
          

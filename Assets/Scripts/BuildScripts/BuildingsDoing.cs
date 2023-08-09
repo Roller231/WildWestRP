@@ -113,8 +113,6 @@ public class BuildingsDoing : MonoBehaviour
 
 
 
-
-
                     buildingThis.open = isOpen = true;
 
 
@@ -228,6 +226,18 @@ public class BuildingsDoing : MonoBehaviour
                 this.buildingThis.upgradeCost *= 2;
                 buildingThis.upgradeTime *= 2;
 
+                buildingThis.damage *= 1.4f;
+
+
+                if (buildingThis.typeBuilding == "weapon")
+                {
+                    for (int i = 0; i < GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns.Length; i++)
+                    {
+                        GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns[i].GetComponent<Enemy>().maxCount += 2;
+                    }
+
+                }
+
                 BackAllBuildings();
                 
                 buildingThis.constructionScript.SetUpgradeBuilding(buildingThis.upgradeTime);
@@ -249,6 +259,18 @@ public class BuildingsDoing : MonoBehaviour
                 this.buildingThis.upgradeCost *= 2;
                 buildingThis.upgradeTime *= 2;
 
+                buildingThis.damage *= 1.4f;
+
+                if (buildingThis.typeBuilding == "weapon")
+                {
+                    for (int i = 0; i < GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns.Length; i++)
+                    {
+                        GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns[i].GetComponent<Enemy>().maxCount += 2;
+                    }
+
+                }
+
+
                 BackAllBuildings();
 
 
@@ -259,43 +281,6 @@ public class BuildingsDoing : MonoBehaviour
         }
     }
 
-    private void UpgradeBar()
-    {
-        if (buildingThis.maxLevel > buildingThis.level)
-        {
-            if (gameManager.oil >= this.buildingThis.upgradeCost && buildingThis.gold_OR_oil)
-            {
-                gameManager.oil -= this.buildingThis.upgradeCost;
-
-                this.buildingThis.level += 1;
-                buildingThis.nextLevel += 1;
-
-                this.buildingThis.upgradeCost *= 2;
-                buildingThis.upgradeTime *= 2;
-
-                BackAllBuildings();
-
-                buildingThis.constructionScript.SetUpgradeBuilding(buildingThis.upgradeTime);
-            }
-            else if (gameManager.gold >= this.buildingThis.upgradeCost && !buildingThis.gold_OR_oil)
-            {
-                gameManager.gold -= this.buildingThis.upgradeCost;
-
-                this.buildingThis.level += 1;
-                buildingThis.nextLevel += 1;
-
-                this.buildingThis.upgradeCost *= 2;
-                buildingThis.upgradeTime *= 2;
-
-                BackAllBuildings();
-
-
-                buildingThis.constructionScript.SetUpgradeBuilding(buildingThis.upgradeTime);
-            }
-
-
-        }
-    }
 
 
     private void DoAnyFunc()
@@ -308,10 +293,23 @@ public class BuildingsDoing : MonoBehaviour
                 child.gameObject.SetActive(true);
             }
         }
-        else if(buildingThis.typeBuilding == "bar")
+        else if (buildingThis.typeBuilding == "pushka")
         {
-
+            foreach (Transform child in GameObject.Find("rootCanon").transform)
+            {
+                child.gameObject.SetActive(true);
+            }
+            GameObject.Find("rootCanon").GetComponent<CanonUi>().OnEnableCanonUI(gameObject.GetComponent<Building>());
         }
+        else if (buildingThis.typeBuilding == "bar")
+        {
+            foreach (Transform child in GameObject.Find("rootBar").transform)
+            {
+                child.gameObject.SetActive(true);
+            }
+            GameObject.Find("rootBar").GetComponent<CanonUi>().OnEnableCanonUI(gameObject.GetComponent<Building>());
+        }
+
     }
 
 

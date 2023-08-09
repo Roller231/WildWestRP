@@ -9,7 +9,7 @@ public class PulaScript : MonoBehaviour
     [SerializeField] float moveSpeed;
     Transform target;
 
-    [SerializeField] int damage;
+    [SerializeField] public int damage;
 
     // Start is called before the first frame update
     void Start()

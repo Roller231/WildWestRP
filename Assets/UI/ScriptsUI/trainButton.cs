@@ -34,6 +34,11 @@ public class trainButton : MonoBehaviour
 
         costObj.GetComponentInChildren<Text>().text = enemy.cost.ToString();
 
+        if (newCard != null && enemy.countInArmy == 0)
+        {
+            Destroy(newCard);
+        }
+
     }
 
     public void TrainPawns()

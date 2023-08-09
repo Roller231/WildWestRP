@@ -58,7 +58,10 @@
   <ItemGroup>
     <Compile Include="Assets\OdinSerializer\Core\Formatters\IFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\EmittedAssemblyAttribute.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Serializers\UInt32Serializer.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Binary\BinaryDataWriter.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\CoroutineFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\DictionaryKeySupport\Vector4DictionaryKeyPathProvider.cs" />
     <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\FormatterLocator.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\EmptyTypeFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\Int64Serializer.cs" />
@@ -66,47 +69,82 @@
     <Compile Include="Assets\OdinSerializer\Core\Misc\SerializationPolicies.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\ReflectionOrEmittedBaseFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\UIntPtrSerializer.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\DefaultLoggers.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\DataFormat.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\IFormatterLocator.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Serializers\CharSerializer.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\ISupportsPrefabSerialization.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\Int32Serializer.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\FormatterEmitter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\NodeInfo.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\CustomGenericFormatterAttribute.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\DateTimeOffsetFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\MinimalBaseFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\Vector3Formatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\DateTimeFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Extensions\Operator.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\ArrayListFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\DictionaryKeySupport\RegisterDictionaryKeyPathProviderAttribute.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Extensions\FieldInfoExtensions.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\SerializationData.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\FormatterLocationStep.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\SerializedBehaviour.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Extensions\PathUtilities.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\ExcludeDataFromInspectorAttribute.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Misc\FastTypeComparer.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\Serializer.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\ListFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Extensions\MemberInfoExtensions.cs" />
     <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\DelegateFormatterLocator.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\GradientColorKeyFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\BaseDataReaderWriter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\SerializationContext.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\ILogger.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\UnitySerializationInitializer.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\UnitySerializationUtility.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\PreviouslySerializedAsAttribute.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\DictionaryKeySupport\Vector2DictionaryKeyPathProvider.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Misc\EmitUtilities.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Misc\DoubleLookupDictionary.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Json\JsonConfig.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\QueueFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\ColorFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Serializers\EnumSerializer.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\EasyBaseFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Misc\Cache.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\IOverridesSerializationPolicy.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\PrefabModification.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\PrimitiveArrayFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\MultiDimensionalArrayFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\IExternalGuidReferenceResolver.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\PrimitiveArrayFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\TypeFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\IDataReader.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\EntryType.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Json\JsonTextReader.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\BooleanSerializer.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\GradientFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\GenericCollectionFormatterLocator.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\DelegateFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Extensions\StringExtensions.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\DefaultSerializationBinder.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\SerializationNodes\SerializationNodeDataReaderWriterConfig.cs" />
     <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\SelfFormatterLocator.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\SerializationNodes\SerializationNodeDataReaderWriterConfig.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\RegisterFormatterLocatorAttribute.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\VersionFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\QuaternionFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\SerializationNodes\SerializationNodeDataWriter.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Misc\Flags.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\AnySerializer.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\BaseDataWriter.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Extensions\TypeExtensions.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Serializers\ComplexTypeSerializer.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\SingleSerializer.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\CustomLogger.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\DerivedDictionaryFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Misc\ReferenceEqualityComparer.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Binary\BinaryEntryType.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Serializers\ByteSerializer.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\IDataWriter.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\GradientAlphaKeyFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\DictionaryKeySupport\IDictionaryKeyPathProvider.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Extensions\PropertyInfoExtensions.cs" />
@@ -114,88 +152,12 @@
     <Compile Include="Assets\OdinSerializer\Core\Serializers\UInt64Serializer.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\SelfFormatterFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\HashSetFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Misc\AssemblyImportSettingsUtilities.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Extensions\UnityExtensions.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\EmittedFormatterAttribute.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\IAskIfCanFormatTypes.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\LoggingPolicy.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\DoubleLookupDictionaryFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\SerializedStateMachineBehaviour.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\ISerializableFormatterLocator.cs" />
-    <Compile Include="Assets\OdinSerializer\Config\AssemblyBuildInfo.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\IExternalIndexReferenceResolver.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\AOTSupportScanner.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\MethodInfoFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Json\JsonDataReader.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Serializers\GuidSerializer.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\LayerMaskFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\KeyframeFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\ArrayFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\SerializableFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\ProperBitConverter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Serializers\UInt16Serializer.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Misc\MemberAliasPropertyInfo.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\PrefabModificationType.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\SerializationNodes\SerializationNode.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Misc\ICacheNotificationReceiver.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\SerializedComponent.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\TwoWaySerializationBinder.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Binary\BinaryDataReader.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\SerializationNodes\SerializationNodeDataReader.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\StackFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\ColorBlockFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\ArrayFormatterLocator.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Misc\UnsafeUtilities.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\ISerializationPolicy.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Serializers\IntPtrSerializer.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\DictionaryKeySupport\BaseDictionaryKeyPathProvider.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\UnityReferenceResolver.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\ArchitectureInfo.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\CustomSerializationPolicy.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\DictionaryFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\SerializationConfig.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Serializers\UInt32Serializer.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Binary\BinaryDataWriter.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\DictionaryKeySupport\Vector4DictionaryKeyPathProvider.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\DefaultLoggers.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\DataFormat.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\IFormatterLocator.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Serializers\CharSerializer.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\CustomGenericFormatterAttribute.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\DateTimeOffsetFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\Vector3Formatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\DictionaryKeySupport\RegisterDictionaryKeyPathProviderAttribute.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Misc\FastTypeComparer.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\BaseDataReaderWriter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\ILogger.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Misc\DoubleLookupDictionary.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Json\JsonConfig.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\QueueFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Serializers\EnumSerializer.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\EasyBaseFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Misc\Cache.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\MultiDimensionalArrayFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\TypeFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\EntryType.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Json\JsonTextReader.cs" />
-    <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\GradientFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\GenericCollectionFormatterLocator.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\DelegateFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Extensions\StringExtensions.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Misc\Flags.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\BaseDataWriter.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Extensions\TypeExtensions.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Serializers\ComplexTypeSerializer.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Misc\CustomLogger.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Formatters\DerivedDictionaryFormatter.cs" />
-    <Compile Include="Assets\OdinSerializer\Utilities\Misc\ReferenceEqualityComparer.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Binary\BinaryEntryType.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\Serializers\ByteSerializer.cs" />
-    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\IDataWriter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\SByteSerializer.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Misc\AssemblyImportSettingsUtilities.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\Vector2Formatter.cs" />
     <Compile Include="Assets\OdinSerializer\Config\GlobalSerializationConfig.cs" />
     <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Json\JsonDataWriter.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Extensions\UnityExtensions.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\Vector4Formatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\BaseFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\AlwaysFormatsSelfAttribute.cs" />
@@ -204,43 +166,81 @@
     <Compile Include="Assets\OdinSerializer\Core\Misc\RegisterFormatterAttribute.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\SerializedUnityObject.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\OdinPrefabSerializationEditorUtility.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\EmittedFormatterAttribute.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\IAskIfCanFormatTypes.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\FormatterUtilities.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\LoggingPolicy.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\SerializedMonoBehaviour.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\DoubleLookupDictionaryFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\SerializedStateMachineBehaviour.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\ISerializableFormatterLocator.cs" />
+    <Compile Include="Assets\OdinSerializer\Config\AssemblyBuildInfo.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\IExternalIndexReferenceResolver.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\NullableFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\AOTSupportScanner.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\StringSerializer.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\IOverridesSerializationFormat.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\ReflectionFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\MethodInfoFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Json\JsonDataReader.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Misc\MemberAliasFieldInfo.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Serializers\GuidSerializer.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\DictionaryKeySupport\DictionaryKeyUtility.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\LayerMaskFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Misc\MemberAliasMethodInfo.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\UnityEventFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Extensions\GarbageFreeIterators.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Extensions\LinqExtensions.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\KeyframeFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\Int16Serializer.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\ErrorHandlingPolicy.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\RectFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\IExternalStringReferenceResolver.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\ArrayFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\VectorIntFormatters.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\SerializableFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Serializers\DecimalSerializer.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Misc\ImmutableList.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\ProperBitConverter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\CustomFormatterAttribute.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\Color32Formatter.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\AOTSupportUtilities.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Serializers\UInt16Serializer.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Misc\MemberAliasPropertyInfo.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\PrefabModificationType.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\SerializationNodes\SerializationNode.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Misc\ICacheNotificationReceiver.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\ISelfFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\Buffer.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\SerializedComponent.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\TwoWaySerializationBinder.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\Binary\BinaryDataReader.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\SerializationAbortException.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Extensions\MethodInfoExtensions.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\CachedMemoryStream.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\DataReaderWriters\SerializationNodes\SerializationNodeDataReader.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\BoundsFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\StackFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\ColorBlockFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\FormatterLocators\ArrayFormatterLocator.cs" />
+    <Compile Include="Assets\OdinSerializer\Utilities\Misc\UnsafeUtilities.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\ISerializationPolicy.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\GenericCollectionFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\SerializedUnityObjects\SerializedScriptableObject.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Serializers\IntPtrSerializer.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\TimeSpanFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\DictionaryKeySupport\BaseDictionaryKeyPathProvider.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\SerializationUtility.cs" />
+    <Compile Include="Assets\OdinSerializer\Unity Integration\UnityReferenceResolver.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\Formatters\AnimationCurveFormatter.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\ArchitectureInfo.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Formatters\KeyValuePairFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Unity Integration\DictionaryKeySupport\Vector3DictionaryKeyPathProvider.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\CustomSerializationPolicy.cs" />
     <Compile Include="Assets\OdinSerializer\Utilities\Misc\UnityVersion.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Formatters\DictionaryFormatter.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\DeserializationContext.cs" />
+    <Compile Include="Assets\OdinSerializer\Core\Misc\SerializationConfig.cs" />
     <Compile Include="Assets\OdinSerializer\Core\Misc\OdinSerializeAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -497,26 +497,14 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Google.VersionHandler">
-      <HintPath>Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandlerImpl">
-      <HintPath>Assets\ExternalDependencyManager\Editor\1.2.176\Google.VersionHandlerImpl.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.App">
-      <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Firebase.Editor">
-      <HintPath>Assets\Firebase\Editor\Firebase.Editor.dll</HintPath>
+    <Reference Include="Firebase.Auth">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Google.IOSResolver">
       <HintPath>Assets\ExternalDependencyManager\Editor\1.2.176\Google.IOSResolver.dll</HintPath>
@@ -524,11 +512,11 @@
     <Reference Include="Firebase.Database">
       <HintPath>Assets\Firebase\Plugins\Firebase.Database.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase.Editor">
+      <HintPath>Assets\Firebase\Editor\Firebase.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="Google.PackageManagerResolver">
       <HintPath>Assets\ExternalDependencyManager\Editor\1.2.176\Google.PackageManagerResolver.dll</HintPath>
@@ -539,14 +527,26 @@
     <Reference Include="Firebase.TaskExtension">
       <HintPath>Assets\Firebase\Plugins\Firebase.TaskExtension.dll</HintPath>
     </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
     <Reference Include="Google.MiniJson">
       <HintPath>Assets\Firebase\Plugins\Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl">
+      <HintPath>Assets\ExternalDependencyManager\Editor\1.2.176\Google.VersionHandlerImpl.dll</HintPath>
+    </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.7\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Platform">
       <HintPath>Assets\Firebase\Plugins\Firebase.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="Firebase.Auth">
-      <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
+    <Reference Include="Firebase.App">
+      <HintPath>Assets\Firebase\Plugins\Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
