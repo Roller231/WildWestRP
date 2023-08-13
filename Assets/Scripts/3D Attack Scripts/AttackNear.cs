@@ -39,7 +39,7 @@ public class AttackNear : MonoBehaviour
         {
             // Обработка столкновения с объектом
 
-            if (hit.collider.gameObject.name != "Enemy Model")
+            if (hit.collider.gameObject.name != "Enemy Model" && hit.collider.gameObject.name != "Enemy Model(Clone)" &&  hit.collider.gameObject.name != "Cube")
             {
                 finedObject = true;
                 gameObject.GetComponent<Animator>().SetBool("isAttack", true);
@@ -66,8 +66,9 @@ public class AttackNear : MonoBehaviour
 
             // Обработка столкновения с объектом
 
-            if (hit.collider.gameObject.name != "Enemy Model")
+            if (hit.collider.gameObject.name != "Enemy Model" && hit.collider.gameObject.name != "Enemy Model(Clone)" && hit.collider.gameObject.name != "Cube")
             {
+                Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.gameObject.GetComponent<BuildingToAttack>().health > 0)
                 {
 
@@ -90,6 +91,7 @@ public class AttackNear : MonoBehaviour
 
                     }
 
+                    hit.collider.gameObject.GetComponent<BuildingToAttack>().destroiedBuild.SetActive(true);
                     UtilScripts.Destroy(hit.collider.gameObject);
 
                 }

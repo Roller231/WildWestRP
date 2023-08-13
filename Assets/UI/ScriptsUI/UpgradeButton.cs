@@ -12,13 +12,15 @@ public class UpgradeButton : MonoBehaviour
     public GameObject goldImage;
     public GameObject oilImage;
     public Text cost;
+    public Text costChips;
+
     public Text upgradeText;
     public void OnEnableFunk(bool gold_OR_oil, Building buildingThis, int gold, int oil)
     {
 
-        Debug.Log("s");
 
         cost.text = buildingThis.upgradeCost.ToString();
+        costChips.text = buildingThis.chipsCost.ToString();
 
         var level = buildingThis.level;
         var name = buildingThis.name.Split("(Clone)")[0];
@@ -47,24 +49,30 @@ public class UpgradeButton : MonoBehaviour
         bool canUpBar = true;
         if (buildingThis.typeBuilding == "bar")
         {
-            int i = 0;
+
             foreach (var build in GameObject.Find("GameManager").GetComponent<GameManager>().buildings)
             {
-                if (build.typeBuilding != "bar")
+                int i = 0;
+                foreach (var item in GameObject.Find("GameManager").GetComponent<GameManager>().saveAll.prefabsHouse)
                 {
-                    if (build.maxLevel == build.level && GameObject.Find("GameManager").GetComponent<GameManager>().saveAll.prefabsHouse[i].GetComponent<Building>().countBuilding == GameObject.Find("GameManager").GetComponent<GameManager>().saveAll.prefabsHouse[i].GetComponent<Building>().limitBuilding)
+                    if (build.typeBuilding != "bar")
                     {
-                        canUpBar = true;
-                    }
-                    else
-                    {
+                        if (build.maxLevel == build.level && GameObject.Find("GameManager").GetComponent<GameManager>().saveAll.prefabsHouse[i].GetComponent<Building>().countBuilding == GameObject.Find("GameManager").GetComponent<GameManager>().saveAll.prefabsHouse[i].GetComponent<Building>().limitBuilding)
+                        {
+                            canUpBar = true;
+                        }
+                        else
+                        {
 
-                        canUpBar = false;
-                        break;
+                            canUpBar = false;
+                            break;
+                        }
                     }
+
+                    i++;
                 }
+                
 
-                i++;
             }
 
 
@@ -117,7 +125,6 @@ public class UpgradeButton : MonoBehaviour
             upgradeText.text = output;
         }
 
-        Debug.Log(canUpBar);
         if (!canUpBar)
         {
             gameObject.GetComponent<Button>().interactable = false;

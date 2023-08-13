@@ -4,20 +4,21 @@ using Firebase.Database;
 using System.IO;
 using System;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class DB : MonoBehaviour
 {
     public GameManager gameManager;
     public SaveAll saveAll;
     public CameraTo3D cameraTo3D;
-
-
+    [HideInInspector]
+    public bool loadIsDone;
     public bool DoLoad;
-
+    public bool haveInternet;
     [HideInInspector]
     public bool doLoadAttack = true;
 
-
+    string twoItem;
 
     [HideInInspector] public bool oneLoad = false, oneSave = false;
 
@@ -33,7 +34,10 @@ public class DB : MonoBehaviour
 
     public bool do3D;
 
-    string otherPlayerNick;
+    public string otherPlayerNick;
+
+
+    public List<string> memNames;
 
     private void Update()
     {
@@ -43,11 +47,10 @@ public class DB : MonoBehaviour
             PlayerPrefs.DeleteAll();
         }
 
-        if (oneLoad && !cameraTo3D.do3D)
+        if (oneLoad && !cameraTo3D.do3D && haveInternet)
         {
             StartCoroutine(LoadStateFire());
             oneLoad = false;
-            Debug.Log("LoadStateFire");
 
         }
 
@@ -55,21 +58,19 @@ public class DB : MonoBehaviour
         {
             StartCoroutine(SaveCoroutine());
             oneSave = false;
-            Debug.Log("SaveCoroutine");
 
         }
 
-        if (oneLoad && cameraTo3D.do3D)
+        if (oneLoad && cameraTo3D.do3D && haveInternet)
         {
             StartCoroutine(LoadStateFireInAttack());
             oneLoad = false;
-            Debug.Log("LoadStateFireInAttack");
         }
         if (!oneLoad && playerInfo.haveName && oneSave && cameraTo3D.do3D)
         {
             StartCoroutine(SaveCoroutineInAttack());
             oneSave = false;
-            Debug.Log("SaveStateFireInAttack");
+
 
         }
 
@@ -112,9 +113,14 @@ public class DB : MonoBehaviour
     public void SaveStateFire()
     {
         GameData data = new GameData();
+
         data.dataOil = gameManager.oil;
         data.dataGold = gameManager.gold;
+        data.dataCrips = gameManager.crips;
         data.dataLEVEL = gameManager.LEVEL;
+        data.dataCups = gameManager.cups;
+
+
         data.dataStorage = saveAll.state.dataStorage;
         data.dataIncome = saveAll.state.dataIncome;
         data.dataMaxIncome = saveAll.state.dataMaxIncome;
@@ -138,6 +144,8 @@ public class DB : MonoBehaviour
         data.dataNextLevel = saveAll.state.dataNextLevel;
         data.dataDamage = saveAll.state.dataDamage;
         data.dataMaxCountPawns = saveAll.state.dataMaxCountPawns;
+        data.dataMaxLvl = saveAll.state.dataMaxLvl;
+        data.dataPrefabMaxLevel = saveAll.state.dataPrefabMaxLevel;
 
         data.dataNick = playerInfo.playerNickname;
         data.pass = playerInfo.pass;
@@ -182,8 +190,14 @@ public class DB : MonoBehaviour
 
             GameData data = JsonUtility.FromJson<GameData>(json);
 
+
+            data.memNames.Add(playerInfo.playerNickname);
+
             gameManager.gold = int.Parse(snapshot.Child("dataGold").Value.ToString());
             gameManager.oil = int.Parse(snapshot.Child("dataOil").Value.ToString());
+            gameManager.cups = int.Parse(snapshot.Child("dataCups").Value.ToString());
+            gameManager.crips = int.Parse(snapshot.Child("dataCrips").Value.ToString());
+
             playerInfo.playerNickname = data.dataNick;
             playerInfo.pass = data.pass;
 
@@ -206,11 +220,13 @@ public class DB : MonoBehaviour
             saveAll.state.posX = data.posX;
             saveAll.state.posY = data.posY;
             saveAll.state.isOccupped = data.isOccupped;
-           saveAll.state.indexTile = data.indexTile;
+            saveAll.state.indexTile = data.indexTile;
             saveAll.state.dataCountPawns = data.dataCountPawns;
             saveAll.state.dataMaxCountPawns = data.dataMaxCountPawns;
             saveAll.state.dataNextLevel = data.dataNextLevel;
             saveAll.state.dataDamage = data.dataDamage;
+            saveAll.state.dataMaxLvl = data.dataMaxLvl;
+            saveAll.state.dataPrefabMaxLevel = data.dataPrefabMaxLevel;
 
 
             saveAll.LoadState();
@@ -386,19 +402,23 @@ public class DB : MonoBehaviour
         GameData data = new GameData();
         data.dataOil = gameManager.oil;
         data.dataGold = gameManager.gold;
+        data.dataCups = gameManager.cups;
         
         data.dataCountPawns = saveAll.state.dataCountPawns;
 
         
 
 
-        // Заполните остальные переменные из gameManager
 
 
         // Сохранение данных в Firebase Realtime Database
         dbRef.Child("users").Child(playerInfo.playerNickname).Child("dataOil").SetValueAsync(gameManager.oil);
         dbRef.Child("users").Child(playerInfo.playerNickname).Child("dataGold").SetValueAsync(gameManager.gold);
+        dbRef.Child("users").Child(playerInfo.playerNickname).Child("dataCups").SetValueAsync(gameManager.cups);
+
         dbRef.Child("users").Child(playerInfo.playerNickname).Child("dataCountPawns").SetValueAsync(saveAll.state.dataCountPawns);
+        dbRef.Child("users").Child(playerInfo.playerNickname).Child("memNames").SetValueAsync(saveAll.state.memNames);
+
 
 
 
@@ -408,6 +428,9 @@ public class DB : MonoBehaviour
 
     IEnumerator LoadStateFireInAttack()
     {
+        string arrayStringLoad = PlayerPrefs.GetString("memNames"); // Retrieve the saved string from PlayerPrefs
+        string[] loadArray = arrayStringLoad.Split(','); // Split the string using the delimiter to get the array
+        memNames = new List<string>(loadArray);
 
 
         var allUsers = dbRef.Child("users").GetValueAsync();
@@ -433,33 +456,52 @@ public class DB : MonoBehaviour
 
         GameData data = JsonUtility.FromJson<GameData>(json);
 
+        bool hadName = false;
 
-
-        int i = 0;
         foreach (var item in snaphotAllUsers.Children)
+        {
+
+
+            foreach (var item2 in memNames)
             {
 
-            if (int.Parse(item.Child("dataLEVEL").Value.ToString()) == int.Parse(snapshot.Child("dataLEVEL").Value.ToString()) && item.Key.ToString() != playerInfo.playerNickname)
+                if (item.Key.ToString() == item2)
                 {
-                Debug.Log(int.Parse(item.Child("dataLEVEL").Value.ToString()));
+                    twoItem = item2;
+                    hadName = true;
+                    Debug.Log(item2);
+                }
+
+
+            }
+
+            if (item.Key.ToString() != twoItem)
+            {
+                hadName = false;
+            }
+
+            if (int.Parse(item.Child("dataLEVEL").Value.ToString()) == int.Parse(snapshot.Child("dataLEVEL").Value.ToString()) && item.Key.ToString() != playerInfo.playerNickname && !hadName)
+            {
 
                 doLoadAttack = true;
-                    Debug.Log(item.Key.ToString());
 
                     otherPlayerNick = item.Key.ToString();
 
-
+                memNames.Add(otherPlayerNick);
+                string[] myArray = memNames.ToArray(); // Convert List to array
+                string arrayString = string.Join(",", myArray); // Convert array to string with delimiter
+                PlayerPrefs.SetString("memNames", arrayString);
 
                 break;
-                }
-
-            i++;
-
             }
+
+
+        }
 
 
         if (doLoadAttack)
         {
+
             string jsonOtherPlayer = snaphotAllUsers.Child(otherPlayerNick).GetRawJsonValue();
 
             File.WriteAllText(filePath2, jsonOtherPlayer);
@@ -467,9 +509,9 @@ public class DB : MonoBehaviour
             GameData data2 = JsonUtility.FromJson<GameData>(jsonOtherPlayer);
 
 
-
             gameManager.gold = int.Parse(snapshot.Child("dataGold").Value.ToString());
                 gameManager.oil = int.Parse(snapshot.Child("dataOil").Value.ToString());
+            gameManager.cups = int.Parse(snapshot.Child("dataCups").Value.ToString());
                 playerInfo.playerNickname = data.dataNick;
                 playerInfo.pass = data.pass;
 
@@ -496,9 +538,11 @@ public class DB : MonoBehaviour
                 saveAll.state.isOccupped = data2.isOccupped;
                 saveAll.state.indexTile = data2.indexTile;
             saveAll.state.dataNextLevel = data.dataNextLevel;
+            saveAll.state.dataMaxLvl = data2.dataMaxLvl;
+            saveAll.state.dataPrefabMaxLevel = data2.dataPrefabMaxLevel;
 
 
-            saveAll.state.dataDamage = data.dataDamage;
+            saveAll.state.dataDamage = data2.dataDamage;
             gameManager.LEVEL = data.dataLEVEL;
 
 
@@ -506,14 +550,18 @@ public class DB : MonoBehaviour
             saveAll.state.dataCountPawns = data.dataCountPawns;
             saveAll.state.dataMaxCountPawns = data.dataMaxCountPawns;
 
-
+            loadIsDone = true;
 
                 saveAll.LoadState();
 
-            }
+        }
             else
             {
-            UtilScripts.OpenSceneVoid(1);
+            memNames.Clear();
+            string[] myArray = memNames.ToArray(); // Convert List to array
+            string arrayString = string.Join(",", myArray); // Convert array to string with delimiter
+            PlayerPrefs.SetString("memNames", arrayString);
+            UtilScripts.OpenSceneVoid(0);
             }
 
 
@@ -534,12 +582,18 @@ public class GameData
 {
     public int dataOil;
     public int dataGold;
+    public int dataCrips;
     public int dataLEVEL;
+    public int dataCups;
 
     public int[] dataStorage;
     public int[] dataIncome;
     public int[] dataMaxIncome;
     public int[] dataLevel;
+    public int[] dataMaxLvl;
+    public int[] dataPrefabMaxLevel;
+
+
     public int[] dataUpgradeCost;
     public int[] dataNextLevel;
     public float[] dataDamage;
@@ -575,6 +629,8 @@ public class GameData
     public string pass;
 
 
+    public List<string> memNames;
 
-    // Добавьте остальные переменные для сохранения и загрузки
+
+
 }

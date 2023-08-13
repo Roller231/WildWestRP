@@ -8,6 +8,8 @@ public class SetPlayerInfo : MonoBehaviour
 
     [SerializeField] private Text nickname;
     [SerializeField] private Text LEVELtext;
+    [SerializeField] private Text CupsText;
+
 
     [SerializeField] private PlayerInfo playerInfo;
     [SerializeField] private GameManager gameManager;
@@ -20,6 +22,8 @@ public class SetPlayerInfo : MonoBehaviour
 
 
         LEVELtext.text = gameManager.LEVEL.ToString();
+
+        CupsText.text = gameManager.cups.ToString();
     }
 
 

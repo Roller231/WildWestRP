@@ -308,12 +308,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  health: 100
+  health: 60
   memSpeed: 0
   target: {fileID: 0}
   cost: 10
-  countInArmy: 10
-  maxCount: 10
+  countInArmy: 1
+  maxCount: 5
 --- !u!54 &6494159561365949141
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2867,7 +2867,7 @@ MonoBehaviour:
   root: {fileID: 962561814842324878}
   kripsList: {fileID: 0}
   maxDistance: 0.5
-  damage: 50
+  damage: 20
 --- !u!136 &3468773411070508319
 CapsuleCollider:
   m_ObjectHideFlags: 0

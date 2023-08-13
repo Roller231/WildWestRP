@@ -10,8 +10,11 @@ public class GameManager : MonoBehaviour
 
     public int gold;
     public int oil;
+    public int crips;
+
 
     public int LEVEL;
+    public int cups;
 
     private Building buildingToPlace;
     public GameObject grid;
@@ -29,6 +32,8 @@ public class GameManager : MonoBehaviour
     public SaveAll saveAll;
     public int countHouses = 0;
 
+    [SerializeField] GameObject erorInt;
+
 
 
 
@@ -36,6 +41,37 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //goldDisplay.text = gold.ToString();
+
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            GameObject.Find("Main Camera").GetComponent<DB>().haveInternet = false;
+            Time.timeScale = 0f;
+            erorInt.SetActive(true);
+
+        }
+        else
+        {
+            GameObject.Find("Main Camera").GetComponent<DB>().haveInternet = true;
+            Time.timeScale = 1f;
+            erorInt.SetActive(false);
+
+        }
+
+
+
+        if (cups < 0)
+        {
+            cups = 0;
+        }
+        if (gold > 99999999)
+        {
+            gold = 99999999;
+        }
+        if (oil > 99999999)
+        {
+            oil = 99999999;
+        }
+
 
         if (Input.GetMouseButtonDown(0) && buildingToPlace != null && buildingMode && !UtilScripts.IsPointerOverUIObject())
         {

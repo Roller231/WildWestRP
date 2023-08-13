@@ -62,6 +62,8 @@ public class trainButton : MonoBehaviour
                 pawnCard.GetComponent<trainButton>().costObj.SetActive(false);
                 pawnCard.GetComponent<trainButton>().countInArmyObj.SetActive(true);
                 pawnCard.GetComponent<Button>().enabled = false;
+                pawnCard.transform.localScale = Vector3.one;
+
                 newCard = pawnCard;
             }
 
@@ -93,7 +95,9 @@ public class trainButton : MonoBehaviour
             pawnCard.GetComponent<trainButton>().costObj.SetActive(false);
             pawnCard.GetComponent<trainButton>().countInArmyObj.SetActive(true);
             pawnCard.GetComponent<Button>().enabled = false;
-            newCard = pawnCard;
+        pawnCard.transform.localScale = Vector3.one;
+
+        newCard = pawnCard;
 
 
         

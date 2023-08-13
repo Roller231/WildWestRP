@@ -8,6 +8,7 @@ public class SetTextGold : MonoBehaviour
 {
     [SerializeField] private Text textGold;
     [SerializeField] private Text textOil;
+    [SerializeField] private Text textCrips;
 
     [SerializeField] private string tagText;
 
@@ -17,6 +18,7 @@ public class SetTextGold : MonoBehaviour
     {
         textGold.text = gameManager.gold.ToString();
         textOil.text = gameManager.oil.ToString();
+        textCrips.text = gameManager.crips.ToString();
     }
 
     public void ClimeButtonFunc()

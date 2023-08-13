@@ -21,7 +21,7 @@ public class AttackButton : MonoBehaviour
         }
         if (i > 0) 
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
 
         else

@@ -19,7 +19,7 @@ public class Building : SerializedMonoBehaviour
     public int upgradeGoldEarn;
     public int upgradeNewMaxIncome;
     public float upgradeTime;
-
+    public int chipsCost;
 
     [Header("Свойства добывающих зданий")]
     public int storage;

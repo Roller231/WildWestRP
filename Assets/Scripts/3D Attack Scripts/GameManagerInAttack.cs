@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,22 +9,40 @@ public class GameManagerInAttack : MonoBehaviour
 
     [SerializeField] GameObject winPanel;
     [SerializeField] GameObject loosePanel;
+    bool doOne = true;
+
+    public int countCups;
+
+    private void Start()
+    {
+        System.Random random = new System.Random();
+        countCups = random.Next(19, 30);
+    }
 
     private void Update()
     {
-        
-        CheckBuildings();
-        CheckKrips();
+        if (gameObject.GetComponent<DB>().loadIsDone)
+        {
+            CheckBuildings();
+            CheckKrips();
+        }
+
     }
 
     public void CheckBuildings()
     {
         BuildingToAttack[] meshRenderers = FindObjectsOfType<BuildingToAttack>();
 
-        Debug.Log(meshRenderers.Length);
         if (meshRenderers.Length == 0)
         {
-            Time.timeScale = 0f;
+            if (doOne)
+            {
+                GameObject.Find("GameManager").GetComponent<GameManager>().cups += countCups;
+
+                doOne = false;
+            }
+
+            Time.timeScale = 1f;
             winPanel.SetActive(true);
         }
         else if (meshRenderers.Length > 0)
@@ -37,6 +56,8 @@ public class GameManagerInAttack : MonoBehaviour
     }
     public void CheckKrips()
     {
+
+
         Enemy[] enemys = FindObjectsOfType<Enemy>();
 
 
@@ -48,6 +69,15 @@ public class GameManagerInAttack : MonoBehaviour
 
         if (j <= 0 && enemys.Length <= 0)
         {
+            if (doOne)
+            {
+
+                GameObject.Find("GameManager").GetComponent<GameManager>().cups -= countCups;
+
+
+                doOne = false;
+            }
+
             loosePanel.SetActive(true);
         }
         else
@@ -56,4 +86,20 @@ public class GameManagerInAttack : MonoBehaviour
 
         }
     }
+
+    public void minusCups()
+    {
+        GameObject.Find("GameManager").GetComponent<GameManager>().cups -= countCups;
+        StartCoroutine(openScene());
+
+    }
+
+    IEnumerator openScene()
+    {
+        yield return new WaitForSeconds(1.6f);
+
+        UtilScripts.OpenSceneVoid(0);
+    }
+
+
 }

@@ -29,7 +29,7 @@ public class SetButtonInfo : MonoBehaviour
         if (buttonBuild.countBuilding >= buttonBuild.limitBuilding)
         {
             gameObject.GetComponent<Button>().interactable = false;
-            costText.color = Color.black;
+            costText.color = Color.white;
 
         }
         else if (buttonBuild.countBuilding >= buttonBuild.limitBuilding)

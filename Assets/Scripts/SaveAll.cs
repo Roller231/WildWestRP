@@ -3,6 +3,7 @@ using UnityEngine;
 using System;
 using OdinSerializer;
 using System.IO;
+using System.Collections.Generic;
 
 public class SaveAll : MonoBehaviour
 {
@@ -37,10 +38,7 @@ public class SaveAll : MonoBehaviour
 
 
 
-        if (!GameObject.Find("Main Camera").GetComponent<CameraTo3D>().do3D)
-        {
 
-        }
         StartCoroutine(SaveCoroutine());
 
     }
@@ -66,6 +64,10 @@ public class SaveAll : MonoBehaviour
     public void SaveState(string filePath)
     {
 
+        if (GameObject.Find("Main Camera").GetComponent<CameraTo3D>().do3D)
+        {
+
+        }
 
         for (int l = 0; l < prefabsPawns.Length; l++)
         {
@@ -74,8 +76,11 @@ public class SaveAll : MonoBehaviour
 
 
 
+
+
             state.dataCountPawns[l] = prefabsPawns[l].GetComponent<Enemy>().countInArmy;
             state.dataMaxCountPawns[l] = prefabsPawns[l].GetComponent<Enemy>().maxCount;
+
 
         }
 
@@ -102,18 +107,22 @@ public class SaveAll : MonoBehaviour
                 Array.Resize(ref state.dataCountHouseMemory, gameManager.buildings.Length);
                 Array.Resize(ref state.dataNextLevel, gameManager.buildings.Length);
                 Array.Resize(ref state.dataDamage, gameManager.buildings.Length);
+                Array.Resize(ref state.dataMaxLvl, gameManager.buildings.Length);
+
 
 
 
                 Array.Resize(ref state.dataCountBuilding, prefabsHouse.Length);
                 Array.Resize(ref state.dataLimitBuilding, prefabsHouse.Length);
-
+                Array.Resize(ref state.dataPrefabMaxLevel, prefabsHouse.Length);
 
 
                 for (int j = 0; j < prefabsHouse.Length; j++)
                 {
                     state.dataCountBuilding[j] = prefabsHouse[j].GetComponent<Building>().countBuilding;
                     state.dataLimitBuilding[j] = prefabsHouse[j].GetComponent<Building>().limitBuilding;
+
+                    state.dataPrefabMaxLevel[j] = prefabsHouse[j].GetComponent<Building>().maxLevel;
                 }
 
 
@@ -136,7 +145,7 @@ public class SaveAll : MonoBehaviour
                 state.posX[i] = gameManager.tiles[state.indexTile[gameManager.buildings[i].memoryCountHouse]].transform.position.x;
                 state.posY[i] = gameManager.tiles[state.indexTile[gameManager.buildings[i].memoryCountHouse]].transform.position.y;
 
-
+                state.dataMaxLvl[i] = gameManager.buildings[i].maxLevel;
 
                 state.isOccupped[i] = gameManager.tiles[state.indexTile[i]].isOccuped;
 
@@ -213,6 +222,7 @@ public class SaveAll : MonoBehaviour
                             gameManager.buildings[i].upgradeCost = state.dataUpgradeCost[i];
                             gameManager.buildings[i].timeEarn = state.dataTimeEarn[i];
                         gameManager.buildings[i].damage = state.dataDamage[i];
+                        gameManager.buildings[i].maxLevel = state.dataMaxLvl[i];
 
                             gameManager.buildings[i].upgradeGoldEarn = state.dataUpgradeGoldEarn[i];
                             gameManager.buildings[i].upgradeNewMaxIncome = state.dataUpgradeNewMaxIncome[i];
@@ -235,6 +245,7 @@ public class SaveAll : MonoBehaviour
 
                         prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
                             prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];
+                        prefabsHouse[j].GetComponent<Building>().maxLevel = state.dataPrefabMaxLevel[j];
 
 
 
@@ -252,7 +263,6 @@ public class SaveAll : MonoBehaviour
             TimeSpan timePassed = DateTime.UtcNow - lastSaveTime;
             int secondsPassed = (int)timePassed.TotalSeconds;
             secondsPassed = Math.Clamp(secondsPassed, 0, 7 * 24 * 60 * 60);
-            Debug.Log(secondsPassed);
             foreach (var count in gameManager.buildings)
             {
                 if (secondsPassed / 2 * count.income > count.maxIncome)
@@ -300,11 +310,15 @@ public class Data
     public int dataOil;
     public int dataGold;
     public int dataLEVEL;
+    public int dataCups;
 
     public int[] dataStorage;
     public int[] dataIncome;
     public int[] dataMaxIncome;
     public int[] dataLevel;
+    public int[] dataMaxLvl;
+    public int[] dataPrefabMaxLevel;
+
     public int[] dataNextLevel;
     public int[] dataUpgradeCost;
     public float[] dataTimeEarn;
@@ -335,6 +349,9 @@ public class Data
     public int[] indexTile;
 
     public string dataNick;
+
+    public string memNames;
+
 
 
 }
