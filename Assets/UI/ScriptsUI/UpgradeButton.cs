@@ -15,7 +15,7 @@ public class UpgradeButton : MonoBehaviour
     public Text costChips;
 
     public Text upgradeText;
-    public void OnEnableFunk(bool gold_OR_oil, Building buildingThis, int gold, int oil)
+    public void OnEnableFunk(bool gold_OR_oil, Building buildingThis, Button upgradeDon, int gold, int oil, int chips)
     {
 
 
@@ -98,21 +98,23 @@ public class UpgradeButton : MonoBehaviour
         else if (buildingThis.level == buildingThis.maxLevel)
         {
             gameObject.GetComponent<Button>().interactable = false;
+            upgradeDon.interactable = false;
             upgradeText.color = Color.red;
             upgradeText.text = "Max level, upgrade bar!";
         }
 
 
 
-        else if (buildingThis.upgradeCost < gold && !gold_OR_oil || buildingThis.level < buildingThis.maxLevel)
+        else if (buildingThis.upgradeCost <= gold && !gold_OR_oil || buildingThis.level < buildingThis.maxLevel)
         {
             gameObject.GetComponent<Button>().interactable = true;
             upgradeText.color = Color.black;
             upgradeText.text = output;
         }
-        else if (buildingThis.upgradeCost < oil && gold_OR_oil || buildingThis.level < buildingThis.maxLevel)
+        else if (buildingThis.upgradeCost <= oil && gold_OR_oil || buildingThis.level < buildingThis.maxLevel)
         {
             gameObject.GetComponent<Button>().interactable = true;
+
             upgradeText.color = Color.black;
             upgradeText.text = output;
         }
@@ -123,6 +125,7 @@ public class UpgradeButton : MonoBehaviour
             gameObject.GetComponent<Button>().interactable = true;
             upgradeText.color = Color.black;
             upgradeText.text = output;
+
         }
 
         if (!canUpBar)
@@ -142,6 +145,51 @@ public class UpgradeButton : MonoBehaviour
                 upgradeText.text = "Max level!";
             }
         }
+
+
+        //Donate button
+
+        if (buildingThis.chipsCost > chips)
+        {
+            upgradeDon.interactable = false;
+            costChips.color = Color.black;
+        }
+
+        else if (buildingThis.level == buildingThis.maxLevel)
+        {
+            upgradeDon.interactable = false;
+            upgradeText.color = Color.red;
+            upgradeText.text = "Max level, upgrade bar!";
+        }
+
+        else if (buildingThis.chipsCost <= chips || buildingThis.level < buildingThis.maxLevel)
+        {
+            upgradeDon.interactable = true;
+            costChips.color = Color.black;
+        }
+
+
+
+        else if (canUpBar)
+        {
+            upgradeDon.interactable = true;
+            upgradeText.color = Color.black;
+            upgradeText.text = output;
+
+        }
+
+        if (!canUpBar)
+        {
+            upgradeDon.interactable = false;
+            upgradeText.color = Color.red;
+            upgradeText.text = "Build all buildings and up on max lvl!";
+
+
+        }
+
+
+
+
 
     }
 }

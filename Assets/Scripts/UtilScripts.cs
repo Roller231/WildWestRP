@@ -108,4 +108,23 @@ public class UtilScripts : MonoBehaviour
 
 
 
+    public static void PlaySounds(string nameAudio, float volume)
+    {
+        AudioClip clip = Resources.Load<AudioClip>("Sounds/" + nameAudio);
+        AudioSource source = GameObject.Find("Sounds").GetComponent<AudioSource>();
+
+        source.clip = clip;
+        source.volume = volume;
+        source.Play();
+    }
+
+    public void PlaySoundsButton(string nameAudio)
+    {
+        AudioClip clip = Resources.Load<AudioClip>("Sounds/" + nameAudio);
+        AudioSource source = GameObject.Find("Sounds").GetComponent<AudioSource>();
+
+        source.clip = clip;
+        source.Play();
+    }
+
 }

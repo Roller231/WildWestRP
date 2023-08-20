@@ -6291,7 +6291,7 @@ GameObject:
   - component: {fileID: 9113240994449851251}
   - component: {fileID: 536866512343693166}
   m_Layer: 0
-  m_Name: BarMagazine
+  m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6388,12 +6388,14 @@ MonoBehaviour:
   maxPanel: {fileID: 3383452184027900162}
   grindBuild: 0
   upgradeButton: {fileID: 0}
+  upgradeButtonDonate: {fileID: 0}
   skipButton: {fileID: 0}
   cancelButtonEarn: {fileID: 0}
   cancelButton: {fileID: 0}
   cancelButtonSkip: {fileID: 0}
   doingButton: {fileID: 0}
   isOpen: 0
+  openedSkipPanel: 0
 --- !u!114 &2824303763551457024
 MonoBehaviour:
   m_ObjectHideFlags: 0

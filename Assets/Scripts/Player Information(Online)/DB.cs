@@ -177,11 +177,6 @@ public class DB : MonoBehaviour
             DataSnapshot snapshot = user.Result;
 
 
-
-
-
-
-
             string json = snapshot.GetRawJsonValue();
 
             // Сохранение JSON-файла по указанному пути
@@ -537,7 +532,7 @@ public class DB : MonoBehaviour
                 saveAll.state.posY = data2.posY;
                 saveAll.state.isOccupped = data2.isOccupped;
                 saveAll.state.indexTile = data2.indexTile;
-            saveAll.state.dataNextLevel = data.dataNextLevel;
+            saveAll.state.dataNextLevel = data2.dataNextLevel;
             saveAll.state.dataMaxLvl = data2.dataMaxLvl;
             saveAll.state.dataPrefabMaxLevel = data2.dataPrefabMaxLevel;
 

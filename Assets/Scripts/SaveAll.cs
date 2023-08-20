@@ -237,11 +237,9 @@ public class SaveAll : MonoBehaviour
 
                             
 
-                        if (!gameObject.GetComponent<CameraTo3D>().do3D)
-                        {
+
                             gameManager.buildings[i].nextLevel = state.dataNextLevel[i];
 
-                        }
 
                         prefabsHouse[j].GetComponent<Building>().countBuilding = state.dataCountBuilding[j];
                             prefabsHouse[j].GetComponent<Building>().limitBuilding = state.dataLimitBuilding[j];

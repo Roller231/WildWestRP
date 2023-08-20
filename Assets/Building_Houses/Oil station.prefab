@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: -78204400783612112}
   - component: {fileID: -5792037277532845329}
   m_Layer: 0
-  m_Name: OilEarner
+  m_Name: Oil station
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -829,12 +829,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  cost: 3500
+  cost: 2500
   level: 1
   nextLevel: 2
   maxLevel: 3
   upgradeCost: 1500
-  limitBuilding: 3
+  limitBuilding: 2
   countBuilding: 0
   upgradeGoldEarn: 4
   upgradeNewMaxIncome: 5000
@@ -853,7 +853,7 @@ MonoBehaviour:
   isBuilt: 0
   nowMove: 0
   plasesInArmy: 0
-  typeBuilding: 
+  typeBuilding: oil
 --- !u!114 &2906757360307730004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,12 +874,14 @@ MonoBehaviour:
   maxPanel: {fileID: 599469354240636820}
   grindBuild: 1
   upgradeButton: {fileID: 0}
+  upgradeButtonDonate: {fileID: 0}
   skipButton: {fileID: 0}
   cancelButtonEarn: {fileID: 0}
   cancelButton: {fileID: 0}
   cancelButtonSkip: {fileID: 0}
   doingButton: {fileID: 0}
   isOpen: 0
+  openedSkipPanel: 0
 --- !u!114 &1121024742721722786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,7 +1117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28459fc6865478e429953bea1b826832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStart: 10
+  timeStart: 60
   timeMemory: 0
   timeText: {fileID: 8749060817594837143}
   imageBuild: {fileID: 3444890851059340703}

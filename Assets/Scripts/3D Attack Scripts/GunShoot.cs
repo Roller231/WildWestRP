@@ -121,11 +121,9 @@ public class GunShoot : MonoBehaviour
             newPrefab.transform.SetParent(gameObject.transform);
             newPrefab.GetComponent<PulaScript>().damage = Mathf.RoundToInt(GetComponentInParent<Building>().damage);
 
+        UtilScripts.PlaySounds("canon", 1);
+
             StartCoroutine(SpawnAmmo());
-
-
-
-
 
 
     }

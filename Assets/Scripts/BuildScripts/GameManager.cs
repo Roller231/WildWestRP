@@ -63,13 +63,16 @@ public class GameManager : MonoBehaviour
         {
             cups = 0;
         }
-        if (gold > 99999999)
+
+
+        if(gold < 0)
         {
-            gold = 99999999;
+            gold = 0;
         }
-        if (oil > 99999999)
+
+        if(oil < 0)
         {
-            oil = 99999999;
+            oil = 0;
         }
 
 
@@ -98,7 +101,9 @@ public class GameManager : MonoBehaviour
                 var houseObject = Instantiate(buildingToPlace, new Vector3(nearesTile.transform.position.x, nearesTile.transform.position.y + 0.3f, 0), Quaternion.identity);
                 houseObject.transform.SetParent(canvasForHouse.transform);
                 houseObject.tile = nearesTile;
-                
+                UtilScripts.PlaySounds("build", 0.3f);
+
+
 
                 int i = 0;
                 foreach (var tile in tiles)

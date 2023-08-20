@@ -47,6 +47,11 @@ public class BuildingsDoing : MonoBehaviour
 
     public bool isOpen;
 
+    public bool openedSkipPanel = false;
+
+
+    bool doSound;
+
     private void Start()
     {
         mainCamera = GameObject.Find("Main Camera");
@@ -73,6 +78,13 @@ public class BuildingsDoing : MonoBehaviour
                     upgradeButton = item.GetComponent<Button>();
                 }
             }
+            foreach (var item in Resources.FindObjectsOfTypeAll<UpgradeButtonDonate>())
+            {
+                if (item != null)
+                {
+                    upgradeButtonDonate = item.GetComponent<Button>();
+                }
+            }
 
 
             cancelButton = GameObject.Find("CloseButtonHouse").GetComponent<Button>();
@@ -96,6 +108,13 @@ public class BuildingsDoing : MonoBehaviour
 
         }
 
+        if (buildingThis.isBuilt && openedSkipPanel && !mainCamera.GetComponent<CameraTo3D>().do3D)
+        {
+            canvasUpgrade.GetComponent<OpenBuildingSettings>().DownCanvas();
+            BackAllBuildings();
+            openedSkipPanel = false;
+
+        }
 
         try
         {
@@ -112,14 +131,25 @@ public class BuildingsDoing : MonoBehaviour
 
         if (grindBuild)
         {
-            if (buildingThis.maxIncome <= buildingThis.storage)
+            if (buildingThis.maxIncome <= buildingThis.storage && buildingThis.isBuilt)
             {
                 maxPanel.SetActive(true);
+                doSound = true;
 
             }
-            else
+            else if(doSound && buildingThis.isBuilt)
             {
                 maxPanel.SetActive(false);
+                doSound = false;
+
+                if (buildingThis.typeBuilding == "mine")
+                {
+                    UtilScripts.PlaySounds("gold", 0.7f);
+                }
+                else
+                {
+                    UtilScripts.PlaySounds("oil", 0.7f);
+                }
             }
         }
 
@@ -134,11 +164,13 @@ public class BuildingsDoing : MonoBehaviour
 
     public void PlayAnimationOnClick(Animator animator)
     {
+
+
         try
         {
             if (!onePlay && !GameManager.buildingMode && buildingThis.isBuilt && !mainCamera.GetComponent<CameraTo3D>().do3D)
             {
-
+                UtilScripts.PlaySounds("OnClick", 0.2f);
                 canvasInGame.SetActive(false);
 
                 if (!grindBuild)
@@ -179,7 +211,8 @@ public class BuildingsDoing : MonoBehaviour
                 }
 
                 upgradeButton.onClick.AddListener(() => UpgradeEarnBuild());
-                upgradeButton.GetComponent<UpgradeButton>().OnEnableFunk(buildingThis.gold_OR_oil, buildingThis, gameManager.gold, gameManager.oil);
+                upgradeButtonDonate.onClick.AddListener(() => UpgradeEarnBuildDonate());
+                upgradeButton.GetComponent<UpgradeButton>().OnEnableFunk(buildingThis.gold_OR_oil, buildingThis, upgradeButtonDonate, gameManager.gold, gameManager.oil, gameManager.crips);
 
 
                 onePlay = true;
@@ -196,6 +229,7 @@ public class BuildingsDoing : MonoBehaviour
             }
             else if (!onePlay && !GameManager.buildingMode && !buildingThis.isBuilt && !mainCamera.GetComponent<CameraTo3D>().do3D)
             {
+                UtilScripts.PlaySounds("OnClick", 0.2f);
                 GameObject.Find("TextSkip").GetComponent<Text>().text = buildingThis.chipsCost.ToString();
 
 
@@ -212,6 +246,13 @@ public class BuildingsDoing : MonoBehaviour
                 }
                 skipButton.onClick.AddListener(() => SkipUpgrade());
                 cancelButtonSkip.onClick.AddListener(() => BackAllBuildings());
+
+                foreach (Building t in gameManager.buildings)
+                {
+                    t.GetComponent<BuildingsDoing>().onePlay = true;
+                }
+
+
             }
 
         }
@@ -231,6 +272,7 @@ public class BuildingsDoing : MonoBehaviour
         canvasInGame.SetActive(true);
 
 
+
         try
         {
             buildingThis.open = isOpen = false;
@@ -243,10 +285,15 @@ public class BuildingsDoing : MonoBehaviour
 
                 t.GetComponent<BuildingsDoing>().onePlay = false;
                 t.open = t.GetComponent<BuildingsDoing>().isOpen = false;
-                
+
+                t.GetComponent<BuildingsDoing>().upgradeButtonDonate.onClick.RemoveAllListeners();
+
                 t.GetComponent<BuildingsDoing>().upgradeButton.onClick.RemoveAllListeners();
                 t.GetComponent<BuildingsDoing>().doingButton.onClick.RemoveAllListeners();
                 t.GetComponent<BuildingsDoing>().skipButton.onClick.RemoveAllListeners();
+                t.GetComponent<BuildingsDoing>().cancelButtonSkip.onClick.RemoveAllListeners();
+
+
 
             }
         }
@@ -260,7 +307,19 @@ public class BuildingsDoing : MonoBehaviour
 
     private void SetStorageOnButton()
     {
+        if (buildingThis.typeBuilding == "mine")
+        {
+            UtilScripts.PlaySounds("gold", 0.7f);
+        }
+        else if (buildingThis.typeBuilding == "oil")
+        {
+            UtilScripts.PlaySounds("oil", 0.7f);
+        }
+
+
         buildingThis.storage = 0;
+
+
     }
 
     private void UpgradeEarnBuild()
@@ -293,6 +352,7 @@ public class BuildingsDoing : MonoBehaviour
                     for (int i = 0; i < GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns.Length; i++)
                     {
                         GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns[i].GetComponent<Enemy>().maxCount += 2;
+                        GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns[i].GetComponent<Enemy>().health += 15;
                     }
 
                 }
@@ -302,20 +362,28 @@ public class BuildingsDoing : MonoBehaviour
 
                     foreach(var build in gameManager.buildings)
                     {
-                        gameManager.buildings[i].limitBuilding = gameManager.buildings[i].limitBuilding + 2;
-                        gameManager.buildings[i].maxLevel = gameManager.buildings[i].maxLevel + 2;
+                        if (buildingThis.typeBuilding != "bar")
+                        {
+                            gameManager.buildings[i].limitBuilding = gameManager.buildings[i].limitBuilding + 2;
+                            gameManager.buildings[i].maxLevel = gameManager.buildings[i].maxLevel + 2;
+                        }
+
                         i++;
                     }
                     int j = 0;
                     foreach (var build in gameManager.saveAll.prefabsHouse)
                     {
-                        gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding = gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding + 2;
+                        if (gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().typeBuilding != "bar")
+                        {
+                            gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding = gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding + 2;
+                        }
                         gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().maxLevel = gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().maxLevel + 2;
 
                         j++;
                     }
 
                 }
+                UtilScripts.PlaySounds("button", 0.5f);
 
                 BackAllBuildings();
                 
@@ -348,6 +416,8 @@ public class BuildingsDoing : MonoBehaviour
                     for (int i = 0; i < GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns.Length; i++)
                     {
                         GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns[i].GetComponent<Enemy>().maxCount += 2;
+                        GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns[i].GetComponent<Enemy>().health += 15;
+
                     }
 
                 }
@@ -357,14 +427,21 @@ public class BuildingsDoing : MonoBehaviour
 
                     foreach (var build in gameManager.buildings)
                     {
-                        gameManager.buildings[i].limitBuilding = gameManager.buildings[i].limitBuilding + 2;
-                        gameManager.buildings[i].maxLevel = gameManager.buildings[i].maxLevel + 2;
+                        if (gameManager.buildings[i].typeBuilding != "bar")
+                        {
+                            gameManager.buildings[i].limitBuilding = gameManager.buildings[i].limitBuilding + 2;
+                            gameManager.buildings[i].maxLevel = gameManager.buildings[i].maxLevel + 2;
+
+                        }
                         i++;
                     }
                     int j = 0;
                     foreach (var build in gameManager.saveAll.prefabsHouse)
                     {
-                        gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding = gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding + 2;
+                        if (gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().typeBuilding != "bar")
+                        {
+                            gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding = gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding + 2;
+                        }
                         gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().maxLevel = gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().maxLevel + 2;
 
                         j++;
@@ -372,6 +449,7 @@ public class BuildingsDoing : MonoBehaviour
 
                 }
 
+                UtilScripts.PlaySounds("button", 0.5f);
 
                 BackAllBuildings();
 
@@ -383,10 +461,84 @@ public class BuildingsDoing : MonoBehaviour
         }
     }
 
+    private void UpgradeEarnBuildDonate()
+    {
+        if (buildingThis.maxLevel > buildingThis.level)
+        {
+            if (gameManager.crips >= this.buildingThis.chipsCost)
+            {
+                gameManager.crips -= this.buildingThis.chipsCost;
 
+                this.buildingThis.level += 1;
+                buildingThis.nextLevel += 1;
+
+                this.buildingThis.income = buildingThis.upgradeGoldEarn;
+                this.buildingThis.maxIncome = buildingThis.upgradeNewMaxIncome;
+
+                buildingThis.upgradeGoldEarn *= 2;
+                buildingThis.upgradeNewMaxIncome *= 2;
+
+                this.buildingThis.upgradeCost *= 2;
+                buildingThis.upgradeTime *= 2;
+
+                buildingThis.chipsCost *= 2;
+
+
+                buildingThis.damage *= 1.4f;
+
+
+                if (buildingThis.typeBuilding == "weapon")
+                {
+                    for (int i = 0; i < GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns.Length; i++)
+                    {
+                        GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns[i].GetComponent<Enemy>().maxCount += 2;
+                        GameObject.Find("Main Camera").GetComponent<SaveAll>().prefabsPawns[i].GetComponent<Enemy>().health += 15;
+
+                    }
+
+                }
+                else if (buildingThis.typeBuilding == "bar")
+                {
+                    int i = 0;
+
+                    foreach (var build in gameManager.buildings)
+                    {
+                        if (gameManager.buildings[i].typeBuilding != "bar")
+                        {
+                            gameManager.buildings[i].limitBuilding = gameManager.buildings[i].limitBuilding + 2;
+                            gameManager.buildings[i].maxLevel = gameManager.buildings[i].maxLevel + 2;
+
+                        }
+                        i++;
+                    }
+                    int j = 0;
+                    foreach (var build in gameManager.saveAll.prefabsHouse)
+                    {
+                        if (gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().typeBuilding != "bar")
+                        {
+                            gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding = gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().limitBuilding + 2;
+                        }
+                        gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().maxLevel = gameManager.saveAll.prefabsHouse[j].GetComponent<Building>().maxLevel + 2;
+
+                        j++;
+                    }
+
+                }
+                UtilScripts.PlaySounds("button", 0.5f);
+
+                BackAllBuildings();
+
+                buildingThis.constructionScript.SetUpgradeBuilding(0);
+            }
+
+
+        }
+    }
 
     private void DoAnyFunc()
     {
+        UtilScripts.PlaySounds("button", 0.5f);
+
         BackAllBuildings();
         if (buildingThis.typeBuilding == "weapon")
         {
@@ -417,6 +569,8 @@ public class BuildingsDoing : MonoBehaviour
 
     private void SkipUpgrade()
     {
+        UtilScripts.PlaySounds("button", 0.5f);
+
         if (gameManager.crips >= buildingThis.chipsCost)
         {
             buildingThis.open = false;
@@ -425,6 +579,7 @@ public class BuildingsDoing : MonoBehaviour
             gameManager.crips-=buildingThis.chipsCost;
 
             canvasUpgrade.GetComponent<OpenBuildingSettings>().DownCanvas();
+            BackAllBuildings();
 
         }
 

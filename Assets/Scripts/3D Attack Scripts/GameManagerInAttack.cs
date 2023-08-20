@@ -12,11 +12,17 @@ public class GameManagerInAttack : MonoBehaviour
     bool doOne = true;
 
     public int countCups;
+    public int countGold;
+    public int countOil;
+
 
     private void Start()
     {
         System.Random random = new System.Random();
         countCups = random.Next(19, 30);
+        countGold = random.Next(500, 1000);
+        countOil = random.Next(500, 1000);
+
     }
 
     private void Update()
@@ -38,6 +44,8 @@ public class GameManagerInAttack : MonoBehaviour
             if (doOne)
             {
                 GameObject.Find("GameManager").GetComponent<GameManager>().cups += countCups;
+                GameObject.Find("GameManager").GetComponent<GameManager>().gold += countGold;
+                GameObject.Find("GameManager").GetComponent<GameManager>().oil += countOil;
 
                 doOne = false;
             }
@@ -73,6 +81,10 @@ public class GameManagerInAttack : MonoBehaviour
             {
 
                 GameObject.Find("GameManager").GetComponent<GameManager>().cups -= countCups;
+                GameObject.Find("GameManager").GetComponent<GameManager>().gold -= countGold;
+                GameObject.Find("GameManager").GetComponent<GameManager>().oil -= countOil;
+
+
 
 
                 doOne = false;
@@ -87,12 +99,12 @@ public class GameManagerInAttack : MonoBehaviour
         }
     }
 
-    public void minusCups()
-    {
-        GameObject.Find("GameManager").GetComponent<GameManager>().cups -= countCups;
-        StartCoroutine(openScene());
+    //public void minusCups()
+    //{
+    //    GameObject.Find("GameManager").GetComponent<GameManager>().cups -= countCups;
+    //    StartCoroutine(openScene());
 
-    }
+    //}
 
     IEnumerator openScene()
     {

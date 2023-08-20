@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     public int countInArmy;
     public int maxCount;
 
+    public string enemySoundAttack;
+
     private void Start()
     {
         memSpeed = moveSpeed;

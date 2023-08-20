@@ -307,13 +307,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f4797c48e6f30428af358ea42bfa29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2
   health: 60
   memSpeed: 0
   target: {fileID: 0}
   cost: 10
-  countInArmy: 1
-  maxCount: 5
+  countInArmy: 0
+  maxCount: 2
+  enemySoundAttack: swordAttack
 --- !u!54 &6494159561365949141
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2867,7 +2868,7 @@ MonoBehaviour:
   root: {fileID: 962561814842324878}
   kripsList: {fileID: 0}
   maxDistance: 0.5
-  damage: 20
+  damage: 15
 --- !u!136 &3468773411070508319
 CapsuleCollider:
   m_ObjectHideFlags: 0

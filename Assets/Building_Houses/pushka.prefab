@@ -845,9 +845,9 @@ MonoBehaviour:
   cost: 3000
   level: 1
   nextLevel: 2
-  maxLevel: 3
+  maxLevel: 5
   upgradeCost: 2000
-  limitBuilding: 3
+  limitBuilding: 4
   countBuilding: 0
   upgradeGoldEarn: 0
   upgradeNewMaxIncome: 0
@@ -887,12 +887,14 @@ MonoBehaviour:
   maxPanel: {fileID: 2042449704648947367}
   grindBuild: 0
   upgradeButton: {fileID: 0}
+  upgradeButtonDonate: {fileID: 0}
   skipButton: {fileID: 0}
   cancelButtonEarn: {fileID: 0}
   cancelButton: {fileID: 0}
   cancelButtonSkip: {fileID: 0}
   doingButton: {fileID: 0}
   isOpen: 0
+  openedSkipPanel: 0
 --- !u!114 &2824303763551457024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1033,7 +1035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28459fc6865478e429953bea1b826832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStart: 10
+  timeStart: 100
   timeMemory: 0
   timeText: {fileID: 8883877096555628558}
   imageBuild: {fileID: 9113240994449851251}

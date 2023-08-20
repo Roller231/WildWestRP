@@ -24,12 +24,4 @@ public class BuildingToAttack : MonoBehaviour
         }
     }
 
-    public void dsad()
-    {
-        if (health <= 0)
-        {
-
-            Destroy(gameObject);
-        }
-    }
 }

@@ -297,7 +297,7 @@ MonoBehaviour:
   root: {fileID: 962561814842324878}
   kripsList: {fileID: 0}
   maxDistance: 3
-  damage: 15
+  damage: 13
 --- !u!136 &5154154652223151935
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -430,6 +430,7 @@ MonoBehaviour:
   cost: 20
   countInArmy: 0
   maxCount: 4
+  enemySoundAttack: arrowAttack
 --- !u!54 &6494159561365949141
 Rigidbody:
   m_ObjectHideFlags: 0

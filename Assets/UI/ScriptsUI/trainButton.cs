@@ -43,6 +43,9 @@ public class trainButton : MonoBehaviour
 
     public void TrainPawns()
     {
+
+
+
         int placesInArmyMax = 0;
         foreach (var item in gameManager.buildings)
         {
@@ -51,6 +54,7 @@ public class trainButton : MonoBehaviour
 
         if (enemy.countInArmy <= 0 && gameManager.oil > enemy.cost)
         {
+            UtilScripts.PlaySounds("train", 1);
             enemy.countInArmy++;
             countInArmyText.GetComponentInChildren<Text>().text = enemy.countInArmy.ToString();
 
@@ -74,6 +78,7 @@ public class trainButton : MonoBehaviour
         }
         else if (enemy.countInArmy > 0 && enemy.maxCount > enemy.countInArmy && gameManager.oil >= enemy.cost)
         {
+            UtilScripts.PlaySounds("train", 1);
             enemy.countInArmy++;
             newCard.GetComponentInChildren<trainButton>().countInArmyText.text = enemy.countInArmy.ToString();
 

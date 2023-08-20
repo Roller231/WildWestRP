@@ -68,12 +68,13 @@ public class AttackNear : MonoBehaviour
 
             if (hit.collider.gameObject.name != "Enemy Model" && hit.collider.gameObject.name != "Enemy Model(Clone)" && hit.collider.gameObject.name != "Cube")
             {
-                Debug.Log(hit.collider.gameObject.name);
+                UtilScripts.PlaySounds(GetComponentInParent<Enemy>().enemySoundAttack, 0.3f);
+
+
                 if (hit.collider.gameObject.GetComponent<BuildingToAttack>().health > 0)
                 {
 
                     hit.collider.gameObject.GetComponent<BuildingToAttack>().health -= damage;
-                    Debug.Log(hit.collider.gameObject.GetComponent<BuildingToAttack>().health);
                 }
                 if (hit.collider.gameObject.GetComponent<BuildingToAttack>().health <= 0)
                 {
@@ -92,6 +93,7 @@ public class AttackNear : MonoBehaviour
                     }
 
                     hit.collider.gameObject.GetComponent<BuildingToAttack>().destroiedBuild.SetActive(true);
+                    UtilScripts.PlaySounds("destroyBuilding", 0.3f);
                     UtilScripts.Destroy(hit.collider.gameObject);
 
                 }

@@ -46,6 +46,10 @@ public class ConstructionScript : MonoBehaviour
         doingBuild.enabled = true;
         gameObject.SetActive(false);
 
+        doingBuild.openedSkipPanel = true;
+
+        doingBuild.gameObject.GetComponent<Building>().storage = 0;
+
         foreach (Building item in gameManager.buildings)
         {
             if (!GameObject.Find("Main Camera").GetComponent<CameraTo3D>().do3D)
@@ -68,7 +72,9 @@ public class ConstructionScript : MonoBehaviour
     }
 
     public void SetUpgradeBuilding(float timeForUpgrade)
-    { 
+    {
+        UtilScripts.PlaySounds("build", 0.3f);
+
         doingBuild.BackAllBuildings();
         doingBuild.gameObject.GetComponent<Building>().isBuilt = false;
         imageBuild.enabled = false;

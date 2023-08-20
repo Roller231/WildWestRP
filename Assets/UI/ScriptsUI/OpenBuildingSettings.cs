@@ -17,6 +17,8 @@ public class OpenBuildingSettings : MonoBehaviour
     {
         box.localPosition = new Vector2(0, -Screen.height);
         canvasInGame.SetActive(true);
+        UtilScripts.PlaySounds("button", 0.5f);
+
     }
 
 }

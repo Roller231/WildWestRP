@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 6614076696385075672}
   - component: {fileID: -1266196628167416662}
   m_Layer: 0
-  m_Name: Schahta
+  m_Name: Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,12 +280,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  cost: 3500
+  cost: 2000
   level: 1
   nextLevel: 2
   maxLevel: 3
   upgradeCost: 1000
-  limitBuilding: 3
+  limitBuilding: 2
   countBuilding: 0
   upgradeGoldEarn: 4
   upgradeNewMaxIncome: 5000
@@ -304,7 +304,7 @@ MonoBehaviour:
   isBuilt: 0
   nowMove: 0
   plasesInArmy: 0
-  typeBuilding: 
+  typeBuilding: mine
 --- !u!114 &-273785919875891180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,12 +325,14 @@ MonoBehaviour:
   maxPanel: {fileID: 3735591614120016217}
   grindBuild: 1
   upgradeButton: {fileID: 0}
+  upgradeButtonDonate: {fileID: 0}
   skipButton: {fileID: 0}
   cancelButtonEarn: {fileID: 0}
   cancelButton: {fileID: 0}
   cancelButtonSkip: {fileID: 0}
   doingButton: {fileID: 0}
   isOpen: 0
+  openedSkipPanel: 0
 --- !u!114 &2299015597342019234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,7 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28459fc6865478e429953bea1b826832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStart: 10
+  timeStart: 60
   timeMemory: 0
   timeText: {fileID: 2282515824574833777}
   imageBuild: {fileID: 906812644005392672}
@@ -1134,8 +1136,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4029194, y: 0.27477995, z: 0.17288505}
-  m_Center: {x: 0.04925586, y: -0.019582951, z: 0.07476762}
+  m_Size: {x: 0.4633865, y: 0.27477995, z: 0.17288505}
+  m_Center: {x: 0.07949059, y: -0.019576382, z: 0.0746078}
 --- !u!114 &3769567577519716761
 MonoBehaviour:
   m_ObjectHideFlags: 0
