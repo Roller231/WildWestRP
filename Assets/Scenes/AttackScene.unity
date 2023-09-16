@@ -12742,7 +12742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomOutMin: 1
   zoomOutMax: 5
-  panSpeed: 0.04
+  panSpeed: 0.025
   cameraMinX: -33
   cameraMaxX: 33
   cameraMinY: 0
@@ -12766,6 +12766,7 @@ MonoBehaviour:
   countCups: 0
   countGold: 0
   countOil: 0
+  ads: {fileID: 1214972565}
 --- !u!1 &520196429
 GameObject:
   m_ObjectHideFlags: 0
@@ -17911,10 +17912,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 696258715}
-        m_TargetAssemblyTypeName: OpenScene, Assembly-CSharp
-        m_MethodName: OpenSceneVoid
-        m_Mode: 3
+      - m_Target: {fileID: 519420041}
+        m_TargetAssemblyTypeName: GameManagerInAttack, Assembly-CSharp
+        m_MethodName: openScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -30430,6 +30431,83 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1214972564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214972567}
+  - component: {fileID: 1214972566}
+  - component: {fileID: 1214972565}
+  - component: {fileID: 1214972568}
+  m_Layer: 0
+  m_Name: AdsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1214972565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214972564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ae43e2b8d8dc242a82edb26a286f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidAdID: Interstitial_Android
+  iOSAdID: Interstitial_iOS
+--- !u!114 &1214972566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214972564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b914407b49a8f44875c0c8fa7d61b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidGameID: 5398515
+  iOSGameID: 5398514
+  testMode: 1
+--- !u!4 &1214972567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214972564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5682726, y: 1.004178, z: 4.3521643}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1214972568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214972564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b9cf9b6c1d69249848cab515463a7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidAdID: Rewarded_Android
+  iOSAdID: Rewarded_iOS
 --- !u!1 &1216908390
 GameObject:
   m_ObjectHideFlags: 0
@@ -43770,10 +43848,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1647675110}
-        m_TargetAssemblyTypeName: OpenScene, Assembly-CSharp
-        m_MethodName: OpenSceneVoid
-        m_Mode: 3
+      - m_Target: {fileID: 519420041}
+        m_TargetAssemblyTypeName: GameManagerInAttack, Assembly-CSharp
+        m_MethodName: openScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -50449,6 +50527,7 @@ MonoBehaviour:
   saveAll: {fileID: 519420035}
   countHouses: 0
   erorInt: {fileID: 82540907}
+  rad: {fileID: 1214972568}
 --- !u!1 &1920663436
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class AttackButton : MonoBehaviour
     [SerializeField] SaveAll saveAll;
     [SerializeField] DB db;
 
+    [SerializeField] GameObject erorTrain;
+
     bool doAttack;
     public void OpenSceneVoid()
     {
@@ -26,7 +28,7 @@ public class AttackButton : MonoBehaviour
 
         else
         {
-            Debug.Log("»ди играй в роблокс");
+            erorTrain.GetComponent<Animation>().Play();
         }
 
     }

@@ -6,6 +6,6 @@
   <string name="project_id" translatable="false">rise-of-west</string>
   <string name="google_api_key" translatable="false">AIzaSyAdRwQtQBjl0eqCCrnqY-e3nHeQ1EBfEcg</string>
   <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAdRwQtQBjl0eqCCrnqY-e3nHeQ1EBfEcg</string>
-  <string name="google_app_id" translatable="false">1:672479106449:android:3776ebba447b3de8477630</string>
+  <string name="google_app_id" translatable="false">1:672479106449:android:ea6962b3432be80f477630</string>
   <string name="default_web_client_id" translatable="false">672479106449-9873g52hvid7alp4luq0lgbe5podrdch.apps.googleusercontent.com</string>
 </resources>

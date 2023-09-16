@@ -61,7 +61,7 @@ public class UpgradeButton : MonoBehaviour
                         {
                             canUpBar = true;
                         }
-                        else
+                        if(build.maxLevel != build.level || GameObject.Find("GameManager").GetComponent<GameManager>().saveAll.prefabsHouse[i].GetComponent<Building>().countBuilding != GameObject.Find("GameManager").GetComponent<GameManager>().saveAll.prefabsHouse[i].GetComponent<Building>().limitBuilding || item.GetComponent<Building>().countBuilding <= 0)
                         {
 
                             canUpBar = false;

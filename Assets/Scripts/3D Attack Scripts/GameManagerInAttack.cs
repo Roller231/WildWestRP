@@ -15,6 +15,7 @@ public class GameManagerInAttack : MonoBehaviour
     public int countGold;
     public int countOil;
 
+    public InterstitialAds ads;
 
     private void Start()
     {
@@ -106,9 +107,9 @@ public class GameManagerInAttack : MonoBehaviour
 
     //}
 
-    IEnumerator openScene()
+    public void openScene()
     {
-        yield return new WaitForSeconds(1.6f);
+        ads.ShowAd();
 
         UtilScripts.OpenSceneVoid(0);
     }

@@ -8,9 +8,38 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:672479106449:android:3776ebba447b3de8477630",
+        "mobilesdk_app_id": "1:672479106449:android:5086925c5cf32554477630",
         "android_client_info": {
-          "package_name": "com.Mystificationstudio.RiseOfWest"
+          "package_name": "com.Mystificationstudio.RiseOfTheWest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672479106449-9873g52hvid7alp4luq0lgbe5podrdch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdRwQtQBjl0eqCCrnqY-e3nHeQ1EBfEcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672479106449-9873g52hvid7alp4luq0lgbe5podrdch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672479106449:android:ea6962b3432be80f477630",
+        "android_client_info": {
+          "package_name": "com.NixzordGS.RiseOfTheWest"
         }
       },
       "oauth_client": [

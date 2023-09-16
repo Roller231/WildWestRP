@@ -34,8 +34,16 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject erorInt;
 
+    [SerializeField] RewardedAds rad;
 
 
+    private void Start()
+    {
+        if (!GameObject.Find("Main Camera").GetComponent<DB>().do3D)
+        {
+            rad.LoadAd();
+        }
+    }
 
 
     private void Update()
